@@ -42,82 +42,167 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
     }
-    @keyframes logoSlide {
-      0% { opacity: 0; transform: scale(3); }
-      50% { opacity: 1; transform: scale(1); }
-      100% { opacity: 1; transform: scale(1); }
+    @keyframes ribbonIn {
+      0% { opacity: 0; transform: scale(0.5) rotate(-10deg); }
+      30% { opacity: 1; transform: scale(1.2) rotate(5deg); }
+      50% { transform: scale(1) rotate(0deg); }
+      100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+    @keyframes letterReveal {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes glowPulse {
+      0%, 100% { filter: drop-shadow(0 0 20px rgba(229,9,20,0.5)); }
+      50% { filter: drop-shadow(0 0 40px rgba(229,9,20,0.8)); }
     }
     @keyframes logoFadeOut {
       0% { opacity: 1; }
       100% { opacity: 0; }
     }
+    .loading-container {
+      position: relative;
+      animation: ribbonIn 2s ease-out forwards;
+    }
     .loading-logo {
-      font-size: 4rem;
+      font-size: 5rem;
       font-weight: 900;
       color: #E50914;
-      animation: logoSlide 2s ease-out forwards;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.15em;
+      animation: glowPulse 2s ease-in-out infinite;
+      text-shadow: 0 0 30px rgba(229,9,20,0.5);
+    }
+    .loading-letter {
+      display: inline-block;
+      animation: letterReveal 0.5s ease-out forwards;
+    }
+    .loading-letter:nth-child(1) { animation-delay: 0.3s; }
+    .loading-letter:nth-child(2) { animation-delay: 0.4s; }
+    .loading-letter:nth-child(3) { animation-delay: 0.5s; }
+    .loading-letter:nth-child(4) { animation-delay: 0.6s; }
+    .loading-letter:nth-child(5) { animation-delay: 0.7s; }
+    .loading-letter:nth-child(6) { animation-delay: 0.8s; }
+    .click-hint {
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #666;
+      font-size: 0.875rem;
+      animation: letterReveal 0.5s ease-out 1.5s forwards;
+      opacity: 0;
     }
     .loading-screen.fade-out {
-      animation: logoFadeOut 0.5s ease-out forwards;
+      animation: logoFadeOut 0.8s ease-out forwards;
     }
   </style>
 </head>
 <body class="bg-[#141414] text-white antialiased min-h-screen">
   <div id="loading-screen">
-    <div class="loading-logo">EdFlix</div>
+    <div class="loading-container">
+      <div class="loading-logo">
+        <span class="loading-letter">E</span>
+        <span class="loading-letter">d</span>
+        <span class="loading-letter">F</span>
+        <span class="loading-letter">l</span>
+        <span class="loading-letter">i</span>
+        <span class="loading-letter">x</span>
+      </div>
+      <div class="click-hint">Click anywhere</div>
+    </div>
   </div>
   <div id="app"></div>
   <script>
     // Netflix-style loading animation with sound
     const loadingScreen = document.getElementById('loading-screen');
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    let audioCtx = null;
+    let soundPlayed = false;
     
     function playTaDum() {
+      if (soundPlayed) return;
+      soundPlayed = true;
+      
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
       const now = audioCtx.currentTime;
-      const duration = 2.5;
       
-      // Create oscillator for the ta-dum sound
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
+      // More impressive ta-dum sound with multiple layers
+      // Bass layer
+      const osc1 = audioCtx.createOscillator();
+      const gain1 = audioCtx.createGain();
+      osc1.type = 'sawtooth';
+      osc1.frequency.setValueAtTime(65, now);
+      osc1.frequency.exponentialRampToValueAtTime(150, now + 0.4);
+      osc1.frequency.exponentialRampToValueAtTime(65, now + 2.5);
+      gain1.gain.setValueAtTime(0, now);
+      gain1.gain.linearRampToValueAtTime(0.4, now + 0.15);
+      gain1.gain.linearRampToValueAtTime(0.3, now + 1.5);
+      gain1.gain.linearRampToValueAtTime(0, now + 2.5);
+      osc1.connect(gain1);
+      gain1.connect(audioCtx.destination);
+      
+      // Mid layer
+      const osc2 = audioCtx.createOscillator();
+      const gain2 = audioCtx.createGain();
       const filter = audioCtx.createBiquadFilter();
-      
-      osc.type = 'sawtooth';
-      osc.frequency.setValueAtTime(80, now);
-      osc.frequency.exponentialRampToValueAtTime(200, now + 0.3);
-      osc.frequency.exponentialRampToValueAtTime(80, now + 2);
-      
+      osc2.type = 'square';
+      osc2.frequency.setValueAtTime(130, now);
+      osc2.frequency.exponentialRampToValueAtTime(260, now + 0.3);
+      osc2.frequency.exponentialRampToValueAtTime(130, now + 2);
       filter.type = 'lowpass';
-      filter.frequency.setValueAtTime(500, now);
+      filter.frequency.setValueAtTime(800, now);
       filter.frequency.exponentialRampToValueAtTime(2000, now + 0.3);
-      filter.frequency.exponentialRampToValueAtTime(500, now + 2);
+      filter.frequency.exponentialRampToValueAtTime(800, now + 2);
+      gain2.gain.setValueAtTime(0, now);
+      gain2.gain.linearRampToValueAtTime(0.2, now + 0.1);
+      gain2.gain.linearRampToValueAtTime(0.15, now + 1.5);
+      gain2.gain.linearRampToValueAtTime(0, now + 2.5);
+      osc2.connect(filter);
+      filter.connect(gain2);
+      gain2.connect(audioCtx.destination);
       
-      gain.gain.setValueAtTime(0, now);
-      gain.gain.linearRampToValueAtTime(0.3, now + 0.1);
-      gain.gain.linearRampToValueAtTime(0.3, now + 1.5);
-      gain.gain.linearRampToValueAtTime(0, now + 2.5);
+      // High layer for shimmer
+      const osc3 = audioCtx.createOscillator();
+      const gain3 = audioCtx.createGain();
+      osc3.type = 'sine';
+      osc3.frequency.setValueAtTime(260, now);
+      osc3.frequency.exponentialRampToValueAtTime(520, now + 0.2);
+      osc3.frequency.exponentialRampToValueAtTime(260, now + 1.5);
+      gain3.gain.setValueAtTime(0, now);
+      gain3.gain.linearRampToValueAtTime(0.1, now + 0.1);
+      gain3.gain.linearRampToValueAtTime(0.05, now + 1);
+      gain3.gain.linearRampToValueAtTime(0, now + 2);
+      osc3.connect(gain3);
+      gain3.connect(audioCtx.destination);
       
-      osc.connect(filter);
-      filter.connect(gain);
-      gain.connect(audioCtx.destination);
-      
-      osc.start(now);
-      osc.stop(now + duration);
+      osc1.start(now);
+      osc1.stop(now + 2.5);
+      osc2.start(now);
+      osc2.stop(now + 2.5);
+      osc3.start(now);
+      osc3.stop(now + 2);
     }
     
     function hideLoadingScreen() {
       loadingScreen.classList.add('fade-out');
       setTimeout(() => {
         loadingScreen.style.display = 'none';
-      }, 500);
+      }, 800);
     }
     
-    // Show loading animation on first load
-    window.addEventListener('load', () => {
+    // Click to start sound
+    loadingScreen.addEventListener('click', () => {
       playTaDum();
-      setTimeout(hideLoadingScreen, 2500);
+      setTimeout(hideLoadingScreen, 1500);
     });
+    
+    // Auto-hide after 4 seconds if no click
+    setTimeout(() => {
+      if (!soundPlayed && loadingScreen.style.display !== 'none') {
+        hideLoadingScreen();
+      }
+    }, 4000);
     
     const DATA = [
       {tmdbId:106,title:"Predator",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Science Fiction"]},
