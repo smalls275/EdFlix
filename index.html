@@ -150,6 +150,24 @@
       color: #fff;
       opacity: 0;
       animation: countdown 1s ease-out forwards;
+      background: #000;
+    }
+    .countdown-circle::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 2px solid #333;
+      border-radius: 50%;
+      transform: rotate(-45deg);
+    }
+    .countdown-circle::after {
+      content: '';
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      border: 1px solid #444;
+      border-radius: 50%;
     }
     .feature-presentation {
       position: absolute;
@@ -222,6 +240,7 @@
     <div class="loading-logo">EdFlix</div>
     <div class="feature-presentation" id="feature-presentation">Feature Presentation</div>
     <div class="countdown-circle" id="countdown-circle"></div>
+    <iframe id="hidden-youtube" style="position:absolute;visibility:hidden;width:0;height:0;" allow="autoplay"></iframe>
   </div>
   <div id="app"></div>
   <script>
@@ -234,11 +253,30 @@
     const countdownCircle = document.getElementById('countdown-circle');
     const featurePresentation = document.getElementById('feature-presentation');
     const filmGrain = document.querySelector('.film-grain');
+    const hiddenYoutube = document.getElementById('hidden-youtube');
     
     let lights = [];
     let dustParticles = [];
     let animationFrame;
     let startTime = Date.now();
+    
+    // YouTube video ID for theater sound (using a dramatic orchestral swell)
+    const YOUTUBE_VIDEO_ID = 'your_video_id_here'; // Replace with actual video ID
+    
+    function playHiddenYoutube() {
+      // Check if user has interacted before
+      const hasInteracted = localStorage.getItem('edflix_sound_enabled');
+      
+      if (hasInteracted) {
+        hiddenYoutube.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&enablejsapi=1&controls=0&loop=0&playlist=${YOUTUBE_VIDEO_ID}`;
+      }
+    }
+    
+    function enableSound() {
+      // User clicked to enable sound
+      localStorage.setItem('edflix_sound_enabled', 'true');
+      playHiddenYoutube();
+    }
     
     function resizeCanvas() {
       canvas.width = window.innerWidth;
@@ -412,6 +450,12 @@
     
     // Auto-hide after 8 seconds
     setTimeout(hideLoadingScreen, 8000);
+    
+    // Try to play YouTube sound if user has interacted before
+    playHiddenYoutube();
+    
+    // Add click handler to enable sound for future visits
+    loadingScreen.addEventListener('click', enableSound);
     
     const DATA = [
       {tmdbId:106,title:"Predator",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Science Fiction"]},
