@@ -19,15 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run build
-        env:
-          NEXT_PUBLIC_TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
-          NEXT_PUBLIC_BASE_PATH: /edflix
+      - run: mkdir -p out && cp index.html out/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
