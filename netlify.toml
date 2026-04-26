@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NEXT_PUBLIC_TMDB_API_KEY = "dfdcfeaefeefe243e2761936a156b66c"
+  NEXT_PUBLIC_BASE_PATH = ""
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
