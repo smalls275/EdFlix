@@ -33,7 +33,7 @@
     .modal-overlay { animation: fadeIn 0.2s ease-out; }
     .modal-content { animation: slideUp 0.3s ease-out; }
     
-    /* Netflix-style loading animation */
+    /* Movie theater lighting animation */
     #loading-screen {
       position: fixed;
       inset: 0;
@@ -44,28 +44,41 @@
       justify-content: center;
       overflow: hidden;
     }
-    #particle-canvas {
+    #theater-canvas {
       position: absolute;
       inset: 0;
     }
     @keyframes logoFadeIn {
-      0% { opacity: 0; transform: scale(2); }
+      0% { opacity: 0; transform: scale(1.5); }
       100% { opacity: 1; transform: scale(1); }
     }
     @keyframes logoFadeOut {
       0% { opacity: 1; }
       100% { opacity: 0; }
     }
+    @keyframes spotlight {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
     .loading-logo {
       position: relative;
       z-index: 10;
-      font-size: 6rem;
+      font-size: 5rem;
       font-weight: 900;
       color: #E50914;
       letter-spacing: 0.2em;
-      text-shadow: 0 0 60px rgba(229,9,20,0.8), 0 0 100px rgba(229,9,20,0.4);
+      text-shadow: 0 0 80px rgba(229,9,20,0.6), 0 0 120px rgba(229,9,20,0.3);
       opacity: 0;
-      animation: logoFadeIn 1.5s ease-out 1s forwards;
+      animation: logoFadeIn 1s ease-out 2.5s forwards;
+    }
+    .spotlight {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+      opacity: 0;
+      animation: spotlight 2s ease-out 1s forwards;
+      pointer-events: none;
     }
     .loading-screen.fade-out {
       animation: logoFadeOut 1s ease-out forwards;
@@ -74,64 +87,94 @@
 </head>
 <body class="bg-[#141414] text-white antialiased min-h-screen">
   <div id="loading-screen">
-    <canvas id="particle-canvas"></canvas>
+    <canvas id="theater-canvas"></canvas>
+    <div class="spotlight"></div>
     <div class="loading-logo">EdFlix</div>
   </div>
   <div id="app"></div>
   <script>
-    // Cinematic particle loading animation
+    // Movie theater lighting animation
     const loadingScreen = document.getElementById('loading-screen');
-    const canvas = document.getElementById('particle-canvas');
+    const canvas = document.getElementById('theater-canvas');
     const ctx = canvas.getContext('2d');
-    let particles = [];
+    let lights = [];
     let animationFrame;
+    let startTime = Date.now();
     
     function resizeCanvas() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      initLights();
     }
     
-    function createParticle() {
-      return {
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 3 + 1,
-        speedX: (Math.random() - 0.5) * 2,
-        speedY: (Math.random() - 0.5) * 2,
-        opacity: Math.random() * 0.5 + 0.2,
-        color: Math.random() > 0.5 ? '#E50914' : '#ff3333'
-      };
-    }
-    
-    function initParticles() {
-      particles = [];
-      for (let i = 0; i < 150; i++) {
-        particles.push(createParticle());
+    function initLights() {
+      lights = [];
+      const rows = 8;
+      const lightsPerRow = 12;
+      const spacingX = canvas.width / (lightsPerRow + 1);
+      const spacingY = canvas.height / (rows + 1);
+      
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < lightsPerRow; col++) {
+          lights.push({
+            x: spacingX * (col + 1),
+            y: spacingY * (row + 1),
+            size: 8,
+            row: row,
+            col: col,
+            brightness: 0,
+            targetBrightness: 1,
+            turnOnTime: (rows - row) * 200 + Math.random() * 100
+          });
+        }
       }
     }
     
-    function animateParticles() {
+    function animateLights() {
+      const elapsed = Date.now() - startTime;
+      
+      // Clear canvas with fade effect
       ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
-      particles.forEach(p => {
-        p.x += p.speedX;
-        p.y += p.speedY;
+      lights.forEach(light => {
+        if (elapsed > light.turnOnTime) {
+          light.brightness = Math.min(light.brightness + 0.05, light.targetBrightness);
+        }
         
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
+        // Draw light
+        const gradient = ctx.createRadialGradient(light.x, light.y, 0, light.x, light.y, light.size * 3);
+        gradient.addColorStop(0, `rgba(255, 220, 150, ${light.brightness * 0.8})`);
+        gradient.addColorStop(0.5, `rgba(255, 200, 100, ${light.brightness * 0.4})`);
+        gradient.addColorStop(1, 'rgba(255, 180, 50, 0)');
         
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = p.color;
-        ctx.globalAlpha = p.opacity;
+        ctx.arc(light.x, light.y, light.size * 3, 0, Math.PI * 2);
+        ctx.fillStyle = gradient;
+        ctx.fill();
+        
+        // Draw light center
+        ctx.beginPath();
+        ctx.arc(light.x, light.y, light.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 200, ${light.brightness})`;
         ctx.fill();
       });
       
-      ctx.globalAlpha = 1;
-      animationFrame = requestAnimationFrame(animateParticles);
+      // Draw ambient glow
+      if (elapsed > 1000) {
+        const ambientIntensity = Math.min((elapsed - 1000) / 2000, 0.3);
+        const ambientGradient = ctx.createRadialGradient(
+          canvas.width / 2, canvas.height / 2, 0,
+          canvas.width / 2, canvas.height / 2, canvas.width
+        );
+        ambientGradient.addColorStop(0, `rgba(255, 220, 150, ${ambientIntensity * 0.2})`);
+        ambientGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        
+        ctx.fillStyle = ambientGradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
+      
+      animationFrame = requestAnimationFrame(animateLights);
     }
     
     function hideLoadingScreen() {
@@ -144,11 +187,10 @@
     
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
-    initParticles();
-    animateParticles();
+    animateLights();
     
-    // Auto-hide after 3 seconds
-    setTimeout(hideLoadingScreen, 3000);
+    // Auto-hide after 4 seconds
+    setTimeout(hideLoadingScreen, 4000);
     
     const DATA = [
       {tmdbId:106,title:"Predator",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Science Fiction"]},
