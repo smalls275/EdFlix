@@ -43,7 +43,6 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      cursor: pointer;
     }
     #theater-canvas {
       position: absolute;
@@ -94,15 +93,13 @@
   </div>
   <div id="app"></div>
   <script>
-    // Movie theater lighting animation with sound
+    // Movie theater lighting animation
     const loadingScreen = document.getElementById('loading-screen');
     const canvas = document.getElementById('theater-canvas');
     const ctx = canvas.getContext('2d');
     let lights = [];
     let animationFrame;
     let startTime = Date.now();
-    let audioCtx = null;
-    let soundPlayed = false;
     
     function resizeCanvas() {
       canvas.width = window.innerWidth;
@@ -131,85 +128,6 @@
           });
         }
       }
-    }
-    
-    function playTheaterSound() {
-      if (soundPlayed) return;
-      soundPlayed = true;
-      
-      try {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        
-        // Resume audio context if suspended (required by some browsers)
-        if (audioCtx.state === 'suspended') {
-          audioCtx.resume().then(() => {
-            console.log('Audio context resumed');
-            generateSound();
-          }).catch(err => {
-            console.error('Failed to resume audio context:', err);
-          });
-        } else {
-          generateSound();
-        }
-      } catch (err) {
-        console.error('Audio context error:', err);
-      }
-    }
-    
-    function generateSound() {
-      const now = audioCtx.currentTime;
-      
-      // Simple but dramatic theater sound
-      // Bass swell
-      const osc1 = audioCtx.createOscillator();
-      const gain1 = audioCtx.createGain();
-      osc1.type = 'sine';
-      osc1.frequency.setValueAtTime(55, now);
-      osc1.frequency.exponentialRampToValueAtTime(110, now + 1);
-      osc1.frequency.exponentialRampToValueAtTime(82, now + 3);
-      gain1.gain.setValueAtTime(0, now);
-      gain1.gain.linearRampToValueAtTime(0.4, now + 0.5);
-      gain1.gain.linearRampToValueAtTime(0.3, now + 2);
-      gain1.gain.linearRampToValueAtTime(0, now + 4);
-      osc1.connect(gain1);
-      gain1.connect(audioCtx.destination);
-      
-      // Mid layer
-      const osc2 = audioCtx.createOscillator();
-      const gain2 = audioCtx.createGain();
-      osc2.type = 'triangle';
-      osc2.frequency.setValueAtTime(110, now);
-      osc2.frequency.exponentialRampToValueAtTime(220, now + 0.8);
-      osc2.frequency.exponentialRampToValueAtTime(165, now + 3);
-      gain2.gain.setValueAtTime(0, now);
-      gain2.gain.linearRampToValueAtTime(0.2, now + 0.3);
-      gain2.gain.linearRampToValueAtTime(0.15, now + 2);
-      gain2.gain.linearRampToValueAtTime(0, now + 4);
-      osc2.connect(gain2);
-      gain2.connect(audioCtx.destination);
-      
-      // High shimmer
-      const osc3 = audioCtx.createOscillator();
-      const gain3 = audioCtx.createGain();
-      osc3.type = 'sine';
-      osc3.frequency.setValueAtTime(220, now);
-      osc3.frequency.exponentialRampToValueAtTime(440, now + 0.5);
-      osc3.frequency.exponentialRampToValueAtTime(330, now + 2);
-      gain3.gain.setValueAtTime(0, now);
-      gain3.gain.linearRampToValueAtTime(0.1, now + 0.2);
-      gain3.gain.linearRampToValueAtTime(0.05, now + 1.5);
-      gain3.gain.linearRampToValueAtTime(0, now + 3);
-      osc3.connect(gain3);
-      gain3.connect(audioCtx.destination);
-      
-      osc1.start(now);
-      osc1.stop(now + 4);
-      osc2.start(now);
-      osc2.stop(now + 4);
-      osc3.start(now);
-      osc3.stop(now + 3);
-      
-      console.log('Theater sound playing');
     }
     
     function animateLights() {
@@ -267,23 +185,12 @@
       }, 1000);
     }
     
-    // Click to start sound
-    loadingScreen.addEventListener('click', () => {
-      console.log('Click detected, playing sound...');
-      playTheaterSound();
-      setTimeout(hideLoadingScreen, 2000);
-    });
-    
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
     animateLights();
     
-    // Auto-hide after 5 seconds if no click
-    setTimeout(() => {
-      if (!soundPlayed && loadingScreen.style.display !== 'none') {
-        hideLoadingScreen();
-      }
-    }, 5000);
+    // Auto-hide after 4 seconds
+    setTimeout(hideLoadingScreen, 4000);
     
     const DATA = [
       {tmdbId:106,title:"Predator",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Science Fiction"]},
