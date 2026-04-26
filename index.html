@@ -38,25 +38,25 @@
   <div id="app"></div>
   <script>
     const DATA = [
-      {tmdbId:106,title:"Predator",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01"},
-      {tmdbId:3133,title:"Badlands",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01"},
-      {tmdbId:1233413,title:"Sinners",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01"},
-      {tmdbId:11020,title:"Picnic at Hanging Rock",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01"},
-      {tmdbId:1078605,title:"Weapons",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01"},
-      {tmdbId:106,title:"Predator 3 Movie Collection",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",notes:"Collection"},
-      {tmdbId:377,title:"A Nightmare on Elm Street Collection",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",notes:"Collection"},
-      {tmdbId:521,title:"Dial M for Murder",formats:["3D Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01"},
-      {tmdbId:11976,title:"Legend",formats:["4K UHD","Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01"},
-      {tmdbId:64688,title:"21 Jump Street",formats:["Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01"},
-      {tmdbId:1891,title:"Rome Complete Series",formats:["Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",notes:"TV Series"},
-      {tmdbId:1903,title:"Vanilla Sky",formats:["Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01"},
-      {tmdbId:268,title:"Batman",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01"},
-      {tmdbId:364,title:"Batman Returns",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01"},
-      {tmdbId:850,title:"A Christmas Story",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01"},
-      {tmdbId:950387,title:"A Minecraft Movie",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01"},
-      {tmdbId:11959,title:"UHF",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01"},
-      {tmdbId:1649,title:"Bill & Ted's Bogus Journey",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01"},
-      {tmdbId:9374,title:"Death Becomes Her",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01"}
+      {tmdbId:106,title:"Predator",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Science Fiction"]},
+      {tmdbId:1242898,title:"Predator: Badlands",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Science Fiction"]},
+      {tmdbId:1233413,title:"Sinners",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Horror","Thriller"]},
+      {tmdbId:11020,title:"Picnic at Hanging Rock",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Drama","Mystery"]},
+      {tmdbId:1078605,title:"Weapons",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Horror","Thriller"]},
+      {tmdbId:106,title:"Predator 3 Movie Collection",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Science Fiction"],notes:"Collection"},
+      {tmdbId:377,title:"A Nightmare on Elm Street Collection",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Horror"],notes:"Collection"},
+      {tmdbId:521,title:"Dial M for Murder",formats:["3D Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Thriller","Crime"]},
+      {tmdbId:11976,title:"Legend",formats:["4K UHD","Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Fantasy","Adventure"]},
+      {tmdbId:64688,title:"21 Jump Street",formats:["Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Comedy"]},
+      {tmdbId:1891,title:"Rome Complete Series",formats:["Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Drama"],notes:"TV Series"},
+      {tmdbId:1903,title:"Vanilla Sky",formats:["Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Thriller","Mystery"]},
+      {tmdbId:268,title:"Batman",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Crime"]},
+      {tmdbId:364,title:"Batman Returns",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Crime"]},
+      {tmdbId:850,title:"A Christmas Story",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Comedy","Family"]},
+      {tmdbId:950387,title:"A Minecraft Movie",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Adventure","Fantasy"]},
+      {tmdbId:11959,title:"UHF",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Comedy"]},
+      {tmdbId:1649,title:"Bill & Ted's Bogus Journey",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Comedy","Fantasy"]},
+      {tmdbId:9374,title:"Death Becomes Her",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Comedy","Fantasy"]}
     ];
 
     let KEY = 'dfdcfeaefeefe243e2761936a156b66c';
