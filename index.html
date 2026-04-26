@@ -159,79 +159,25 @@
     function generateSound() {
       const now = audioCtx.currentTime;
       
-      // Dramatic theater swell sound
-      // Bass foundation
-      const osc1 = audioCtx.createOscillator();
-      const gain1 = audioCtx.createGain();
-      osc1.type = 'sawtooth';
-      osc1.frequency.setValueAtTime(55, now);
-      osc1.frequency.exponentialRampToValueAtTime(110, now + 1);
-      osc1.frequency.exponentialRampToValueAtTime(82, now + 3);
-      gain1.gain.setValueAtTime(0, now);
-      gain1.gain.linearRampToValueAtTime(0.3, now + 0.5);
-      gain1.gain.linearRampToValueAtTime(0.25, now + 2);
-      gain1.gain.linearRampToValueAtTime(0, now + 4);
-      osc1.connect(gain1);
-      gain1.connect(audioCtx.destination);
+      // Simple test beep
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
       
-      // Mid layer for richness
-      const osc2 = audioCtx.createOscillator();
-      const gain2 = audioCtx.createGain();
-      const filter = audioCtx.createBiquadFilter();
-      osc2.type = 'triangle';
-      osc2.frequency.setValueAtTime(110, now);
-      osc2.frequency.exponentialRampToValueAtTime(220, now + 0.8);
-      osc2.frequency.exponentialRampToValueAtTime(165, now + 3);
-      filter.type = 'lowpass';
-      filter.frequency.setValueAtTime(1000, now);
-      filter.frequency.exponentialRampToValueAtTime(2000, now + 1);
-      filter.frequency.exponentialRampToValueAtTime(1000, now + 3);
-      gain2.gain.setValueAtTime(0, now);
-      gain2.gain.linearRampToValueAtTime(0.15, now + 0.3);
-      gain2.gain.linearRampToValueAtTime(0.12, now + 2);
-      gain2.gain.linearRampToValueAtTime(0, now + 4);
-      osc2.connect(filter);
-      filter.connect(gain2);
-      gain2.connect(audioCtx.destination);
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(440, now);
+      osc.frequency.setValueAtTime(880, now + 0.1);
+      osc.frequency.setValueAtTime(440, now + 0.2);
       
-      // High shimmer layer
-      const osc3 = audioCtx.createOscillator();
-      const gain3 = audioCtx.createGain();
-      osc3.type = 'sine';
-      osc3.frequency.setValueAtTime(220, now);
-      osc3.frequency.exponentialRampToValueAtTime(440, now + 0.6);
-      osc3.frequency.exponentialRampToValueAtTime(330, now + 2.5);
-      gain3.gain.setValueAtTime(0, now);
-      gain3.gain.linearRampToValueAtTime(0.08, now + 0.2);
-      gain3.gain.linearRampToValueAtTime(0.05, now + 1.5);
-      gain3.gain.linearRampToValueAtTime(0, now + 3);
-      osc3.connect(gain3);
-      gain3.connect(audioCtx.destination);
+      gain.gain.setValueAtTime(0.5, now);
+      gain.gain.linearRampToValueAtTime(0, now + 0.5);
       
-      // Subtle brass-like layer
-      const osc4 = audioCtx.createOscillator();
-      const gain4 = audioCtx.createGain();
-      osc4.type = 'square';
-      osc4.frequency.setValueAtTime(82.5, now);
-      osc4.frequency.exponentialRampToValueAtTime(165, now + 1.2);
-      osc4.frequency.exponentialRampToValueAtTime(123.75, now + 3);
-      gain4.gain.setValueAtTime(0, now);
-      gain4.gain.linearRampToValueAtTime(0.06, now + 0.4);
-      gain4.gain.linearRampToValueAtTime(0.04, now + 2);
-      gain4.gain.linearRampToValueAtTime(0, now + 4);
-      osc4.connect(gain4);
-      gain4.connect(audioCtx.destination);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
       
-      osc1.start(now);
-      osc1.stop(now + 4);
-      osc2.start(now);
-      osc2.stop(now + 4);
-      osc3.start(now);
-      osc3.stop(now + 3);
-      osc4.start(now);
-      osc4.stop(now + 4);
+      osc.start(now);
+      osc.stop(now + 0.5);
       
-      console.log('Sound playing');
+      console.log('Test beep playing');
     }
     
     function animateLights() {
