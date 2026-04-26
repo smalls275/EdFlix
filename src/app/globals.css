@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #141414;
+  --foreground: #ffffff;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Row scroll container */
+.scroll-row {
+  scrollbar-width: thin;
+  scrollbar-color: #555 transparent;
+}
+
+/* Fade edges on rows */
+.row-fade-left,
+.row-fade-right {
+  position: relative;
+}
+
+.row-fade-left::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(to right, #141414, transparent);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.row-fade-right::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(to left, #141414, transparent);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Media badge styles */
+.badge-4k {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border: 1px solid #0f3460;
+}
+
+.badge-bluray {
+  background: linear-gradient(135deg, #0a1628, #1a2980);
+  border: 1px solid #2563eb;
+}
+
+.badge-dvd {
+  background: linear-gradient(135deg, #2d1b00, #78350f);
+  border: 1px solid #d97706;
+}
+
+.badge-vhs {
+  background: linear-gradient(135deg, #1a0a2e, #4a044e);
+  border: 1px solid #a855f7;
+}
+
+.badge-steelbook {
+  background: linear-gradient(135deg, #1c1c1c, #374151);
+  border: 1px solid #9ca3af;
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 20, 20, 0) 0%,
+    rgba(20, 20, 20, 0.6) 50%,
+    rgba(20, 20, 20, 1) 100%
+  );
+}
+
+/* Movie card hover */
+.movie-card {
+  transition: transform 0.3s ease, z-index 0s;
+}
+
+.movie-card:hover {
+  transform: scale(1.08);
+  z-index: 20;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-content {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

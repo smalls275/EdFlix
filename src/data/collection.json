@@ -1,0 +1,209 @@
+[
+  {
+    "tmdbId": 155,
+    "title": "The Dark Knight",
+    "formats": ["4K UHD", "Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "notes": "Steelbook edition",
+    "dateAdded": "2023-01-15",
+    "genre": ["Action", "Crime", "Drama"],
+    "tags": ["favorites", "superhero"]
+  },
+  {
+    "tmdbId": 680,
+    "title": "Pulp Fiction",
+    "formats": ["Blu-ray", "DVD"],
+    "location": "Living Room Shelf B",
+    "status": "available",
+    "dateAdded": "2022-06-20",
+    "genre": ["Thriller", "Crime"],
+    "tags": ["classics"]
+  },
+  {
+    "tmdbId": 238,
+    "title": "The Godfather",
+    "formats": ["4K UHD", "Blu-ray", "DVD"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2021-12-25",
+    "genre": ["Drama", "Crime"],
+    "tags": ["classics", "favorites"]
+  },
+  {
+    "tmdbId": 550,
+    "title": "Fight Club",
+    "formats": ["Blu-ray"],
+    "location": "Bedroom Shelf",
+    "status": "checked-out",
+    "checkedOutBy": "Dad",
+    "dateAdded": "2023-03-10",
+    "genre": ["Drama"],
+    "tags": ["cult-classics"]
+  },
+  {
+    "tmdbId": 13,
+    "title": "Forrest Gump",
+    "formats": ["DVD", "VHS"],
+    "location": "Living Room Shelf B",
+    "status": "available",
+    "dateAdded": "2020-08-01",
+    "genre": ["Comedy", "Drama", "Romance"],
+    "tags": ["family-friendly", "classics"]
+  },
+  {
+    "tmdbId": 11,
+    "title": "Star Wars",
+    "formats": ["4K UHD", "Blu-ray", "VHS"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2019-05-04",
+    "genre": ["Adventure", "Action", "Science Fiction"],
+    "tags": ["favorites", "sci-fi"]
+  },
+  {
+    "tmdbId": 120,
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "formats": ["4K UHD", "Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "notes": "Extended Edition",
+    "dateAdded": "2022-01-10",
+    "genre": ["Adventure", "Fantasy", "Action"],
+    "tags": ["favorites", "fantasy"]
+  },
+  {
+    "tmdbId": 497,
+    "title": "The Green Mile",
+    "formats": ["Blu-ray"],
+    "location": "Living Room Shelf B",
+    "status": "available",
+    "dateAdded": "2023-06-15",
+    "genre": ["Fantasy", "Drama", "Crime"],
+    "tags": ["classics"]
+  },
+  {
+    "tmdbId": 157336,
+    "title": "Interstellar",
+    "formats": ["4K UHD", "Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "lent-out",
+    "checkedOutBy": "Uncle Mike",
+    "dateAdded": "2023-09-01",
+    "genre": ["Adventure", "Drama", "Science Fiction"],
+    "tags": ["favorites", "sci-fi"]
+  },
+  {
+    "tmdbId": 278,
+    "title": "The Shawshank Redemption",
+    "formats": ["Blu-ray", "DVD"],
+    "location": "Living Room Shelf B",
+    "status": "available",
+    "dateAdded": "2021-03-20",
+    "genre": ["Drama", "Crime"],
+    "tags": ["classics", "favorites"]
+  },
+  {
+    "tmdbId": 603,
+    "title": "The Matrix",
+    "formats": ["4K UHD", "DVD"],
+    "location": "Bedroom Shelf",
+    "status": "available",
+    "dateAdded": "2022-11-10",
+    "genre": ["Action", "Science Fiction"],
+    "tags": ["sci-fi", "cult-classics"]
+  },
+  {
+    "tmdbId": 389,
+    "title": "12 Angry Men",
+    "formats": ["DVD"],
+    "location": "Living Room Shelf B",
+    "status": "available",
+    "dateAdded": "2020-02-14",
+    "genre": ["Drama"],
+    "tags": ["classics"]
+  },
+  {
+    "tmdbId": 24428,
+    "title": "The Avengers",
+    "formats": ["Blu-ray", "DVD"],
+    "location": "Kids Room",
+    "status": "available",
+    "dateAdded": "2022-07-04",
+    "genre": ["Science Fiction", "Action", "Adventure"],
+    "tags": ["family-friendly", "superhero"]
+  },
+  {
+    "tmdbId": 862,
+    "title": "Toy Story",
+    "formats": ["Blu-ray", "DVD", "VHS"],
+    "location": "Kids Room",
+    "status": "available",
+    "dateAdded": "2019-11-22",
+    "genre": ["Animation", "Comedy", "Family"],
+    "tags": ["family-friendly", "kids", "animation"]
+  },
+  {
+    "tmdbId": 150540,
+    "title": "Inside Out",
+    "formats": ["Blu-ray"],
+    "location": "Kids Room",
+    "status": "checked-out",
+    "checkedOutBy": "Kids",
+    "dateAdded": "2023-04-20",
+    "genre": ["Animation", "Family", "Comedy"],
+    "tags": ["family-friendly", "kids", "animation"]
+  },
+  {
+    "tmdbId": 122,
+    "title": "The Lord of the Rings: The Return of the King",
+    "formats": ["4K UHD", "Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "notes": "Extended Edition",
+    "dateAdded": "2022-01-10",
+    "genre": ["Adventure", "Fantasy", "Action"],
+    "tags": ["favorites", "fantasy"]
+  },
+  {
+    "tmdbId": 121,
+    "title": "The Lord of the Rings: The Two Towers",
+    "formats": ["4K UHD", "Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "notes": "Extended Edition",
+    "dateAdded": "2022-01-10",
+    "genre": ["Adventure", "Fantasy", "Action"],
+    "tags": ["favorites", "fantasy"]
+  },
+  {
+    "tmdbId": 27205,
+    "title": "Inception",
+    "formats": ["4K UHD", "Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2023-02-28",
+    "genre": ["Action", "Science Fiction", "Adventure"],
+    "tags": ["favorites", "sci-fi"]
+  },
+  {
+    "tmdbId": 807,
+    "title": "Se7en",
+    "formats": ["Blu-ray"],
+    "location": "Bedroom Shelf",
+    "status": "available",
+    "dateAdded": "2023-10-31",
+    "genre": ["Crime", "Mystery", "Thriller"],
+    "tags": ["thriller"]
+  },
+  {
+    "tmdbId": 105,
+    "title": "Back to the Future",
+    "formats": ["4K UHD", "Blu-ray", "VHS"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2020-10-21",
+    "genre": ["Adventure", "Comedy", "Science Fiction"],
+    "tags": ["family-friendly", "classics", "sci-fi"]
+  }
+]
