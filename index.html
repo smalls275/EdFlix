@@ -55,7 +55,7 @@
       width: 50%;
       background: linear-gradient(to right, #8B0000 0%, #4a0000 100%);
       z-index: 5;
-      transition: transform 2s ease-in-out;
+      transition: transform 2.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .curtain-left {
       left: 0;
@@ -85,7 +85,8 @@
       );
     }
     @keyframes logoFadeIn {
-      0% { opacity: 0; transform: scale(2); filter: blur(10px); }
+      0% { opacity: 0; transform: scale(3); filter: blur(20px); }
+      50% { opacity: 0.5; transform: scale(1.5); filter: blur(10px); }
       100% { opacity: 1; transform: scale(1); filter: blur(0); }
     }
     @keyframes logoFadeOut {
@@ -97,50 +98,110 @@
       100% { opacity: 1; }
     }
     @keyframes countdown {
-      0% { opacity: 0; transform: scale(1.5); }
+      0% { opacity: 0; transform: scale(2); }
       50% { opacity: 1; transform: scale(1); }
-      100% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 0; transform: scale(0.5); }
+    }
+    @keyframes featurePresentation {
+      0% { opacity: 0; transform: translateY(30px); letter-spacing: 0.5em; }
+      100% { opacity: 1; transform: translateY(0); letter-spacing: 0.3em; }
+    }
+    @keyframes projectorBeam {
+      0% { opacity: 0; transform: scaleX(0); }
+      100% { opacity: 0.3; transform: scaleX(1); }
+    }
+    @keyframes filmGrain {
+      0%, 100% { opacity: 0.03; }
+      50% { opacity: 0.05; }
     }
     .loading-logo {
       position: relative;
       z-index: 10;
-      font-size: 6rem;
+      font-size: 7rem;
       font-weight: 900;
       color: #E50914;
-      letter-spacing: 0.2em;
-      text-shadow: 0 0 100px rgba(229,9,20,1), 0 0 150px rgba(229,9,20,0.6), 0 0 200px rgba(229,9,20,0.3);
+      letter-spacing: 0.3em;
+      text-shadow: 0 0 150px rgba(229,9,20,1), 0 0 250px rgba(229,9,20,0.8), 0 0 350px rgba(229,9,20,0.5);
       opacity: 0;
-      animation: logoFadeIn 1.5s ease-out 3s forwards;
+      animation: logoFadeIn 2s cubic-bezier(0.4, 0, 0.2, 1) 4s forwards;
     }
     .spotlight {
       position: absolute;
       width: 100%;
       height: 100%;
-      background: radial-gradient(ellipse at center, rgba(255,255,255,0.15) 0%, transparent 60%);
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.2) 0%, transparent 50%);
       opacity: 0;
-      animation: spotlight 2s ease-out 2s forwards;
+      animation: spotlight 2.5s ease-out 2.5s forwards;
       pointer-events: none;
       z-index: 2;
     }
-    .countdown {
+    .countdown-circle {
       position: absolute;
       z-index: 15;
-      font-size: 4rem;
+      width: 120px;
+      height: 120px;
+      border: 8px solid #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
       font-weight: 700;
       color: #fff;
       opacity: 0;
       animation: countdown 1s ease-out forwards;
     }
+    .feature-presentation {
+      position: absolute;
+      z-index: 12;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: featurePresentation 1.5s ease-out forwards;
+    }
+    .projector-beam {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(255,255,200,0.15) 0%, transparent 100%);
+      clip-path: polygon(40% 0%, 60% 0%, 100% 100%, 0% 100%);
+      opacity: 0;
+      animation: projectorBeam 2s ease-out 1s forwards;
+      pointer-events: none;
+      z-index: 3;
+    }
+    .film-grain {
+      position: absolute;
+      inset: 0;
+      background-image: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.4"/></svg>');
+      opacity: 0;
+      animation: filmGrain 0.5s steps(10) infinite;
+      pointer-events: none;
+      z-index: 20;
+    }
+    .vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.8) 100%);
+      pointer-events: none;
+      z-index: 4;
+    }
     .screen-glow {
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at center, rgba(255,255,255,0.05) 0%, transparent 50%);
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.08) 0%, transparent 50%);
       opacity: 0;
       z-index: 1;
-      animation: spotlight 3s ease-out 2.5s forwards;
+      animation: spotlight 3s ease-out 3s forwards;
     }
     .loading-screen.fade-out {
-      animation: logoFadeOut 1s ease-out forwards;
+      animation: logoFadeOut 1.5s ease-out forwards;
     }
   </style>
 </head>
@@ -148,15 +209,19 @@
   <div id="loading-screen">
     <canvas id="theater-canvas"></canvas>
     <div class="screen-glow"></div>
+    <div class="vignette"></div>
     <div class="curtain curtain-left">
       <div class="curtain-pattern"></div>
     </div>
     <div class="curtain curtain-right">
       <div class="curtain-pattern"></div>
     </div>
+    <div class="projector-beam"></div>
     <div class="spotlight"></div>
+    <div class="film-grain"></div>
     <div class="loading-logo">EdFlix</div>
-    <div class="countdown" id="countdown"></div>
+    <div class="feature-presentation" id="feature-presentation">Feature Presentation</div>
+    <div class="countdown-circle" id="countdown-circle"></div>
   </div>
   <div id="app"></div>
   <script>
@@ -166,7 +231,9 @@
     const ctx = canvas.getContext('2d');
     const curtainLeft = document.querySelector('.curtain-left');
     const curtainRight = document.querySelector('.curtain-right');
-    const countdownEl = document.getElementById('countdown');
+    const countdownCircle = document.getElementById('countdown-circle');
+    const featurePresentation = document.getElementById('feature-presentation');
+    const filmGrain = document.querySelector('.film-grain');
     
     let lights = [];
     let dustParticles = [];
@@ -182,8 +249,8 @@
     
     function initLights() {
       lights = [];
-      const rows = 12;
-      const lightsPerRow = 16;
+      const rows = 14;
+      const lightsPerRow = 18;
       const spacingX = canvas.width / (lightsPerRow + 1);
       const spacingY = canvas.height / (rows + 1);
       
@@ -192,14 +259,14 @@
           lights.push({
             x: spacingX * (col + 1),
             y: spacingY * (row + 1),
-            size: 6,
+            size: 5,
             row: row,
             col: col,
             brightness: 0,
             targetBrightness: 1,
-            turnOnTime: (rows - row) * 150 + Math.random() * 80,
+            turnOnTime: (rows - row) * 120 + Math.random() * 60,
             flickerOffset: Math.random() * 1000,
-            colorTemp: Math.random() > 0.5 ? 0 : 0.1
+            colorTemp: Math.random() > 0.5 ? 0 : 0.15
           });
         }
       }
@@ -207,14 +274,14 @@
     
     function initDustParticles() {
       dustParticles = [];
-      for (let i = 0; i < 100; i++) {
+      for (let i = 0; i < 150; i++) {
         dustParticles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
           size: Math.random() * 2 + 0.5,
-          speedX: (Math.random() - 0.5) * 0.3,
-          speedY: (Math.random() - 0.5) * 0.3,
-          opacity: Math.random() * 0.3 + 0.1
+          speedX: (Math.random() - 0.5) * 0.2,
+          speedY: (Math.random() - 0.5) * 0.2,
+          opacity: Math.random() * 0.25 + 0.1
         });
       }
     }
@@ -223,36 +290,36 @@
       const elapsed = Date.now() - startTime;
       
       // Clear canvas with fade effect
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.03)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
       lights.forEach(light => {
         if (elapsed > light.turnOnTime) {
-          const flicker = Math.sin((elapsed + light.flickerOffset) / 100) * 0.1;
-          light.brightness = Math.min(light.brightness + 0.03, light.targetBrightness + flicker);
+          const flicker = Math.sin((elapsed + light.flickerOffset) / 80) * 0.12;
+          light.brightness = Math.min(light.brightness + 0.02, light.targetBrightness + flicker);
         }
         
         // Draw light with warm glow
-        const warmth = 0.9 + light.colorTemp;
-        const gradient = ctx.createRadialGradient(light.x, light.y, 0, light.x, light.y, light.size * 4);
-        gradient.addColorStop(0, `rgba(255, ${220 * warmth}, ${150 * warmth}, ${light.brightness * 0.9})`);
-        gradient.addColorStop(0.4, `rgba(255, ${200 * warmth}, ${100 * warmth}, ${light.brightness * 0.5})`);
-        gradient.addColorStop(1, 'rgba(255, 180, 50, 0)');
+        const warmth = 0.85 + light.colorTemp;
+        const gradient = ctx.createRadialGradient(light.x, light.y, 0, light.x, light.y, light.size * 5);
+        gradient.addColorStop(0, `rgba(255, ${220 * warmth}, ${140 * warmth}, ${light.brightness * 0.95})`);
+        gradient.addColorStop(0.3, `rgba(255, ${200 * warmth}, ${90 * warmth}, ${light.brightness * 0.6})`);
+        gradient.addColorStop(1, 'rgba(255, 170, 50, 0)');
         
         ctx.beginPath();
-        ctx.arc(light.x, light.y, light.size * 4, 0, Math.PI * 2);
+        ctx.arc(light.x, light.y, light.size * 5, 0, Math.PI * 2);
         ctx.fillStyle = gradient;
         ctx.fill();
         
         // Draw light center
         ctx.beginPath();
         ctx.arc(light.x, light.y, light.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, ${220 * warmth}, ${light.brightness})`;
+        ctx.fillStyle = `rgba(255, 255, ${215 * warmth}, ${light.brightness})`;
         ctx.fill();
       });
       
       // Draw dust particles in spotlight
-      if (elapsed > 2000) {
+      if (elapsed > 2500) {
         dustParticles.forEach(p => {
           p.x += p.speedX;
           p.y += p.speedY;
@@ -264,19 +331,19 @@
           
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255, 255, 200, ${p.opacity * 0.5})`;
+          ctx.fillStyle = `rgba(255, 255, 200, ${p.opacity * 0.6})`;
           ctx.fill();
         });
       }
       
       // Draw ambient glow
-      if (elapsed > 1500) {
-        const ambientIntensity = Math.min((elapsed - 1500) / 2500, 0.4);
+      if (elapsed > 2000) {
+        const ambientIntensity = Math.min((elapsed - 2000) / 3000, 0.5);
         const ambientGradient = ctx.createRadialGradient(
           canvas.width / 2, canvas.height / 2, 0,
           canvas.width / 2, canvas.height / 2, canvas.width
         );
-        ambientGradient.addColorStop(0, `rgba(255, 220, 150, ${ambientIntensity * 0.15})`);
+        ambientGradient.addColorStop(0, `rgba(255, 220, 150, ${ambientIntensity * 0.2})`);
         ambientGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
         
         ctx.fillStyle = ambientGradient;
@@ -286,31 +353,45 @@
       animationFrame = requestAnimationFrame(animateLights);
     }
     
+    function showFeaturePresentation() {
+      setTimeout(() => {
+        featurePresentation.style.animation = 'none';
+        featurePresentation.offsetHeight;
+        featurePresentation.style.animation = 'featurePresentation 2s ease-out forwards';
+      }, 3500);
+    }
+    
     function showCountdown() {
       const numbers = ['3', '2', '1'];
       let index = 0;
       
       function showNext() {
         if (index < numbers.length) {
-          countdownEl.textContent = numbers[index];
-          countdownEl.style.animation = 'none';
-          countdownEl.offsetHeight; // Trigger reflow
-          countdownEl.style.animation = 'countdown 1s ease-out forwards';
+          countdownCircle.textContent = numbers[index];
+          countdownCircle.style.animation = 'none';
+          countdownCircle.offsetHeight;
+          countdownCircle.style.animation = 'countdown 1s ease-out forwards';
           index++;
           setTimeout(showNext, 1000);
         } else {
-          countdownEl.style.display = 'none';
+          countdownCircle.style.display = 'none';
         }
       }
       
-      setTimeout(showNext, 2000);
+      setTimeout(showNext, 2500);
+    }
+    
+    function showFilmGrain() {
+      setTimeout(() => {
+        filmGrain.style.opacity = '1';
+      }, 1500);
     }
     
     function openCurtains() {
       setTimeout(() => {
         curtainLeft.classList.add('open-left');
         curtainRight.classList.add('open-right');
-      }, 1500);
+      }, 2000);
     }
     
     function hideLoadingScreen() {
@@ -318,17 +399,19 @@
       loadingScreen.classList.add('fade-out');
       setTimeout(() => {
         loadingScreen.style.display = 'none';
-      }, 1000);
+      }, 1500);
     }
     
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
     animateLights();
+    showFilmGrain();
     openCurtains();
     showCountdown();
+    showFeaturePresentation();
     
-    // Auto-hide after 6 seconds
-    setTimeout(hideLoadingScreen, 6000);
+    // Auto-hide after 8 seconds
+    setTimeout(hideLoadingScreen, 8000);
     
     const DATA = [
       {tmdbId:106,title:"Predator",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Science Fiction"]},
