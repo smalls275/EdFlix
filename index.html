@@ -48,9 +48,45 @@
       position: absolute;
       inset: 0;
     }
+    .curtain {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      background: linear-gradient(to right, #8B0000 0%, #4a0000 100%);
+      z-index: 5;
+      transition: transform 2s ease-in-out;
+    }
+    .curtain-left {
+      left: 0;
+      background: linear-gradient(to right, #8B0000 0%, #4a0000 100%);
+      transform: translateX(0);
+    }
+    .curtain-right {
+      right: 0;
+      background: linear-gradient(to left, #8B0000 0%, #4a0000 100%);
+      transform: translateX(0);
+    }
+    .curtain.open-left {
+      transform: translateX(-100%);
+    }
+    .curtain.open-right {
+      transform: translateX(100%);
+    }
+    .curtain-pattern {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 20px,
+        rgba(0,0,0,0.3) 20px,
+        rgba(0,0,0,0.3) 40px
+      );
+    }
     @keyframes logoFadeIn {
-      0% { opacity: 0; transform: scale(1.5); }
-      100% { opacity: 1; transform: scale(1); }
+      0% { opacity: 0; transform: scale(2); filter: blur(10px); }
+      100% { opacity: 1; transform: scale(1); filter: blur(0); }
     }
     @keyframes logoFadeOut {
       0% { opacity: 1; }
@@ -60,25 +96,48 @@
       0% { opacity: 0; }
       100% { opacity: 1; }
     }
+    @keyframes countdown {
+      0% { opacity: 0; transform: scale(1.5); }
+      50% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(0.8); }
+    }
     .loading-logo {
       position: relative;
       z-index: 10;
-      font-size: 5rem;
+      font-size: 6rem;
       font-weight: 900;
       color: #E50914;
       letter-spacing: 0.2em;
-      text-shadow: 0 0 80px rgba(229,9,20,0.6), 0 0 120px rgba(229,9,20,0.3);
+      text-shadow: 0 0 100px rgba(229,9,20,1), 0 0 150px rgba(229,9,20,0.6), 0 0 200px rgba(229,9,20,0.3);
       opacity: 0;
-      animation: logoFadeIn 1s ease-out 2.5s forwards;
+      animation: logoFadeIn 1.5s ease-out 3s forwards;
     }
     .spotlight {
       position: absolute;
       width: 100%;
       height: 100%;
-      background: radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.15) 0%, transparent 60%);
       opacity: 0;
-      animation: spotlight 2s ease-out 1s forwards;
+      animation: spotlight 2s ease-out 2s forwards;
       pointer-events: none;
+      z-index: 2;
+    }
+    .countdown {
+      position: absolute;
+      z-index: 15;
+      font-size: 4rem;
+      font-weight: 700;
+      color: #fff;
+      opacity: 0;
+      animation: countdown 1s ease-out forwards;
+    }
+    .screen-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.05) 0%, transparent 50%);
+      opacity: 0;
+      z-index: 1;
+      animation: spotlight 3s ease-out 2.5s forwards;
     }
     .loading-screen.fade-out {
       animation: logoFadeOut 1s ease-out forwards;
@@ -88,8 +147,16 @@
 <body class="bg-[#141414] text-white antialiased min-h-screen">
   <div id="loading-screen">
     <canvas id="theater-canvas"></canvas>
+    <div class="screen-glow"></div>
+    <div class="curtain curtain-left">
+      <div class="curtain-pattern"></div>
+    </div>
+    <div class="curtain curtain-right">
+      <div class="curtain-pattern"></div>
+    </div>
     <div class="spotlight"></div>
     <div class="loading-logo">EdFlix</div>
+    <div class="countdown" id="countdown"></div>
   </div>
   <div id="app"></div>
   <script>
@@ -97,7 +164,12 @@
     const loadingScreen = document.getElementById('loading-screen');
     const canvas = document.getElementById('theater-canvas');
     const ctx = canvas.getContext('2d');
+    const curtainLeft = document.querySelector('.curtain-left');
+    const curtainRight = document.querySelector('.curtain-right');
+    const countdownEl = document.getElementById('countdown');
+    
     let lights = [];
+    let dustParticles = [];
     let animationFrame;
     let startTime = Date.now();
     
@@ -105,12 +177,13 @@
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       initLights();
+      initDustParticles();
     }
     
     function initLights() {
       lights = [];
-      const rows = 8;
-      const lightsPerRow = 12;
+      const rows = 12;
+      const lightsPerRow = 16;
       const spacingX = canvas.width / (lightsPerRow + 1);
       const spacingY = canvas.height / (rows + 1);
       
@@ -119,14 +192,30 @@
           lights.push({
             x: spacingX * (col + 1),
             y: spacingY * (row + 1),
-            size: 8,
+            size: 6,
             row: row,
             col: col,
             brightness: 0,
             targetBrightness: 1,
-            turnOnTime: (rows - row) * 200 + Math.random() * 100
+            turnOnTime: (rows - row) * 150 + Math.random() * 80,
+            flickerOffset: Math.random() * 1000,
+            colorTemp: Math.random() > 0.5 ? 0 : 0.1
           });
         }
+      }
+    }
+    
+    function initDustParticles() {
+      dustParticles = [];
+      for (let i = 0; i < 100; i++) {
+        dustParticles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 2 + 0.5,
+          speedX: (Math.random() - 0.5) * 0.3,
+          speedY: (Math.random() - 0.5) * 0.3,
+          opacity: Math.random() * 0.3 + 0.1
+        });
       }
     }
     
@@ -134,40 +223,60 @@
       const elapsed = Date.now() - startTime;
       
       // Clear canvas with fade effect
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
       lights.forEach(light => {
         if (elapsed > light.turnOnTime) {
-          light.brightness = Math.min(light.brightness + 0.05, light.targetBrightness);
+          const flicker = Math.sin((elapsed + light.flickerOffset) / 100) * 0.1;
+          light.brightness = Math.min(light.brightness + 0.03, light.targetBrightness + flicker);
         }
         
-        // Draw light
-        const gradient = ctx.createRadialGradient(light.x, light.y, 0, light.x, light.y, light.size * 3);
-        gradient.addColorStop(0, `rgba(255, 220, 150, ${light.brightness * 0.8})`);
-        gradient.addColorStop(0.5, `rgba(255, 200, 100, ${light.brightness * 0.4})`);
+        // Draw light with warm glow
+        const warmth = 0.9 + light.colorTemp;
+        const gradient = ctx.createRadialGradient(light.x, light.y, 0, light.x, light.y, light.size * 4);
+        gradient.addColorStop(0, `rgba(255, ${220 * warmth}, ${150 * warmth}, ${light.brightness * 0.9})`);
+        gradient.addColorStop(0.4, `rgba(255, ${200 * warmth}, ${100 * warmth}, ${light.brightness * 0.5})`);
         gradient.addColorStop(1, 'rgba(255, 180, 50, 0)');
         
         ctx.beginPath();
-        ctx.arc(light.x, light.y, light.size * 3, 0, Math.PI * 2);
+        ctx.arc(light.x, light.y, light.size * 4, 0, Math.PI * 2);
         ctx.fillStyle = gradient;
         ctx.fill();
         
         // Draw light center
         ctx.beginPath();
         ctx.arc(light.x, light.y, light.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 200, ${light.brightness})`;
+        ctx.fillStyle = `rgba(255, 255, ${220 * warmth}, ${light.brightness})`;
         ctx.fill();
       });
       
+      // Draw dust particles in spotlight
+      if (elapsed > 2000) {
+        dustParticles.forEach(p => {
+          p.x += p.speedX;
+          p.y += p.speedY;
+          
+          if (p.x < 0) p.x = canvas.width;
+          if (p.x > canvas.width) p.x = 0;
+          if (p.y < 0) p.y = canvas.height;
+          if (p.y > canvas.height) p.y = 0;
+          
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 255, 200, ${p.opacity * 0.5})`;
+          ctx.fill();
+        });
+      }
+      
       // Draw ambient glow
-      if (elapsed > 1000) {
-        const ambientIntensity = Math.min((elapsed - 1000) / 2000, 0.3);
+      if (elapsed > 1500) {
+        const ambientIntensity = Math.min((elapsed - 1500) / 2500, 0.4);
         const ambientGradient = ctx.createRadialGradient(
           canvas.width / 2, canvas.height / 2, 0,
           canvas.width / 2, canvas.height / 2, canvas.width
         );
-        ambientGradient.addColorStop(0, `rgba(255, 220, 150, ${ambientIntensity * 0.2})`);
+        ambientGradient.addColorStop(0, `rgba(255, 220, 150, ${ambientIntensity * 0.15})`);
         ambientGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
         
         ctx.fillStyle = ambientGradient;
@@ -175,6 +284,33 @@
       }
       
       animationFrame = requestAnimationFrame(animateLights);
+    }
+    
+    function showCountdown() {
+      const numbers = ['3', '2', '1'];
+      let index = 0;
+      
+      function showNext() {
+        if (index < numbers.length) {
+          countdownEl.textContent = numbers[index];
+          countdownEl.style.animation = 'none';
+          countdownEl.offsetHeight; // Trigger reflow
+          countdownEl.style.animation = 'countdown 1s ease-out forwards';
+          index++;
+          setTimeout(showNext, 1000);
+        } else {
+          countdownEl.style.display = 'none';
+        }
+      }
+      
+      setTimeout(showNext, 2000);
+    }
+    
+    function openCurtains() {
+      setTimeout(() => {
+        curtainLeft.classList.add('open-left');
+        curtainRight.classList.add('open-right');
+      }, 1500);
     }
     
     function hideLoadingScreen() {
@@ -188,9 +324,11 @@
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
     animateLights();
+    openCurtains();
+    showCountdown();
     
-    // Auto-hide after 4 seconds
-    setTimeout(hideLoadingScreen, 4000);
+    // Auto-hide after 6 seconds
+    setTimeout(hideLoadingScreen, 6000);
     
     const DATA = [
       {tmdbId:106,title:"Predator",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Science Fiction"]},
