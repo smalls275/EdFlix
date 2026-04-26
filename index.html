@@ -137,7 +137,26 @@
       if (soundPlayed) return;
       soundPlayed = true;
       
-      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      try {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        
+        // Resume audio context if suspended (required by some browsers)
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume().then(() => {
+            console.log('Audio context resumed');
+            generateSound();
+          }).catch(err => {
+            console.error('Failed to resume audio context:', err);
+          });
+        } else {
+          generateSound();
+        }
+      } catch (err) {
+        console.error('Audio context error:', err);
+      }
+    }
+    
+    function generateSound() {
       const now = audioCtx.currentTime;
       
       // Dramatic theater swell sound
@@ -211,6 +230,8 @@
       osc3.stop(now + 3);
       osc4.start(now);
       osc4.stop(now + 4);
+      
+      console.log('Sound playing');
     }
     
     function animateLights() {
@@ -270,6 +291,7 @@
     
     // Click to start sound
     loadingScreen.addEventListener('click', () => {
+      console.log('Click detected, playing sound...');
       playTheaterSound();
       setTimeout(hideLoadingScreen, 2000);
     });
