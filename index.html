@@ -43,6 +43,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      cursor: pointer;
     }
     #theater-canvas {
       position: absolute;
@@ -93,13 +94,15 @@
   </div>
   <div id="app"></div>
   <script>
-    // Movie theater lighting animation
+    // Movie theater lighting animation with sound
     const loadingScreen = document.getElementById('loading-screen');
     const canvas = document.getElementById('theater-canvas');
     const ctx = canvas.getContext('2d');
     let lights = [];
     let animationFrame;
     let startTime = Date.now();
+    let audioCtx = null;
+    let soundPlayed = false;
     
     function resizeCanvas() {
       canvas.width = window.innerWidth;
@@ -128,6 +131,86 @@
           });
         }
       }
+    }
+    
+    function playTheaterSound() {
+      if (soundPlayed) return;
+      soundPlayed = true;
+      
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const now = audioCtx.currentTime;
+      
+      // Dramatic theater swell sound
+      // Bass foundation
+      const osc1 = audioCtx.createOscillator();
+      const gain1 = audioCtx.createGain();
+      osc1.type = 'sawtooth';
+      osc1.frequency.setValueAtTime(55, now);
+      osc1.frequency.exponentialRampToValueAtTime(110, now + 1);
+      osc1.frequency.exponentialRampToValueAtTime(82, now + 3);
+      gain1.gain.setValueAtTime(0, now);
+      gain1.gain.linearRampToValueAtTime(0.3, now + 0.5);
+      gain1.gain.linearRampToValueAtTime(0.25, now + 2);
+      gain1.gain.linearRampToValueAtTime(0, now + 4);
+      osc1.connect(gain1);
+      gain1.connect(audioCtx.destination);
+      
+      // Mid layer for richness
+      const osc2 = audioCtx.createOscillator();
+      const gain2 = audioCtx.createGain();
+      const filter = audioCtx.createBiquadFilter();
+      osc2.type = 'triangle';
+      osc2.frequency.setValueAtTime(110, now);
+      osc2.frequency.exponentialRampToValueAtTime(220, now + 0.8);
+      osc2.frequency.exponentialRampToValueAtTime(165, now + 3);
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(1000, now);
+      filter.frequency.exponentialRampToValueAtTime(2000, now + 1);
+      filter.frequency.exponentialRampToValueAtTime(1000, now + 3);
+      gain2.gain.setValueAtTime(0, now);
+      gain2.gain.linearRampToValueAtTime(0.15, now + 0.3);
+      gain2.gain.linearRampToValueAtTime(0.12, now + 2);
+      gain2.gain.linearRampToValueAtTime(0, now + 4);
+      osc2.connect(filter);
+      filter.connect(gain2);
+      gain2.connect(audioCtx.destination);
+      
+      // High shimmer layer
+      const osc3 = audioCtx.createOscillator();
+      const gain3 = audioCtx.createGain();
+      osc3.type = 'sine';
+      osc3.frequency.setValueAtTime(220, now);
+      osc3.frequency.exponentialRampToValueAtTime(440, now + 0.6);
+      osc3.frequency.exponentialRampToValueAtTime(330, now + 2.5);
+      gain3.gain.setValueAtTime(0, now);
+      gain3.gain.linearRampToValueAtTime(0.08, now + 0.2);
+      gain3.gain.linearRampToValueAtTime(0.05, now + 1.5);
+      gain3.gain.linearRampToValueAtTime(0, now + 3);
+      osc3.connect(gain3);
+      gain3.connect(audioCtx.destination);
+      
+      // Subtle brass-like layer
+      const osc4 = audioCtx.createOscillator();
+      const gain4 = audioCtx.createGain();
+      osc4.type = 'square';
+      osc4.frequency.setValueAtTime(82.5, now);
+      osc4.frequency.exponentialRampToValueAtTime(165, now + 1.2);
+      osc4.frequency.exponentialRampToValueAtTime(123.75, now + 3);
+      gain4.gain.setValueAtTime(0, now);
+      gain4.gain.linearRampToValueAtTime(0.06, now + 0.4);
+      gain4.gain.linearRampToValueAtTime(0.04, now + 2);
+      gain4.gain.linearRampToValueAtTime(0, now + 4);
+      osc4.connect(gain4);
+      gain4.connect(audioCtx.destination);
+      
+      osc1.start(now);
+      osc1.stop(now + 4);
+      osc2.start(now);
+      osc2.stop(now + 4);
+      osc3.start(now);
+      osc3.stop(now + 3);
+      osc4.start(now);
+      osc4.stop(now + 4);
     }
     
     function animateLights() {
@@ -185,12 +268,22 @@
       }, 1000);
     }
     
+    // Click to start sound
+    loadingScreen.addEventListener('click', () => {
+      playTheaterSound();
+      setTimeout(hideLoadingScreen, 2000);
+    });
+    
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
     animateLights();
     
-    // Auto-hide after 4 seconds
-    setTimeout(hideLoadingScreen, 4000);
+    // Auto-hide after 5 seconds if no click
+    setTimeout(() => {
+      if (!soundPlayed && loadingScreen.style.display !== 'none') {
+        hideLoadingScreen();
+      }
+    }, 5000);
     
     const DATA = [
       {tmdbId:106,title:"Predator",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Science Fiction"]},
