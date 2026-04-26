@@ -32,11 +32,93 @@
     @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     .modal-overlay { animation: fadeIn 0.2s ease-out; }
     .modal-content { animation: slideUp 0.3s ease-out; }
+    
+    /* Netflix-style loading animation */
+    #loading-screen {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @keyframes logoSlide {
+      0% { opacity: 0; transform: scale(3); }
+      50% { opacity: 1; transform: scale(1); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes logoFadeOut {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    .loading-logo {
+      font-size: 4rem;
+      font-weight: 900;
+      color: #E50914;
+      animation: logoSlide 2s ease-out forwards;
+      letter-spacing: 0.1em;
+    }
+    .loading-screen.fade-out {
+      animation: logoFadeOut 0.5s ease-out forwards;
+    }
   </style>
 </head>
 <body class="bg-[#141414] text-white antialiased min-h-screen">
+  <div id="loading-screen">
+    <div class="loading-logo">EdFlix</div>
+  </div>
   <div id="app"></div>
   <script>
+    // Netflix-style loading animation with sound
+    const loadingScreen = document.getElementById('loading-screen');
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    
+    function playTaDum() {
+      const now = audioCtx.currentTime;
+      const duration = 2.5;
+      
+      // Create oscillator for the ta-dum sound
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      const filter = audioCtx.createBiquadFilter();
+      
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(80, now);
+      osc.frequency.exponentialRampToValueAtTime(200, now + 0.3);
+      osc.frequency.exponentialRampToValueAtTime(80, now + 2);
+      
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(500, now);
+      filter.frequency.exponentialRampToValueAtTime(2000, now + 0.3);
+      filter.frequency.exponentialRampToValueAtTime(500, now + 2);
+      
+      gain.gain.setValueAtTime(0, now);
+      gain.gain.linearRampToValueAtTime(0.3, now + 0.1);
+      gain.gain.linearRampToValueAtTime(0.3, now + 1.5);
+      gain.gain.linearRampToValueAtTime(0, now + 2.5);
+      
+      osc.connect(filter);
+      filter.connect(gain);
+      gain.connect(audioCtx.destination);
+      
+      osc.start(now);
+      osc.stop(now + duration);
+    }
+    
+    function hideLoadingScreen() {
+      loadingScreen.classList.add('fade-out');
+      setTimeout(() => {
+        loadingScreen.style.display = 'none';
+      }, 500);
+    }
+    
+    // Show loading animation on first load
+    window.addEventListener('load', () => {
+      playTaDum();
+      setTimeout(hideLoadingScreen, 2500);
+    });
+    
     const DATA = [
       {tmdbId:106,title:"Predator",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Science Fiction"]},
       {tmdbId:1242898,title:"Predator: Badlands",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Science Fiction"]},
