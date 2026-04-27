@@ -795,6 +795,30 @@
       [...g.entries()].sort((a,b) => b[1].length - a[1].length).forEach(([t,m]) => { if (m.length >= 2) c.push({title: t, movies: m}); });
       const un = fr.filter(m => m.status !== 'available');
       if (un.length) c.push({title: 'Currently Checked Out', movies: un});
+
+      // Fun bonus categories
+      const yearOf = m => parseInt((m.tmdbData?.release_date || '').slice(0,4)) || 0;
+      const runtimeOf = m => m.tmdbData?.runtime || 0;
+      const ratingOf = m => m.tmdbData?.vote_average || 0;
+
+      const push = (title, movies, min = 3) => { if (movies.length >= min) c.push({title, movies}); };
+
+      push('🏆 4K Crown Jewels', fr.filter(m => m.formats.includes('4K UHD') && ratingOf(m) >= 8));
+      push('🎞️ Criterion Classics (Pre-1980)', fr.filter(m => { const y = yearOf(m); return y > 0 && y < 1980; }));
+      push('📼 The \'80s', fr.filter(m => { const y = yearOf(m); return y >= 1980 && y < 1990; }));
+      push('💿 The \'90s', fr.filter(m => { const y = yearOf(m); return y >= 1990 && y < 2000; }));
+      push('📀 The 2000s', fr.filter(m => { const y = yearOf(m); return y >= 2000 && y < 2010; }));
+      push('🆕 Fresh This Decade (2020s)', fr.filter(m => yearOf(m) >= 2020));
+      push('🌙 Late Night Horror', fr.filter(m => m.genre?.some(g => /horror/i.test(g))));
+      push('🍿 Popcorn Comedies', fr.filter(m => m.genre?.some(g => /comedy/i.test(g))));
+      push('🚀 Sci-Fi Deep Space', fr.filter(m => m.genre?.some(g => /sci.?fi|science fiction/i.test(g))));
+      push('⭐ Critically Acclaimed (8.0+)', fr.filter(m => ratingOf(m) >= 8).sort((a,b) => ratingOf(b) - ratingOf(a)));
+      push('⏳ Epic Runtimes (2.5hr+)', fr.filter(m => runtimeOf(m) >= 150));
+      push('⚡ Quick Watches (Under 100 min)', fr.filter(m => runtimeOf(m) > 0 && runtimeOf(m) < 100));
+      push('💎 Hidden Gems (High-rated, Few Votes)', fr.filter(m => ratingOf(m) >= 7.5 && (m.tmdbData?.vote_count || 0) < 1000));
+      push('📺 Dusty DVD Shelf', fr.filter(m => m.formats.includes('DVD') && !m.formats.includes('4K UHD') && !m.formats.includes('Blu-ray')));
+      push('👪 Family Movie Night', fr.filter(m => m.genre?.some(g => /family|animation/i.test(g))));
+
       return c;
     }
 
