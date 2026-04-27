@@ -625,6 +625,8 @@
       if (fav.length) c.push({title: 'Family Favorites', movies: fav});
       const k = fr.filter(m => m.formats.includes('4K UHD'));
       if (k.length) c.push({title: '4K Ultra HD Collection', movies: k});
+      const threeD = fr.filter(m => m.formats.includes('3D Blu-ray'));
+      if (threeD.length) c.push({title: '3D Movies', movies: threeD});
       const g = new Map();
       fr.forEach(m => m.genre?.forEach(h => { if (!g.has(h)) g.set(h, []); g.get(h).push(m); }));
       [...g.entries()].sort((a,b) => b[1].length - a[1].length).forEach(([t,m]) => { if (m.length >= 2) c.push({title: t, movies: m}); });
