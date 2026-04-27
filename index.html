@@ -816,7 +816,7 @@
       push('🚀 Sci-Fi Deep Space', fr.filter(m => m.genre?.some(g => /sci.?fi|science fiction/i.test(g))));
       push('⭐ Critically Acclaimed (8.0+)', fr.filter(m => ratingOf(m) >= 8).sort((a,b) => ratingOf(b) - ratingOf(a)));
       push('⏳ Epic Runtimes (2.5hr+)', fr.filter(m => runtimeOf(m) >= 150));
-      push('⚡ Quick Watches (Under 100 min)', fr.filter(m => runtimeOf(m) > 0 && runtimeOf(m) < 100));
+      push('⚡ Tight 88', fr.filter(m => runtimeOf(m) > 0 && runtimeOf(m) <= 95));
       push('💎 Hidden Gems (High-rated, Few Votes)', fr.filter(m => ratingOf(m) >= 7.5 && (m.tmdbData?.vote_count || 0) < 1000));
       push('📺 Dusty DVD Shelf', fr.filter(m => m.formats.includes('DVD') && !m.formats.includes('4K UHD') && !m.formats.includes('Blu-ray')));
       push('👪 Family Movie Night', fr.filter(m => m.genre?.some(g => /family|animation/i.test(g))));
