@@ -160,7 +160,7 @@
       letter-spacing: 0.3em;
       text-shadow: 0 0 150px rgba(229,9,20,1), 0 0 250px rgba(229,9,20,0.8), 0 0 350px rgba(229,9,20,0.5);
       opacity: 0;
-      animation: logoFadeIn 2s cubic-bezier(0.4, 0, 0.2, 1) 4s forwards;
+      animation: logoFadeIn 2s cubic-bezier(0.4, 0, 0.2, 1) 8.5s forwards;
     }
     .spotlight {
       position: absolute;
@@ -168,7 +168,7 @@
       height: 100%;
       background: radial-gradient(ellipse at center, rgba(255,255,255,0.2) 0%, transparent 50%);
       opacity: 0;
-      animation: spotlight 2.5s ease-out 2.5s forwards;
+      animation: spotlight 2.5s ease-out 5.3s forwards;
       pointer-events: none;
       z-index: 2;
     }
@@ -253,7 +253,7 @@
       background: radial-gradient(ellipse at center, rgba(255,255,255,0.08) 0%, transparent 50%);
       opacity: 0;
       z-index: 1;
-      animation: spotlight 3s ease-out 3s forwards;
+      animation: spotlight 3s ease-out 6.4s forwards;
     }
     .loading-screen.fade-out {
       animation: logoFadeOut 1.5s ease-out forwards;
@@ -431,7 +431,7 @@
           featurePresentation.style.animation = 'none';
           featurePresentation.offsetHeight;
           featurePresentation.style.animation = 'featurePresentation 2s ease-out forwards';
-        }, 3500);
+        }, 7400);
       }
       
       function showCountdown() {
@@ -451,20 +451,20 @@
           }
         }
         
-        setTimeout(showNext, 2500);
+        setTimeout(showNext, 5300);
       }
       
       function showFilmGrain() {
         setTimeout(() => {
           filmGrain.style.opacity = '1';
-        }, 1500);
+        }, 3200);
       }
       
       function openCurtains() {
         setTimeout(() => {
           curtainLeft.classList.add('open-left');
           curtainRight.classList.add('open-right');
-        }, 2000);
+        }, 4250);
       }
       
       function hideLoadingScreen() {
@@ -484,7 +484,7 @@
       showFeaturePresentation();
       playHiddenYoutube();
       
-      setTimeout(hideLoadingScreen, 8000);
+      setTimeout(hideLoadingScreen, 17000);
     }
     
     const DATA = [
