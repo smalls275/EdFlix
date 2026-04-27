@@ -578,8 +578,7 @@
       {tmdbId:521,title:"Dial M for Murder",formats:["3D Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Thriller","Crime"]},
       {tmdbId:11976,title:"Legend",formats:["4K UHD","Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Fantasy","Adventure"]},
       {tmdbId:64688,title:"21 Jump Street",formats:["Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Comedy"]},
-      {tmdbId:1915,title:"Rome Complete Series",formats:["Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Drama"],notes:"TV Series"},
-      {tmdbId:1891,title:"The Empire Strikes Back",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Science Fiction"]},
+      {tmdbId:1891,title:"Rome Complete Series",formats:["Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Drama"],notes:"TV Series"},
       {tmdbId:1903,title:"Vanilla Sky",formats:["Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Thriller","Mystery"]},
       {tmdbId:268,title:"Batman",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Crime"]},
       {tmdbId:364,title:"Batman Returns",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Crime"]},
@@ -598,7 +597,9 @@
       if (!KEY) { movies = DATA.map(d => ({...d, tmdbData: null})); render(); return; }
       movies = await Promise.all(DATA.map(async d => {
         try {
-          const r = await fetch(`https://api.themoviedb.org/3/movie/${d.tmdbId}?api_key=${KEY}&append_to_response=videos,credits`);
+          const isTV = d.notes?.includes('TV Series');
+          const endpoint = isTV ? 'tv' : 'movie';
+          const r = await fetch(`https://api.themoviedb.org/3/${endpoint}/${d.tmdbId}?api_key=${KEY}&append_to_response=videos,credits`);
           return {...d, tmdbData: r.ok ? await r.json() : null};
         } catch { return {...d, tmdbData: null}; }
       }));
