@@ -636,7 +636,9 @@
       {tmdbId:1184918,title:"The Wild Robot",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Animation","Adventure","Family"]},
       {tmdbId:326359,title:"Frozen Fever",formats:["DVD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Animation","Comedy","Family"]},
       {tmdbId:1939,title:"Laura",formats:["Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Drama","Film-Noir","Mystery"]},
-      {tmdbId:664,title:"Twister",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Adventure","Thriller"]},
+      {tmdbId:664,title:"Twister",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Adventure","Thriller"],tags:["drive-in"]},
+      {tmdbId:329,title:"Jurassic Park",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Adventure","Sci-Fi","Thriller"],tags:["drive-in"]},
+      {tmdbId:330,title:"The Lost World: Jurassic Park",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Adventure","Sci-Fi"],tags:["drive-in"]},
       {tmdbId:595,title:"To Kill a Mockingbird",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Crime","Drama"]},
       {tmdbId:289,title:"Casablanca",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Drama","Romance","War"]},
       {tmdbId:276843,title:"What We Did on Our Holiday",formats:["DVD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Comedy","Drama"]},
@@ -710,7 +712,7 @@
       {tmdbId:693134,title:"Dune: Part Two",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Adventure","Drama"]},
       {tmdbId:438631,title:"Dune",formats:["4K UHD","3D Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Adventure","Drama"]},
       {tmdbId:374720,title:"Dunkirk",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Drama","History"]},
-      {tmdbId:601,title:"E.T. the Extra-Terrestrial",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Adventure","Family","Sci-Fi"]},
+      {tmdbId:601,title:"E.T. the Extra-Terrestrial",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Adventure","Family","Sci-Fi"],tags:["drive-in"]},
       {tmdbId:4523,title:"Enchanted",formats:["Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Animation","Adventure","Comedy"]},
       {tmdbId:550,title:"Fight Club",formats:["Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Drama"]},
       {tmdbId:127380,title:"Finding Dory",formats:["Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Animation","Adventure","Comedy"]},
@@ -818,6 +820,24 @@
       push('💎 Hidden Gems (High-rated, Few Votes)', fr.filter(m => ratingOf(m) >= 7.5 && (m.tmdbData?.vote_count || 0) < 1000));
       push('📺 Dusty DVD Shelf', fr.filter(m => m.formats.includes('DVD') && !m.formats.includes('4K UHD') && !m.formats.includes('Blu-ray')));
       push('👪 Family Movie Night', fr.filter(m => m.genre?.some(g => /family|animation/i.test(g))));
+
+      // Drive-In Double Feature: curated by tag, boosted by Spielbergian blockbuster traits
+      const driveInScore = m => {
+        let s = 0;
+        if (m.tags?.includes('drive-in')) s += 100;
+        const y = yearOf(m);
+        if (y >= 1975 && y < 2000) s += 20;
+        const gs = (m.genre || []).join(' ').toLowerCase();
+        if (/adventure/.test(gs)) s += 10;
+        if (/action|thriller/.test(gs)) s += 6;
+        if (/family|sci.?fi|science fiction/.test(gs)) s += 5;
+        if (/horror|drama|western/.test(gs)) s += 3;
+        if (runtimeOf(m) >= 100 && runtimeOf(m) <= 150) s += 4;
+        if (ratingOf(m) >= 7) s += 4;
+        return s;
+      };
+      const driveIn = fr.filter(m => driveInScore(m) >= 10).sort((a,b) => driveInScore(b) - driveInScore(a)).slice(0, 20);
+      push('🚗 Drive-In Double Feature', driveIn);
 
       return c;
     }
