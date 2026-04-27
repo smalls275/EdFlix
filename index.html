@@ -151,16 +151,36 @@
       0%, 100% { opacity: 0.03; }
       50% { opacity: 0.05; }
     }
+    @keyframes shake {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      10% { transform: translate(-2px, -1px) rotate(-1deg); }
+      20% { transform: translate(2px, 2px) rotate(1deg); }
+      30% { transform: translate(-1px, 2px) rotate(0deg); }
+      40% { transform: translate(1px, -1px) rotate(1deg); }
+      50% { transform: translate(-2px, 1px) rotate(-1deg); }
+      60% { transform: translate(2px, -2px) rotate(0deg); }
+      70% { transform: translate(-1px, -1px) rotate(1deg); }
+      80% { transform: translate(1px, 2px) rotate(-1deg); }
+      90% { transform: translate(-2px, -2px) rotate(0deg); }
+    }
+    @keyframes colorShift {
+      0%, 100% { filter: hue-rotate(0deg) saturate(1); }
+      33% { filter: hue-rotate(10deg) saturate(1.2); }
+      66% { filter: hue-rotate(-10deg) saturate(0.8); }
+    }
     .loading-logo {
       position: absolute;
       z-index: 10;
-      font-size: 7rem;
+      font-size: 9rem;
       font-weight: 900;
       color: #E50914;
       letter-spacing: 0.3em;
       text-shadow: 0 0 150px rgba(229,9,20,1), 0 0 250px rgba(229,9,20,0.8), 0 0 350px rgba(229,9,20,0.5);
       opacity: 0;
-      animation: logoFadeIn 2s cubic-bezier(0.4, 0, 0.2, 1) 8.5s forwards;
+      animation: 
+        logoFadeIn 2s cubic-bezier(0.4, 0, 0.2, 1) 8.5s forwards,
+        shake 0.1s linear infinite 8.5s,
+        colorShift 3s ease-in-out infinite 8.5s;
       top: 35%;
     }
     .feature-presentation {
