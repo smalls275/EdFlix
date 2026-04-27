@@ -264,18 +264,7 @@
     const YOUTUBE_VIDEO_ID = '8HEL4YHdj68';
     
     function playHiddenYoutube() {
-      // Check if user has interacted before
-      const hasInteracted = localStorage.getItem('edflix_sound_enabled');
-      
-      if (hasInteracted) {
-        hiddenYoutube.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&enablejsapi=1&controls=0&loop=0&playlist=${YOUTUBE_VIDEO_ID}`;
-      }
-    }
-    
-    function enableSound() {
-      // User clicked to enable sound
-      localStorage.setItem('edflix_sound_enabled', 'true');
-      playHiddenYoutube();
+      hiddenYoutube.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&enablejsapi=1&controls=0&loop=0&playlist=${YOUTUBE_VIDEO_ID}`;
     }
     
     function resizeCanvas() {
@@ -451,11 +440,8 @@
     // Auto-hide after 8 seconds
     setTimeout(hideLoadingScreen, 8000);
     
-    // Try to play YouTube sound if user has interacted before
+    // Try to autoplay YouTube sound on page load
     playHiddenYoutube();
-    
-    // Add click handler to enable sound for future visits
-    loadingScreen.addEventListener('click', enableSound);
     
     const DATA = [
       {tmdbId:106,title:"Predator",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Science Fiction"]},
