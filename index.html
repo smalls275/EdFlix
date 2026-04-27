@@ -238,7 +238,7 @@
       opacity: 0;
       animation: filmGrain 0.5s steps(10) infinite;
       pointer-events: none;
-      z-index: 20;
+      z-index: 3;
     }
     .vignette {
       position: absolute;
@@ -457,7 +457,7 @@
       function showFilmGrain() {
         setTimeout(() => {
           filmGrain.style.opacity = '1';
-        }, 3200);
+        }, 5000);
       }
       
       function openCurtains() {
