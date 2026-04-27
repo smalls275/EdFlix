@@ -623,8 +623,6 @@
       if (ra.length) c.push({title: 'Recently Added', movies: ra});
       const fav = fr.filter(m => m.tags?.includes('favorites'));
       if (fav.length) c.push({title: 'Family Favorites', movies: fav});
-      const k = fr.filter(m => m.formats.includes('4K UHD'));
-      if (k.length) c.push({title: '4K Ultra HD Collection', movies: k});
       const threeD = fr.filter(m => m.formats.includes('3D Blu-ray'));
       if (threeD.length) c.push({title: '3D Movies', movies: threeD});
       const g = new Map();
