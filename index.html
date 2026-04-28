@@ -865,24 +865,44 @@
         const today = now.toISOString().slice(0, 10);
         const sixMo = new Date(now); sixMo.setMonth(sixMo.getMonth() + 6);
         const sixMoStr = sixMo.toISOString().slice(0, 10);
-        // Use /discover with a 6-month window for upcoming theatrical releases
-        const pages = await Promise.all([1, 2, 3].map(p =>
-          fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=2|3&primary_release_date.gte=${today}&primary_release_date.lte=${sixMoStr}&sort_by=popularity.desc&page=${p}`).then(r => r.ok ? r.json() : { results: [] }).catch(() => ({ results: [] }))
+        // Use /discover with a 6-month window for US theatrical releases
+        // release_date.* + region=US filters by the movie's US release date specifically
+        const pages = await Promise.all([1, 2, 3, 4].map(p =>
+          fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=2|3&release_date.gte=${today}&release_date.lte=${sixMoStr}&sort_by=popularity.desc&page=${p}`).then(r => r.ok ? r.json() : { results: [] }).catch(() => ({ results: [] }))
         ));
         const seen = new Set();
         const future = pages.flatMap(p => p.results || [])
-          .filter(m => m.release_date && m.release_date >= today && m.release_date <= sixMoStr && !seen.has(m.id) && (seen.add(m.id), true))
-          .sort((a, b) => a.release_date.localeCompare(b.release_date))
-          .slice(0, 30);
+          .filter(m => !seen.has(m.id) && (seen.add(m.id), true))
+          .slice(0, 60);
+        // Fetch details + US release dates + videos in parallel
         const detailed = await Promise.all(future.map(async m => {
           try {
-            const r = await fetch(`https://api.themoviedb.org/3/movie/${m.id}?api_key=${KEY}&append_to_response=videos,credits`);
-            if (!r.ok) return null;
-            const d = await r.json();
+            const [detailRes, datesRes] = await Promise.all([
+              fetch(`https://api.themoviedb.org/3/movie/${m.id}?api_key=${KEY}&append_to_response=videos,credits`),
+              fetch(`https://api.themoviedb.org/3/movie/${m.id}/release_dates?api_key=${KEY}`)
+            ]);
+            if (!detailRes.ok) return null;
+            const d = await detailRes.json();
+            // Find US theatrical release date (type 2 = limited, 3 = theatrical)
+            let usReleaseDate = null;
+            if (datesRes.ok) {
+              const dj = await datesRes.json();
+              const usEntry = (dj.results || []).find(r => r.iso_3166_1 === 'US');
+              if (usEntry) {
+                const rel = (usEntry.release_dates || []).filter(r => r.type === 2 || r.type === 3).sort((a,b) => a.release_date.localeCompare(b.release_date))[0];
+                if (rel) usReleaseDate = rel.release_date.slice(0, 10);
+              }
+            }
+            const effectiveDate = usReleaseDate || d.release_date;
+            if (!effectiveDate || effectiveDate < today || effectiveDate > sixMoStr) return null;
+            // Require a trailer to exist (already released to the public)
+            const hasTrailer = (d.videos?.results || []).some(v => v.site === 'YouTube' && (v.type === 'Trailer' || v.type === 'Teaser'));
+            if (!hasTrailer) return null;
+            d.release_date = effectiveDate;
             return { tmdbId: m.id, title: d.title, formats: [], status: 'upcoming', genre: (d.genres || []).map(g => g.name), tmdbData: d, isUpcoming: true };
           } catch { return null; }
         }));
-        upcoming = detailed.filter(Boolean);
+        upcoming = detailed.filter(Boolean).sort((a, b) => (a.tmdbData.release_date || '').localeCompare(b.tmdbData.release_date || '')).slice(0, 30);
         render();
       } catch {}
     }
