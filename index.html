@@ -878,18 +878,32 @@
         const sixMo = new Date(now); sixMo.setMonth(sixMo.getMonth() + 6);
         const sixMoStr = sixMo.toISOString().slice(0, 10);
 
-        // Fetch page 1 first to learn total_pages, then fetch the rest
-        const base = `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=2|3&release_date.gte=${today}&release_date.lte=${sixMoStr}&sort_by=popularity.desc`;
-        const firstRes = await fetch(`${base}&page=1`).then(r => r.ok ? r.json() : { results: [], total_pages: 0 }).catch(() => ({ results: [], total_pages: 0 }));
-        const maxPage = Math.min(firstRes.total_pages || 1, 15); // cap at 15 pages (~300 movies) to stay under rate limits
-        const restPages = maxPage > 1 ? await Promise.all(
-          Array.from({ length: maxPage - 1 }, (_, i) => i + 2).map(p =>
-            fetch(`${base}&page=${p}`).then(r => r.ok ? r.json() : { results: [] }).catch(() => ({ results: [] }))
-          )
-        ) : [];
+        // Pull from multiple sources / sort orders so we don't miss less-popular films
+        const sources = [
+          `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=2|3&release_date.gte=${today}&release_date.lte=${sixMoStr}&sort_by=popularity.desc`,
+          `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=2|3&release_date.gte=${today}&release_date.lte=${sixMoStr}&sort_by=primary_release_date.asc`,
+          `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=3&release_date.gte=${today}&release_date.lte=${sixMoStr}&sort_by=popularity.desc`,
+          `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=2&release_date.gte=${today}&release_date.lte=${sixMoStr}&sort_by=popularity.desc`,
+          `https://api.themoviedb.org/3/movie/upcoming?api_key=${KEY}&region=US`
+        ];
+        const PAGE_CAP = 25; // up to ~500 results per source
+
+        const fetchAllPages = async (base) => {
+          const first = await fetch(`${base}&page=1`).then(r => r.ok ? r.json() : { results: [], total_pages: 0 }).catch(() => ({ results: [], total_pages: 0 }));
+          const maxPage = Math.min(first.total_pages || 1, PAGE_CAP);
+          if (maxPage <= 1) return first.results || [];
+          const rest = await Promise.all(
+            Array.from({ length: maxPage - 1 }, (_, i) => i + 2).map(p =>
+              fetch(`${base}&page=${p}`).then(r => r.ok ? r.json() : { results: [] }).catch(() => ({ results: [] }))
+            )
+          );
+          return [first, ...rest].flatMap(p => p.results || []);
+        };
+
+        const allResults = (await Promise.all(sources.map(fetchAllPages))).flat();
         const seen = new Set();
-        const candidates = [firstRes, ...restPages].flatMap(p => p.results || [])
-          .filter(m => !seen.has(m.id) && (seen.add(m.id), true));
+        const candidates = allResults
+          .filter(m => m && m.id && !seen.has(m.id) && (seen.add(m.id), true));
 
         // Process detail fetches in batches to avoid hitting TMDB's rate limit
         const batchSize = 15;
