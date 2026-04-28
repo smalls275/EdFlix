@@ -861,16 +861,19 @@
     async function loadUpcoming() {
       if (!KEY) return;
       try {
-        const today = new Date().toISOString().slice(0, 10);
-        // Fetch a couple of pages to give us a healthy pool of future releases
-        const pages = await Promise.all([1, 2].map(p =>
-          fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${KEY}&region=US&page=${p}`).then(r => r.ok ? r.json() : { results: [] }).catch(() => ({ results: [] }))
+        const now = new Date();
+        const today = now.toISOString().slice(0, 10);
+        const sixMo = new Date(now); sixMo.setMonth(sixMo.getMonth() + 6);
+        const sixMoStr = sixMo.toISOString().slice(0, 10);
+        // Use /discover with a 6-month window for upcoming theatrical releases
+        const pages = await Promise.all([1, 2, 3].map(p =>
+          fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=2|3&primary_release_date.gte=${today}&primary_release_date.lte=${sixMoStr}&sort_by=popularity.desc&page=${p}`).then(r => r.ok ? r.json() : { results: [] }).catch(() => ({ results: [] }))
         ));
         const seen = new Set();
         const future = pages.flatMap(p => p.results || [])
-          .filter(m => m.release_date && m.release_date >= today && !seen.has(m.id) && (seen.add(m.id), true))
+          .filter(m => m.release_date && m.release_date >= today && m.release_date <= sixMoStr && !seen.has(m.id) && (seen.add(m.id), true))
           .sort((a, b) => a.release_date.localeCompare(b.release_date))
-          .slice(0, 20);
+          .slice(0, 30);
         const detailed = await Promise.all(future.map(async m => {
           try {
             const r = await fetch(`https://api.themoviedb.org/3/movie/${m.id}?api_key=${KEY}&append_to_response=videos,credits`);
