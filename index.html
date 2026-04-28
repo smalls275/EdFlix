@@ -875,15 +875,16 @@
       try {
         const now = new Date();
         const today = now.toISOString().slice(0, 10);
-        const sixMo = new Date(now); sixMo.setMonth(sixMo.getMonth() + 6);
-        const sixMoStr = sixMo.toISOString().slice(0, 10);
+        const windowEnd = new Date(now); windowEnd.setMonth(windowEnd.getMonth() + 18);
+        const windowEndStr = windowEnd.toISOString().slice(0, 10);
 
-        // Pull from multiple sources / sort orders so we don't miss less-popular films
+        // Pull from multiple sources / sort orders so we don't miss less-popular or far-out films
         const sources = [
-          `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=2|3&release_date.gte=${today}&release_date.lte=${sixMoStr}&sort_by=popularity.desc`,
-          `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=2|3&release_date.gte=${today}&release_date.lte=${sixMoStr}&sort_by=primary_release_date.asc`,
-          `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=3&release_date.gte=${today}&release_date.lte=${sixMoStr}&sort_by=popularity.desc`,
-          `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=2&release_date.gte=${today}&release_date.lte=${sixMoStr}&sort_by=popularity.desc`,
+          `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=2|3&release_date.gte=${today}&release_date.lte=${windowEndStr}&sort_by=popularity.desc`,
+          `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=2|3&release_date.gte=${today}&release_date.lte=${windowEndStr}&sort_by=primary_release_date.asc`,
+          `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=3&release_date.gte=${today}&release_date.lte=${windowEndStr}&sort_by=popularity.desc`,
+          `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=2&release_date.gte=${today}&release_date.lte=${windowEndStr}&sort_by=popularity.desc`,
+          `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&primary_release_date.gte=${today}&primary_release_date.lte=${windowEndStr}&sort_by=popularity.desc`,
           `https://api.themoviedb.org/3/movie/upcoming?api_key=${KEY}&region=US`
         ];
         const PAGE_CAP = 25; // up to ~500 results per source
@@ -918,18 +919,27 @@
               ]);
               if (!detailRes.ok) return null;
               const d = await detailRes.json();
-              // Find US theatrical release date (type 2 = limited, 3 = theatrical)
+              // Find US release date (prefer theatrical/limited, then premiere/digital as fallback)
               let usReleaseDate = null;
               if (datesRes.ok) {
                 const dj = await datesRes.json();
                 const usEntry = (dj.results || []).find(r => r.iso_3166_1 === 'US');
                 if (usEntry) {
-                  const rel = (usEntry.release_dates || []).filter(r => r.type === 2 || r.type === 3).sort((a,b) => a.release_date.localeCompare(b.release_date))[0];
-                  if (rel) usReleaseDate = rel.release_date.slice(0, 10);
+                  const rels = (usEntry.release_dates || []).slice().sort((a,b) => a.release_date.localeCompare(b.release_date));
+                  const theatrical = rels.find(r => r.type === 3) || rels.find(r => r.type === 2);
+                  const any = rels[0];
+                  const chosen = theatrical || any;
+                  if (chosen) usReleaseDate = chosen.release_date.slice(0, 10);
                 }
               }
-              // Require an actual US theatrical release in window (strict)
-              if (!usReleaseDate || usReleaseDate < today || usReleaseDate > sixMoStr) return null;
+              // Fallback: if no US release entry yet, accept the movie's primary release_date if its production includes the US
+              if (!usReleaseDate && d.release_date) {
+                const usProduced = (d.production_countries || []).some(c => c.iso_3166_1 === 'US') ||
+                                   (d.origin_country || []).includes('US');
+                if (usProduced) usReleaseDate = d.release_date;
+              }
+              // Require a release in our window
+              if (!usReleaseDate || usReleaseDate < today || usReleaseDate > windowEndStr) return null;
               // Require a trailer to exist (already released to the public)
               const hasTrailer = (d.videos?.results || []).some(v => v.site === 'YouTube' && (v.type === 'Trailer' || v.type === 'Teaser'));
               if (!hasTrailer) return null;
