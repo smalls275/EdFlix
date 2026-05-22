@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: mkdir -p out && cp index.html out/index.html
+      - run: mkdir -p out && cp index.html tailwind.css out/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
