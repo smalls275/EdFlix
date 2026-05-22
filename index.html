@@ -619,26 +619,61 @@
     let KEY = 'dfdcfeaefeefe243e2761936a156b66c';
     const IMG = 'https://image.tmdb.org/t/p';
     let movies = [], upcoming = [], search = '', filter = 'all', modalId = null;
+    let heroPick = null, heroKey = '';
+
+    // Deduplicate DATA by (tmdbId,type) so accidental dupes don't render twice
+    const SEEN_DATA = new Set();
+    const UNIQUE_DATA = DATA.filter(d => {
+      const k = `${d.type || 'movie'}:${d.tmdbId}`;
+      if (SEEN_DATA.has(k)) return false;
+      SEEN_DATA.add(k); return true;
+    });
+
+    // Coalesce render() calls so background fetches don't cause a re-render storm
+    let _renderQueued = false;
+    function scheduleRender() {
+      if (_renderQueued) return;
+      _renderQueued = true;
+      requestAnimationFrame(() => { _renderQueued = false; render(); });
+    }
+
+    // Limit-concurrency map to avoid TMDB 429s
+    async function pMap(items, limit, fn) {
+      const out = new Array(items.length);
+      let i = 0;
+      const workers = Array.from({length: Math.min(limit, items.length)}, async () => {
+        while (true) {
+          const idx = i++;
+          if (idx >= items.length) return;
+          out[idx] = await fn(items[idx], idx);
+        }
+      });
+      await Promise.all(workers);
+      return out;
+    }
 
     async function load() {
-      if (!KEY) { movies = DATA.map(d => ({...d, tmdbData: null})); render(); return; }
-      movies = await Promise.all(DATA.map(async d => {
+      if (!KEY) { movies = UNIQUE_DATA.map(d => ({...d, tmdbData: null})); render(); return; }
+      // Show cards immediately with no metadata, then progressively enrich
+      movies = UNIQUE_DATA.map(d => ({...d, tmdbData: null}));
+      render();
+      const fetchOne = async d => {
         try {
           const isTV = d.type === 'tv' || d.notes?.includes('TV Series');
           const endpoint = isTV ? 'tv' : 'movie';
           const r = await fetch(`https://api.themoviedb.org/3/${endpoint}/${d.tmdbId}?api_key=${KEY}&append_to_response=videos,credits`);
           if (!r.ok) return {...d, tmdbData: null};
           const data = await r.json();
-          // Normalize TV fields to match movie schema for downstream rendering
           if (isTV) {
             data.title = data.title || data.name;
             data.release_date = data.release_date || data.first_air_date;
           }
           return {...d, tmdbData: data, isTV};
         } catch { return {...d, tmdbData: null}; }
-      }));
-      loadUpcoming();
+      };
+      movies = await pMap(UNIQUE_DATA, 8, fetchOne);
       render();
+      loadUpcoming();
     }
 
     async function loadUpcoming() {
@@ -675,7 +710,8 @@
         const allResults = (await Promise.all(sources.map(fetchAllPages))).flat();
         const seen = new Set();
         const candidates = allResults
-          .filter(m => m && m.id && !seen.has(m.id) && (seen.add(m.id), true));
+          .filter(m => m && m.id && !seen.has(m.id) && (seen.add(m.id), true))
+          .slice(0, 250); // cap to keep detail fetches reasonable
 
         // Process detail fetches in batches to avoid hitting TMDB's rate limit
         const batchSize = 15;
@@ -719,9 +755,9 @@
             } catch { return null; }
           }));
           detailed.push(...results.filter(Boolean));
-          // Progressive render so the row fills in as data arrives
+          // Progressive render (coalesced) so the row fills in without a re-render storm
           upcoming = [...detailed].sort((a, b) => (a.tmdbData.release_date || '').localeCompare(b.tmdbData.release_date || ''));
-          render();
+          scheduleRender();
         }
       } catch {}
     }
@@ -861,8 +897,14 @@
 
       html += `<main class="min-h-screen bg-[#141414]">`;
 
-      // Hero
-      const hero = !search && fr.length > 0 ? fr[Math.floor(Math.random() * Math.min(fr.length, 5))] : null;
+      // Hero (stable: only re-pick when search/filter changes or candidate set changes meaningfully)
+      const key = `${search}|${filter}|${fr.length}`;
+      if (key !== heroKey) {
+        heroKey = key;
+        heroPick = !search && fr.length > 0 ? fr[Math.floor(Math.random() * Math.min(fr.length, 5))] : null;
+      }
+      // Re-resolve heroPick from current fr in case the same id now has metadata
+      const hero = heroPick ? (fr.find(m => m.tmdbId === heroPick.tmdbId && m.type === heroPick.type) || heroPick) : null;
       if (hero && hero.tmdbData?.backdrop_path) {
         html += `<div class="relative h-[60vh] md:h-[70vh]"><img src="${IMG}/original${hero.tmdbData.backdrop_path}" alt="${hero.title}" class="w-full h-full object-cover" /><div class="hero-gradient absolute inset-0"></div><div class="absolute bottom-16 left-4 md:left-12 max-w-xl z-10"><h2 class="text-3xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg">${hero.title}</h2><p class="text-sm text-gray-200 line-clamp-3 mb-3 drop-shadow">${hero.tmdbData.overview || ''}</p><div class="flex items-center gap-2 flex-wrap mb-3">${hero.formats.map(f => `<span class="text-xs bg-white/20 backdrop-blur-sm text-white px-2.5 py-1 rounded">${f}</span>`).join('')}</div><button onclick="openModal(${hero.tmdbId})" class="bg-white text-black font-semibold px-6 py-2.5 rounded hover:bg-gray-200 transition-colors text-sm">More Info</button></div></div>`;
       }
