@@ -604,6 +604,59 @@
       if (card) card.scrollIntoView({block: 'nearest', inline: 'center', behavior: 'smooth'});
     });
 
+    // D-pad / arrow key navigation between cards and rows (Silk / Fire TV friendly)
+    document.addEventListener('keydown', e => {
+      if (modalId) return; // modal handles its own keys
+      const tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea') return; // don't hijack typing in search
+      const k = e.key;
+      if (k !== 'ArrowLeft' && k !== 'ArrowRight' && k !== 'ArrowUp' && k !== 'ArrowDown') return;
+
+      let card = document.activeElement && document.activeElement.classList?.contains('movie-card')
+        ? document.activeElement : null;
+      // If no card focused yet, focus the first one and stop
+      if (!card) {
+        const first = document.querySelector('.movie-card');
+        if (first) { e.preventDefault(); first.focus(); }
+        return;
+      }
+
+      if (k === 'ArrowLeft' || k === 'ArrowRight') {
+        const sib = k === 'ArrowLeft' ? card.previousElementSibling : card.nextElementSibling;
+        if (sib && sib.classList.contains('movie-card')) { e.preventDefault(); sib.focus(); }
+        return;
+      }
+
+      // ArrowUp / ArrowDown: jump to nearest card in adjacent row by horizontal center
+      const row = card.parentElement;
+      const m = row && row.id && row.id.match(/^r(\d+)$/);
+      if (!m) return;
+      const idx = parseInt(m[1], 10);
+      const dir = k === 'ArrowUp' ? -1 : 1;
+      const nextRow = document.getElementById('r' + (idx + dir));
+      if (!nextRow) return;
+      e.preventDefault();
+      const cr = card.getBoundingClientRect();
+      const target = (cr.left + cr.right) / 2;
+      let best = null, bestDist = Infinity;
+      for (const c of nextRow.children) {
+        if (!c.classList || !c.classList.contains('movie-card')) continue;
+        const r = c.getBoundingClientRect();
+        const center = (r.left + r.right) / 2;
+        const d = Math.abs(center - target);
+        if (d < bestDist) { bestDist = d; best = c; }
+      }
+      if (best) best.focus();
+    });
+
+    // Auto-focus first card after the first content render so D-pad has something to drive
+    let _initialFocusDone = false;
+    function maybeAutoFocusFirstCard() {
+      if (_initialFocusDone) return;
+      const first = document.querySelector('.movie-card');
+      if (first) { _initialFocusDone = true; first.focus({preventScroll: true}); }
+    }
+
     function openModal(id) { modalId = id; document.body.style.overflow = 'hidden'; renderModal(); }
     function closeModal() { modalId = null; document.body.style.overflow = ''; renderModal(); }
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && modalId) closeModal(); });
@@ -658,6 +711,7 @@
       // Modal handled in renderModal() so opening/closing doesn't re-render rows
       document.getElementById('app').innerHTML = html;
       renderModal();
+      maybeAutoFocusFirstCard();
     }
 
     function renderModal() {
