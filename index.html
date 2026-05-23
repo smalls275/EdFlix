@@ -598,10 +598,26 @@
       _searchTimer = setTimeout(() => { _searchTimer = null; render(); }, 180);
     }
 
-    // Keep focused card visible (Fire TV / D-pad navigation)
+    // Keep focused card visible (Fire TV / D-pad navigation).
+    // Use 'auto' (instant) so holding an arrow key produces a continuous, Netflix-style scroll
+    // instead of queueing smooth animations that interrupt each other.
     document.addEventListener('focusin', e => {
       const card = e.target.closest && e.target.closest('.movie-card');
-      if (card) card.scrollIntoView({block: 'nearest', inline: 'center', behavior: 'smooth'});
+      if (!card) return;
+      const row = card.parentElement;
+      if (row && row.classList.contains('scroll-row')) {
+        // Horizontal: snap row so focused card is centered
+        const rowRect = row.getBoundingClientRect();
+        const cardRect = card.getBoundingClientRect();
+        const cardCenter = cardRect.left + cardRect.width / 2;
+        const rowCenter = rowRect.left + rowRect.width / 2;
+        row.scrollLeft += (cardCenter - rowCenter);
+      }
+      // Vertical: only if card is outside viewport
+      const cr = card.getBoundingClientRect();
+      if (cr.top < 80 || cr.bottom > window.innerHeight - 20) {
+        card.scrollIntoView({block: 'center', behavior: 'smooth'});
+      }
     });
 
     // D-pad / arrow key navigation between cards and rows (Silk / Fire TV friendly).
