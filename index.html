@@ -368,23 +368,24 @@
       return out;
     }
 
-    // Hero Carousel: slowly iterates through all movies with backdrops (Fire TV / leanback friendly)
+    // Hero Carousel: slowly iterates through all movies with backdrops (Fire TV / leanback friendly).
+    // Only re-renders the hero element, not the whole app, so focus/search state is preserved.
     function rotateHero() {
+      // Skip rotation while user is searching or modal is open
+      if (search || modalId) return;
       const candidates = movies.filter(m => m.tmdbData?.backdrop_path);
       if (candidates.length === 0) return;
       heroIndex = (heroIndex + 1) % candidates.length;
       heroPick = candidates[heroIndex];
-      render();
+      renderHero();
     }
 
     function startHeroCarousel() {
       if (heroTimer) clearInterval(heroTimer);
       const candidates = movies.filter(m => m.tmdbData?.backdrop_path);
       if (candidates.length > 0) {
-        // Random starting index
         heroIndex = Math.floor(Math.random() * candidates.length);
         heroPick = candidates[heroIndex];
-        render();
       }
       heroTimer = setInterval(rotateHero, 15000); // cycle every 15 seconds
     }
@@ -410,6 +411,7 @@
       };
       movies = await pMap(UNIQUE_DATA, 8, fetchOne);
       startHeroCarousel();
+      render();
       loadUpcoming();
     }
 
@@ -723,14 +725,13 @@
 
       html += `<main class="min-h-screen bg-[#141414]">`;
 
-      // Hero (stable carousel rotation, only display when not searching)
-      const hero = !search && heroPick ? (fr.find(m => m.tmdbId === heroPick.tmdbId && m.type === heroPick.type) || heroPick) : null;
-      if (hero && hero.tmdbData?.backdrop_path) {
-        html += `<div class="relative h-[60vh] md:h-[70vh]"><img src="${IMG}/w1280${hero.tmdbData.backdrop_path}" alt="${hero.title}" class="w-full h-full object-cover" /><div class="hero-gradient absolute inset-0"></div><div class="absolute bottom-16 left-4 md:left-12 max-w-xl z-10"><h2 class="text-3xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg">${hero.title}</h2><p class="text-sm text-gray-200 line-clamp-3 mb-3 drop-shadow">${hero.tmdbData.overview || ''}</p><div class="flex items-center gap-2 flex-wrap mb-3">${hero.formats.map(f => `<span class="text-xs bg-white/20 backdrop-blur-sm text-white px-2.5 py-1 rounded">${f}</span>`).join('')}</div><button onclick="openModal(${hero.tmdbId})" class="bg-white text-black font-semibold px-6 py-2.5 rounded hover:bg-gray-200 transition-colors text-sm">More Info</button></div></div>`;
-      }
+      // Hero is rendered into its own root by renderHero() so carousel rotation
+      // doesn't tear down the rest of the app DOM (preserves focus, search input, etc).
+      html += `<div id="hero-root"></div>`;
 
       // Stats bar
-      html += `<div class="px-3 md:px-12 ${!search && hero ? '-mt-4' : 'pt-20 md:pt-24'} pb-4 relative z-10"><div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3"><div class="flex items-center gap-3 text-sm text-gray-400"><svg class="w-4 h-4 text-[#E50914]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span><strong class="text-white">${movies.length}</strong> titles</span><span class="text-gray-600">|</span><span><strong class="text-green-400">${movies.filter(m => m.status === 'available').length}</strong> available</span></div><div class="flex items-center gap-1 md:gap-2 flex-wrap"><svg class="w-4 h-4 text-gray-500 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>${[['All','all'],['Available','available'],['Checked Out','checked-out'],['4K UHD','4K UHD'],['Blu-ray','Blu-ray'],['3D','3D Blu-ray'],['DVD','DVD'],['VHS','VHS']].map(([l,v]) => `<button onclick="filter='${v}';render();" class="text-[10px] md:text-xs px-2 md:px-3 py-1 md:py-1.5 rounded-full transition-colors ${filter === v ? 'bg-white text-black font-semibold' : 'bg-[#2F2F2F] text-gray-300 hover:bg-gray-600'}">${l}</button>`).join('')}</div></div></div>`;
+      const heroVisible = !search && heroPick && heroPick.tmdbData?.backdrop_path;
+      html += `<div class="px-3 md:px-12 ${heroVisible ? '-mt-4' : 'pt-20 md:pt-24'} pb-4 relative z-10"><div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3"><div class="flex items-center gap-3 text-sm text-gray-400"><svg class="w-4 h-4 text-[#E50914]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span><strong class="text-white">${movies.length}</strong> titles</span><span class="text-gray-600">|</span><span><strong class="text-green-400">${movies.filter(m => m.status === 'available').length}</strong> available</span></div><div class="flex items-center gap-1 md:gap-2 flex-wrap"><svg class="w-4 h-4 text-gray-500 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>${[['All','all'],['Available','available'],['Checked Out','checked-out'],['4K UHD','4K UHD'],['Blu-ray','Blu-ray'],['3D','3D Blu-ray'],['DVD','DVD'],['VHS','VHS']].map(([l,v]) => `<button onclick="filter='${v}';render();" class="text-[10px] md:text-xs px-2 md:px-3 py-1 md:py-1.5 rounded-full transition-colors ${filter === v ? 'bg-white text-black font-semibold' : 'bg-[#2F2F2F] text-gray-300 hover:bg-gray-600'}">${l}</button>`).join('')}</div></div></div>`;
 
       // API key banner
       if (!KEY && movies.length > 0) {
@@ -745,8 +746,17 @@
 
       // Modal handled in renderModal() so opening/closing doesn't re-render rows
       document.getElementById('app').innerHTML = html;
+      renderHero();
       renderModal();
       maybeAutoFocusFirstCard();
+    }
+
+    function renderHero() {
+      const root = document.getElementById('hero-root');
+      if (!root) return;
+      const hero = !search && heroPick ? heroPick : null;
+      if (!hero || !hero.tmdbData?.backdrop_path) { root.innerHTML = ''; return; }
+      root.innerHTML = `<div class="relative h-[60vh] md:h-[70vh]"><img src="${IMG}/w1280${hero.tmdbData.backdrop_path}" alt="${hero.title}" class="w-full h-full object-cover" /><div class="hero-gradient absolute inset-0"></div><div class="absolute bottom-16 left-4 md:left-12 max-w-xl z-10"><h2 class="text-3xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg">${hero.title}</h2><p class="text-sm text-gray-200 line-clamp-3 mb-3 drop-shadow">${hero.tmdbData.overview || ''}</p><div class="flex items-center gap-2 flex-wrap mb-3">${hero.formats.map(f => `<span class="text-xs bg-white/20 backdrop-blur-sm text-white px-2.5 py-1 rounded">${f}</span>`).join('')}</div><button onclick="openModal(${hero.tmdbId})" class="bg-white text-black font-semibold px-6 py-2.5 rounded hover:bg-gray-200 transition-colors text-sm">More Info</button></div></div>`;
     }
 
     function renderModal() {
