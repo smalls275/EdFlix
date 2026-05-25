@@ -356,6 +356,8 @@
     const IMG = 'https://image.tmdb.org/t/p';
     let movies = [], upcoming = [], search = '', filter = 'all', modalId = null;
     let heroPick = null, heroKey = '', heroIndex = 0, heroTimer = null;
+    let taskmasterShow = null, taskmasterEpisodes = [], tmEpisodeIdx = null;
+    const TM_CHANNEL = 'UCT5C7yaO3RVuOgwP8JVAujQ', TM_TMDB = 63404;
 
     // Deduplicate DATA by (tmdbId,type) so accidental dupes don't render twice
     const SEEN_DATA = new Set();
@@ -408,6 +410,76 @@
         heroPick = candidates[heroIndex];
       }
       heroTimer = setInterval(rotateHero, 15000); // cycle every 15 seconds
+    }
+
+    async function loadTaskmaster() {
+      try {
+        if (KEY) {
+          const r = await fetch(`https://api.themoviedb.org/3/tv/${TM_TMDB}?api_key=${KEY}&language=en-US`);
+          if (r.ok) taskmasterShow = await r.json();
+        }
+      } catch {}
+      try {
+        const rss = `https://www.youtube.com/feeds/videos.xml?channel_id=${TM_CHANNEL}`;
+        const proxy = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rss)}&count=15`;
+        const r = await fetch(proxy);
+        if (r.ok) {
+          const data = await r.json();
+          if (data.status === 'ok' && data.items?.length) {
+            taskmasterEpisodes = data.items.map(item => {
+              const videoId = item.guid?.replace('yt:video:','') || item.link?.split('v=')[1]?.split('&')[0] || '';
+              return { videoId, title: item.title || '', pubDate: item.pubDate || '', thumbnail: item.thumbnail || `https://img.youtube.com/vi/${videoId}/mqdefault.jpg` };
+            }).filter(e => e.videoId);
+          }
+        }
+      } catch {}
+      renderTaskmaster();
+    }
+
+    function openTaskmasterEpisode(idx) {
+      tmEpisodeIdx = idx;
+      modalId = null;
+      document.body.style.overflow = 'hidden';
+      renderModal();
+      requestAnimationFrame(() => { const fs = document.querySelector('.modal-content button[onclick="toggleFullscreen()"]'); if (fs) fs.focus(); });
+    }
+
+    function renderTaskmaster() {
+      const root = document.getElementById('taskmaster-root');
+      if (!root) return;
+      if (!taskmasterEpisodes.length && !taskmasterShow) { root.innerHTML = ''; return; }
+      const bd = taskmasterShow?.backdrop_path ? `${IMG}/w1280${taskmasterShow.backdrop_path}` : '';
+      const ov = taskmasterShow?.overview || 'Five comedians compete in bizarre tasks judged by the all-powerful Taskmaster. Comedy chaos ensues.';
+      let h = `<section class="relative bg-[#0a0a0a] border-t-4 border-[#FFD700] mt-2">`;
+      h += `<div class="relative ${bd ? 'h-52 md:h-72' : 'h-24'} overflow-hidden">`;
+      if (bd) h += `<img src="${bd}" class="w-full h-full object-cover opacity-35" alt="Taskmaster" />`;
+      h += `<div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>`;
+      h += `<div class="absolute inset-0 flex items-center px-4 md:px-12"><div>`;
+      h += `<div class="flex items-baseline gap-1.5 mb-1"><span class="text-[#FFD700] text-3xl md:text-5xl font-black tracking-tight drop-shadow">TASKMASTER</span><span class="bg-[#FFD700] text-black text-xs font-black px-1.5 py-0.5 rounded leading-none">+</span></div>`;
+      h += `<p class="text-gray-300 text-xs md:text-sm max-w-lg line-clamp-2 mb-2 md:mb-3">${ov.replace(/</g,'&lt;')}</p>`;
+      if (taskmasterEpisodes.length) h += `<button onclick="openTaskmasterEpisode(0)" class="bg-[#FFD700] text-black font-bold px-5 py-2 text-xs md:text-sm rounded hover:bg-yellow-300 focus:ring-2 focus:ring-[#FFD700] focus:outline-none transition-colors">▶ Watch Latest Episode</button>`;
+      h += `</div></div></div>`;
+      if (taskmasterEpisodes.length) {
+        h += `<div class="px-4 md:px-12 pb-5 pt-3"><h3 class="text-[#FFD700] font-bold text-xs md:text-sm mb-3 flex items-center gap-2"><span>👑</span><span>Latest Episodes on YouTube</span><span class="text-gray-500 font-normal text-[10px]">— streams free, no subscription needed</span></h3><div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x">`;
+        taskmasterEpisodes.forEach((ep, i) => {
+          const isNew = i === 0;
+          const dateStr = ep.pubDate ? new Date(ep.pubDate).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}) : '';
+          const thumb = ep.thumbnail || `https://img.youtube.com/vi/${ep.videoId}/mqdefault.jpg`;
+          const safeTitle = ep.title.replace(/</g,'&lt;').replace(/"/g,'&quot;');
+          h += `<div class="flex-shrink-0 w-48 md:w-60 snap-start cursor-pointer group" onclick="openTaskmasterEpisode(${i})" tabindex="0" onkeydown="if(event.key==='Enter')openTaskmasterEpisode(${i})">`;
+          h += `<div class="relative rounded overflow-hidden" style="aspect-ratio:16/9;background:#111">`;
+          h += `<img src="${thumb}" alt="${safeTitle}" class="w-full h-full object-cover group-hover:opacity-60 transition-opacity" loading="lazy" />`;
+          h += `<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><div class="bg-white/90 rounded-full p-2"><svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>`;
+          if (isNew) h += `<span class="absolute top-1.5 left-1.5 bg-[#FFD700] text-black text-[9px] font-black px-1.5 py-0.5 rounded">NEW</span>`;
+          h += `</div>`;
+          h += `<p class="text-white text-[11px] md:text-xs mt-1.5 line-clamp-2 font-medium leading-snug">${safeTitle}</p>`;
+          if (dateStr) h += `<p class="text-gray-500 text-[9px] mt-0.5">${dateStr}</p>`;
+          h += `</div>`;
+        });
+        h += `</div></div>`;
+      }
+      h += `</section>`;
+      root.innerHTML = h;
     }
 
     async function load() {
@@ -770,7 +842,7 @@
         (document.exitFullscreen || document.webkitExitFullscreen).call(document);
         return;
       }
-      modalId = null; document.body.style.overflow = ''; renderModal();
+      modalId = null; tmEpisodeIdx = null; document.body.style.overflow = ''; renderModal();
       // Return focus to the card that was previously focused
       if (_lastFocusedBeforeModal && document.body.contains(_lastFocusedBeforeModal)) {
         _lastFocusedBeforeModal.focus({preventScroll: true});
@@ -815,6 +887,7 @@
       // Ignore the card or hero button click that just opened the modal (it bubbles up here after openModal runs)
       if (e.target.closest && e.target.closest('.movie-card')) return;
       if (e.target.closest && e.target.closest('#hero-root')) return;
+      if (e.target.closest && e.target.closest('#taskmaster-root')) return;
       const content = document.querySelector('.modal-content');
       if (content && !content.contains(e.target)) closeModal();
     });
@@ -838,6 +911,9 @@
       // doesn't tear down the rest of the app DOM (preserves focus, search input, etc).
       html += `<div id="hero-root"></div>`;
 
+      // Taskmaster+ section (isolated root, populated by renderTaskmaster)
+      html += `<div id="taskmaster-root"></div>`;
+
       // Stats bar
       const heroVisible = !search && heroPick && heroPick.tmdbData?.backdrop_path;
       html += `<div class="px-3 md:px-12 ${heroVisible ? '-mt-4' : 'pt-20 md:pt-24'} pb-4 relative z-10"><div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3"><div class="flex items-center gap-3 text-sm text-gray-400"><svg class="w-4 h-4 text-[#E50914]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span><strong class="text-white">${movies.length}</strong> titles</span><span class="text-gray-600">|</span><span><strong class="text-green-400">${movies.filter(m => m.status === 'available').length}</strong> available</span></div><div class="flex items-center gap-1 md:gap-2 flex-wrap"><svg class="w-4 h-4 text-gray-500 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>${[['All','all'],['Available','available'],['Checked Out','checked-out'],['4K UHD','4K UHD'],['Blu-ray','Blu-ray'],['3D','3D Blu-ray'],['DVD','DVD'],['VHS','VHS']].map(([l,v]) => `<button onclick="filter='${v}';render();" class="text-[10px] md:text-xs px-2 md:px-3 py-1 md:py-1.5 rounded-full transition-colors ${filter === v ? 'bg-white text-black font-semibold' : 'bg-[#2F2F2F] text-gray-300 hover:bg-gray-600'}">${l}</button>`).join('')}</div></div></div>`;
@@ -856,6 +932,7 @@
       // Modal handled in renderModal() so opening/closing doesn't re-render rows
       document.getElementById('app').innerHTML = html;
       renderHero();
+      renderTaskmaster();
       renderModal();
       maybeAutoFocusFirstCard();
     }
@@ -870,8 +947,13 @@
 
     function renderModal() {
       let modalHtml = '';
-      // Modal
-      if (modalId) {
+      // Taskmaster YouTube episode modal
+      if (tmEpisodeIdx !== null && taskmasterEpisodes[tmEpisodeIdx]) {
+        const ep = taskmasterEpisodes[tmEpisodeIdx];
+        const safeTitle = (ep.title || '').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+        modalHtml = `<div class="modal-overlay fixed inset-0 z-[100] bg-black/90 flex items-start justify-center overflow-y-auto py-8 px-4" onclick="if(event.target===event.currentTarget)closeModal()"><div class="modal-content relative bg-[#0a0a0a] rounded-lg overflow-hidden max-w-4xl w-full shadow-2xl border border-[#FFD700]/30"><button onclick="toggleFullscreen()" title="Fullscreen (F)" class="absolute top-3 right-14 z-30 bg-[#141414]/80 hover:bg-[#141414] focus:bg-[#FFD700] rounded-full p-2 text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4h4M16 4h4v4M4 16v4h4M16 20h4v-4"/></svg></button><button onclick="closeModal()" title="Close (Esc)" class="absolute top-3 right-3 z-30 bg-[#141414]/80 hover:bg-[#141414] focus:bg-[#FFD700] rounded-full p-2 text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button><div class="relative aspect-video bg-black"><iframe src="https://www.youtube.com/embed/${ep.videoId}?autoplay=1&rel=0&modestbranding=1" title="${safeTitle}" class="w-full h-full" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe></div><div class="px-5 py-4"><div class="flex items-center gap-2 mb-1"><span class="text-[#FFD700] font-black text-sm">TASKMASTER+</span><span class="text-gray-500 text-xs">—</span><span class="text-gray-400 text-xs">${ep.pubDate ? new Date(ep.pubDate).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}) : ''}</span></div><p class="text-white font-semibold text-sm md:text-base">${safeTitle}</p></div></div></div>`;
+      // TMDB movie/show modal
+      } else if (modalId) {
         const m = movies.find(x => x.tmdbId === modalId) || upcoming.find(x => x.tmdbId === modalId);
         if (m) {
           const t = m.tmdbData || {};
@@ -886,7 +968,9 @@
       if (root) root.innerHTML = modalHtml;
     }
 
+
     load();
+    loadTaskmaster();
   </script>
 </body>
 </html>
