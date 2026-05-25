@@ -17,7 +17,7 @@ _Auto-generated from `index.html` DATA array._
 ## By format
 
 - **3D Blu-ray**: 38
-- **4K UHD**: 146
+- **4K UHD**: 147
 - **Blu-ray**: 95
 - **DVD**: 27
 
@@ -283,7 +283,7 @@ _Auto-generated from `index.html` DATA array._
 | The Nightmare Before Christmas | movie | 3D Blu-ray | Animation, Family, Fantasy | Living Room | 9479 |
 | The Other Guys | movie | Blu-ray | Action, Comedy, Crime | Living Room | 27581 |
 | The Polar Express | movie | 3D Blu-ray | Animation, Adventure, Family | Living Room | 5255 |
-| The Prestige | movie | DVD | Drama, Mystery, Sci-Fi | Living Room | 1124 |
+| The Prestige | movie | 4K UHD, DVD | Drama, Mystery, Sci-Fi | Living Room | 1124 |
 | The Princess and the Frog | movie | 4K UHD | Animation, Adventure, Family | Living Room | 10198 |
 | The Princess Bride | movie | Blu-ray | Adventure, Comedy, Family | Living Room | 2493 |
 | The Red Shoes | movie | 4K UHD | Drama, Music, Romance | Living Room | 19542 |
