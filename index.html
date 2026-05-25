@@ -335,7 +335,7 @@
     let KEY = 'dfdcfeaefeefe243e2761936a156b66c';
     const IMG = 'https://image.tmdb.org/t/p';
     let movies = [], upcoming = [], search = '', filter = 'all', modalId = null;
-    let heroPick = null, heroKey = '';
+    let heroPick = null, heroKey = '', heroIndex = 0, heroTimer = null;
 
     // Deduplicate DATA by (tmdbId,type) so accidental dupes don't render twice
     const SEEN_DATA = new Set();
@@ -368,6 +368,27 @@
       return out;
     }
 
+    // Hero Carousel: slowly iterates through all movies with backdrops (Fire TV / leanback friendly)
+    function rotateHero() {
+      const candidates = movies.filter(m => m.tmdbData?.backdrop_path);
+      if (candidates.length === 0) return;
+      heroIndex = (heroIndex + 1) % candidates.length;
+      heroPick = candidates[heroIndex];
+      render();
+    }
+
+    function startHeroCarousel() {
+      if (heroTimer) clearInterval(heroTimer);
+      const candidates = movies.filter(m => m.tmdbData?.backdrop_path);
+      if (candidates.length > 0) {
+        // Random starting index
+        heroIndex = Math.floor(Math.random() * candidates.length);
+        heroPick = candidates[heroIndex];
+        render();
+      }
+      heroTimer = setInterval(rotateHero, 15000); // cycle every 15 seconds
+    }
+
     async function load() {
       if (!KEY) { movies = UNIQUE_DATA.map(d => ({...d, tmdbData: null})); render(); return; }
       // Show cards immediately with no metadata, then progressively enrich
@@ -388,7 +409,7 @@
         } catch { return {...d, tmdbData: null}; }
       };
       movies = await pMap(UNIQUE_DATA, 8, fetchOne);
-      render();
+      startHeroCarousel();
       loadUpcoming();
     }
 
@@ -702,14 +723,8 @@
 
       html += `<main class="min-h-screen bg-[#141414]">`;
 
-      // Hero (stable: only re-pick when search/filter changes or candidate set changes meaningfully)
-      const key = `${search}|${filter}|${fr.length}`;
-      if (key !== heroKey) {
-        heroKey = key;
-        heroPick = !search && fr.length > 0 ? fr[Math.floor(Math.random() * Math.min(fr.length, 5))] : null;
-      }
-      // Re-resolve heroPick from current fr in case the same id now has metadata
-      const hero = heroPick ? (fr.find(m => m.tmdbId === heroPick.tmdbId && m.type === heroPick.type) || heroPick) : null;
+      // Hero (stable carousel rotation, only display when not searching)
+      const hero = !search && heroPick ? (fr.find(m => m.tmdbId === heroPick.tmdbId && m.type === heroPick.type) || heroPick) : null;
       if (hero && hero.tmdbData?.backdrop_path) {
         html += `<div class="relative h-[60vh] md:h-[70vh]"><img src="${IMG}/w1280${hero.tmdbData.backdrop_path}" alt="${hero.title}" class="w-full h-full object-cover" /><div class="hero-gradient absolute inset-0"></div><div class="absolute bottom-16 left-4 md:left-12 max-w-xl z-10"><h2 class="text-3xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg">${hero.title}</h2><p class="text-sm text-gray-200 line-clamp-3 mb-3 drop-shadow">${hero.tmdbData.overview || ''}</p><div class="flex items-center gap-2 flex-wrap mb-3">${hero.formats.map(f => `<span class="text-xs bg-white/20 backdrop-blur-sm text-white px-2.5 py-1 rounded">${f}</span>`).join('')}</div><button onclick="openModal(${hero.tmdbId})" class="bg-white text-black font-semibold px-6 py-2.5 rounded hover:bg-gray-200 transition-colors text-sm">More Info</button></div></div>`;
       }
