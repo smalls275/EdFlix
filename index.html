@@ -421,15 +421,23 @@
       } catch {}
       try {
         const rss = `https://www.youtube.com/feeds/videos.xml?channel_id=${TM_CHANNEL}`;
-        const proxy = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rss)}&count=15`;
-        const r = await fetch(proxy);
+        const r = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(rss)}`);
         if (r.ok) {
           const data = await r.json();
-          if (data.status === 'ok' && data.items?.length) {
-            taskmasterEpisodes = data.items.map(item => {
-              const videoId = item.guid?.replace('yt:video:','') || item.link?.split('v=')[1]?.split('&')[0] || '';
-              return { videoId, title: item.title || '', pubDate: item.pubDate || '', thumbnail: item.thumbnail || `https://img.youtube.com/vi/${videoId}/mqdefault.jpg` };
+          if (data.contents) {
+            const xml = new DOMParser().parseFromString(data.contents, 'text/xml');
+            const allItems = [...xml.querySelectorAll('entry')].map(entry => {
+              const id = entry.querySelector('id')?.textContent || '';
+              const videoId = id.replace('yt:video:', '');
+              const title = entry.querySelector('title')?.textContent || '';
+              const published = entry.querySelector('published')?.textContent || '';
+              const link = entry.querySelector('link')?.getAttribute('href') || '';
+              const isShort = link.includes('/shorts/');
+              return { videoId, title, pubDate: published, thumbnail: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`, isShort };
             }).filter(e => e.videoId);
+            const fullEps = allItems.filter(e => !e.isShort && /\|\s*Full Episode/i.test(e.title));
+            taskmasterEpisodes = (fullEps.length > 0 ? fullEps : allItems.filter(e => !e.isShort))
+              .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
           }
         }
       } catch {}
