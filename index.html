@@ -45,6 +45,7 @@
 <body class="bg-[#141414] text-white antialiased min-h-screen">
   <div id="app"></div>
   <div id="modal-root"></div>
+  <div id="tm-page-root"></div>
   <script>
     
     const DATA = [
@@ -357,6 +358,7 @@
     let movies = [], upcoming = [], search = '', filter = 'all', modalId = null;
     let heroPick = null, heroKey = '', heroIndex = 0, heroTimer = null;
     let taskmasterShow = null, taskmasterEpisodes = [], tmEpisodeIdx = null;
+    let taskmasterPageOpen = false, tmPageFocusIdx = 0;
     const TM_CHANNEL = 'UCT5C7yaO3RVuOgwP8JVAujQ', TM_TMDB = 63404;
 
     // Deduplicate DATA by (tmdbId,type) so accidental dupes don't render twice
@@ -444,12 +446,90 @@
       renderTaskmaster();
     }
 
+    function openTaskmasterPage() {
+      if (!taskmasterEpisodes.length) return;
+      taskmasterPageOpen = true;
+      tmPageFocusIdx = 0;
+      document.body.style.overflow = 'hidden';
+      renderTaskmasterPage();
+      requestAnimationFrame(() => { const el = document.getElementById('tm-ep-0'); if (el) el.focus(); });
+    }
+
+    function closeTaskmasterPage() {
+      taskmasterPageOpen = false;
+      document.body.style.overflow = '';
+      const root = document.getElementById('tm-page-root');
+      if (root) root.innerHTML = '';
+    }
+
+    function renderTaskmasterPage() {
+      const root = document.getElementById('tm-page-root');
+      if (!root) return;
+      if (!taskmasterPageOpen) { root.innerHTML = ''; return; }
+      const bd = taskmasterShow?.backdrop_path ? `${IMG}/w1280${taskmasterShow.backdrop_path}` : '';
+      let h = `<div class="fixed inset-0 z-[150] bg-black flex flex-col" id="tm-page">`;
+      if (bd) h += `<div class="absolute inset-0 pointer-events-none"><img src="${bd}" class="w-full h-full object-cover opacity-15" /></div>`;
+      h += `<div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(to bottom,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.5) 40%,rgba(0,0,0,0.85) 100%)"></div>`;
+      h += `<div class="relative z-10 flex items-center justify-between px-4 md:px-12 py-3 border-b border-white/10 flex-shrink-0">`;
+      h += `<button id="tm-back-btn" onclick="closeTaskmasterPage()" onkeydown="if(event.key==='ArrowDown'){event.preventDefault();var e=document.getElementById('tm-ep-0');if(e)e.focus();}" class="flex items-center gap-2 text-white hover:text-[#FFD700] focus:text-[#FFD700] focus:outline-none transition-colors px-2 py-1 rounded focus:bg-white/10">`;
+      h += `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg><span class="text-sm font-semibold">Back</span></button>`;
+      h += `<div class="flex items-baseline gap-1.5"><span class="text-[#FFD700] text-lg md:text-2xl font-black tracking-tight">TASKMASTER</span><span class="bg-[#FFD700] text-black text-[10px] font-black px-1 py-0.5 rounded">+</span></div>`;
+      h += `<div class="w-20 text-right text-gray-500 text-xs">${taskmasterEpisodes.length} episode${taskmasterEpisodes.length!==1?'s':''}</div>`;
+      h += `</div>`;
+      h += `<div class="relative z-10 flex-1 overflow-y-auto px-4 md:px-12 py-3" id="tm-ep-list">`;
+      h += `<p class="text-gray-500 text-[10px] uppercase tracking-widest mb-3">&#x2191;&#x2193; Navigate &nbsp;&bull;&nbsp; OK to watch &nbsp;&bull;&nbsp; Back to exit</p>`;
+      taskmasterEpisodes.forEach((ep, i) => {
+        const focused = i === 0;
+        const dateStr = ep.pubDate ? new Date(ep.pubDate).toLocaleDateString('en-US',{weekday:'short',month:'long',day:'numeric',year:'numeric'}) : '';
+        const safeTitle = ep.title.replace(/</g,'&lt;').replace(/"/g,'&quot;');
+        h += `<div id="tm-ep-${i}" class="tm-ep-item flex items-center gap-3 md:gap-5 p-3 md:p-4 rounded-xl mb-2 cursor-pointer transition-all focus:outline-none ${focused?'bg-[#FFD700]/15 ring-2 ring-[#FFD700]':'bg-white/5 hover:bg-white/10'}"
+          tabindex="0"
+          onclick="openTaskmasterEpisode(${i})"
+          onkeydown="handleTMEpKey(event,${i})"
+          onfocus="highlightTMEp(${i})">`;
+        h += `<div class="flex-shrink-0 rounded-lg overflow-hidden" style="width:140px;aspect-ratio:16/9;background:#111">`;
+        h += `<img src="${ep.thumbnail}" alt="" class="w-full h-full object-cover" loading="lazy" />`;
+        h += `</div>`;
+        h += `<div class="flex-1 min-w-0">`;
+        h += `<p class="text-white font-bold text-sm md:text-base line-clamp-2 leading-snug">${safeTitle}</p>`;
+        if (dateStr) h += `<p class="text-gray-400 text-xs mt-1">${dateStr}</p>`;
+        h += `</div>`;
+        h += `<div class="flex-shrink-0 mr-1"><div class="bg-[#FFD700] text-black rounded-full p-2.5 md:p-3"><svg class="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>`;
+        h += `</div>`;
+      });
+      h += `</div></div>`;
+      root.innerHTML = h;
+    }
+
+    function highlightTMEp(idx) {
+      tmPageFocusIdx = idx;
+      document.querySelectorAll('.tm-ep-item').forEach((el, i) => {
+        if (i === idx) { el.classList.add('bg-[#FFD700]/15','ring-2','ring-[#FFD700]'); el.classList.remove('bg-white/5'); }
+        else { el.classList.remove('bg-[#FFD700]/15','ring-2','ring-[#FFD700]'); el.classList.add('bg-white/5'); }
+      });
+      const el = document.getElementById(`tm-ep-${idx}`);
+      if (el) el.scrollIntoView({block:'nearest',behavior:'smooth'});
+    }
+
+    function handleTMEpKey(e, idx) {
+      if (e.key === 'Enter') { openTaskmasterEpisode(idx); }
+      else if (e.key === 'ArrowDown') { e.preventDefault(); const n = document.getElementById(`tm-ep-${idx+1}`); if (n) n.focus(); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); const p = document.getElementById(`tm-ep-${idx-1}`); if (p) p.focus(); else document.getElementById('tm-back-btn')?.focus(); }
+      else if (e.key === 'Escape' || e.key === 'Backspace' || e.key === 'GoBack') { closeTaskmasterPage(); }
+    }
+
     function openTaskmasterEpisode(idx) {
+      _lastFocusedBeforeModal = document.activeElement;
       tmEpisodeIdx = idx;
       modalId = null;
       document.body.style.overflow = 'hidden';
       renderModal();
-      requestAnimationFrame(() => { const fs = document.querySelector('.modal-content button[onclick="toggleFullscreen()"]'); if (fs) fs.focus(); });
+      requestAnimationFrame(() => {
+        const overlay = document.querySelector('.modal-overlay');
+        if (overlay) try { (overlay.requestFullscreen || overlay.webkitRequestFullscreen || Function.prototype).call(overlay); } catch {}
+        const fs = document.querySelector('.modal-content button[onclick="toggleFullscreen()"]');
+        if (fs) fs.focus();
+      });
     }
 
     function renderTaskmaster() {
@@ -458,36 +538,20 @@
       if (!taskmasterEpisodes.length && !taskmasterShow) { root.innerHTML = ''; return; }
       const bd = taskmasterShow?.backdrop_path ? `${IMG}/w1280${taskmasterShow.backdrop_path}` : '';
       const ov = taskmasterShow?.overview || 'Five comedians compete in bizarre tasks judged by the all-powerful Taskmaster. Comedy chaos ensues.';
+      const epCount = taskmasterEpisodes.length;
       let h = `<section class="relative bg-[#0a0a0a] border-t-4 border-[#FFD700] mt-2">`;
-      h += `<div class="relative ${bd ? 'h-52 md:h-72' : 'h-24'} overflow-hidden">`;
+      h += `<div class="relative h-48 md:h-64 overflow-hidden">`;
       if (bd) h += `<img src="${bd}" class="w-full h-full object-cover opacity-35" alt="Taskmaster" />`;
       h += `<div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>`;
       h += `<div class="absolute inset-0 flex items-center px-4 md:px-12"><div>`;
       h += `<div class="flex items-baseline gap-1.5 mb-1"><span class="text-[#FFD700] text-3xl md:text-5xl font-black tracking-tight drop-shadow">TASKMASTER</span><span class="bg-[#FFD700] text-black text-xs font-black px-1.5 py-0.5 rounded leading-none">+</span></div>`;
-      h += `<p class="text-gray-300 text-xs md:text-sm max-w-lg line-clamp-2 mb-2 md:mb-3">${ov.replace(/</g,'&lt;')}</p>`;
-      if (taskmasterEpisodes.length) h += `<button onclick="openTaskmasterEpisode(0)" class="bg-[#FFD700] text-black font-bold px-5 py-2 text-xs md:text-sm rounded hover:bg-yellow-300 focus:ring-2 focus:ring-[#FFD700] focus:outline-none transition-colors">▶ Watch Latest Episode</button>`;
-      h += `</div></div></div>`;
-      if (taskmasterEpisodes.length) {
-        h += `<div class="px-4 md:px-12 pb-5 pt-3"><h3 class="text-[#FFD700] font-bold text-xs md:text-sm mb-3 flex items-center gap-2"><span>👑</span><span>Latest Episodes on YouTube</span><span class="text-gray-500 font-normal text-[10px]">— streams free, no subscription needed</span></h3><div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x">`;
-        taskmasterEpisodes.forEach((ep, i) => {
-          const isNew = i === 0;
-          const dateStr = ep.pubDate ? new Date(ep.pubDate).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}) : '';
-          const thumb = ep.thumbnail || `https://img.youtube.com/vi/${ep.videoId}/mqdefault.jpg`;
-          const safeTitle = ep.title.replace(/</g,'&lt;').replace(/"/g,'&quot;');
-          h += `<div class="flex-shrink-0 w-48 md:w-60 snap-start cursor-pointer group" onclick="openTaskmasterEpisode(${i})" tabindex="0" onkeydown="if(event.key==='Enter')openTaskmasterEpisode(${i})">`;
-          h += `<div class="relative rounded overflow-hidden" style="aspect-ratio:16/9;background:#111">`;
-          h += `<img src="${thumb}" alt="${safeTitle}" class="w-full h-full object-cover group-hover:opacity-60 transition-opacity" loading="lazy" />`;
-          h += `<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><div class="bg-white/90 rounded-full p-2"><svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>`;
-          if (isNew) h += `<span class="absolute top-1.5 left-1.5 bg-[#FFD700] text-black text-[9px] font-black px-1.5 py-0.5 rounded">NEW</span>`;
-          h += `</div>`;
-          h += `<p class="text-white text-[11px] md:text-xs mt-1.5 line-clamp-2 font-medium leading-snug">${safeTitle}</p>`;
-          if (dateStr) h += `<p class="text-gray-500 text-[9px] mt-0.5">${dateStr}</p>`;
-          h += `</div>`;
-        });
-        h += `</div></div>`;
-      }
-      h += `</section>`;
+      h += `<p class="text-gray-300 text-xs md:text-sm max-w-lg line-clamp-2 mb-3">${ov.replace(/</g,'&lt;')}</p>`;
+      h += `<div class="flex items-center gap-3 flex-wrap">`;
+      if (epCount > 0) h += `<button onclick="openTaskmasterPage()" class="bg-[#FFD700] text-black font-bold px-6 py-2.5 text-sm rounded hover:bg-yellow-300 focus:ring-2 focus:ring-[#FFD700] focus:outline-none transition-colors flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Browse ${epCount} Episode${epCount!==1?'s':''}</button>`;
+      h += `<span class="text-gray-500 text-xs">👑 Live from YouTube</span>`;
+      h += `</div></div></div></div></section>`;
       root.innerHTML = h;
+      if (taskmasterPageOpen) renderTaskmasterPage();
     }
 
     async function load() {
@@ -851,9 +915,12 @@
         (document.exitFullscreen || document.webkitExitFullscreen).call(document);
         return;
       }
-      modalId = null; tmEpisodeIdx = null; document.body.style.overflow = ''; renderModal();
-      // Return focus to the card that was previously focused
-      if (_lastFocusedBeforeModal && document.body.contains(_lastFocusedBeforeModal)) {
+      modalId = null; tmEpisodeIdx = null;
+      if (!taskmasterPageOpen) document.body.style.overflow = '';
+      renderModal();
+      if (taskmasterPageOpen) {
+        requestAnimationFrame(() => { const el = document.getElementById(`tm-ep-${tmPageFocusIdx}`); if (el) el.focus(); });
+      } else if (_lastFocusedBeforeModal && document.body.contains(_lastFocusedBeforeModal)) {
         _lastFocusedBeforeModal.focus({preventScroll: true});
       }
       _lastFocusedBeforeModal = null;
