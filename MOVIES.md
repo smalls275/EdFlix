@@ -2,8 +2,8 @@
 
 _Auto-generated from `index.html` DATA array._
 
-**Unique titles:** 281 (Movies: 274  TV Series: 7)
-**Source rows:** 287  (includes 6 duplicate entries)
+**Unique titles:** 289 (Movies: 282  TV Series: 7)
+**Source rows:** 295  (includes 6 duplicate entries)
 
 ## Duplicate entries in DATA (deduped at runtime)
 
@@ -16,9 +16,9 @@ _Auto-generated from `index.html` DATA array._
 
 ## By format
 
-- **3D Blu-ray**: 37
-- **4K UHD**: 137
-- **Blu-ray**: 92
+- **3D Blu-ray**: 38
+- **4K UHD**: 141
+- **Blu-ray**: 95
 - **DVD**: 25
 
 ## Full list (alphabetical)
@@ -292,17 +292,25 @@ _Auto-generated from `index.html` DATA array._
 | The Thing | movie | 4K UHD | Horror, Mystery, Sci-Fi | Living Room | 1091 |
 | The Wild Robot | movie | 4K UHD | Animation, Adventure, Family | Living Room | 1184918 |
 | The World's End | movie | Blu-ray | Action, Comedy, Sci-Fi | Living Room | 107985 |
+| There Will Be Blood | movie | Blu-ray | Drama, Western | Living Room | 7345 |
 | They Live | movie | 4K UHD | Action, Horror, Sci-Fi | Living Room | 8337 |
 | Thor: Ragnarok | movie | 3D Blu-ray | Action, Adventure, Comedy | Living Room | 284053 |
 | Titanic | movie | 4K UHD | Drama, Romance | Living Room | 597 |
 | To Kill a Mockingbird | movie | 4K UHD | Crime, Drama | Living Room | 595 |
 | Tommy Boy | movie | 4K UHD | Comedy | Living Room | 11381 |
+| Total Recall | movie | 4K UHD | Action, Sci-Fi, Thriller | Living Room | 861 |
+| TRON: Legacy | movie | 3D Blu-ray | Action, Adventure, Sci-Fi | Living Room | 20526 |
+| True Romance | movie | Blu-ray | Crime, Drama, Romance, Thriller | Living Room | 319 |
 | Twister | movie | 4K UHD | Action, Adventure, Thriller | Living Room | 664 |
 | UHF | movie | 4K UHD | Comedy | Living Room | 11959 |
 | Vanilla Sky | movie | Blu-ray | Fantasy, Mystery, Romance | Living Room | 1903 |
+| Vertigo | movie | 4K UHD | Mystery, Romance, Thriller | Living Room | 426 |
+| Videodrome | movie | Blu-ray | Horror, Sci-Fi, Thriller | Living Room | 837 |
 | Wanderlust | movie | Blu-ray | Comedy, Romance | Living Room | 50647 |
 | Weapons | movie | 4K UHD | Horror, Mystery | Living Room | 1078605 |
 | Wes Craven's New Nightmare | movie | 4K UHD | Fantasy, Horror, Mystery | Living Room | 11596 |
 | Wet Hot American Summer | movie | Blu-ray | Comedy | Living Room | 2171 |
 | What We Did on Our Holiday | movie | DVD | Comedy, Drama | Living Room | 276843 |
 | White Christmas | movie | 4K UHD | Comedy, Musical, Romance | Living Room | 13368 |
+| Willy Wonka & the Chocolate Factory | movie | 4K UHD | Adventure, Comedy, Family, Fantasy, Musical | Living Room | 252 |
+| Wonka | movie | 4K UHD | Adventure, Comedy, Family, Fantasy, Musical | Living Room | 787699 |
