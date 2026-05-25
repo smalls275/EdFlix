@@ -420,13 +420,17 @@
       try {
         const now = new Date();
         const today = now.toISOString().slice(0, 10);
+        // Window starts 60 days ago so films still in their US theatrical run are included
+        const windowStart = new Date(now); windowStart.setDate(windowStart.getDate() - 60);
+        const windowStartStr = windowStart.toISOString().slice(0, 10);
         const windowEnd = new Date(now); windowEnd.setMonth(windowEnd.getMonth() + 18);
         const windowEndStr = windowEnd.toISOString().slice(0, 10);
 
         // Pull from multiple sources / sort orders so we don't miss less-popular or far-out films
         const sources = [
-          `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=2|3&release_date.gte=${today}&release_date.lte=${windowEndStr}&sort_by=popularity.desc`,
-          `https://api.themoviedb.org/3/movie/upcoming?api_key=${KEY}&region=US`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=2|3&release_date.gte=${windowStartStr}&release_date.lte=${windowEndStr}&sort_by=popularity.desc`,
+          `https://api.themoviedb.org/3/movie/upcoming?api_key=${KEY}&region=US`,
+          `https://api.themoviedb.org/3/movie/now_playing?api_key=${KEY}&region=US`
         ];
         const PAGE_CAP = 5; // ~100 results per source
 
@@ -480,8 +484,8 @@
                                    (d.origin_country || []).includes('US');
                 if (usProduced) usReleaseDate = d.release_date;
               }
-              // Require a release in our window
-              if (!usReleaseDate || usReleaseDate < today || usReleaseDate > windowEndStr) return null;
+              // Require a release in our window (includes films currently in theaters)
+              if (!usReleaseDate || usReleaseDate < windowStartStr || usReleaseDate > windowEndStr) return null;
               // Require a trailer to exist (already released to the public)
               const hasTrailer = (d.videos?.results || []).some(v => v.site === 'YouTube' && (v.type === 'Trailer' || v.type === 'Teaser'));
               if (!hasTrailer) return null;
@@ -512,7 +516,7 @@
     function cats(fr) {
       if (search.trim()) return [{title: `Search Results for "${search}"`, movies: fr}];
       const c = [];
-      if (upcoming.length && filter === 'all') c.push({title: '🎬 Coming Soon to Theaters', movies: upcoming});
+      if (upcoming.length && filter === 'all') c.push({title: '🎬 In Theaters & Coming Soon', movies: upcoming});
       const fav = fr.filter(m => m.tags?.includes('favorites'));
       if (fav.length) c.push({title: 'Family Favorites', movies: fav});
       const threeD = fr.filter(m => m.formats.includes('3D Blu-ray'));
@@ -598,7 +602,10 @@
       const poster = t.poster_path ? `${IMG}/w500${t.poster_path}` : '';
       if (m.isUpcoming) {
         const rd = t.release_date ? new Date(t.release_date + 'T00:00:00').toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'}) : '';
-        return `<button onclick="openModal(${m.tmdbId})" class="movie-card flex-shrink-0 w-[160px] md:w-[200px] group cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-[#E50914] rounded-md"><div class="relative rounded-md overflow-hidden bg-[#181818] aspect-[2/3]">${poster ? `<img src="${poster}" alt="${m.title}" class="w-full h-full object-cover" loading="lazy" />` : `<div class="w-full h-full flex items-center justify-center text-gray-500 text-sm px-2 text-center">${m.title}</div>`}<div class="absolute top-2 left-2 bg-[#E50914] text-white text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded">Coming Soon</div><div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3"><p class="text-white text-xs font-semibold truncate">${m.title}</p><div class="flex items-center gap-2 text-[10px] text-gray-300 mt-0.5">${rd ? `<span>📅 ${rd}</span>` : ''}</div></div></div></button>`;
+        const todayStr = new Date().toISOString().slice(0,10);
+        const inTheaters = t.release_date && t.release_date <= todayStr;
+        const badgeText = inTheaters ? 'In Theaters' : 'Coming Soon';
+        return `<button onclick="openModal(${m.tmdbId})" class="movie-card flex-shrink-0 w-[160px] md:w-[200px] group cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-[#E50914] rounded-md"><div class="relative rounded-md overflow-hidden bg-[#181818] aspect-[2/3]">${poster ? `<img src="${poster}" alt="${m.title}" class="w-full h-full object-cover" loading="lazy" />` : `<div class="w-full h-full flex items-center justify-center text-gray-500 text-sm px-2 text-center">${m.title}</div>`}<div class="absolute top-2 left-2 bg-[#E50914] text-white text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded">${badgeText}</div><div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3"><p class="text-white text-xs font-semibold truncate">${m.title}</p><div class="flex items-center gap-2 text-[10px] text-gray-300 mt-0.5">${rd ? `<span>📅 ${rd}</span>` : ''}</div></div></div></button>`;
       }
       const s = st(m.status, m.checkedOutBy);
       return `<button onclick="openModal(${m.tmdbId})" class="movie-card flex-shrink-0 w-[160px] md:w-[200px] group cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-[#E50914] rounded-md"><div class="relative rounded-md overflow-hidden bg-[#181818] aspect-[2/3]">${poster ? `<img src="${poster}" alt="${m.title}" class="w-full h-full object-cover" loading="lazy" />` : `<div class="w-full h-full flex items-center justify-center text-gray-500 text-sm px-2 text-center">${m.title}</div>`}${m.status !== 'available' ? `<div class="absolute top-2 right-2 bg-black/80 rounded-full p-1 text-xs ${s.c}">●</div>` : ''}<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3"><div class="flex items-center gap-1.5 mb-1.5 flex-wrap">${m.formats.map(f => badge(f)).join('')}</div><p class="text-white text-xs font-semibold truncate">${m.title}</p><div class="flex items-center gap-2 text-[10px] text-gray-300 mt-0.5">${y ? `<span>${y}</span>` : ''}${r ? `<span class="text-yellow-400">★ ${r}</span>` : ''}</div><div class="flex items-center gap-1 mt-1 text-[10px] ${s.c}"><span>${s.l}</span></div>${m.location ? `<div class="text-[10px] text-gray-400 mt-0.5 truncate">📍 ${m.location}</div>` : ''}</div></div></button>`;
