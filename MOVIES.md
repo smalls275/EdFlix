@@ -2,8 +2,8 @@
 
 _Auto-generated from `index.html` DATA array._
 
-**Unique titles:** 291 (Movies: 284  TV Series: 7)
-**Source rows:** 297  (includes 6 duplicate entries)
+**Unique titles:** 296 (Movies: 289  TV Series: 7)
+**Source rows:** 302  (includes 6 duplicate entries)
 
 ## Duplicate entries in DATA (deduped at runtime)
 
@@ -17,7 +17,7 @@ _Auto-generated from `index.html` DATA array._
 ## By format
 
 - **3D Blu-ray**: 38
-- **4K UHD**: 141
+- **4K UHD**: 146
 - **Blu-ray**: 95
 - **DVD**: 27
 
@@ -103,6 +103,7 @@ _Auto-generated from `index.html` DATA array._
 | Elf | movie | 4K UHD | Comedy, Family, Fantasy | Living Room | 10719 |
 | Enchanted | movie | Blu-ray | Animation, Adventure, Comedy | Living Room | 4523 |
 | Exit Through the Gift Shop | movie | DVD | Documentary, Comedy, Crime | Living Room | 39452 |
+| Family Plot | movie | 4K UHD | Comedy, Mystery, Thriller | Living Room | 5854 |
 | Fantastic Mr. Fox | movie | Blu-ray | Animation, Adventure, Comedy | Living Room | 10315 |
 | Fear and Loathing in Las Vegas | movie | 4K UHD | Adventure, Comedy, Drama | Living Room | 1878 |
 | Fight Club | movie | Blu-ray | Drama | Living Room | 550 |
@@ -166,6 +167,7 @@ _Auto-generated from `index.html` DATA array._
 | Mad Max: Fury Road | movie | 4K UHD, 3D Blu-ray | Action, Adventure, Sci-Fi | Living Room | 76341 |
 | Major League | movie | 4K UHD | Comedy, Sport | Living Room | 9942 |
 | Mallrats | movie | 4K UHD | Comedy, Romance | Living Room | 2293 |
+| Marnie | movie | 4K UHD | Crime, Drama, Mystery, Thriller | Living Room | 506 |
 | Mindhorn | movie | Blu-ray | Action, Adventure, Comedy | Living Room | 381518 |
 | Moana | movie | 3D Blu-ray | Animation, Adventure, Family | Living Room | 277834 |
 | Monster Dog | movie | Blu-ray | Horror, Music | Living Room | 87148 |
@@ -206,6 +208,8 @@ _Auto-generated from `index.html` DATA array._
 | RoboCop 2 | movie | 4K UHD | Action, Crime, Sci-Fi | Living Room | 5549 |
 | Role Models | movie | Blu-ray | Comedy | Living Room | 15373 |
 | Rome | tv | Blu-ray | Drama, History, War | Living Room | 1891 |
+| Saboteur | movie | 4K UHD | Mystery, Thriller | Living Room | 31997 |
+| Shadow of a Doubt | movie | 4K UHD | Drama, Mystery, Thriller | Living Room | 21734 |
 | Shaun of the Dead | movie | Blu-ray | Comedy, Horror | Living Room | 747 |
 | Shazam! | movie | 4K UHD | Action, Adventure, Comedy | Living Room | 287947 |
 | Shoot 'Em Up | movie | Blu-ray | Action, Comedy, Thriller | Living Room | 4141 |
@@ -292,6 +296,7 @@ _Auto-generated from `index.html` DATA array._
 | The Super Mario Bros. Movie | movie | 4K UHD | Animation, Adventure, Comedy, Family | Living Room | 502356 |
 | The Terminator | movie | 4K UHD | Action, Sci-Fi, Thriller | Living Room | 218 |
 | The Thing | movie | 4K UHD | Horror, Mystery, Sci-Fi | Living Room | 1091 |
+| The Trouble with Harry | movie | 4K UHD | Comedy, Mystery | Living Room | 11219 |
 | The Wild Robot | movie | 4K UHD | Animation, Adventure, Family | Living Room | 1184918 |
 | The World's End | movie | Blu-ray | Action, Comedy, Sci-Fi | Living Room | 107985 |
 | There Will Be Blood | movie | Blu-ray | Drama, Western | Living Room | 7345 |
