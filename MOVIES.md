@@ -2,8 +2,8 @@
 
 _Auto-generated from `index.html` DATA array._
 
-**Unique titles:** 278 (Movies: 274  TV Series: 4)
-**Source rows:** 284  (includes 6 duplicate entries)
+**Unique titles:** 281 (Movies: 274  TV Series: 7)
+**Source rows:** 287  (includes 6 duplicate entries)
 
 ## Duplicate entries in DATA (deduped at runtime)
 
@@ -18,7 +18,7 @@ _Auto-generated from `index.html` DATA array._
 
 - **3D Blu-ray**: 37
 - **4K UHD**: 137
-- **Blu-ray**: 89
+- **Blu-ray**: 92
 - **DVD**: 25
 
 ## Full list (alphabetical)
@@ -107,6 +107,8 @@ _Auto-generated from `index.html` DATA array._
 | Fight Club | movie | Blu-ray | Drama | Living Room | 550 |
 | Finding Dory | movie | Blu-ray | Animation, Adventure, Comedy | Living Room | 127380 |
 | Force 10 from Navarone | movie | Blu-ray | Action, Drama, War | Living Room | 17339 |
+| Frank Herbert's Children of Dune | tv | Blu-ray | Drama, Sci-Fi | Living Room | 9156 |
+| Frank Herbert's Dune | tv | Blu-ray | Drama, Sci-Fi | Living Room | 19566 |
 | Freddy's Dead: The Final Nightmare | movie | 4K UHD | Fantasy, Horror | Living Room | 11284 |
 | Frozen | movie | 4K UHD, 3D Blu-ray | Animation, Adventure, Family | Living Room | 109445 |
 | Frozen Fever | movie | DVD | Animation, Comedy, Family | Living Room | 326359 |
@@ -264,6 +266,7 @@ _Auto-generated from `index.html` DATA array._
 | The Little Mermaid | movie | 3D Blu-ray | Animation, Adventure, Family | Living Room | 10144 |
 | The Lord of the Rings: The Fellowship of the Ring | movie | 4K UHD | Adventure, Fantasy | Living Room | 120 |
 | The Lord of the Rings: The Return of the King | movie | 4K UHD | Adventure, Fantasy | Living Room | 122 |
+| The Lord of the Rings: The Rings of Power | tv | Blu-ray | Action, Adventure, Drama, Fantasy | Living Room | 84773 |
 | The Lord of the Rings: The Two Towers | movie | 4K UHD | Adventure, Fantasy | Living Room | 121 |
 | The Lost World: Jurassic Park | movie | 4K UHD | Action, Adventure, Sci-Fi | Living Room | 330 |
 | The Martian | movie | 3D Blu-ray | Adventure, Drama, Sci-Fi | Living Room | 286217 |
