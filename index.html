@@ -646,11 +646,33 @@
     // D-pad / arrow key navigation between cards and rows (Silk / Fire TV friendly).
     // Use capture phase so Silk's built-in spatial nav doesn't swallow the key first.
     document.addEventListener('keydown', e => {
-      if (modalId) return; // modal handles its own keys
       const tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea') return; // don't hijack typing in search
       const k = e.key;
       if (k !== 'ArrowLeft' && k !== 'ArrowRight' && k !== 'ArrowUp' && k !== 'ArrowDown') return;
+
+      // When modal is open: arrows scroll the modal content (Up/Down) and toggle between FS/Close (Left/Right)
+      if (modalId) {
+        if (document.fullscreenElement || document.webkitFullscreenElement) return; // let YouTube handle keys in fullscreen
+        const overlay = document.querySelector('.modal-overlay');
+        if (k === 'ArrowUp' || k === 'ArrowDown') {
+          if (overlay) {
+            e.preventDefault();
+            overlay.scrollBy({top: k === 'ArrowUp' ? -160 : 160, behavior: 'smooth'});
+          }
+        } else if (k === 'ArrowLeft' || k === 'ArrowRight') {
+          // Move focus between Fullscreen and Close buttons
+          const btns = document.querySelectorAll('.modal-content > button');
+          if (btns.length >= 2) {
+            e.preventDefault();
+            const cur = document.activeElement;
+            const idx = Array.prototype.indexOf.call(btns, cur);
+            const next = k === 'ArrowLeft' ? Math.max(0, idx - 1) : Math.min(btns.length - 1, idx + 1);
+            btns[next === -1 ? 0 : next].focus();
+          }
+        }
+        return;
+      }
 
       let card = document.activeElement && document.activeElement.classList?.contains('movie-card')
         ? document.activeElement : null;
