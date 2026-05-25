@@ -806,8 +806,9 @@
     // Use 'click' (bubble) not 'mousedown' so the close doesn't expose a card under the cursor mid-click and trigger a new openModal.
     document.addEventListener('click', e => {
       if (!modalId) return;
-      // Ignore the card click that just opened the modal (it bubbles up here after openModal runs)
+      // Ignore the card or hero button click that just opened the modal (it bubbles up here after openModal runs)
       if (e.target.closest && e.target.closest('.movie-card')) return;
+      if (e.target.closest && e.target.closest('#hero-root')) return;
       const content = document.querySelector('.modal-content');
       if (content && !content.contains(e.target)) closeModal();
     });
