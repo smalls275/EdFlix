@@ -611,8 +611,6 @@
       if (upcoming.length && filter === 'all') c.push({title: '🎬 In Theaters & Coming Soon', movies: upcoming});
       const fav = fr.filter(m => m.tags?.includes('favorites'));
       if (fav.length) c.push({title: 'Family Favorites', movies: fav});
-      const hitchcock = fr.filter(m => m.tags?.includes('hitchcock')).sort((a,b) => a.title.localeCompare(b.title));
-      if (hitchcock.length) c.push({title: '🎥 Alfred Hitchcock Collection', movies: hitchcock});
       const threeD = fr.filter(m => m.formats.includes('3D Blu-ray'));
       if (threeD.length) c.push({title: '3D Movies', movies: threeD});
       const tv = fr.filter(m => m.type === 'tv' || m.notes?.includes('TV Series'));
@@ -663,6 +661,9 @@
       };
       const driveIn = fr.filter(m => driveInScore(m) >= 10).sort((a,b) => driveInScore(b) - driveInScore(a)).slice(0, 20);
       push('🚗 Drive-In Double Feature', driveIn);
+
+      const hitchcock = fr.filter(m => m.tags?.includes('hitchcock')).sort((a,b) => a.title.localeCompare(b.title));
+      if (hitchcock.length) c.push({title: '🎥 Alfred Hitchcock Collection', movies: hitchcock});
 
       // Catch-all: every title appears in A–Z so nothing is invisible without searching
       const allAZ = [...fr].sort((a,b) => a.title.localeCompare(b.title));
@@ -911,9 +912,6 @@
       // doesn't tear down the rest of the app DOM (preserves focus, search input, etc).
       html += `<div id="hero-root"></div>`;
 
-      // Taskmaster+ section (isolated root, populated by renderTaskmaster)
-      html += `<div id="taskmaster-root"></div>`;
-
       // Stats bar
       const heroVisible = !search && heroPick && heroPick.tmdbData?.backdrop_path;
       html += `<div class="px-3 md:px-12 ${heroVisible ? '-mt-4' : 'pt-20 md:pt-24'} pb-4 relative z-10"><div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3"><div class="flex items-center gap-3 text-sm text-gray-400"><svg class="w-4 h-4 text-[#E50914]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span><strong class="text-white">${movies.length}</strong> titles</span><span class="text-gray-600">|</span><span><strong class="text-green-400">${movies.filter(m => m.status === 'available').length}</strong> available</span></div><div class="flex items-center gap-1 md:gap-2 flex-wrap"><svg class="w-4 h-4 text-gray-500 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>${[['All','all'],['Available','available'],['Checked Out','checked-out'],['4K UHD','4K UHD'],['Blu-ray','Blu-ray'],['3D','3D Blu-ray'],['DVD','DVD'],['VHS','VHS']].map(([l,v]) => `<button onclick="filter='${v}';render();" class="text-[10px] md:text-xs px-2 md:px-3 py-1 md:py-1.5 rounded-full transition-colors ${filter === v ? 'bg-white text-black font-semibold' : 'bg-[#2F2F2F] text-gray-300 hover:bg-gray-600'}">${l}</button>`).join('')}</div></div></div>`;
@@ -925,7 +923,11 @@
 
       // No results
       if (fr.length === 0) html += `<div class="flex items-center justify-center py-24 text-center"><p class="text-gray-400 text-lg mb-2">No movies found</p><p class="text-gray-600 text-sm">Try a different search or filter</p></div>`;
-      else html += `<div class="pb-12">${ca.map(row).join('')}</div>`;
+      else {
+        const rows = ca.map(row);
+        const splitAt = Math.min(2, rows.length);
+        html += `<div class="pb-12">${rows.slice(0, splitAt).join('')}<div id="taskmaster-root"></div>${rows.slice(splitAt).join('')}</div>`;
+      }
 
       html += `</main>`;
 
