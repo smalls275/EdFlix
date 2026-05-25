@@ -2,8 +2,8 @@
 
 _Auto-generated from `index.html` DATA array._
 
-**Unique titles:** 289 (Movies: 282  TV Series: 7)
-**Source rows:** 295  (includes 6 duplicate entries)
+**Unique titles:** 291 (Movies: 284  TV Series: 7)
+**Source rows:** 297  (includes 6 duplicate entries)
 
 ## Duplicate entries in DATA (deduped at runtime)
 
@@ -19,7 +19,7 @@ _Auto-generated from `index.html` DATA array._
 - **3D Blu-ray**: 38
 - **4K UHD**: 141
 - **Blu-ray**: 95
-- **DVD**: 25
+- **DVD**: 27
 
 ## Full list (alphabetical)
 
@@ -90,6 +90,7 @@ _Auto-generated from `index.html` DATA array._
 | Dirty Dancing | movie | 4K UHD | Drama, Music, Romance | Living Room | 88 |
 | Django Unchained | movie | Blu-ray | Drama, Western | Living Room | 68718 |
 | Donnie Darko | movie | 4K UHD | Drama, Mystery, Sci-Fi | Living Room | 141 |
+| Don't Tell Mom the Babysitter's Dead | movie | DVD | Comedy | Living Room | 15413 |
 | Dora the Explorer: Big Sister Dora | movie | DVD | Animation, Adventure, Comedy | Living Room | 373868 |
 | Double Indemnity | movie | 4K UHD | Crime, Drama, Film-Noir | Living Room | 996 |
 | Dredd | movie | 3D Blu-ray | Action, Crime, Sci-Fi | Living Room | 49049 |
@@ -124,6 +125,7 @@ _Auto-generated from `index.html` DATA array._
 | Grease 2 | movie | Blu-ray | Comedy, Musical, Romance | Living Room | 9037 |
 | Gremlins | movie | Blu-ray | Comedy, Fantasy, Horror | Living Room | 927 |
 | Gremlins 2: The New Batch | movie | Blu-ray | Comedy, Fantasy, Horror | Living Room | 928 |
+| Grumpy Old Men | movie | DVD | Comedy, Drama, Romance | Living Room | 11520 |
 | Hail, Caesar! | movie | Blu-ray | Comedy, Mystery | Living Room | 270487 |
 | Happy Feet | movie | DVD | Animation, Adventure, Comedy | Living Room | 9836 |
 | Hellraiser | movie | 4K UHD | Horror | Living Room | 9003 |
