@@ -860,7 +860,12 @@
 
     // Debounced search so typing doesn't trigger a full render per keystroke (helps low-power devices)
     let _searchTimer = null;
+    let _searchHadFocus = false;
+    let _searchCursorPos = 0;
     function queueSearch(v) {
+      const input = document.querySelector('input[type="text"][placeholder*="Search"]');
+      _searchHadFocus = input && document.activeElement === input;
+      _searchCursorPos = input?.selectionStart || 0;
       search = v;
       if (_searchTimer) clearTimeout(_searchTimer);
       _searchTimer = setTimeout(() => { _searchTimer = null; render(); }, 180);
@@ -1081,6 +1086,18 @@
       renderTaskmaster();
       renderModal();
       maybeAutoFocusFirstCard();
+
+      // Restore search input focus and cursor position after render
+      if (_searchHadFocus) {
+        const input = document.querySelector('input[type="text"][placeholder*="Search"]');
+        if (input) {
+          input.focus();
+          if (_searchCursorPos && input.setSelectionRange) {
+            input.setSelectionRange(_searchCursorPos, _searchCursorPos);
+          }
+        }
+        _searchHadFocus = false;
+      }
     }
 
     function renderHero() {
