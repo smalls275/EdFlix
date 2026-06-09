@@ -1,0 +1,1642 @@
+﻿Keyboard Diagnostic Report - 05/23/2026 18:42:08
+=================================================
+
+### System Info ###
+-------------------------------------------------
+
+
+Manufacturer : Alienware
+Model        : Alienware x17 R1
+SystemFamily : Alienware
+
+
+
+
+
+Manufacturer      : Alienware
+SMBIOSBIOSVersion : 1.32.0
+ReleaseDate       : 12/8/2025 7:00:00 PM
+
+
+
+
+
+Caption        : Microsoft Windows 11 Home
+Version        : 10.0.26200
+BuildNumber    : 26200
+OSArchitecture : 64-bit
+LastBootUpTime : 5/23/2026 1:54:27 PM
+
+
+
+
+### Keyboard Devices (PnP) ###
+-------------------------------------------------
+
+
+Status             : OK
+FriendlyName       : HID Keyboard Device
+InstanceId         : HID\CONVERTEDDEVICE&COL01\5&32CF90E6&0&0000
+Problem            : CM_PROB_NONE
+ProblemDescription : 
+
+Status             : OK
+FriendlyName       : Standard PS/2 Keyboard
+InstanceId         : ACPI\MSFT0001\4&247CD731&0
+Problem            : CM_PROB_NONE
+ProblemDescription : 
+
+Status             : OK
+FriendlyName       : HID Keyboard Device
+InstanceId         : HID\VID_0D62&PID_BABC&COL03\6&13FCA618&0&0002
+Problem            : CM_PROB_NONE
+ProblemDescription : 
+
+
+
+
+### HID Devices ###
+-------------------------------------------------
+
+Status FriendlyName                             InstanceId                                                                   Problem
+------ ------------                             ----------                                                                   -------
+OK     HID-compliant consumer control device    HID\VID_0D62&PID_BABC&COL04\6&13FCA618&0&0003                           CM_PROB_NONE
+OK     HID PCI Minidriver for ISS               {DEA5AE2A-D1FD-438A-A091-CBD484788436}\VID_8087&PID_0AC2\5&E681FB1&0&00 CM_PROB_NONE
+OK     HID-compliant vendor-defined device      HID\VID_187C&PID_0550\6&1C2BC3D3&0&0000                                 CM_PROB_NONE
+OK     HID-compliant consumer control device    HID\CONVERTEDDEVICE&COL02\5&32CF90E6&0&0001                             CM_PROB_NONE
+OK     USB Input Device                         USB\VID_1EA7&PID_0064\5&22528FA9&0&6                                    CM_PROB_NONE
+OK     USB Input Device                         USB\VID_187C&PID_0550\00.01                                             CM_PROB_NONE
+OK     HID-compliant vendor-defined device      HID\DELL0A8F&COL04\5&4DCED90&0&0003                                     CM_PROB_NONE
+OK     Portable Device Control device           HID\INTC816\3&D2322F2&0&0000                                            CM_PROB_NONE
+OK     Microsoft Input Configuration Device     HID\DELL0A8F&COL03\5&4DCED90&0&0002                                     CM_PROB_NONE
+OK     HID-compliant touch pad                  HID\DELL0A8F&COL02\5&4DCED90&0&0001                                     CM_PROB_NONE
+OK     USB Input Device                         USB\VID_0D62&PID_BABC\5&22528FA9&0&9                                    CM_PROB_NONE
+OK     HID-compliant vendor-defined device      HID\VID_0D62&PID_BABC&COL01\6&13FCA618&0&0000                           CM_PROB_NONE
+OK     HID-compliant system controller          HID\CONVERTEDDEVICE&COL03\5&32CF90E6&0&0002                             CM_PROB_NONE
+OK     HID-compliant vendor-defined device      HID\VID_0D62&PID_BABC&COL02\6&13FCA618&0&0001                           CM_PROB_NONE
+OK     Converted Portable Device Control device BUTTONCONVERTER\CONVERTEDDEVICE\4&23CB1920&0&0                          CM_PROB_NONE
+OK     I2C HID Device                           ACPI\DELL0A8F\1                                                         CM_PROB_NONE
+OK     HID-compliant vendor-defined device      HID\VID_1EA7&PID_0064&COL01\6&21605432&1&0000                           CM_PROB_NONE
+OK     Intel(R) HID Event Filter                ACPI\INTC1051\2&DABA3FF&0                                               CM_PROB_NONE
+
+
+
+### Keyboard Drivers ###
+-------------------------------------------------
+
+
+DeviceName    : HID Keyboard Device
+DriverVersion : 10.0.26100.8328
+DriverDate    : 6/20/2006 8:00:00 PM
+Manufacturer  : (Standard keyboards)
+InfName       : keyboard.inf
+
+DeviceName    : Standard PS/2 Keyboard
+DriverVersion : 10.0.26100.8328
+DriverDate    : 6/20/2006 8:00:00 PM
+Manufacturer  : (Standard keyboards)
+InfName       : keyboard.inf
+
+DeviceName    : HID Keyboard Device
+DriverVersion : 10.0.26100.8328
+DriverDate    : 6/20/2006 8:00:00 PM
+Manufacturer  : (Standard keyboards)
+InfName       : keyboard.inf
+
+
+
+
+### USB Power Management (Allow turn off to save power) ###
+-------------------------------------------------
+ACPI\INTC1051\2&daba3ff&0_0  Enabled=True
+PCI\VEN_8086&DEV_43ED&SUBSYS_0A8F1028&REV_11\3&11583659&0&A0_0  Enabled=True
+PCI\VEN_8086&DEV_9A17&SUBSYS_00000000&REV_05\3&11583659&0&68_0  Enabled=True
+PCI\VEN_8086&DEV_43E8&SUBSYS_0A8F1028&REV_11\3&11583659&0&A8_0  Enabled=True
+PCI\VEN_8086&DEV_43C8&SUBSYS_0A8F1028&REV_11\3&11583659&0&FB_0  Enabled=True
+USB\ROOT_HUB30\4&394145fb&0&0_0  Enabled=True
+PCI\VEN_8086&DEV_43E0&SUBSYS_0A8F1028&REV_11\3&11583659&0&B0_0  Enabled=True
+USB\ROOT_HUB30\4&7c05156&0&0_0  Enabled=True
+PCI\VEN_8086&DEV_9A1F&SUBSYS_11112222&REV_05\3&11583659&0&6A_0  Enabled=True
+ACPI\DELL0A8F\1_0  Enabled=True
+ButtonConverter\ConvertedDevice\4&23cb1920&0&0_0  Enabled=True
+INTELAUDIO\DSP_CTLR_DEV_43C8&VEN_8086&DEV_0222&SUBSYS_0A8F1028&REV_0011\4&29282690&0&0800_0  Enabled=True
+USB\VID_187C&PID_0550\00.01_0  Enabled=True
+USB\VID_1EA7&PID_0064\5&22528fa9&0&6_0  Enabled=True
+USB\VID_0D62&PID_BABC\5&22528fa9&0&9_0  Enabled=True
+USB\VID_8087&PID_0032\5&22528fa9&0&14_0  Enabled=True
+{DEA5AE2A-D1FD-438A-A091-CBD484788436}\Vid_8087&Pid_0AC2\5&e681fb1&0&00_0  Enabled=True
+{DD8E82AE-334B-49A2-AEAE-AEB0FD5C40DD}\DetectionVerification\5&12a0c8b&0&0_0  Enabled=True
+{5d624f94-8850-40c3-a3fa-a4fd2080baf3}\vwifimp_wfd\5&4d95fc3&0&11_0  Enabled=True
+{5d624f94-8850-40c3-a3fa-a4fd2080baf3}\vwifimp_wfd\5&4d95fc3&0&12_0  Enabled=True
+
+### Active Power Plan ###
+-------------------------------------------------
+Power Scheme GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (High performance)
+
+USB selective suspend setting:
+
+### Filter Keys / Sticky Keys / Accessibility ###
+-------------------------------------------------
+
+
+AutoRepeatDelay        : 1000
+AutoRepeatRate         : 500
+BounceTime             : 0
+DelayBeforeAcceptance  : 1000
+Flags                  : 102
+Last BounceKey Setting : 0
+Last Valid Delay       : 0
+Last Valid Repeat      : 0
+Last Valid Wait        : 1000
+PSPath                 : Microsoft.PowerShell.Core\Registry::HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard 
+                         Response
+PSParentPath           : Microsoft.PowerShell.Core\Registry::HKEY_CURRENT_USER\Control Panel\Accessibility
+PSChildName            : Keyboard Response
+PSDrive                : HKCU
+PSProvider             : Microsoft.PowerShell.Core\Registry
+
+
+
+
+
+Flags        : 2
+PSPath       : Microsoft.PowerShell.Core\Registry::HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys
+PSParentPath : Microsoft.PowerShell.Core\Registry::HKEY_CURRENT_USER\Control Panel\Accessibility
+PSChildName  : StickyKeys
+PSDrive      : HKCU
+PSProvider   : Microsoft.PowerShell.Core\Registry
+
+
+
+
+
+Flags        : 38
+PSPath       : Microsoft.PowerShell.Core\Registry::HKEY_CURRENT_USER\Control Panel\Accessibility\ToggleKeys
+PSParentPath : Microsoft.PowerShell.Core\Registry::HKEY_CURRENT_USER\Control Panel\Accessibility
+PSChildName  : ToggleKeys
+PSDrive      : HKCU
+PSProvider   : Microsoft.PowerShell.Core\Registry
+
+
+
+
+### Thermal Zones (current temps in Kelvin*10 -> Celsius) ###
+-------------------------------------------------
+
+### Battery / Power Source ###
+-------------------------------------------------
+
+
+Name                     : PABAS0241231
+BatteryStatus            : 2
+EstimatedChargeRemaining : 100
+DesignVoltage            : 12314
+
+
+
+
+### Recent System Event Log Errors/Warnings (last 3 days) ###
+-------------------------------------------------
+
+
+TimeCreated      : 5/23/2026 6:01:34 PM
+Id               : 10016
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-DistributedCOM
+Message          : The application-specific permission settings do not grant Local Activation permission for the COM 
+                   Server application with CLSID 
+                   {2593F8B9-4EAF-457C-B68A-50F6B8EA6B54}
+                    and APPID 
+                   {15C20B67-12E7-4BB6-92BB-7AFF07997402}
+                    to the user DESKTOP-H10I3JQ\Edward SID (S-1-5-21-4111830499-752027429-2964234843-1001) from 
+                   address LocalHost (Using LRPC) running in the application container Unavailable SID (Unavailable). 
+                   This security permission can be modified using the Component Services administrative tool.
+
+TimeCreated      : 5/23/2026 5:57:38 PM
+Id               : 10016
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-DistributedCOM
+Message          : The application-specific permission settings do not grant Local Activation permission for the COM 
+                   Server application with CLSID 
+                   {2593F8B9-4EAF-457C-B68A-50F6B8EA6B54}
+                    and APPID 
+                   {15C20B67-12E7-4BB6-92BB-7AFF07997402}
+                    to the user DESKTOP-H10I3JQ\Edward SID (S-1-5-21-4111830499-752027429-2964234843-1001) from 
+                   address LocalHost (Using LRPC) running in the application container Unavailable SID (Unavailable). 
+                   This security permission can be modified using the Component Services administrative tool.
+
+TimeCreated      : 5/23/2026 5:49:38 PM
+Id               : 6062
+LevelDisplayName : Warning
+ProviderName     : Netwtw14
+Message          : 
+
+TimeCreated      : 5/23/2026 5:49:32 PM
+Id               : 10016
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-DistributedCOM
+Message          : The application-specific permission settings do not grant Local Activation permission for the COM 
+                   Server application with CLSID 
+                   {6B3B8D23-FA8D-40B9-8DBD-B950333E2C52}
+                    and APPID 
+                   {4839DDB7-58C2-48F5-8283-E1D1807D0D7D}
+                    to the user NT AUTHORITY\LOCAL SERVICE SID (S-1-5-19) from address LocalHost (Using LRPC) running 
+                   in the application container Unavailable SID (Unavailable). This security permission can be 
+                   modified using the Component Services administrative tool.
+
+TimeCreated      : 5/23/2026 5:49:32 PM
+Id               : 10016
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-DistributedCOM
+Message          : The application-specific permission settings do not grant Local Activation permission for the COM 
+                   Server application with CLSID 
+                   {6B3B8D23-FA8D-40B9-8DBD-B950333E2C52}
+                    and APPID 
+                   {4839DDB7-58C2-48F5-8283-E1D1807D0D7D}
+                    to the user NT AUTHORITY\LOCAL SERVICE SID (S-1-5-19) from address LocalHost (Using LRPC) running 
+                   in the application container Unavailable SID (Unavailable). This security permission can be 
+                   modified using the Component Services administrative tool.
+
+TimeCreated      : 5/23/2026 5:49:29 PM
+Id               : 30
+LevelDisplayName : Warning
+ProviderName     : TPM
+Message          : Reset and/or resume count do not match expected values after hibernate/resume.
+
+TimeCreated      : 5/23/2026 4:14:18 PM
+Id               : 100
+LevelDisplayName : Warning
+ProviderName     : winsrvext
+Message          : Process C:\Windows\System32\mmc.exe is delaying system shutdown after 5172 milliseconds.
+
+TimeCreated      : 5/23/2026 4:10:11 PM
+Id               : 20
+LevelDisplayName : Error
+ProviderName     : Microsoft-Windows-WindowsUpdateClient
+Message          : Installation Failure: Windows failed to install the following update with error 0x80073D02: 
+                   9WZDNCRFJBMP-MICROSOFT.WINDOWSSTORE.
+
+TimeCreated      : 5/23/2026 4:04:58 PM
+Id               : 1073
+LevelDisplayName : Warning
+ProviderName     : User32
+Message          : The attempt by user DESKTOP-H10I3JQ\Edward to restart/shutdown computer DESKTOP-H10I3JQ failed
+
+TimeCreated      : 5/23/2026 3:59:10 PM
+Id               : 6062
+LevelDisplayName : Warning
+ProviderName     : Netwtw14
+Message          : 
+
+TimeCreated      : 5/23/2026 3:54:39 PM
+Id               : 10016
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-DistributedCOM
+Message          : The application-specific permission settings do not grant Local Activation permission for the COM 
+                   Server application with CLSID 
+                   {6B3B8D23-FA8D-40B9-8DBD-B950333E2C52}
+                    and APPID 
+                   {4839DDB7-58C2-48F5-8283-E1D1807D0D7D}
+                    to the user NT AUTHORITY\LOCAL SERVICE SID (S-1-5-19) from address LocalHost (Using LRPC) running 
+                   in the application container Unavailable SID (Unavailable). This security permission can be 
+                   modified using the Component Services administrative tool.
+
+TimeCreated      : 5/23/2026 3:54:39 PM
+Id               : 10016
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-DistributedCOM
+Message          : The machine-default permission settings do not grant Local Activation permission for the COM Server 
+                   application with CLSID 
+                   {C2F03A33-21F5-47FA-B4BB-156362A2F239}
+                    and APPID 
+                   {316CDED5-E4AE-4B15-9113-7055D84DCC97}
+                    to the user NT AUTHORITY\LOCAL SERVICE SID (S-1-5-19) from address LocalHost (Using LRPC) running 
+                   in the application container Unavailable SID (Unavailable). This security permission can be 
+                   modified using the Component Services administrative tool.
+
+TimeCreated      : 5/23/2026 3:54:39 PM
+Id               : 10016
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-DistributedCOM
+Message          : The machine-default permission settings do not grant Local Activation permission for the COM Server 
+                   application with CLSID 
+                   {C2F03A33-21F5-47FA-B4BB-156362A2F239}
+                    and APPID 
+                   {316CDED5-E4AE-4B15-9113-7055D84DCC97}
+                    to the user NT AUTHORITY\LOCAL SERVICE SID (S-1-5-19) from address LocalHost (Using LRPC) running 
+                   in the application container Unavailable SID (Unavailable). This security permission can be 
+                   modified using the Component Services administrative tool.
+
+TimeCreated      : 5/23/2026 3:54:39 PM
+Id               : 10016
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-DistributedCOM
+Message          : The application-specific permission settings do not grant Local Activation permission for the COM 
+                   Server application with CLSID 
+                   {6B3B8D23-FA8D-40B9-8DBD-B950333E2C52}
+                    and APPID 
+                   {4839DDB7-58C2-48F5-8283-E1D1807D0D7D}
+                    to the user NT AUTHORITY\LOCAL SERVICE SID (S-1-5-19) from address LocalHost (Using LRPC) running 
+                   in the application container Unavailable SID (Unavailable). This security permission can be 
+                   modified using the Component Services administrative tool.
+
+TimeCreated      : 5/23/2026 2:11:19 PM
+Id               : 20
+LevelDisplayName : Error
+ProviderName     : Microsoft-Windows-WindowsUpdateClient
+Message          : Installation Failure: Windows failed to install the following update with error 0x80073D02: 
+                   9WZDNCRFJBMP-MICROSOFT.WINDOWSSTORE.
+
+TimeCreated      : 5/23/2026 2:08:04 PM
+Id               : 10016
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-DistributedCOM
+Message          : The application-specific permission settings do not grant Local Activation permission for the COM 
+                   Server application with CLSID 
+                   {2593F8B9-4EAF-457C-B68A-50F6B8EA6B54}
+                    and APPID 
+                   {15C20B67-12E7-4BB6-92BB-7AFF07997402}
+                    to the user DESKTOP-H10I3JQ\Edward SID (S-1-5-21-4111830499-752027429-2964234843-1001) from 
+                   address LocalHost (Using LRPC) running in the application container Unavailable SID (Unavailable). 
+                   This security permission can be modified using the Component Services administrative tool.
+
+TimeCreated      : 5/23/2026 1:56:26 PM
+Id               : 10016
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-DistributedCOM
+Message          : The application-specific permission settings do not grant Local Activation permission for the COM 
+                   Server application with CLSID 
+                   {9EA82395-E31B-41CA-8DF7-EC1CEE7194DF}
+                    and APPID 
+                   {2ED83BAA-B2FD-43B1-99BF-E6149C622692}
+                    to the user NT AUTHORITY\NETWORK SERVICE SID (S-1-5-20) from address LocalHost (Using LRPC) 
+                   running in the application container Unavailable SID (Unavailable). This security permission can be 
+                   modified using the Component Services administrative tool.
+
+TimeCreated      : 5/23/2026 1:55:49 PM
+Id               : 6062
+LevelDisplayName : Warning
+ProviderName     : Netwtw14
+Message          : 
+
+TimeCreated      : 5/23/2026 1:55:41 PM
+Id               : 37
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-Processor-Power
+Message          : The speed of processor 15 in group 0 is being limited by system firmware. The processor has been in 
+                   this reduced performance state for 71 seconds since the last report.
+
+TimeCreated      : 5/23/2026 1:55:41 PM
+Id               : 37
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-Processor-Power
+Message          : The speed of processor 3 in group 0 is being limited by system firmware. The processor has been in 
+                   this reduced performance state for 71 seconds since the last report.
+
+TimeCreated      : 5/23/2026 1:55:41 PM
+Id               : 37
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-Processor-Power
+Message          : The speed of processor 5 in group 0 is being limited by system firmware. The processor has been in 
+                   this reduced performance state for 71 seconds since the last report.
+
+TimeCreated      : 5/23/2026 1:55:41 PM
+Id               : 37
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-Processor-Power
+Message          : The speed of processor 1 in group 0 is being limited by system firmware. The processor has been in 
+                   this reduced performance state for 71 seconds since the last report.
+
+TimeCreated      : 5/23/2026 1:55:41 PM
+Id               : 37
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-Processor-Power
+Message          : The speed of processor 7 in group 0 is being limited by system firmware. The processor has been in 
+                   this reduced performance state for 71 seconds since the last report.
+
+TimeCreated      : 5/23/2026 1:55:41 PM
+Id               : 37
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-Processor-Power
+Message          : The speed of processor 13 in group 0 is being limited by system firmware. The processor has been in 
+                   this reduced performance state for 71 seconds since the last report.
+
+TimeCreated      : 5/23/2026 1:55:41 PM
+Id               : 37
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-Processor-Power
+Message          : The speed of processor 11 in group 0 is being limited by system firmware. The processor has been in 
+                   this reduced performance state for 71 seconds since the last report.
+
+TimeCreated      : 5/23/2026 1:55:41 PM
+Id               : 37
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-Processor-Power
+Message          : The speed of processor 9 in group 0 is being limited by system firmware. The processor has been in 
+                   this reduced performance state for 71 seconds since the last report.
+
+TimeCreated      : 5/23/2026 1:55:41 PM
+Id               : 37
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-Processor-Power
+Message          : The speed of processor 6 in group 0 is being limited by system firmware. The processor has been in 
+                   this reduced performance state for 71 seconds since the last report.
+
+TimeCreated      : 5/23/2026 1:55:41 PM
+Id               : 37
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-Processor-Power
+Message          : The speed of processor 12 in group 0 is being limited by system firmware. The processor has been in 
+                   this reduced performance state for 71 seconds since the last report.
+
+TimeCreated      : 5/23/2026 1:55:41 PM
+Id               : 37
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-Processor-Power
+Message          : The speed of processor 4 in group 0 is being limited by system firmware. The processor has been in 
+                   this reduced performance state for 71 seconds since the last report.
+
+TimeCreated      : 5/23/2026 1:55:41 PM
+Id               : 37
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-Processor-Power
+Message          : The speed of processor 2 in group 0 is being limited by system firmware. The processor has been in 
+                   this reduced performance state for 71 seconds since the last report.
+
+TimeCreated      : 5/23/2026 1:55:41 PM
+Id               : 37
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-Processor-Power
+Message          : The speed of processor 8 in group 0 is being limited by system firmware. The processor has been in 
+                   this reduced performance state for 71 seconds since the last report.
+
+TimeCreated      : 5/23/2026 1:55:41 PM
+Id               : 37
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-Processor-Power
+Message          : The speed of processor 10 in group 0 is being limited by system firmware. The processor has been in 
+                   this reduced performance state for 71 seconds since the last report.
+
+TimeCreated      : 5/23/2026 1:55:41 PM
+Id               : 37
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-Processor-Power
+Message          : The speed of processor 14 in group 0 is being limited by system firmware. The processor has been in 
+                   this reduced performance state for 71 seconds since the last report.
+
+TimeCreated      : 5/23/2026 1:55:41 PM
+Id               : 37
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-Processor-Power
+Message          : The speed of processor 0 in group 0 is being limited by system firmware. The processor has been in 
+                   this reduced performance state for 71 seconds since the last report.
+
+TimeCreated      : 5/23/2026 1:54:40 PM
+Id               : 7030
+LevelDisplayName : Error
+ProviderName     : Service Control Manager
+Message          : The Printer Extensions and Notifications service is marked as an interactive service.  However, the 
+                   system is configured to not allow interactive services.  This service may not function properly.
+
+TimeCreated      : 5/23/2026 1:54:40 PM
+Id               : 7024
+LevelDisplayName : Error
+ProviderName     : Service Control Manager
+Message          : The Intel(R) Audio Service service terminated with the following service-specific error: 
+                   The operation completed successfully.
+
+TimeCreated      : 5/23/2026 1:54:38 PM
+Id               : 7023
+LevelDisplayName : Error
+ProviderName     : Service Control Manager
+Message          : The cplspcon service terminated with the following error: 
+                   Unspecified error
+
+TimeCreated      : 5/23/2026 1:54:31 PM
+Id               : 219
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-PnP
+Message          : The driver \Driver\WUDFRd failed to load.
+                   Device: {DD8E82AE-334B-49A2-AEAE-AEB0FD5C40DD}\DetectionVerification\5&12a0c8b&0&0
+                   Status: 0xC0000365
+
+TimeCreated      : 5/23/2026 1:54:29 PM
+Id               : 219
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-PnP
+Message          : The driver \Driver\WUDFRd failed to load.
+                   Device: PCI\VEN_8086&DEV_9A03&SUBSYS_0A8F1028&REV_05\3&11583659&0&20
+                   Status: 0xC0000365
+
+TimeCreated      : 5/23/2026 1:54:29 PM
+Id               : 219
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-PnP
+Message          : The driver \Driver\WUDFRd failed to load.
+                   Device: ROOT\DISPLAY\0000
+                   Status: 0xC0000365
+
+TimeCreated      : 5/23/2026 1:53:52 PM
+Id               : 10002
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-WLAN-AutoConfig
+Message          : WLAN Extensibility Module has stopped.
+                   
+                   Module Path: C:\Windows\System32\DriverStore\FileRepository\netwtw6e.inf_amd64_25da419ddd4c4513\Inte
+                   lIHVRouter14.dll
+                   
+
+TimeCreated      : 5/23/2026 1:53:33 PM
+Id               : 7024
+LevelDisplayName : Error
+ProviderName     : Service Control Manager
+Message          : The Intel(R) Audio Service service terminated with the following service-specific error: 
+                   The operation completed successfully.
+
+TimeCreated      : 5/23/2026 1:53:33 PM
+Id               : 7009
+LevelDisplayName : Error
+ProviderName     : Service Control Manager
+Message          : A timeout was reached (60000 milliseconds) while waiting for the XTU3SERVICE service to connect.
+
+TimeCreated      : 5/23/2026 1:53:33 PM
+Id               : 7000
+LevelDisplayName : Error
+ProviderName     : Service Control Manager
+Message          : The XTU3SERVICE service failed to start due to the following error: 
+                   The service did not respond to the start or control request in a timely fashion.
+
+TimeCreated      : 5/23/2026 1:53:32 PM
+Id               : 7023
+LevelDisplayName : Error
+ProviderName     : Service Control Manager
+Message          : The netprofm service terminated with the following error: 
+                   The device is not ready.
+
+TimeCreated      : 5/23/2026 1:53:32 PM
+Id               : 7023
+LevelDisplayName : Error
+ProviderName     : Service Control Manager
+Message          : The cplspcon service terminated with the following error: 
+                   Unspecified error
+
+TimeCreated      : 5/23/2026 1:53:20 PM
+Id               : 7000
+LevelDisplayName : Error
+ProviderName     : Service Control Manager
+Message          : The l1vhlwf service failed to start due to the following error: 
+                   A hypervisor feature is not available to the user.
+
+TimeCreated      : 5/23/2026 1:53:18 PM
+Id               : 219
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-PnP
+Message          : The driver \Driver\WUDFRd failed to load.
+                   Device: ROOT\DISPLAY\0000
+                   Status: 0xC0000365
+
+TimeCreated      : 5/23/2026 1:53:15 PM
+Id               : 219
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-PnP
+Message          : The driver \Driver\WUDFRd failed to load.
+                   Device: {DD8E82AE-334B-49A2-AEAE-AEB0FD5C40DD}\DetectionVerification\5&12a0c8b&0&0
+                   Status: 0xC0000365
+
+TimeCreated      : 5/23/2026 1:53:14 PM
+Id               : 219
+LevelDisplayName : Warning
+ProviderName     : Microsoft-Windows-Kernel-PnP
+Message          : The driver \Driver\WUDFRd failed to load.
+                   Device: PCI\VEN_8086&DEV_9A03&SUBSYS_0A8F1028&REV_05\3&11583659&0&20
+                   Status: 0xC0000365
+
+
+
+
+### Recent Application Event Log Errors (last 3 days) ###
+-------------------------------------------------
+
+
+TimeCreated      : 5/23/2026 5:49:31 PM
+Id               : 0
+LevelDisplayName : 
+ProviderName     : OVRServiceLauncher
+Message          : 
+
+TimeCreated      : 5/23/2026 4:14:18 PM
+Id               : 1026
+LevelDisplayName : Error
+ProviderName     : .NET Runtime
+Message          : Application: mmc.exe
+                   Framework Version: v4.0.30319
+                   Description: The process was terminated due to an unhandled exception.
+                   Exception Info: exception code c0000005, exception address 00007FF82CCD3D44
+                   Stack:
+                   
+
+TimeCreated      : 5/23/2026 4:05:06 PM
+Id               : 0
+LevelDisplayName : 
+ProviderName     : OVRServiceLauncher
+Message          : 
+
+TimeCreated      : 5/23/2026 4:04:40 PM
+Id               : 0
+LevelDisplayName : 
+ProviderName     : OVRServiceLauncher
+Message          : 
+
+TimeCreated      : 5/23/2026 3:59:07 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : Failed to get auth header with 0x8086000c
+
+TimeCreated      : 5/23/2026 3:59:07 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : User Interaction Required while trying to get a token silently. ErrorCode: 0xcaa10001, Error: Need 
+                   user interaction to continue.
+
+TimeCreated      : 5/23/2026 3:59:03 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : Failed to get auth header with 0x8086000c
+
+TimeCreated      : 5/23/2026 3:59:03 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : User Interaction Required while trying to get a token silently. ErrorCode: 0xcaa10001, Error: Need 
+                   user interaction to continue.
+
+TimeCreated      : 5/23/2026 3:58:59 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : Failed to get auth header with 0x8086000c
+
+TimeCreated      : 5/23/2026 3:58:59 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : User Interaction Required while trying to get a token silently. ErrorCode: 0xcaa10001, Error: Need 
+                   user interaction to continue.
+
+TimeCreated      : 5/23/2026 3:58:55 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : Failed to get auth header with 0x8086000c
+
+TimeCreated      : 5/23/2026 3:58:55 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : User Interaction Required while trying to get a token silently. ErrorCode: 0xcaa10001, Error: Need 
+                   user interaction to continue.
+
+TimeCreated      : 5/23/2026 3:58:51 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : Failed to get auth header with 0x8086000c
+
+TimeCreated      : 5/23/2026 3:58:51 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : User Interaction Required while trying to get a token silently. ErrorCode: 0xcaa10001, Error: Need 
+                   user interaction to continue.
+
+TimeCreated      : 5/23/2026 3:58:47 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : Failed to get auth header with 0x8086000c
+
+TimeCreated      : 5/23/2026 3:58:47 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : User Interaction Required while trying to get a token silently. ErrorCode: 0xcaa10001, Error: Need 
+                   user interaction to continue.
+
+TimeCreated      : 5/23/2026 3:58:43 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : Failed to get auth header with 0x8086000c
+
+TimeCreated      : 5/23/2026 3:58:43 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : User Interaction Required while trying to get a token silently. ErrorCode: 0xcaa10001, Error: Need 
+                   user interaction to continue.
+
+TimeCreated      : 5/23/2026 3:58:39 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : Failed to get auth header with 0x8086000c
+
+TimeCreated      : 5/23/2026 3:58:39 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : User Interaction Required while trying to get a token silently. ErrorCode: 0xcaa10001, Error: Need 
+                   user interaction to continue.
+
+TimeCreated      : 5/23/2026 3:58:35 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : Failed to get auth header with 0x8086000c
+
+TimeCreated      : 5/23/2026 3:58:35 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : User Interaction Required while trying to get a token silently. ErrorCode: 0xcaa10001, Error: Need 
+                   user interaction to continue.
+
+TimeCreated      : 5/23/2026 3:58:31 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : Failed to get auth header with 0x8086000c
+
+TimeCreated      : 5/23/2026 3:58:31 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : User Interaction Required while trying to get a token silently. ErrorCode: 0xcaa10001, Error: Need 
+                   user interaction to continue.
+
+TimeCreated      : 5/23/2026 3:58:27 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : Failed to get auth header with 0x8086000c
+
+TimeCreated      : 5/23/2026 3:58:27 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : User Interaction Required while trying to get a token silently. ErrorCode: 0xcaa10001, Error: Need 
+                   user interaction to continue.
+
+TimeCreated      : 5/23/2026 3:58:23 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : Failed to get auth header with 0x8086000c
+
+TimeCreated      : 5/23/2026 3:58:23 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : User Interaction Required while trying to get a token silently. ErrorCode: 0xcaa10001, Error: Need 
+                   user interaction to continue.
+
+TimeCreated      : 5/23/2026 3:58:19 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : Failed to get auth header with 0x8086000c
+
+TimeCreated      : 5/23/2026 3:58:19 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : User Interaction Required while trying to get a token silently. ErrorCode: 0xcaa10001, Error: Need 
+                   user interaction to continue.
+
+TimeCreated      : 5/23/2026 3:58:15 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : Failed to get auth header with 0x8086000c
+
+TimeCreated      : 5/23/2026 3:58:15 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : User Interaction Required while trying to get a token silently. ErrorCode: 0xcaa10001, Error: Need 
+                   user interaction to continue.
+
+TimeCreated      : 5/23/2026 3:58:11 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : Failed to get auth header with 0x8086000c
+
+TimeCreated      : 5/23/2026 3:58:11 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : User Interaction Required while trying to get a token silently. ErrorCode: 0xcaa10001, Error: Need 
+                   user interaction to continue.
+
+TimeCreated      : 5/23/2026 3:58:07 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : Failed to get auth header with 0x8086000c
+
+TimeCreated      : 5/23/2026 3:58:07 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : User Interaction Required while trying to get a token silently. ErrorCode: 0xcaa10001, Error: Need 
+                   user interaction to continue.
+
+TimeCreated      : 5/23/2026 3:58:03 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : Failed to get auth header with 0x8086000c
+
+TimeCreated      : 5/23/2026 3:58:03 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : User Interaction Required while trying to get a token silently. ErrorCode: 0xcaa10001, Error: Need 
+                   user interaction to continue.
+
+TimeCreated      : 5/23/2026 3:57:59 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : Failed to get auth header with 0x8086000c
+
+TimeCreated      : 5/23/2026 3:57:59 PM
+Id               : 1
+LevelDisplayName : Error
+ProviderName     : Universal Print
+Message          : User Interaction Required while trying to get a token silently. ErrorCode: 0xcaa10001, Error: Need 
+                   user interaction to continue.
+
+
+
+
+### Kernel-Power / Unexpected Shutdown events (last 14 days) ###
+-------------------------------------------------
+
+
+TimeCreated : 5/23/2026 6:11:15 PM
+Id          : 566
+Message     : The system session has transitioned from 6 to 7.
+              
+              Reason InputAccelerometer 
+              
+              BootId: 2
+
+TimeCreated : 5/23/2026 6:11:15 PM
+Id          : 507
+Message     : The system is exiting Modern Standby 
+              
+              Reason: Input Keyboard.
+
+TimeCreated : 5/23/2026 6:11:15 PM
+Id          : 566
+Message     : The system session has transitioned from 5 to 6.
+              
+              Reason SessionUnlock 
+              
+              BootId: 2
+
+TimeCreated : 5/23/2026 6:10:48 PM
+Id          : 506
+Message     : The system is entering Modern Standby 
+              
+              Reason: Idle Timeout.
+
+TimeCreated : 5/23/2026 6:10:48 PM
+Id          : 566
+Message     : The system session has transitioned from 4 to 5.
+              
+              Reason SessionUnlock 
+              
+              BootId: 2
+
+TimeCreated : 5/23/2026 5:49:30 PM
+Id          : 566
+Message     : The system session has transitioned from 2 to 4.
+              
+              Reason Unknown 
+              
+              BootId: 2
+
+TimeCreated : 5/23/2026 5:49:30 PM
+Id          : 507
+Message     : The system is exiting Modern Standby 
+              
+              Reason: Power Button.
+
+TimeCreated : 5/23/2026 5:49:30 PM
+Id          : 506
+Message     : The system is entering Modern Standby 
+              
+              Reason: Sleep, Hibernate, or Shutdown.
+
+TimeCreated : 5/23/2026 5:49:30 PM
+Id          : 566
+Message     : The system session has transitioned from 1 to 2.
+              
+              Reason SxTransition 
+              
+              BootId: 2
+
+TimeCreated : 5/23/2026 4:14:26 PM
+Id          : 107
+Message     : The system has resumed from sleep.
+
+TimeCreated : 5/23/2026 4:14:23 PM
+Id          : 42
+Message     : The system is entering sleep.
+              
+              Sleep Reason: Application API
+
+TimeCreated : 5/23/2026 4:14:23 PM
+Id          : 40
+Message     : The driver \Driver\ACPI for device  stopped the power transition.
+
+TimeCreated : 5/23/2026 4:14:22 PM
+Id          : 566
+Message     : The system session has transitioned from 0 to 1.
+              
+              Reason ScreenOffGracePeriod 
+              
+              BootId: 2
+
+TimeCreated : 5/23/2026 4:14:22 PM
+Id          : 187
+Message     : User-mode process attempted to change the system state by calling SetSuspendState or SetSystemPowerState 
+              APIs.
+
+TimeCreated : 5/23/2026 1:54:30 PM
+Id          : 521
+Message     : Active battery count change.
+
+TimeCreated : 5/23/2026 1:53:52 PM
+Id          : 577
+Message     : The system has prepared for a system initiated reboot from Active.
+
+TimeCreated : 5/23/2026 1:53:52 PM
+Id          : 109
+Message     : The kernel power manager has initiated a shutdown transition.
+              
+              Action: Power Action Reboot 
+              Event Code: 0x0 
+              Reason: Kernel API
+
+
+
+
+### Driver install/update history (last 30 days) ###
+-------------------------------------------------
+
+
+TimeCreated : 5/23/2026 3:01:08 PM
+Id          : 410
+Message     : Device STORAGE\VolumeSnapshot\HarddiskVolumeSnapshot2 was started.
+              
+              Driver Name: volsnap.inf
+              Class GUID: {533c5b84-ec70-11d2-9505-00c04f79deaf}
+              Service: 
+              Lower Filters: 
+              Upper Filters: 
+
+TimeCreated : 5/23/2026 3:01:08 PM
+Id          : 400
+Message     : Device STORAGE\VolumeSnapshot\HarddiskVolumeSnapshot2 was configured.
+              
+              Driver Name: volsnap.inf
+              Driver Package ID: volsnap.inf_amd64_da435361dee3ff66
+              Class GUID: {533c5b84-ec70-11d2-9505-00c04f79deaf}
+              Driver Date: 06/21/2006
+              Driver Version: 10.0.26100.1
+              Driver Provider: Microsoft
+              Driver Section: volume_snapshot_install.NTamd64
+              Driver Rank: 0xFF0000
+              Matching Device ID: STORAGE\VolumeSnapshot
+              Outranked Drivers: 
+              Device Updated: false
+              Parent Device: STORAGE\Volume\{aa9ec344-15fc-11f0-9f02-806e6f6e6963}#0000000017100000
+
+TimeCreated : 5/23/2026 2:01:22 PM
+Id          : 410
+Message     : Device SWD\MSRRAS\MS_NDISWANBH was started.
+              
+              Driver Name: netrasa.inf
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Service: NdisWan
+              Lower Filters: NdisTapi
+              Upper Filters: 
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 400
+Message     : Device SWD\MSRRAS\MS_NDISWANBH was configured.
+              
+              Driver Name: netrasa.inf
+              Driver Package ID: netrasa.inf_amd64_417ad0eea84e3a58
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Driver Date: 06/21/2006
+              Driver Version: 10.0.26100.1
+              Driver Provider: Microsoft
+              Driver Section: Ndi-Mp-Bh
+              Driver Rank: 0xFF0000
+              Matching Device ID: ms_ndiswanbh
+              Outranked Drivers: 
+              Device Updated: false
+              Parent Device: SWD\MSRRAS\{5e259276-bc7e-40e3-b93b-8f89b5f3abc0}
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 440
+Message     : Device settings for SWD\MSRRAS\MS_NDISWANBH were migrated from previous OS installation.
+              
+              Last Device Instance ID: SWD\MSRRAS\MS_NDISWANBH
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Location Path: 
+              Migration Rank: 0x0
+              Present: true
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 410
+Message     : Device SWD\MSRRAS\MS_NDISWANIPV6 was started.
+              
+              Driver Name: netrasa.inf
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Service: NdisWan
+              Lower Filters: NdisTapi
+              Upper Filters: 
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 400
+Message     : Device SWD\MSRRAS\MS_NDISWANIPV6 was configured.
+              
+              Driver Name: netrasa.inf
+              Driver Package ID: netrasa.inf_amd64_417ad0eea84e3a58
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Driver Date: 06/21/2006
+              Driver Version: 10.0.26100.1
+              Driver Provider: Microsoft
+              Driver Section: Ndi-Mp-Ipv6
+              Driver Rank: 0xFF0000
+              Matching Device ID: ms_ndiswanipv6
+              Outranked Drivers: 
+              Device Updated: false
+              Parent Device: SWD\MSRRAS\{5e259276-bc7e-40e3-b93b-8f89b5f3abc0}
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 440
+Message     : Device settings for SWD\MSRRAS\MS_NDISWANIPV6 were migrated from previous OS installation.
+              
+              Last Device Instance ID: SWD\MSRRAS\MS_NDISWANIPV6
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Location Path: 
+              Migration Rank: 0x0
+              Present: true
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 410
+Message     : Device SWD\MSRRAS\MS_NDISWANIP was started.
+              
+              Driver Name: netrasa.inf
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Service: NdisWan
+              Lower Filters: NdisTapi
+              Upper Filters: 
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 400
+Message     : Device SWD\MSRRAS\MS_NDISWANIP was configured.
+              
+              Driver Name: netrasa.inf
+              Driver Package ID: netrasa.inf_amd64_417ad0eea84e3a58
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Driver Date: 06/21/2006
+              Driver Version: 10.0.26100.1
+              Driver Provider: Microsoft
+              Driver Section: Ndi-Mp-Ip
+              Driver Rank: 0xFF0000
+              Matching Device ID: ms_ndiswanip
+              Outranked Drivers: 
+              Device Updated: false
+              Parent Device: SWD\MSRRAS\{5e259276-bc7e-40e3-b93b-8f89b5f3abc0}
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 440
+Message     : Device settings for SWD\MSRRAS\MS_NDISWANIP were migrated from previous OS installation.
+              
+              Last Device Instance ID: SWD\MSRRAS\MS_NDISWANIP
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Location Path: 
+              Migration Rank: 0x0
+              Present: true
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 410
+Message     : Device SWD\MSRRAS\MS_PPPOEMINIPORT was started.
+              
+              Driver Name: netrasa.inf
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Service: RasPppoe
+              Lower Filters: 
+              Upper Filters: 
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 400
+Message     : Device SWD\MSRRAS\MS_PPPOEMINIPORT was configured.
+              
+              Driver Name: netrasa.inf
+              Driver Package ID: netrasa.inf_amd64_417ad0eea84e3a58
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Driver Date: 06/21/2006
+              Driver Version: 10.0.26100.1
+              Driver Provider: Microsoft
+              Driver Section: Ndi-Mp-Pppoe
+              Driver Rank: 0xFF0000
+              Matching Device ID: ms_pppoeminiport
+              Outranked Drivers: 
+              Device Updated: false
+              Parent Device: SWD\MSRRAS\{5e259276-bc7e-40e3-b93b-8f89b5f3abc0}
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 440
+Message     : Device settings for SWD\MSRRAS\MS_PPPOEMINIPORT were migrated from previous OS installation.
+              
+              Last Device Instance ID: SWD\MSRRAS\MS_PPPOEMINIPORT
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Location Path: 
+              Migration Rank: 0x0
+              Present: true
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 410
+Message     : Device SWD\MSRRAS\MS_PPTPMINIPORT was started.
+              
+              Driver Name: netrasa.inf
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Service: PptpMiniport
+              Lower Filters: 
+              Upper Filters: 
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 400
+Message     : Device SWD\MSRRAS\MS_PPTPMINIPORT was configured.
+              
+              Driver Name: netrasa.inf
+              Driver Package ID: netrasa.inf_amd64_417ad0eea84e3a58
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Driver Date: 06/21/2006
+              Driver Version: 10.0.26100.1
+              Driver Provider: Microsoft
+              Driver Section: Ndi-Mp-Pptp
+              Driver Rank: 0xFF0000
+              Matching Device ID: ms_pptpminiport
+              Outranked Drivers: 
+              Device Updated: false
+              Parent Device: SWD\MSRRAS\{5e259276-bc7e-40e3-b93b-8f89b5f3abc0}
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 440
+Message     : Device settings for SWD\MSRRAS\MS_PPTPMINIPORT were migrated from previous OS installation.
+              
+              Last Device Instance ID: SWD\MSRRAS\MS_PPTPMINIPORT
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Location Path: 
+              Migration Rank: 0x0
+              Present: true
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 410
+Message     : Device SWD\MSRRAS\MS_L2TPMINIPORT was started.
+              
+              Driver Name: netrasa.inf
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Service: Rasl2tp
+              Lower Filters: 
+              Upper Filters: 
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 400
+Message     : Device SWD\MSRRAS\MS_L2TPMINIPORT was configured.
+              
+              Driver Name: netrasa.inf
+              Driver Package ID: netrasa.inf_amd64_417ad0eea84e3a58
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Driver Date: 06/21/2006
+              Driver Version: 10.0.26100.1
+              Driver Provider: Microsoft
+              Driver Section: Ndi-Mp-L2tp
+              Driver Rank: 0xFF0000
+              Matching Device ID: ms_l2tpminiport
+              Outranked Drivers: 
+              Device Updated: false
+              Parent Device: SWD\MSRRAS\{5e259276-bc7e-40e3-b93b-8f89b5f3abc0}
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 440
+Message     : Device settings for SWD\MSRRAS\MS_L2TPMINIPORT were migrated from previous OS installation.
+              
+              Last Device Instance ID: SWD\MSRRAS\MS_L2TPMINIPORT
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Location Path: 
+              Migration Rank: 0x0
+              Present: true
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 410
+Message     : Device SWD\MSRRAS\MS_AGILEVPNMINIPORT was started.
+              
+              Driver Name: netavpna.inf
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Service: RasAgileVpn
+              Lower Filters: 
+              Upper Filters: 
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 400
+Message     : Device SWD\MSRRAS\MS_AGILEVPNMINIPORT was configured.
+              
+              Driver Name: netavpna.inf
+              Driver Package ID: netavpna.inf_amd64_27530893ea84631e
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Driver Date: 06/21/2006
+              Driver Version: 10.0.26100.1
+              Driver Provider: Microsoft
+              Driver Section: Ndi-Mp-AgileVpn
+              Driver Rank: 0xFF0000
+              Matching Device ID: ms_agilevpnminiport
+              Outranked Drivers: 
+              Device Updated: false
+              Parent Device: SWD\MSRRAS\{5e259276-bc7e-40e3-b93b-8f89b5f3abc0}
+
+TimeCreated : 5/23/2026 2:01:21 PM
+Id          : 440
+Message     : Device settings for SWD\MSRRAS\MS_AGILEVPNMINIPORT were migrated from previous OS installation.
+              
+              Last Device Instance ID: SWD\MSRRAS\MS_AGILEVPNMINIPORT
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Location Path: 
+              Migration Rank: 0x0
+              Present: true
+
+TimeCreated : 5/23/2026 2:01:20 PM
+Id          : 410
+Message     : Device SWD\MSRRAS\MS_SSTPMINIPORT was started.
+              
+              Driver Name: netsstpa.inf
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Service: RasSstp
+              Lower Filters: 
+              Upper Filters: 
+
+TimeCreated : 5/23/2026 2:01:20 PM
+Id          : 400
+Message     : Device SWD\MSRRAS\MS_SSTPMINIPORT was configured.
+              
+              Driver Name: netsstpa.inf
+              Driver Package ID: netsstpa.inf_amd64_a982732ea027811e
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Driver Date: 06/21/2006
+              Driver Version: 10.0.26100.1
+              Driver Provider: Microsoft
+              Driver Section: Ndi-Mp-Sstp
+              Driver Rank: 0xFF0000
+              Matching Device ID: ms_sstpminiport
+              Outranked Drivers: 
+              Device Updated: false
+              Parent Device: SWD\MSRRAS\{5e259276-bc7e-40e3-b93b-8f89b5f3abc0}
+
+TimeCreated : 5/23/2026 2:01:20 PM
+Id          : 440
+Message     : Device settings for SWD\MSRRAS\MS_SSTPMINIPORT were migrated from previous OS installation.
+              
+              Last Device Instance ID: SWD\MSRRAS\MS_SSTPMINIPORT
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Location Path: 
+              Migration Rank: 0x0
+              Present: true
+
+TimeCreated : 5/23/2026 2:01:20 PM
+Id          : 410
+Message     : Device SWD\MSRRAS\{5e259276-bc7e-40e3-b93b-8f89b5f3abc0} was started.
+              
+              Driver Name: c_swdevice.inf
+              Class GUID: {62f9c741-b25a-46ce-b54c-9bccce08b6f2}
+              Service: 
+              Lower Filters: 
+              Upper Filters: 
+
+TimeCreated : 5/23/2026 2:01:20 PM
+Id          : 400
+Message     : Device SWD\MSRRAS\{5e259276-bc7e-40e3-b93b-8f89b5f3abc0} was configured.
+              
+              Driver Name: c_swdevice.inf
+              Driver Package ID: c_swdevice.inf_amd64_845d51425d14f98b
+              Class GUID: {62f9c741-b25a-46ce-b54c-9bccce08b6f2}
+              Driver Date: 06/21/2006
+              Driver Version: 10.0.26100.1
+              Driver Provider: Microsoft
+              Driver Section: SoftwareDevice
+              Driver Rank: 0xFF3000
+              Matching Device ID: SWD\GenericRaw
+              Outranked Drivers: 
+              Device Updated: false
+              Parent Device: HTREE\ROOT\0
+
+TimeCreated : 5/23/2026 2:01:20 PM
+Id          : 440
+Message     : Device settings for SWD\MSRRAS\{5e259276-bc7e-40e3-b93b-8f89b5f3abc0} were migrated from previous OS 
+              installation.
+              
+              Last Device Instance ID: SWD\MSRRAS\{5e259276-bc7e-40e3-b93b-8f89b5f3abc0}
+              Class GUID: {62f9c741-b25a-46ce-b54c-9bccce08b6f2}
+              Location Path: 
+              Migration Rank: 0x0
+              Present: true
+
+TimeCreated : 5/23/2026 1:57:30 PM
+Id          : 410
+Message     : Device STORAGE\VolumeSnapshot\HarddiskVolumeSnapshot1 was started.
+              
+              Driver Name: volsnap.inf
+              Class GUID: {533c5b84-ec70-11d2-9505-00c04f79deaf}
+              Service: 
+              Lower Filters: 
+              Upper Filters: 
+
+TimeCreated : 5/23/2026 1:57:30 PM
+Id          : 400
+Message     : Device STORAGE\VolumeSnapshot\HarddiskVolumeSnapshot1 was configured.
+              
+              Driver Name: volsnap.inf
+              Driver Package ID: volsnap.inf_amd64_da435361dee3ff66
+              Class GUID: {533c5b84-ec70-11d2-9505-00c04f79deaf}
+              Driver Date: 06/21/2006
+              Driver Version: 10.0.26100.1
+              Driver Provider: Microsoft
+              Driver Section: volume_snapshot_install.NTamd64
+              Driver Rank: 0xFF0000
+              Matching Device ID: STORAGE\VolumeSnapshot
+              Outranked Drivers: 
+              Device Updated: false
+              Parent Device: STORAGE\Volume\{aa9ec344-15fc-11f0-9f02-806e6f6e6963}#0000000017100000
+
+TimeCreated : 5/23/2026 1:56:30 PM
+Id          : 410
+Message     : Device {5d624f94-8850-40c3-a3fa-a4fd2080baf3}\vwifimp_wfd\5&4d95fc3&0&12 was started.
+              
+              Driver Name: netvwifimp.inf
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Service: vwifimp
+              Lower Filters: 
+              Upper Filters: 
+
+TimeCreated : 5/23/2026 1:56:30 PM
+Id          : 400
+Message     : Device {5d624f94-8850-40c3-a3fa-a4fd2080baf3}\vwifimp_wfd\5&4d95fc3&0&12 was configured.
+              
+              Driver Name: netvwifimp.inf
+              Driver Package ID: netvwifimp.inf_amd64_18ab2b4b684ab84b
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Driver Date: 06/21/2006
+              Driver Version: 10.0.26100.8328
+              Driver Provider: Microsoft
+              Driver Section: vwifimp_wfd.ndi
+              Driver Rank: 0xFF0000
+              Matching Device ID: {5d624f94-8850-40c3-a3fa-a4fd2080baf3}\vwifimp_wfd
+              Outranked Drivers: netvwifimp.inf:{5d624f94-8850-40c3-a3fa-a4fd2080baf3}\vwifimp_wfd:00FF2000
+              Device Updated: false
+              Parent Device: PCI\VEN_8086&DEV_2725&SUBSYS_16731A56&REV_1A\4&366ea56&0&00E5
+
+TimeCreated : 5/23/2026 1:56:30 PM
+Id          : 440
+Message     : Device settings for {5d624f94-8850-40c3-a3fa-a4fd2080baf3}\vwifimp_wfd\5&4d95fc3&0&12 were migrated from 
+              previous OS installation.
+              
+              Last Device Instance ID: {5d624f94-8850-40c3-a3fa-a4fd2080baf3}\vwifimp_wfd\5&4d95fc3&0&12
+              Class GUID: {4d36e972-e325-11ce-bfc1-08002be10318}
+              Location Path: 
+              Migration Rank: 0x0
+              Present: true
+
+TimeCreated : 5/23/2026 1:56:29 PM
+Id          : 410
+Message     : Device SWD\DRIVERENUM\{96bedf2c-18cb-4a15-b821-5e95ed0fea61}#VocaEffectPack&1&2e57512&0 was started.
+              
+              Driver Name: oem222.inf
+              Class GUID: {5989fce8-9cd0-467d-8a6a-5419e31529d4}
+              Service: 
+              Lower Filters: 
+              Upper Filters: 
+
+TimeCreated : 5/23/2026 1:56:29 PM
+Id          : 400
+Message     : Device SWD\DRIVERENUM\{96bedf2c-18cb-4a15-b821-5e95ed0fea61}#VocaEffectPack&1&2e57512&0 was configured.
+              
+              Driver Name: oem222.inf
+              Driver Package ID: voiceclarityep_audio_component.inf_amd64_f475a157038e13d5
+              Class GUID: {5989fce8-9cd0-467d-8a6a-5419e31529d4}
+              Driver Date: 03/31/2026
+              Driver Version: 10.0.26100.6710
+              Driver Provider: Microsoft Corporation
+              Driver Section: MSVoiceClarityComponentAPO_Install.NTamd64
+              Driver Rank: 0xFF0000
+              Matching Device ID: SWC\VEN_MSFT&AUDIO_EFFECTPACK_VOICECLARITY
+              Outranked Drivers: c_swcomponent.inf:SWC\Generic:00FF3000 c_swdevice.inf:SWD\GenericRaw:00FF3001
+              Device Updated: true
+              Parent Device: SWD\COMPUTER\MFG_Alienware&FAM_Alienware&PROD_Alienware_x17_R1&SKU_0A8F
+
+TimeCreated : 5/23/2026 1:56:11 PM
+Id          : 410
+Message     : Device SWD\PRINTENUM\{80410B9F-FC21-43B6-B414-7E31BF15CD20} was started.
+              
+              Driver Name: printqueue.inf
+              Class GUID: {1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}
+              Service: 
+              Lower Filters: 
+              Upper Filters: 
+
+TimeCreated : 5/23/2026 1:56:11 PM
+Id          : 400
+Message     : Device SWD\PRINTENUM\{80410B9F-FC21-43B6-B414-7E31BF15CD20} was configured.
+              
+              Driver Name: printqueue.inf
+              Driver Package ID: printqueue.inf_amd64_044b5f13f940e7c8
+              Class GUID: {1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}
+              Driver Date: 06/21/2006
+              Driver Version: 10.0.26100.1
+              Driver Provider: Microsoft
+              Driver Section: NO_DRV_LOCAL
+              Driver Rank: 0x0
+              Matching Device ID: PRINTENUM\LocalPrintQueue
+              Outranked Drivers: c_swdevice.inf:SWD\GenericRaw:00FF3001
+              Device Updated: false
+              Parent Device: SWD\PRINTENUM\PrintQueues
+
+TimeCreated : 5/23/2026 1:56:11 PM
+Id          : 440
+Message     : Device settings for SWD\PRINTENUM\{80410B9F-FC21-43B6-B414-7E31BF15CD20} were migrated from previous OS 
+              installation.
+              
+              Last Device Instance ID: SWD\PRINTENUM\{80410B9F-FC21-43B6-B414-7E31BF15CD20}
+              Class GUID: {1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}
+              Location Path: 
+              Migration Rank: 0x0
+              Present: true
+
+TimeCreated : 5/23/2026 1:56:11 PM
+Id          : 410
+Message     : Device SWD\PRINTENUM\{09B659FF-405F-4D2F-8824-A36338901EAC} was started.
+              
+              Driver Name: printqueue.inf
+              Class GUID: {1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}
+              Service: 
+              Lower Filters: 
+              Upper Filters: 
+
+TimeCreated : 5/23/2026 1:56:11 PM
+Id          : 410
+Message     : Device SWD\PRINTENUM\{9A9656BD-0340-41BB-A8F7-8E2B8C1ECBDF} was started.
+              
+              Driver Name: printqueue.inf
+              Class GUID: {1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}
+              Service: 
+              Lower Filters: 
+              Upper Filters: 
+
+TimeCreated : 5/23/2026 1:56:11 PM
+Id          : 410
+Message     : Device SWD\PRINTENUM\{75CF028F-9D2A-4314-8D98-A8E4D095F872} was started.
+              
+              Driver Name: printqueue.inf
+              Class GUID: {1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}
+              Service: 
+              Lower Filters: 
+              Upper Filters: 
+
+TimeCreated : 5/23/2026 1:56:11 PM
+Id          : 400
+Message     : Device SWD\PRINTENUM\{09B659FF-405F-4D2F-8824-A36338901EAC} was configured.
+              
+              Driver Name: printqueue.inf
+              Driver Package ID: printqueue.inf_amd64_044b5f13f940e7c8
+              Class GUID: {1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}
+              Driver Date: 06/21/2006
+              Driver Version: 10.0.26100.1
+              Driver Provider: Microsoft
+              Driver Section: NO_DRV_LOCAL
+              Driver Rank: 0x1
+              Matching Device ID: PRINTENUM\LocalPrintQueue
+              Outranked Drivers: oem18.inf:{3ee39114-30b4-45a4-a109-19d4a40fcc22}:00FF0002 
+              c_swdevice.inf:SWD\GenericRaw:00FF3001
+              Device Updated: false
+              Parent Device: SWD\PRINTENUM\PrintQueues
+
+TimeCreated : 5/23/2026 1:56:11 PM
+Id          : 440
+Message     : Device settings for SWD\PRINTENUM\{09B659FF-405F-4D2F-8824-A36338901EAC} were migrated from previous OS 
+              installation.
+              
+              Last Device Instance ID: SWD\PRINTENUM\{09B659FF-405F-4D2F-8824-A36338901EAC}
+              Class GUID: {1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}
+              Location Path: 
+              Migration Rank: 0x0
+              Present: true
+
+TimeCreated : 5/23/2026 1:56:11 PM
+Id          : 400
+Message     : Device SWD\PRINTENUM\{9A9656BD-0340-41BB-A8F7-8E2B8C1ECBDF} was configured.
+              
+              Driver Name: printqueue.inf
+              Driver Package ID: printqueue.inf_amd64_044b5f13f940e7c8
+              Class GUID: {1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}
+              Driver Date: 06/21/2006
+              Driver Version: 10.0.26100.1
+              Driver Provider: Microsoft
+              Driver Section: NO_DRV_LOCAL
+              Driver Rank: 0x0
+              Matching Device ID: PRINTENUM\LocalPrintQueue
+              Outranked Drivers: c_swdevice.inf:SWD\GenericRaw:00FF3001
+              Device Updated: false
+              Parent Device: SWD\PRINTENUM\PrintQueues
+
+TimeCreated : 5/23/2026 1:56:11 PM
+Id          : 440
+Message     : Device settings for SWD\PRINTENUM\{9A9656BD-0340-41BB-A8F7-8E2B8C1ECBDF} were migrated from previous OS 
+              installation.
+              
+              Last Device Instance ID: SWD\PRINTENUM\{9A9656BD-0340-41BB-A8F7-8E2B8C1ECBDF}
+              Class GUID: {1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}
+              Location Path: 
+              Migration Rank: 0x0
+              Present: true
+
+TimeCreated : 5/23/2026 1:56:11 PM
+Id          : 400
+Message     : Device SWD\PRINTENUM\{75CF028F-9D2A-4314-8D98-A8E4D095F872} was configured.
+              
+              Driver Name: printqueue.inf
+              Driver Package ID: printqueue.inf_amd64_044b5f13f940e7c8
+              Class GUID: {1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}
+              Driver Date: 06/21/2006
+              Driver Version: 10.0.26100.1
+              Driver Provider: Microsoft
+              Driver Section: NO_DRV_LOCAL
+              Driver Rank: 0x1
+              Matching Device ID: PRINTENUM\LocalPrintQueue
+              Outranked Drivers: c_swdevice.inf:SWD\GenericRaw:00FF3001
+              Device Updated: false
+              Parent Device: SWD\PRINTENUM\PrintQueues
+
+TimeCreated : 5/23/2026 1:56:11 PM
+Id          : 440
+Message     : Device settings for SWD\PRINTENUM\{75CF028F-9D2A-4314-8D98-A8E4D095F872} were migrated from previous OS 
+              installation.
+              
+              Last Device Instance ID: SWD\PRINTENUM\{75CF028F-9D2A-4314-8D98-A8E4D095F872}
+              Class GUID: {1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}
+              Location Path: 
+              Migration Rank: 0x0
+              Present: true
+
+TimeCreated : 5/23/2026 1:56:11 PM
+Id          : 410
+Message     : Device SWD\PRINTENUM\{00D9A942-9E7B-484B-8AA8-DEA95DAB37DB} was started.
+              
+              Driver Name: printqueue.inf
+              Class GUID: {1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}
+              Service: 
+              Lower Filters: 
+              Upper Filters: 
+
+TimeCreated : 5/23/2026 1:56:11 PM
+Id          : 400
+Message     : Device SWD\PRINTENUM\{00D9A942-9E7B-484B-8AA8-DEA95DAB37DB} was configured.
+              
+              Driver Name: printqueue.inf
+              Driver Package ID: printqueue.inf_amd64_044b5f13f940e7c8
+              Class GUID: {1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}
+              Driver Date: 06/21/2006
+              Driver Version: 10.0.26100.1
+              Driver Provider: Microsoft
+              Driver Section: NO_DRV_LOCAL
+              Driver Rank: 0x0
+              Matching Device ID: PRINTENUM\LocalPrintQueue
+              Outranked Drivers: c_swdevice.inf:SWD\GenericRaw:00FF3001
+              Device Updated: false
+              Parent Device: SWD\PRINTENUM\PrintQueues
+
+
+
+
+=== DONE ===
+
