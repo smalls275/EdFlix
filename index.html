@@ -580,16 +580,10 @@
       modalId = null;
       document.body.style.overflow = 'hidden';
       renderModal();
+      // After modal is in the DOM, focus the Fullscreen button so the remote OK key fullscreens
       requestAnimationFrame(() => {
         const fs = document.querySelector('.modal-content button[onclick="toggleFullscreen()"]');
         if (fs) fs.focus();
-        setTimeout(() => {
-          const container = document.getElementById('fs-container');
-          if (container) {
-            const req = container.requestFullscreen || container.webkitRequestFullscreen;
-            if (req) req.call(container).catch(() => {});
-          }
-        }, 500);
       });
     }
 
