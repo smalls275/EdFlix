@@ -642,18 +642,23 @@
 
     async function loadUpcoming() {
       if (!KEY) return;
+      console.log('[Upcoming] Starting fetch...');
       try {
         const now = new Date();
         const today = now.toISOString().slice(0, 10);
         // Window starts 60 days ago so films still in their US theatrical run are included
-        const windowStart = new Date(now); windowStart.setDate(windowStart.getDate() - 60);
+        // Extended to 90 days to catch recent streaming releases
+        const windowStart = new Date(now); windowStart.setDate(windowStart.getDate() - 90);
         const windowStartStr = windowStart.toISOString().slice(0, 10);
         const windowEnd = new Date(now); windowEnd.setMonth(windowEnd.getMonth() + 18);
         const windowEndStr = windowEnd.toISOString().slice(0, 10);
+        console.log('[Upcoming] Date window:', windowStartStr, 'to', windowEndStr);
 
         // Pull from multiple sources / sort orders so we don't miss less-popular or far-out films
+        // Release types: 1=premiere, 2=theatrical(limited), 3=theatrical, 4=digital, 5=physical, 6=TV
         const sources = [
-          `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=2|3&release_date.gte=${windowStartStr}&release_date.lte=${windowEndStr}&sort_by=popularity.desc`,
+          `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=1|2|3|4|5|6&release_date.gte=${windowStartStr}&release_date.lte=${windowEndStr}&sort_by=popularity.desc`,
+          `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&region=US&with_release_type=1|2|3|4|5|6&release_date.gte=${windowStartStr}&release_date.lte=${windowEndStr}&sort_by=primary_release_date.desc`,
           `https://api.themoviedb.org/3/movie/upcoming?api_key=${KEY}&region=US`,
           `https://api.themoviedb.org/3/movie/now_playing?api_key=${KEY}&region=US`
         ];
@@ -690,17 +695,20 @@
               ]);
               if (!detailRes.ok) return null;
               const d = await detailRes.json();
-              // Find US release date (prefer theatrical/limited, then premiere/digital as fallback)
+              // Find US release date (accept any type: theatrical, digital, streaming, TV, premiere)
               let usReleaseDate = null;
+              let usReleaseType = null;
               if (datesRes.ok) {
                 const dj = await datesRes.json();
                 const usEntry = (dj.results || []).find(r => r.iso_3166_1 === 'US');
                 if (usEntry) {
                   const rels = (usEntry.release_dates || []).slice().sort((a,b) => a.release_date.localeCompare(b.release_date));
-                  const theatrical = rels.find(r => r.type === 3) || rels.find(r => r.type === 2);
-                  const any = rels[0];
-                  const chosen = theatrical || any;
-                  if (chosen) usReleaseDate = chosen.release_date.slice(0, 10);
+                  // Accept any release type (1-6): premiere, theatrical limited, theatrical, digital, physical, TV
+                  const anyRelease = rels.find(r => r.type >= 1 && r.type <= 6);
+                  if (anyRelease) {
+                    usReleaseDate = anyRelease.release_date.slice(0, 10);
+                    usReleaseType = anyRelease.type;
+                  }
                 }
               }
               // Fallback: if no US release entry yet, accept the movie's primary release_date if its production includes the US
@@ -711,9 +719,16 @@
               }
               // Require a release in our window (includes films currently in theaters)
               if (!usReleaseDate || usReleaseDate < windowStartStr || usReleaseDate > windowEndStr) return null;
-              // Require a trailer to exist (already released to the public)
-              const hasTrailer = (d.videos?.results || []).some(v => v.site === 'YouTube' && (v.type === 'Trailer' || v.type === 'Teaser'));
-              if (!hasTrailer) return null;
+              // Require a trailer to exist (accept Trailer, Teaser, or Clip from YouTube)
+              const videos = d.videos?.results || [];
+              const hasTrailer = videos.some(v => v.site === 'YouTube' && (v.type === 'Trailer' || v.type === 'Teaser' || v.type === 'Clip' || v.type === 'Featurette'));
+              if (!hasTrailer) {
+                console.log('[Upcoming] Skipping (no trailer):', d.title);
+                return null;
+              }
+              // Log what we're including for debugging
+              const releaseTypeNames = {1:'Premiere',2:'Theatrical(Limited)',3:'Theatrical',4:'Digital',5:'Physical',6:'TV'};
+              console.log('[Upcoming] Added:', d.title, '| Release:', usReleaseDate, '| Type:', releaseTypeNames[usReleaseType] || 'Unknown');
               d.release_date = usReleaseDate;
               return { tmdbId: m.id, title: d.title, formats: [], status: 'upcoming', genre: (d.genres || []).map(g => g.name), tmdbData: d, isUpcoming: true };
             } catch { return null; }
