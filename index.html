@@ -361,6 +361,7 @@
     let taskmasterShow = null, taskmasterEpisodes = [], tmEpisodeIdx = null;
     let taskmasterPageOpen = false, tmPageFocusIdx = 0;
     const TM_CHANNEL = 'UCT5C7yaO3RVuOgwP8JVAujQ', TM_TMDB = 63404;
+    const MAX_TM_EPISODES = 3; // Configure: number of latest episodes to display
 
     // Deduplicate DATA by (tmdbId,type) so accidental dupes don't render twice
     const SEEN_DATA = new Set();
@@ -486,8 +487,9 @@
           const fullEps = allItems.filter(e => !e.isShort && /\|\s*Full Episode/i.test(e.title));
           console.log('[TM] Full episodes:', fullEps.length);
           taskmasterEpisodes = (fullEps.length > 0 ? fullEps : allItems.filter(e => !e.isShort))
-            .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-          console.log('[TM] Final episodes:', taskmasterEpisodes.length);
+            .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
+            .slice(0, MAX_TM_EPISODES);
+          console.log('[TM] Final episodes (limited to', MAX_TM_EPISODES, '):', taskmasterEpisodes.length);
           break;
         } catch (e) {
           console.error('[TM] Proxy error:', e.message);
