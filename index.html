@@ -993,14 +993,24 @@
     }
     function toggleFullscreen() {
       const container = document.getElementById('fs-container');
-      if (!container) return;
-      const fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+      if (!container) { console.log('[FS] No fs-container found'); return; }
+
+      const fsEl = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
       if (fsEl) {
-        (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+        const exit = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen;
+        if (exit) exit.call(document);
       } else {
-        const req = container.requestFullscreen || container.webkitRequestFullscreen || container.mozRequestFullScreen;
+        const req = container.requestFullscreen || container.webkitRequestFullscreen || container.mozRequestFullScreen || container.msRequestFullscreen;
         if (req) {
-          req.call(container).catch(err => console.log('Fullscreen request failed:', err));
+          req.call(container).then(() => console.log('[FS] Fullscreen entered')).catch(err => {
+            console.log('[FS] Fullscreen request failed:', err);
+            // Fallback: try the iframe directly if container fails
+            const iframe = container.querySelector('iframe');
+            if (iframe) {
+              const iframeReq = iframe.requestFullscreen || iframe.webkitRequestFullscreen;
+              if (iframeReq) iframeReq.call(iframe).catch(() => {});
+            }
+          });
         }
       }
     }
