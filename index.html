@@ -774,25 +774,28 @@
     function cats(fr) {
       if (search.trim()) return [{title: `Search Results for "${search}"`, movies: fr}];
       const c = [];
+      // Sort helper: highest-rated first so the best titles are leftmost in each row
+      const byRating = arr => [...arr].sort((a,b) => (b.tmdbData?.vote_average || 0) - (a.tmdbData?.vote_average || 0));
       if (upcoming.length && filter === 'all') c.push({title: '🎬 In Theaters & Coming Soon', movies: upcoming});
       const fav = fr.filter(m => m.tags?.includes('favorites'));
-      if (fav.length) c.push({title: 'Family Favorites', movies: fav});
+      if (fav.length) c.push({title: 'Family Favorites', movies: byRating(fav)});
       const threeD = fr.filter(m => m.formats.includes('3D Blu-ray'));
-      if (threeD.length) c.push({title: '3D Movies', movies: threeD});
+      if (threeD.length) c.push({title: '3D Movies', movies: byRating(threeD)});
       const tv = fr.filter(m => m.type === 'tv' || m.notes?.includes('TV Series'));
-      if (tv.length) c.push({title: 'TV Series', movies: tv});
+      if (tv.length) c.push({title: 'TV Series', movies: byRating(tv)});
       const g = new Map();
       fr.forEach(m => m.genre?.forEach(h => { if (!g.has(h)) g.set(h, []); g.get(h).push(m); }));
-      [...g.entries()].sort((a,b) => b[1].length - a[1].length).forEach(([t,m]) => { if (m.length >= 2) c.push({title: t, movies: m}); });
+      [...g.entries()].sort((a,b) => b[1].length - a[1].length).forEach(([t,m]) => { if (m.length >= 2) c.push({title: t, movies: byRating(m)}); });
       const un = fr.filter(m => m.status !== 'available');
-      if (un.length) c.push({title: 'Currently Checked Out', movies: un});
+      if (un.length) c.push({title: 'Currently Checked Out', movies: byRating(un)});
 
       // Fun bonus categories
       const yearOf = m => parseInt((m.tmdbData?.release_date || '').slice(0,4)) || 0;
       const runtimeOf = m => m.tmdbData?.runtime || 0;
       const ratingOf = m => m.tmdbData?.vote_average || 0;
 
-      const push = (title, movies, min = 3) => { if (movies.length >= min) c.push({title, movies}); };
+      // Categories are sorted highest-rated first so the best titles are leftmost
+      const push = (title, movies, min = 3) => { if (movies.length >= min) c.push({title, movies: [...movies].sort((a,b) => ratingOf(b) - ratingOf(a))}); };
 
       push('🏆 4K Crown Jewels', fr.filter(m => m.formats.includes('4K UHD') && ratingOf(m) >= 8));
       push('🎞️ Criterion Classics (Pre-1980)', fr.filter(m => { const y = yearOf(m); return y > 0 && y < 1980; }));
