@@ -478,12 +478,34 @@
           }
 
           console.log('[TM] Parsed', allItems.length, 'items');
-          const fullEps = allItems.filter(e => !e.isShort && /\|\s*Full Episode/i.test(e.title));
+          // Parse season/episode numbers from titles like "Season 21, Episode 7 - '...' | Full Episode"
+          const parseSE = t => {
+            const m = /Season\s+(\d+)\s*,?\s*Episode\s+(\d+)/i.exec(t || '');
+            return m ? { season: parseInt(m[1]), episode: parseInt(m[2]) } : null;
+          };
+          const fullEps = allItems
+            .filter(e => !e.isShort && /\|\s*Full Episode/i.test(e.title))
+            .map(e => ({ ...e, se: parseSE(e.title) }));
           console.log('[TM] Full episodes:', fullEps.length);
-          taskmasterEpisodes = (fullEps.length > 0 ? fullEps : allItems.filter(e => !e.isShort))
-            .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
-            .slice(0, MAX_TM_EPISODES);
-          console.log('[TM] Final episodes (limited to', MAX_TM_EPISODES, '):', taskmasterEpisodes.length);
+          // Find the latest season among parsed episodes
+          const seasons = fullEps.filter(e => e.se).map(e => e.se.season);
+          const latestSeason = seasons.length ? Math.max(...seasons) : null;
+          console.log('[TM] Latest season detected:', latestSeason);
+          let picked;
+          if (latestSeason !== null) {
+            // Latest 3 episodes of the latest season, newest episode first
+            picked = fullEps
+              .filter(e => e.se && e.se.season === latestSeason)
+              .sort((a, b) => b.se.episode - a.se.episode)
+              .slice(0, MAX_TM_EPISODES);
+          } else {
+            // Fallback: no parseable season info, use newest by date
+            picked = (fullEps.length > 0 ? fullEps : allItems.filter(e => !e.isShort))
+              .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
+              .slice(0, MAX_TM_EPISODES);
+          }
+          taskmasterEpisodes = picked;
+          console.log('[TM] Final episodes:', taskmasterEpisodes.map(e => e.title));
           break;
         } catch (e) {
           console.error('[TM] Proxy error:', e.message);
