@@ -3,8 +3,8 @@
 
 _Auto-generated from `index.html` DATA array._
 
-**Unique titles:** 307 (Movies: 297  TV Series: 10)
-**Source rows:** 313  (includes 6 duplicate entries)
+**Unique titles:** 308 (Movies: 298  TV Series: 10)
+**Source rows:** 314  (includes 6 duplicate entries)
 
 ## Duplicate entries in DATA (deduped at runtime)
 
@@ -18,7 +18,7 @@ _Auto-generated from `index.html` DATA array._
 ## By format
 
 - **3D Blu-ray**: 39
-- **4K UHD**: 151
+- **4K UHD**: 152
 - **Blu-ray**: 98
 - **DVD**: 30
 
@@ -278,6 +278,7 @@ _Auto-generated from `index.html` DATA array._
 | The Hobbit: The Desolation of Smaug | movie | 3D Blu-ray | Adventure, Fantasy | Living Room | 57158 |
 | The Hunt for Red October | movie | 4K UHD | Action, Thriller | Living Room | 1669 |
 | The Incredibles | movie | 4K UHD | Animation, Action, Adventure | Living Room | 9806 |
+| The Incredibles 2 | movie | 4K UHD | Action, Adventure, Animation, Family | Living Room | 260513 |
 | The Last Dragon | movie | 4K UHD | Action, Comedy, Music | Living Room | 13938 |
 | The Lion King | movie | 3D Blu-ray | Animation, Adventure, Drama | Living Room | 8587 |
 | The Little Mermaid | movie | 3D Blu-ray | Animation, Adventure, Family | Living Room | 10144 |
