@@ -215,5 +215,45 @@
     "dateAdded": "2026-08-22",
     "genre": ["Horror", "Thriller"],
     "tags": ["2026", "new-release", "horror"]
+  },
+  {
+    "tmdbId": 11286,
+    "title": "The Cannonball Run",
+    "formats": ["Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Action", "Comedy", "Family"],
+    "tags": ["comedy", "classics"]
+  },
+  {
+    "tmdbId": 2252,
+    "title": "Eastern Promises",
+    "formats": ["Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Thriller", "Crime", "Mystery"],
+    "tags": ["thriller"]
+  },
+  {
+    "tmdbId": 6466,
+    "title": "Freddy vs. Jason",
+    "formats": ["Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Horror"],
+    "tags": ["horror", "franchise"]
+  },
+  {
+    "tmdbId": 687163,
+    "title": "Project Hail Mary",
+    "formats": ["4K UHD"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Science Fiction", "Adventure"],
+    "tags": ["2026", "new-release", "sci-fi"]
   }
 ]

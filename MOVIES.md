@@ -3,8 +3,8 @@
 
 _Auto-generated from `index.html` DATA array._
 
-**Unique titles:** 297 (Movies: 290  TV Series: 7)
-**Source rows:** 303  (includes 6 duplicate entries)
+**Unique titles:** 301 (Movies: 294  TV Series: 7)
+**Source rows:** 307  (includes 6 duplicate entries)
 
 ## Duplicate entries in DATA (deduped at runtime)
 
@@ -18,8 +18,8 @@ _Auto-generated from `index.html` DATA array._
 ## By format
 
 - **3D Blu-ray**: 38
-- **4K UHD**: 148
-- **Blu-ray**: 95
+- **4K UHD**: 149
+- **Blu-ray**: 98
 - **DVD**: 27
 
 ## Full list (alphabetical)
@@ -71,6 +71,7 @@ _Auto-generated from `index.html` DATA array._
 | Brazil | movie | Blu-ray | Drama, Sci-Fi, Thriller | Living Room | 68 |
 | Burning Love | movie | DVD | Comedy | Living Room | 44189 |
 | Caddyshack | movie | Blu-ray | Comedy, Sport | Living Room | 11977 |
+| The Cannonball Run | movie | Blu-ray | Action, Comedy, Family | Living Room | 11286 |
 | Cannibal! The Musical | movie | Blu-ray | Comedy, Horror, Musical | Living Room | 13063 |
 | Cars | movie | 3D Blu-ray | Animation, Adventure, Comedy | Living Room | 920 |
 | Casablanca | movie | 4K UHD | Drama, Romance, War | Living Room | 289 |
@@ -99,6 +100,7 @@ _Auto-generated from `index.html` DATA array._
 | Dune: Part Two | movie | 4K UHD | Action, Adventure, Drama | Living Room | 693134 |
 | Dungeons & Dragons: Honor Among Thieves | movie | 4K UHD | Action, Adventure, Comedy | Living Room | 493529 |
 | Dunkirk | movie | 4K UHD | Action, Drama, History | Living Room | 374720 |
+| Eastern Promises | movie | Blu-ray | Thriller, Crime, Mystery | Living Room | 2252 |
 | E.T. the Extra-Terrestrial | movie | 4K UHD | Adventure, Family, Sci-Fi | Living Room | 601 |
 | Edge of Tomorrow | movie | 3D Blu-ray | Action, Sci-Fi | Living Room | 137113 |
 | Elf | movie | 4K UHD | Comedy, Family, Fantasy | Living Room | 10719 |
@@ -113,6 +115,7 @@ _Auto-generated from `index.html` DATA array._
 | Frank Herbert's Children of Dune | tv | Blu-ray | Drama, Sci-Fi | Living Room | 9156 |
 | Frank Herbert's Dune | tv | Blu-ray | Drama, Sci-Fi | Living Room | 19566 |
 | Freddy's Dead: The Final Nightmare | movie | 4K UHD | Fantasy, Horror | Living Room | 11284 |
+| Freddy vs. Jason | movie | Blu-ray | Horror | Living Room | 6466 |
 | Frozen | movie | 4K UHD, 3D Blu-ray | Animation, Adventure, Family | Living Room | 109445 |
 | Frozen Fever | movie | DVD | Animation, Comedy, Family | Living Room | 326359 |
 | Frozen II | movie | 3D Blu-ray | Animation, Adventure, Family | Living Room | 330457 |
@@ -288,6 +291,7 @@ _Auto-generated from `index.html` DATA array._
 | The Prestige | movie | 4K UHD, DVD | Drama, Mystery, Sci-Fi | Living Room | 1124 |
 | The Princess and the Frog | movie | 4K UHD | Animation, Adventure, Family | Living Room | 10198 |
 | The Princess Bride | movie | Blu-ray | Adventure, Comedy, Family | Living Room | 2493 |
+| Project Hail Mary | movie | 4K UHD | Science Fiction, Adventure | Living Room | 687163 |
 | The Red Shoes | movie | 4K UHD | Drama, Music, Romance | Living Room | 19542 |
 | The Road | movie | Blu-ray | Adventure, Drama, Thriller | Living Room | 20766 |
 | The Rock | movie | DVD | Action, Adventure, Thriller | Living Room | 9802 |
