@@ -805,6 +805,8 @@
       // Sort helper: highest-rated first so the best titles are leftmost in each row
       const byRating = arr => [...arr].sort((a,b) => (b.tmdbData?.vote_average || 0) - (a.tmdbData?.vote_average || 0));
       if (upcoming.length && filter === 'all') c.push({title: '🎬 In Theaters & Coming Soon', movies: upcoming});
+      const recentlyAdded = fr.filter(m => m.dateAdded).sort((a,b) => (b.dateAdded || '').localeCompare(a.dateAdded || '')).slice(0, 15);
+      if (recentlyAdded.length) c.push({title: 'Recently Added', movies: recentlyAdded});
       const fav = fr.filter(m => m.tags?.includes('favorites'));
       if (fav.length) c.push({title: 'Family Favorites', movies: byRating(fav)});
       const threeD = fr.filter(m => m.formats.includes('3D Blu-ray'));
