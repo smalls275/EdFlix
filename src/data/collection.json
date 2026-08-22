@@ -277,5 +277,29 @@
     "genre": ["Comedy"],
     "notes": "Complete Series",
     "tags": ["comedy", "sketch-comedy"]
+  },
+  {
+    "tmdbId": 57607,
+    "type": "tv",
+    "title": "Kroll Show",
+    "formats": ["DVD"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Comedy"],
+    "notes": "Season 1",
+    "tags": ["comedy", "sketch-comedy"]
+  },
+  {
+    "tmdbId": 57607,
+    "type": "tv",
+    "title": "Kroll Show",
+    "formats": ["DVD"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Comedy"],
+    "notes": "Season 2",
+    "tags": ["comedy", "sketch-comedy"]
   }
 ]

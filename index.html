@@ -240,6 +240,8 @@
       {tmdbId:393,title:"Kill Bill: Vol. 2",formats:["Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Crime","Thriller"]},
       {tmdbId:546554,title:"Knives Out",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Comedy","Crime","Drama"]},
       {tmdbId:43082,type:"tv",title:"Key & Peele",formats:["DVD"],location:"Living Room",status:"available",dateAdded:"2026-08-22",genre:["Comedy"],notes:"Complete Series",tags:["comedy","sketch-comedy"]},
+      {tmdbId:57607,type:"tv",title:"Kroll Show",formats:["DVD"],location:"Living Room",status:"available",dateAdded:"2026-08-22",genre:["Comedy"],notes:"Season 1",tags:["comedy","sketch-comedy"]},
+      {tmdbId:57607,type:"tv",title:"Kroll Show",formats:["DVD"],location:"Living Room",status:"available",dateAdded:"2026-08-22",genre:["Comedy"],notes:"Season 2",tags:["comedy","sketch-comedy"]},
       {tmdbId:13938,title:"The Last Dragon",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Action","Comedy","Music"]},
       {tmdbId:947,title:"Lawrence of Arabia",formats:["4K UHD"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Adventure","Biography","Drama"]},
       {tmdbId:87827,title:"Life of Pi",formats:["3D Blu-ray"],location:"Living Room",status:"available",dateAdded:"2025-01-01",genre:["Adventure","Drama","Fantasy"]},
@@ -364,10 +366,10 @@
     const TM_CHANNEL = 'UCT5C7yaO3RVuOgwP8JVAujQ', TM_TMDB = 63404;
     const MAX_TM_EPISODES = 3; // Configure: number of latest episodes to display
 
-    // Deduplicate DATA by (tmdbId,type) so accidental dupes don't render twice
+    // Deduplicate accidental exact editions while preserving separate seasons.
     const SEEN_DATA = new Set();
     const UNIQUE_DATA = DATA.filter(d => {
-      const k = `${d.type || 'movie'}:${d.tmdbId}`;
+      const k = `${d.type || 'movie'}:${d.tmdbId}:${d.notes || ''}`;
       if (SEEN_DATA.has(k)) return false;
       SEEN_DATA.add(k); return true;
     });
