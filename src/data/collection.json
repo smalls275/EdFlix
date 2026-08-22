@@ -267,6 +267,16 @@
     "tags": ["action", "thriller", "classics"]
   },
   {
+    "tmdbId": 4011,
+    "title": "Beetlejuice",
+    "formats": ["4K UHD"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Comedy", "Fantasy"],
+    "tags": ["comedy", "classics"]
+  },
+  {
     "tmdbId": 43082,
     "type": "tv",
     "title": "Key & Peele",
