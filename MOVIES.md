@@ -3,8 +3,8 @@
 
 _Auto-generated from `index.html` DATA array._
 
-**Unique titles:** 301 (Movies: 294  TV Series: 7)
-**Source rows:** 307  (includes 6 duplicate entries)
+**Unique titles:** 302 (Movies: 295  TV Series: 7)
+**Source rows:** 308  (includes 6 duplicate entries)
 
 ## Duplicate entries in DATA (deduped at runtime)
 
@@ -18,7 +18,7 @@ _Auto-generated from `index.html` DATA array._
 ## By format
 
 - **3D Blu-ray**: 38
-- **4K UHD**: 149
+- **4K UHD**: 150
 - **Blu-ray**: 98
 - **DVD**: 27
 
@@ -165,6 +165,7 @@ _Auto-generated from `index.html` DATA array._
 | Legend | movie | 4K UHD, Blu-ray | Adventure, Fantasy, Romance | Living Room | 11976 |
 | Life of Pi | movie | 3D Blu-ray | Adventure, Drama, Fantasy | Living Room | 87827 |
 | Lone Survivor | movie | Blu-ray | Action, Drama, War | Living Room | 193756 |
+| The Long Kiss Goodnight | movie | 4K UHD | Crime, Action, Mystery, Thriller | Living Room | 11412 |
 | Mad Max | movie | 4K UHD | Action, Adventure, Sci-Fi | Living Room | 9659 |
 | Mad Max 2: The Road Warrior | movie | 4K UHD | Action, Adventure, Sci-Fi | Living Room | 8810 |
 | Mad Max Beyond Thunderdome | movie | 4K UHD | Action, Adventure, Sci-Fi | Living Room | 9355 |

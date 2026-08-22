@@ -255,5 +255,15 @@
     "dateAdded": "2026-08-22",
     "genre": ["Science Fiction", "Adventure"],
     "tags": ["2026", "new-release", "sci-fi"]
+  },
+  {
+    "tmdbId": 11412,
+    "title": "The Long Kiss Goodnight",
+    "formats": ["4K UHD"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Crime", "Action", "Mystery", "Thriller"],
+    "tags": ["action", "thriller", "classics"]
   }
 ]
