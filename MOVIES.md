@@ -3,8 +3,8 @@
 
 _Auto-generated from `index.html` DATA array._
 
-**Unique titles:** 302 (Movies: 295  TV Series: 7)
-**Source rows:** 308  (includes 6 duplicate entries)
+**Unique titles:** 303 (Movies: 295  TV Series: 8)
+**Source rows:** 309  (includes 6 duplicate entries)
 
 ## Duplicate entries in DATA (deduped at runtime)
 
@@ -20,7 +20,7 @@ _Auto-generated from `index.html` DATA array._
 - **3D Blu-ray**: 38
 - **4K UHD**: 150
 - **Blu-ray**: 98
-- **DVD**: 27
+- **DVD**: 28
 
 ## Full list (alphabetical)
 
@@ -157,6 +157,7 @@ _Auto-generated from `index.html` DATA array._
 | Jumanji | movie | 4K UHD | Adventure, Family, Fantasy | Living Room | 8844 |
 | Jurassic Park | movie | 4K UHD, 3D Blu-ray | Adventure, Sci-Fi, Thriller | Living Room | 329 |
 | Keanu | movie | Blu-ray | Action, Comedy, Crime | Living Room | 342521 |
+| Key & Peele | tv | DVD | Comedy | Living Room | 43082 |
 | Kill Bill: Vol. 1 | movie | Blu-ray | Action, Crime, Thriller | Living Room | 24 |
 | Kill Bill: Vol. 2 | movie | Blu-ray | Action, Crime, Thriller | Living Room | 393 |
 | Knives Out | movie | 4K UHD | Comedy, Crime, Drama | Living Room | 546554 |

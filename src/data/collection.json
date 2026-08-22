@@ -265,5 +265,17 @@
     "dateAdded": "2026-08-22",
     "genre": ["Crime", "Action", "Mystery", "Thriller"],
     "tags": ["action", "thriller", "classics"]
+  },
+  {
+    "tmdbId": 43082,
+    "type": "tv",
+    "title": "Key & Peele",
+    "formats": ["DVD"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Comedy"],
+    "notes": "Complete Series",
+    "tags": ["comedy", "sketch-comedy"]
   }
 ]
