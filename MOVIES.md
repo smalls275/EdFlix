@@ -3,8 +3,8 @@
 
 _Auto-generated from `index.html` DATA array._
 
-**Unique titles:** 308 (Movies: 298  TV Series: 10)
-**Source rows:** 314  (includes 6 duplicate entries)
+**Unique titles:** 309 (Movies: 299  TV Series: 10)
+**Source rows:** 315  (includes 6 duplicate entries)
 
 ## Duplicate entries in DATA (deduped at runtime)
 
@@ -19,7 +19,7 @@ _Auto-generated from `index.html` DATA array._
 
 - **3D Blu-ray**: 39
 - **4K UHD**: 152
-- **Blu-ray**: 98
+- **Blu-ray**: 99
 - **DVD**: 30
 
 ## Full list (alphabetical)
@@ -122,6 +122,7 @@ _Auto-generated from `index.html` DATA array._
 | Frozen II | movie | 3D Blu-ray | Animation, Adventure, Family | Living Room | 330457 |
 | Furiosa: A Mad Max Saga | movie | 4K UHD | Action, Adventure, Sci-Fi | Living Room | 786892 |
 | Galaxy Quest | movie | 4K UHD | Adventure, Comedy, Sci-Fi | Living Room | 926 |
+| Glass Onion: A Knives Out Mystery | movie | Blu-ray | Comedy, Crime, Mystery | Living Room | 661374 |
 | Garth Marenghi's Darkplace | tv | DVD | Comedy, Horror | Living Room | 205 |
 | Gladiator | movie | Blu-ray | Action, Adventure, Drama | Living Room | 98 |
 | Gone with the Wind | movie | Blu-ray | Drama, Romance, War | Living Room | 770 |

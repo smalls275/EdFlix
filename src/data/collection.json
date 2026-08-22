@@ -321,6 +321,16 @@
     "tags": ["family-friendly", "animation", "superhero"]
   },
   {
+    "tmdbId": 661374,
+    "title": "Glass Onion: A Knives Out Mystery",
+    "formats": ["Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Comedy", "Crime", "Mystery"],
+    "tags": ["comedy", "mystery", "knives-out"]
+  },
+  {
     "tmdbId": 57607,
     "type": "tv",
     "title": "Kroll Show",
