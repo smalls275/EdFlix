@@ -301,6 +301,16 @@
     "tags": ["comedy", "sketch-comedy"]
   },
   {
+    "tmdbId": 1547,
+    "title": "The Lost Boys",
+    "formats": ["4K UHD"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Horror", "Comedy", "Thriller"],
+    "tags": ["horror", "classics"]
+  },
+  {
     "tmdbId": 57607,
     "type": "tv",
     "title": "Kroll Show",
