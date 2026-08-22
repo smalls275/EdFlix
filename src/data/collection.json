@@ -311,5 +311,15 @@
     "genre": ["Comedy"],
     "notes": "Season 2",
     "tags": ["comedy", "sketch-comedy"]
+  },
+  {
+    "tmdbId": 9728,
+    "title": "Friday the 13th Part III",
+    "formats": ["3D Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Horror"],
+    "tags": ["horror", "franchise"]
   }
 ]
