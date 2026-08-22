@@ -205,5 +205,15 @@
     "dateAdded": "2020-10-21",
     "genre": ["Adventure", "Comedy", "Science Fiction"],
     "tags": ["family-friendly", "classics", "sci-fi"]
+  },
+  {
+    "tmdbId": 1339713,
+    "title": "Obsession",
+    "formats": ["4K UHD"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Horror", "Thriller"],
+    "tags": ["2026", "new-release", "horror"]
   }
 ]

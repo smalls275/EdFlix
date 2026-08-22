@@ -3,8 +3,8 @@
 
 _Auto-generated from `index.html` DATA array._
 
-**Unique titles:** 296 (Movies: 289  TV Series: 7)
-**Source rows:** 302  (includes 6 duplicate entries)
+**Unique titles:** 297 (Movies: 290  TV Series: 7)
+**Source rows:** 303  (includes 6 duplicate entries)
 
 ## Duplicate entries in DATA (deduped at runtime)
 
@@ -18,7 +18,7 @@ _Auto-generated from `index.html` DATA array._
 ## By format
 
 - **3D Blu-ray**: 38
-- **4K UHD**: 147
+- **4K UHD**: 148
 - **Blu-ray**: 95
 - **DVD**: 27
 
@@ -180,6 +180,7 @@ _Auto-generated from `index.html` DATA array._
 | Nope | movie | 4K UHD | Horror, Mystery, Sci-Fi | Living Room | 762504 |
 | North by Northwest | movie | 4K UHD | Adventure, Mystery, Thriller | Living Room | 213 |
 | Notorious | movie | DVD | Drama, Film-Noir, Mystery | Living Room | 303 |
+| Obsession | movie | 4K UHD | Horror, Thriller | Living Room | 1339713 |
 | Oppenheimer | movie | 4K UHD | Biography, Drama, History | Living Room | 872585 |
 | Paddington | movie | Blu-ray | Adventure, Comedy, Family | Living Room | 116149 |
 | Paddington 2 | movie | 4K UHD | Adventure, Comedy, Family | Living Room | 346648 |
