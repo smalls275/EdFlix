@@ -1212,7 +1212,10 @@
       }
 
       const root = document.getElementById('modal-root');
-      if (root) root.innerHTML = modalHtml;
+      if (root) {
+        root.innerHTML = modalHtml;
+        renderVirginiaEndTime();
+      }
     }
 
     function renderVirginiaEndTime() {
