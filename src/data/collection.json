@@ -164,6 +164,33 @@
     "genre": ["Drama", "Romance"]
   },
   {
+    "tmdbId": 44403,
+    "title": "Big Man on Campus",
+    "formats": ["Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-23",
+    "genre": ["Comedy"]
+  },
+  {
+    "tmdbId": 9292,
+    "title": "Hudson Hawk",
+    "formats": ["Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-23",
+    "genre": ["Action", "Adventure", "Comedy"]
+  },
+  {
+    "tmdbId": 841,
+    "title": "Dune",
+    "formats": ["Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-23",
+    "genre": ["Action", "Science Fiction", "Adventure"]
+  },
+  {
     "tmdbId": 1022789,
     "title": "Inside Out 2",
     "formats": ["4K UHD", "Blu-ray"],

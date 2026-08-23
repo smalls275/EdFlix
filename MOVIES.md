@@ -51,6 +51,7 @@ _Auto-generated from `index.html` DATA array._
 | Altered States | movie | 4K UHD | Horror, Sci-Fi | Living Room | 11542 |
 | Amadeus | movie | 4K UHD | Biography, Drama, Music | Living Room | 279 |
 | Anna Karenina | movie | Blu-ray | Drama, Romance | Living Room | 50512 |
+| Big Man on Campus | movie | Blu-ray | Comedy | Living Room | 44403 |
 | Annihilation | movie | 4K UHD | Adventure, Drama, Horror | Living Room | 300668 |
 | Anonymous | movie | Blu-ray | Drama, Thriller | Living Room | 61891 |
 | Apollo 13 | movie | 4K UHD | Adventure, Drama, History | Living Room | 568 |
@@ -98,6 +99,7 @@ _Auto-generated from `index.html` DATA array._
 | Double Indemnity | movie | 4K UHD | Crime, Drama, Film-Noir | Living Room | 996 |
 | Dredd | movie | 3D Blu-ray | Action, Crime, Sci-Fi | Living Room | 49049 |
 | Dune | movie | 4K UHD, 3D Blu-ray | Action, Adventure, Drama | Living Room | 438631 |
+| Dune | movie | Blu-ray | Action, Sci-Fi, Adventure | Living Room | 841 |
 | Dune: Part Two | movie | 4K UHD | Action, Adventure, Drama | Living Room | 693134 |
 | Dungeons & Dragons: Honor Among Thieves | movie | 4K UHD | Action, Adventure, Comedy | Living Room | 493529 |
 | Dunkirk | movie | 4K UHD | Action, Drama, History | Living Room | 374720 |
@@ -141,6 +143,7 @@ _Auto-generated from `index.html` DATA array._
 | Hellraiser III: Hell on Earth | movie | 4K UHD | Horror | Living Room | 11569 |
 | Hellraiser: Bloodline | movie | 4K UHD | Horror, Sci-Fi | Living Room | 8766 |
 | Home Alone | movie | Blu-ray | Comedy, Family | Living Room | 771 |
+| Hudson Hawk | movie | Blu-ray | Action, Adventure, Comedy | Living Room | 9292 |
 | Hornblower | tv | DVD | Action, Adventure, Drama | Living Room | 814 |
 | Hot Fuzz | movie | Blu-ray | Action, Comedy, Mystery | Living Room | 4638 |
 | House of Wax | movie | 3D Blu-ray | Horror, Mystery, Thriller | Living Room | 10066 |
