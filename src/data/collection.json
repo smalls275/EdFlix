@@ -331,6 +331,16 @@
     "tags": ["comedy", "mystery", "knives-out"]
   },
   {
+    "tmdbId": 16363,
+    "title": "The Best Little Whorehouse in Texas",
+    "formats": ["Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Comedy"],
+    "tags": ["comedy", "classics"]
+  },
+  {
     "tmdbId": 57607,
     "type": "tv",
     "title": "Kroll Show",

@@ -3,8 +3,8 @@
 
 _Auto-generated from `index.html` DATA array._
 
-**Unique titles:** 309 (Movies: 299  TV Series: 10)
-**Source rows:** 315  (includes 6 duplicate entries)
+**Unique titles:** 310 (Movies: 300  TV Series: 10)
+**Source rows:** 316  (includes 6 duplicate entries)
 
 ## Duplicate entries in DATA (deduped at runtime)
 
@@ -19,7 +19,7 @@ _Auto-generated from `index.html` DATA array._
 
 - **3D Blu-ray**: 39
 - **4K UHD**: 152
-- **Blu-ray**: 99
+- **Blu-ray**: 100
 - **DVD**: 30
 
 ## Full list (alphabetical)
@@ -258,6 +258,7 @@ _Auto-generated from `index.html` DATA array._
 | The Abyss | movie | 4K UHD | Action, Adventure, Sci-Fi | Living Room | 2756 |
 | The Addams Family | movie | 4K UHD | Comedy, Fantasy | Living Room | 2907 |
 | The Age of Innocence | movie | Blu-ray | Drama, Romance | Living Room | 10436 |
+| The Best Little Whorehouse in Texas | movie | Blu-ray | Comedy | Living Room | 16363 |
 | The BFG | movie | 3D Blu-ray | Adventure, Family, Fantasy | Living Room | 267935 |
 | The Blues Brothers | movie | 4K UHD | Action, Comedy, Crime | Living Room | 525 |
 | The Cell | movie | 4K UHD | Crime, Horror, Sci-Fi | Living Room | 8843 |
