@@ -14,6 +14,7 @@ interface MovieModalProps {
 export default function MovieModal({ movie, onClose }: MovieModalProps) {
   const [details, setDetails] = useState<TMDBMovieDetail | null>(null);
   const [loading, setLoading] = useState(false);
+  const [now, setNow] = useState(() => new Date());
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -32,6 +33,13 @@ export default function MovieModal({ movie, onClose }: MovieModalProps) {
   }, [movie]);
 
   useEffect(() => {
+    const updateNow = () => setNow(new Date());
+    const intervalId = window.setInterval(updateNow, 30_000);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
+  useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
     document.body.style.overflow = 'hidden';
     return () => {
@@ -48,6 +56,17 @@ export default function MovieModal({ movie, onClose }: MovieModalProps) {
   const year = (details?.release_date || movie.tmdbData?.release_date)?.split('-')[0] || '';
   const rating = details?.vote_average || movie.tmdbData?.vote_average;
   const runtime = details?.runtime;
+  const endTime = runtime ? new Date(now.getTime() + runtime * 60_000) : null;
+  const virginiaTime = endTime
+    ? new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/New_York',
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+      }).format(endTime)
+    : null;
   const director = details?.credits?.crew?.find((c) => c.job === 'Director');
   const cast = details?.credits?.cast?.slice(0, 8) || [];
 
@@ -151,9 +170,16 @@ export default function MovieModal({ movie, onClose }: MovieModalProps) {
                   </span>
                 )}
                 {runtime && (
-                  <span className="flex items-center gap-1">
-                    <Clock className="w-3.5 h-3.5" /> {Math.floor(runtime / 60)}h {runtime % 60}m
-                  </span>
+                  <>
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3.5 h-3.5" /> {Math.floor(runtime / 60)}h {runtime % 60}m
+                    </span>
+                    {virginiaTime && (
+                      <span className="text-edflix-red" title="Calculated using Virginia time">
+                        Ends {virginiaTime} Virginia time
+                      </span>
+                    )}
+                  </>
                 )}
               </div>
 
