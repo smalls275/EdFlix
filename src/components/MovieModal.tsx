@@ -176,7 +176,7 @@ export default function MovieModal({ movie, onClose }: MovieModalProps) {
                     </span>
                     {virginiaTime && (
                       <span className="text-edflix-red" title="Calculated using Virginia time">
-                        Ends {virginiaTime} Virginia time
+                        Movie will be over at {virginiaTime} Virginia time if you start now
                       </span>
                     )}
                   </>
