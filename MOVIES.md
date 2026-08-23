@@ -102,7 +102,7 @@ _Auto-generated from `index.html` DATA array._
 | Dunkirk | movie | 4K UHD | Action, Drama, History | Living Room | 374720 |
 | Eastern Promises | movie | Blu-ray | Thriller, Crime, Mystery | Living Room | 2252 |
 | E.T. the Extra-Terrestrial | movie | 4K UHD | Adventure, Family, Sci-Fi | Living Room | 601 |
-| Edge of Tomorrow | movie | 3D Blu-ray | Action, Sci-Fi | Living Room | 137113 |
+| Live Die Repeat | movie | 3D Blu-ray | Action, Sci-Fi | Living Room | 137113 |
 | Elf | movie | 4K UHD | Comedy, Family, Fantasy | Living Room | 10719 |
 | Enchanted | movie | Blu-ray | Animation, Adventure, Comedy | Living Room | 4523 |
 | Exit Through the Gift Shop | movie | DVD | Documentary, Comedy, Crime | Living Room | 39452 |

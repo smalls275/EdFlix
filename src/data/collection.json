@@ -361,5 +361,14 @@
     "dateAdded": "2026-08-22",
     "genre": ["Horror"],
     "tags": ["horror", "franchise"]
+  },
+  {
+    "tmdbId": 137113,
+    "title": "Live Die Repeat",
+    "formats": ["3D Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Action", "Sci-Fi"]
   }
 ]
