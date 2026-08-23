@@ -3,8 +3,8 @@
 
 _Auto-generated from `index.html` DATA array._
 
-**Unique titles:** 312 (Movies: 302  TV Series: 10)
-**Source rows:** 318  (includes 6 duplicate entries)
+**Unique titles:** 314 (Movies: 304  TV Series: 10)
+**Source rows:** 320  (includes 6 duplicate entries)
 
 ## Duplicate entries in DATA (deduped at runtime)
 
@@ -19,8 +19,8 @@ _Auto-generated from `index.html` DATA array._
 
 - **3D Blu-ray**: 39
 - **4K UHD**: 152
-- **Blu-ray**: 102
-- **DVD**: 30
+- **Blu-ray**: 103
+- **DVD**: 31
 
 ## Full list (alphabetical)
 
@@ -331,6 +331,7 @@ _Auto-generated from `index.html` DATA array._
 | Vertigo | movie | 4K UHD | Mystery, Romance, Thriller | Living Room | 426 |
 | Videodrome | movie | Blu-ray | Horror, Sci-Fi, Thriller | Living Room | 837 |
 | Wanderlust | movie | Blu-ray | Comedy, Romance | Living Room | 50647 |
+| We Bought a Zoo | movie | DVD | Drama, Comedy, Family | Living Room | 74465 |
 | Weapons | movie | 4K UHD | Horror, Mystery | Living Room | 1078605 |
 | Wes Craven's New Nightmare | movie | 4K UHD | Fantasy, Horror, Mystery | Living Room | 11596 |
 | Wet Hot American Summer | movie | Blu-ray | Comedy | Living Room | 2171 |
@@ -338,3 +339,4 @@ _Auto-generated from `index.html` DATA array._
 | White Christmas | movie | 4K UHD | Comedy, Musical, Romance | Living Room | 13368 |
 | Willy Wonka & the Chocolate Factory | movie | 4K UHD | Adventure, Comedy, Family, Fantasy, Musical | Living Room | 252 |
 | Wonka | movie | 4K UHD | Adventure, Comedy, Family, Fantasy, Musical | Living Room | 787699 |
+| Zero Dark Thirty | movie | Blu-ray | Thriller, Drama | Living Room | 97630 |

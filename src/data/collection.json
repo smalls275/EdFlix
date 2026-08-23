@@ -388,5 +388,23 @@
     "status": "available",
     "dateAdded": "2026-08-22",
     "genre": ["Mystery", "Science Fiction"]
+  },
+  {
+    "tmdbId": 74465,
+    "title": "We Bought a Zoo",
+    "formats": ["DVD"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Drama", "Comedy", "Family"]
+  },
+  {
+    "tmdbId": 97630,
+    "title": "Zero Dark Thirty",
+    "formats": ["Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Thriller", "Drama"]
   }
 ]
