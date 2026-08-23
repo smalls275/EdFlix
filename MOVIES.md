@@ -205,7 +205,7 @@ _Auto-generated from `index.html` DATA array._
 | Pinocchio | movie | Blu-ray | Animation, Adventure, Family | Living Room | 10895 |
 | Planet Terror | movie | Blu-ray | Action, Horror, Sci-Fi | Living Room | 1992 |
 | Popstar: Never Stop Never Stopping | movie | Blu-ray | Comedy, Music | Living Room | 341012 |
-| Predator | movie | 4K UHD | Action, Adventure, Horror | Living Room | 106 |
+| Predator | movie | 4K UHD, 3D Blu-ray | Action, Adventure, Horror | Living Room | 106 |
 | Predator 2 | movie | 4K UHD | Action, Horror, Sci-Fi | Living Room | 169 |
 | Predator: Badlands | movie | 4K UHD | Action, Adventure, Sci-Fi | Living Room | 1242898 |
 | Predators | movie | 4K UHD | Action, Adventure, Sci-Fi | Living Room | 34851 |
