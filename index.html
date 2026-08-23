@@ -1215,6 +1215,34 @@
       if (root) root.innerHTML = modalHtml;
     }
 
+    function renderVirginiaEndTime() {
+      const root = document.getElementById('modal-root');
+      const runtimeElement = root && Array.from(root.querySelectorAll('.modal-content span')).find(el => /^(\d+)h\s+(\d+)m$/.test(el.textContent.trim()));
+      if (!runtimeElement) return;
+
+      const runtime = runtimeElement.textContent.trim().match(/^(\d+)h\s+(\d+)m$/);
+      const runtimeMinutes = Number(runtime[1]) * 60 + Number(runtime[2]);
+      const endTime = new Date(Date.now() + runtimeMinutes * 60000);
+      const endText = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/New_York',
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit'
+      }).format(endTime);
+
+      root.querySelector('[data-virginia-end-time]')?.remove();
+      const endElement = document.createElement('span');
+      endElement.dataset.virginiaEndTime = 'true';
+      endElement.className = 'text-[#E50914]';
+      endElement.title = 'Calculated using Virginia time';
+      endElement.textContent = `Ends ${endText} Virginia time`;
+      runtimeElement.parentElement.appendChild(endElement);
+    }
+
+    setInterval(renderVirginiaEndTime, 30000);
+
 
     load();
     loadTaskmaster();
