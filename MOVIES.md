@@ -3,8 +3,8 @@
 
 _Auto-generated from `index.html` DATA array._
 
-**Unique titles:** 310 (Movies: 300  TV Series: 10)
-**Source rows:** 316  (includes 6 duplicate entries)
+**Unique titles:** 311 (Movies: 301  TV Series: 10)
+**Source rows:** 317  (includes 6 duplicate entries)
 
 ## Duplicate entries in DATA (deduped at runtime)
 
@@ -19,7 +19,7 @@ _Auto-generated from `index.html` DATA array._
 
 - **3D Blu-ray**: 39
 - **4K UHD**: 152
-- **Blu-ray**: 100
+- **Blu-ray**: 101
 - **DVD**: 30
 
 ## Full list (alphabetical)
@@ -51,6 +51,7 @@ _Auto-generated from `index.html` DATA array._
 | Altered States | movie | 4K UHD | Horror, Sci-Fi | Living Room | 11542 |
 | Amadeus | movie | 4K UHD | Biography, Drama, Music | Living Room | 279 |
 | Anna Karenina | movie | Blu-ray | Drama, Romance | Living Room | 96724 |
+| Anna Karina, Remember | movie | Blu-ray | Documentary | Living Room | 514964 |
 | Annihilation | movie | 4K UHD | Adventure, Drama, Horror | Living Room | 300668 |
 | Anonymous | movie | Blu-ray | Drama, Thriller | Living Room | 61891 |
 | Apollo 13 | movie | 4K UHD | Adventure, Drama, History | Living Room | 568 |
