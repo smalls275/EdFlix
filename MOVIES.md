@@ -146,7 +146,7 @@ _Auto-generated from `index.html` DATA array._
 | Hudson Hawk | movie | Blu-ray | Action, Adventure, Comedy | Living Room | 9292 |
 | Hornblower | tv | DVD | Action, Adventure, Drama | Living Room | 814 |
 | Hot Fuzz | movie | Blu-ray | Action, Comedy, Mystery | Living Room | 4638 |
-| House of Wax | movie | 3D Blu-ray | Horror, Mystery, Thriller | Living Room | 10066 |
+| House of Wax | movie | 3D Blu-ray | Horror, Mystery, Thriller | Living Room | 18573 |
 | House on Haunted Hill | movie | 3D Blu-ray | Horror, Mystery, Thriller | Living Room | 15856 |
 | Hugo | movie | 3D Blu-ray | Adventure, Drama, Family | Living Room | 44826 |
 | Inception | movie | 4K UHD | Action, Sci-Fi, Thriller | Living Room | 27205 |
