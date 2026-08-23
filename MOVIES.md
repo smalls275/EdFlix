@@ -50,7 +50,7 @@ _Auto-generated from `index.html` DATA array._
 | Aliens | movie | 4K UHD | Action, Adventure, Horror | Living Room | 679 |
 | Altered States | movie | 4K UHD | Horror, Sci-Fi | Living Room | 11542 |
 | Amadeus | movie | 4K UHD | Biography, Drama, Music | Living Room | 279 |
-| Anna Karenina | movie | Blu-ray | Drama, Romance | Living Room | 96724 |
+| Anna Karenina | movie | Blu-ray | Drama, Romance | Living Room | 50512 |
 | Anna Karina, Remember | movie | Blu-ray | Documentary | Living Room | 514964 |
 | Annihilation | movie | 4K UHD | Adventure, Drama, Horror | Living Room | 300668 |
 | Anonymous | movie | Blu-ray | Drama, Thriller | Living Room | 61891 |

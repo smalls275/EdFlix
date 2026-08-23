@@ -155,6 +155,25 @@
     "tags": ["family-friendly", "kids", "animation"]
   },
   {
+    "tmdbId": 50512,
+    "title": "Anna Karenina",
+    "formats": ["Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2025-01-01",
+    "genre": ["Drama", "Romance"]
+  },
+  {
+    "tmdbId": 1022789,
+    "title": "Inside Out 2",
+    "formats": ["4K UHD", "Blu-ray"],
+    "location": "Kids Room",
+    "status": "available",
+    "dateAdded": "2026-08-23",
+    "genre": ["Animation", "Family", "Comedy"],
+    "tags": ["family-friendly", "kids", "animation"]
+  },
+  {
     "tmdbId": 122,
     "title": "The Lord of the Rings: The Return of the King",
     "formats": ["4K UHD", "Blu-ray"],
