@@ -51,7 +51,6 @@ _Auto-generated from `index.html` DATA array._
 | Altered States | movie | 4K UHD | Horror, Sci-Fi | Living Room | 11542 |
 | Amadeus | movie | 4K UHD | Biography, Drama, Music | Living Room | 279 |
 | Anna Karenina | movie | Blu-ray | Drama, Romance | Living Room | 50512 |
-| Anna Karina, Remember | movie | Blu-ray | Documentary | Living Room | 514964 |
 | Annihilation | movie | 4K UHD | Adventure, Drama, Horror | Living Room | 300668 |
 | Anonymous | movie | Blu-ray | Drama, Thriller | Living Room | 61891 |
 | Apollo 13 | movie | 4K UHD | Adventure, Drama, History | Living Room | 568 |
@@ -154,6 +153,7 @@ _Auto-generated from `index.html` DATA array._
 | Inglourious Basterds | movie | 4K UHD | Drama, War | Living Room | 16869 |
 | Inside Llewyn Davis | movie | Blu-ray | Drama, Music | Living Room | 86829 |
 | Inside Out | movie | 4K UHD, 3D Blu-ray | Animation, Adventure, Family | Living Room | 150540 |
+| Inside Out 2 | movie | 4K UHD, Blu-ray | Animation, Adventure, Family | Living Room | 1022789 |
 | Interstellar | movie | 4K UHD | Adventure, Drama, Sci-Fi | Living Room | 157336 |
 | It's the Great Pumpkin, Charlie Brown | movie | 4K UHD | Animation, Comedy, Family | Living Room | 13353 |
 | Jaws | movie | Blu-ray | Adventure, Thriller | Living Room | 578 |
