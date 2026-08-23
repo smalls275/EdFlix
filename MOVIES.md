@@ -42,11 +42,11 @@ _Auto-generated from `index.html` DATA array._
 | A Nightmare on Elm Street: The Dream Child | movie | 4K UHD | Fantasy, Horror | Living Room | 10160 |
 | Addams Family Values | movie | Blu-ray | Comedy, Fantasy | Living Room | 2758 |
 | Aladdin | movie | 4K UHD | Animation, Adventure, Comedy | Living Room | 812 |
-| Alien | movie | 4K UHD | Horror, Sci-Fi | Living Room | 348 |
+| Alien | movie | 4K UHD, 3D Blu-ray | Horror, Sci-Fi | Living Room | 348 |
 | Alien Resurrection | movie | Blu-ray | Action, Horror, Sci-Fi | Living Room | 8078 |
 | Alien: Covenant | movie | 4K UHD | Horror, Sci-Fi | Living Room | 126889 |
 | Alien: Romulus | movie | 4K UHD | Horror, Sci-Fi | Living Room | 945961 |
-| Alien³ | movie | Blu-ray | Action, Horror, Sci-Fi | Living Room | 8077 |
+| Alien³ | movie | Blu-ray, 3D Blu-ray | Action, Horror, Sci-Fi | Living Room | 8077 |
 | Aliens | movie | 4K UHD | Action, Adventure, Horror | Living Room | 679 |
 | Altered States | movie | 4K UHD | Horror, Sci-Fi | Living Room | 11542 |
 | Amadeus | movie | 4K UHD | Biography, Drama, Music | Living Room | 279 |
