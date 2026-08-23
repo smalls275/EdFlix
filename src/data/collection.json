@@ -406,5 +406,14 @@
     "status": "available",
     "dateAdded": "2026-08-22",
     "genre": ["Thriller", "Drama"]
+  },
+  {
+    "tmdbId": 11967,
+    "title": "Young Guns",
+    "formats": ["Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Western", "Action", "Adventure", "Drama"]
   }
 ]

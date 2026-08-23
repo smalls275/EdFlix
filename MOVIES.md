@@ -3,8 +3,8 @@
 
 _Auto-generated from `index.html` DATA array._
 
-**Unique titles:** 314 (Movies: 304  TV Series: 10)
-**Source rows:** 320  (includes 6 duplicate entries)
+**Unique titles:** 315 (Movies: 305  TV Series: 10)
+**Source rows:** 321  (includes 6 duplicate entries)
 
 ## Duplicate entries in DATA (deduped at runtime)
 
@@ -19,7 +19,7 @@ _Auto-generated from `index.html` DATA array._
 
 - **3D Blu-ray**: 39
 - **4K UHD**: 152
-- **Blu-ray**: 103
+- **Blu-ray**: 104
 - **DVD**: 31
 
 ## Full list (alphabetical)
@@ -339,4 +339,5 @@ _Auto-generated from `index.html` DATA array._
 | White Christmas | movie | 4K UHD | Comedy, Musical, Romance | Living Room | 13368 |
 | Willy Wonka & the Chocolate Factory | movie | 4K UHD | Adventure, Comedy, Family, Fantasy, Musical | Living Room | 252 |
 | Wonka | movie | 4K UHD | Adventure, Comedy, Family, Fantasy, Musical | Living Room | 787699 |
+| Young Guns | movie | Blu-ray | Western, Action, Adventure, Drama | Living Room | 11967 |
 | Zero Dark Thirty | movie | Blu-ray | Thriller, Drama | Living Room | 97630 |
