@@ -379,5 +379,14 @@
     "status": "available",
     "dateAdded": "2026-08-22",
     "genre": ["Documentary"]
+  },
+  {
+    "tmdbId": 2666,
+    "title": "Dark City",
+    "formats": ["Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-22",
+    "genre": ["Mystery", "Science Fiction"]
   }
 ]

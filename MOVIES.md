@@ -3,8 +3,8 @@
 
 _Auto-generated from `index.html` DATA array._
 
-**Unique titles:** 311 (Movies: 301  TV Series: 10)
-**Source rows:** 317  (includes 6 duplicate entries)
+**Unique titles:** 312 (Movies: 302  TV Series: 10)
+**Source rows:** 318  (includes 6 duplicate entries)
 
 ## Duplicate entries in DATA (deduped at runtime)
 
@@ -19,7 +19,7 @@ _Auto-generated from `index.html` DATA array._
 
 - **3D Blu-ray**: 39
 - **4K UHD**: 152
-- **Blu-ray**: 101
+- **Blu-ray**: 102
 - **DVD**: 30
 
 ## Full list (alphabetical)
@@ -72,6 +72,7 @@ _Auto-generated from `index.html` DATA array._
 | Brazil | movie | Blu-ray | Drama, Sci-Fi, Thriller | Living Room | 68 |
 | Burning Love | movie | DVD | Comedy | Living Room | 44189 |
 | Caddyshack | movie | Blu-ray | Comedy, Sport | Living Room | 11977 |
+| Dark City | movie | Blu-ray | Mystery, Sci-Fi | Living Room | 2666 |
 | The Cannonball Run | movie | Blu-ray | Action, Comedy, Family | Living Room | 11286 |
 | Cannibal! The Musical | movie | Blu-ray | Comedy, Horror, Musical | Living Room | 13063 |
 | Cars | movie | 3D Blu-ray | Animation, Adventure, Comedy | Living Room | 920 |
