@@ -175,8 +175,8 @@ export default function MovieModal({ movie, onClose }: MovieModalProps) {
                       <Clock className="w-3.5 h-3.5" /> {Math.floor(runtime / 60)}h {runtime % 60}m
                     </span>
                     {virginiaTime && (
-                      <span className="text-edflix-red" title="Calculated using Virginia time">
-                        Movie will be over at {virginiaTime} Virginia time if you start now
+                      <span className="text-edflix-red">
+                        Movie will be over at {virginiaTime} if you start now
                       </span>
                     )}
                   </>
