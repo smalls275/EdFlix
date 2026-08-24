@@ -342,6 +342,7 @@ _Auto-generated from `index.html` DATA array._
 | What We Did on Our Holiday | movie | DVD | Comedy, Drama | Living Room | 276843 |
 | White Christmas | movie | 4K UHD | Comedy, Musical, Romance | Living Room | 13368 |
 | Willy Wonka & the Chocolate Factory | movie | 4K UHD | Adventure, Comedy, Family, Fantasy, Musical | Living Room | 252 |
+| The Wizard of Oz | movie | 4K UHD, 3D Blu-ray | Adventure, Fantasy, Family, Musical | Living Room | 630 |
 | Wonka | movie | 4K UHD | Adventure, Comedy, Family, Fantasy, Musical | Living Room | 787699 |
 | Young Guns | movie | Blu-ray | Western, Action, Adventure, Drama | Living Room | 11967 |
 | Zero Dark Thirty | movie | Blu-ray | Thriller, Drama | Living Room | 97630 |
