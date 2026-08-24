@@ -656,7 +656,6 @@
         return;
       }
       const bd = taskmasterShow?.backdrop_path ? `${IMG}/w1280${taskmasterShow.backdrop_path}` : '';
-      const ov = taskmasterShow?.overview || 'Five comedians compete in bizarre tasks judged by the all-powerful Taskmaster. Comedy chaos ensues.';
       const epCount = taskmasterEpisodes.length;
       console.log('[TM] Rendering with', epCount, 'episodes');
       let h = `<section class="relative bg-[#0a0a0a] border-t-4 border-[#FFD700] mt-2">`;
@@ -665,7 +664,6 @@
       h += `<div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>`;
       h += `<div class="absolute inset-0 flex items-center px-4 md:px-12"><div>`;
       h += `<div class="flex items-baseline gap-1.5 mb-1"><span class="text-[#FFD700] text-3xl md:text-5xl font-black tracking-tight drop-shadow">TASKMASTER</span><span class="bg-[#FFD700] text-black text-xs font-black px-1.5 py-0.5 rounded leading-none">+</span></div>`;
-      h += `<p class="text-gray-300 text-xs md:text-sm max-w-lg line-clamp-2 mb-3">${ov.replace(/</g,'&lt;')}</p>`;
       h += `<div class="flex items-center gap-3 flex-wrap">`;
       if (epCount > 0) h += `<button onclick="openTaskmasterPage()" aria-label="Browse Taskmaster episodes" class="relative z-10 aspect-video w-[5.5rem] overflow-hidden bg-black border-2 border-[#FFD700] text-white font-black px-2 py-1 text-[10px] uppercase tracking-wide rounded-lg shadow-[0_4px_0_#FFD700,0_6px_14px_rgba(0,0,0,0.75)] hover:border-white focus:ring-4 focus:ring-white focus:outline-none transition-colors flex items-center justify-center gap-1" style="background-image:linear-gradient(90deg,rgba(0,0,0,0.82),rgba(0,0,0,0.45)),url('./taskmaster/image001_2_1.jpg');background-size:contain;background-repeat:no-repeat;background-position:center"><svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><span>Browse</span></button>`;
       h += `</div></div></div></div></section>`;
