@@ -377,7 +377,7 @@
     let movies = [], upcoming = [], search = '', filter = 'all', modalId = null, modalType = null;
     let heroPick = null, heroKey = '', heroIndex = 0, heroTimer = null;
     let taskmasterShow = null, taskmasterEpisodes = [{videoId:'QuoqIxGeYEk',title:"Season 21, Episode 7 - 'Putting things on things.' | Full Episode",pubDate:'2026-05-21',thumbnail:'https://img.youtube.com/vi/QuoqIxGeYEk/hqdefault.jpg',isShort:false}], tmEpisodeIdx = null;
-    let taskmasterPageOpen = false, tmPageFocusIdx = 0;
+    let taskmasterPageOpen = false, taskmasterHistoryPushed = false, tmPageFocusIdx = 0;
     const TM_CHANNEL = 'UCT5C7yaO3RVuOgwP8JVAujQ', TM_TMDB = 63404;
     const MAX_TM_EPISODES = 3; // Configure: number of latest episodes to display
 
@@ -546,6 +546,10 @@
 
     function openTaskmasterPage() {
       if (!taskmasterEpisodes.length) return;
+      if (!taskmasterHistoryPushed) {
+        history.pushState({edflixTaskmaster: true}, '', window.location.href);
+        taskmasterHistoryPushed = true;
+      }
       taskmasterPageOpen = true;
       tmPageFocusIdx = 0;
       document.body.style.overflow = 'hidden';
@@ -554,11 +558,21 @@
     }
 
     function closeTaskmasterPage() {
+      const shouldRestoreHistory = taskmasterHistoryPushed;
+      taskmasterHistoryPushed = false;
       taskmasterPageOpen = false;
       document.body.style.overflow = '';
       const root = document.getElementById('tm-page-root');
       if (root) root.innerHTML = '';
+      if (shouldRestoreHistory) history.back();
     }
+
+    window.addEventListener('popstate', () => {
+      if (taskmasterPageOpen) {
+        taskmasterHistoryPushed = false;
+        closeTaskmasterPage();
+      }
+    });
 
     function renderTaskmasterPage() {
       const root = document.getElementById('tm-page-root');
@@ -1101,6 +1115,11 @@
       }
     }
     document.addEventListener('keydown', e => {
+      if (taskmasterPageOpen && !modalId && ['Escape', 'Backspace', 'GoBack', 'BrowserBack'].includes(e.key)) {
+        e.preventDefault();
+        closeTaskmasterPage();
+        return;
+      }
       // Esc / Back button: exits fullscreen first, then closes modal
       if (e.key === 'Escape' || e.key === 'Backspace') {
         if (modalId) {
