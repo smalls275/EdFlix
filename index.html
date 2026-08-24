@@ -553,6 +553,8 @@
       taskmasterPageOpen = true;
       tmPageFocusIdx = 0;
       document.body.style.overflow = 'hidden';
+      const taskmasterRoot = document.getElementById('taskmaster-root');
+      if (taskmasterRoot) taskmasterRoot.innerHTML = '';
       renderTaskmasterPage();
       requestAnimationFrame(() => { const el = document.getElementById('tm-ep-0'); if (el) el.focus(); });
     }
@@ -564,6 +566,7 @@
       document.body.style.overflow = '';
       const root = document.getElementById('tm-page-root');
       if (root) root.innerHTML = '';
+      renderTaskmaster();
       if (shouldRestoreHistory) history.back();
     }
 
