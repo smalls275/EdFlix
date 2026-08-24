@@ -182,6 +182,15 @@
     "genre": ["Action", "Adventure", "Comedy"]
   },
   {
+    "tmdbId": 264660,
+    "title": "Ex Machina",
+    "formats": ["Blu-ray"],
+    "location": "Living Room Shelf A",
+    "status": "available",
+    "dateAdded": "2026-08-24",
+    "genre": ["Science Fiction", "Drama"]
+  },
+  {
     "tmdbId": 841,
     "title": "Dune",
     "formats": ["Blu-ray"],

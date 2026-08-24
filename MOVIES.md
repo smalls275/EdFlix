@@ -108,6 +108,7 @@ _Auto-generated from `index.html` DATA array._
 | Live Die Repeat | movie | 3D Blu-ray | Action, Sci-Fi | Living Room | 137113 |
 | Elf | movie | 4K UHD | Comedy, Family, Fantasy | Living Room | 10719 |
 | Enchanted | movie | Blu-ray | Animation, Adventure, Comedy | Living Room | 4523 |
+| Ex Machina | movie | Blu-ray | Sci-Fi, Drama | Living Room | 264660 |
 | Exit Through the Gift Shop | movie | DVD | Documentary, Comedy, Crime | Living Room | 39452 |
 | Family Plot | movie | 4K UHD | Comedy, Mystery, Thriller | Living Room | 5854 |
 | Fantastic Mr. Fox | movie | Blu-ray | Animation, Adventure, Comedy | Living Room | 10315 |
