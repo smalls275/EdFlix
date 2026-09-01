@@ -201,6 +201,9 @@ _Auto-generated from `index.html` DATA array._
 | Paddington | movie | Blu-ray | Adventure, Comedy, Family | Living Room | 116149 |
 | Paddington 2 | movie | 4K UHD | Adventure, Comedy, Family | Living Room | 346648 |
 | Patriot Games | movie | DVD | Action, Thriller | Living Room | 9869 |
+| Pirates of the Caribbean: At World's End | movie | Blu-ray | Action, Adventure, Fantasy | Living Room | 285 |
+| Pirates of the Caribbean: Dead Man's Chest | movie | Blu-ray | Action, Adventure, Fantasy | Living Room | 58 |
+| Pirates of the Caribbean: The Curse of the Black Pearl | movie | Blu-ray | Action, Adventure, Fantasy | Living Room | 22 |
 | Picnic at Hanging Rock | movie | 4K UHD | Drama, Mystery | Living Room | 11020 |
 | Pig | movie | 4K UHD | Drama, Mystery | Living Room | 635731 |
 | Pinocchio | movie | Blu-ray | Animation, Adventure, Family | Living Room | 10895 |

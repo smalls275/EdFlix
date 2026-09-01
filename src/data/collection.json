@@ -470,5 +470,32 @@
     "status": "available",
     "dateAdded": "2026-08-24",
     "genre": ["Adventure", "Fantasy", "Family", "Musical"]
+  },
+  {
+    "tmdbId": 285,
+    "title": "Pirates of the Caribbean: At World's End",
+    "formats": ["Blu-ray"],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-01",
+    "genre": ["Action", "Adventure", "Fantasy"]
+  },
+  {
+    "tmdbId": 58,
+    "title": "Pirates of the Caribbean: Dead Man's Chest",
+    "formats": ["Blu-ray"],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-01",
+    "genre": ["Action", "Adventure", "Fantasy"]
+  },
+  {
+    "tmdbId": 22,
+    "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+    "formats": ["Blu-ray"],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-01",
+    "genre": ["Action", "Adventure", "Fantasy"]
   }
 ]
