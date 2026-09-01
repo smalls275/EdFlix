@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdFlix Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #999;
+            font-size: 1.1em;
+        }
+
+        .form-section {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #FFD700;
+        }
+
+        .required::after {
+            content: " *";
+            color: #E50914;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 1em;
+            font-family: inherit;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #FFD700;
+            background: #333;
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin-right: 8px;
+            cursor: pointer;
+            accent-color: #FFD700;
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            color: #fff;
+            cursor: pointer;
+            font-weight: 400;
+        }
+
+        button {
+            background: #FFD700;
+            color: #0a0a0a;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        button:hover:not(:disabled) {
+            background: #FFC700;
+        }
+
+        button:disabled {
+            background: #666;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .message {
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .message.success {
+            background: #1a3a1a;
+            border: 1px solid #4a9d4a;
+            color: #7fd87f;
+            display: block;
+        }
+
+        .message.error {
+            background: #3a1a1a;
+            border: 1px solid #9d4a4a;
+            color: #d87f7f;
+            display: block;
+        }
+
+        .info-box {
+            background: #1a2a3a;
+            border: 1px solid #3a4a5a;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        .info-box strong {
+            color: #FFD700;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #666;
+            border-top-color: #FFD700;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 EdFlix Manager</h1>
+            <p class="subtitle">Add movies to your collection from anywhere</p>
+        </header>
+
+        <div class="message success" id="successMessage"></div>
+        <div class="message error" id="errorMessage"></div>
+
+        <form class="form-section" id="movieForm">
+            <!-- Required Fields -->
+            <div class="input-row">
+                <div class="form-group">
+                    <label for="tmdbId" class="required">TMDB ID</label>
+                    <input type="number" id="tmdbId" name="tmdbId" placeholder="e.g., 22" required>
+                </div>
+                <div class="form-group">
+                    <label for="title" class="required">Title</label>
+                    <input type="text" id="title" name="title" placeholder="e.g., Pirates of the Caribbean" required>
+                </div>
+            </div>
+
+            <!-- Formats -->
+            <div class="form-group">
+                <label class="required">Formats</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="formats" value="4K UHD" id="fmt-4k">
+                        <label for="fmt-4k">4K UHD</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="formats" value="Blu-ray" id="fmt-br">
+                        <label for="fmt-br">Blu-ray</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="formats" value="3D Blu-ray" id="fmt-3d">
+                        <label for="fmt-3d">3D Blu-ray</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="formats" value="DVD" id="fmt-dvd">
+                        <label for="fmt-dvd">DVD</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="formats" value="VHS" id="fmt-vhs">
+                        <label for="fmt-vhs">VHS</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Genres -->
+            <div class="form-group">
+                <label class="required">Genres</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="genres" value="Action" id="gen-action">
+                        <label for="gen-action">Action</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="genres" value="Adventure" id="gen-adventure">
+                        <label for="gen-adventure">Adventure</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="genres" value="Animation" id="gen-animation">
+                        <label for="gen-animation">Animation</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="genres" value="Comedy" id="gen-comedy">
+                        <label for="gen-comedy">Comedy</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="genres" value="Crime" id="gen-crime">
+                        <label for="gen-crime">Crime</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="genres" value="Documentary" id="gen-doc">
+                        <label for="gen-doc">Documentary</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="genres" value="Drama" id="gen-drama">
+                        <label for="gen-drama">Drama</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="genres" value="Family" id="gen-family">
+                        <label for="gen-family">Family</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="genres" value="Fantasy" id="gen-fantasy">
+                        <label for="gen-fantasy">Fantasy</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="genres" value="History" id="gen-history">
+                        <label for="gen-history">History</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="genres" value="Horror" id="gen-horror">
+                        <label for="gen-horror">Horror</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="genres" value="Musical" id="gen-musical">
+                        <label for="gen-musical">Musical</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="genres" value="Mystery" id="gen-mystery">
+                        <label for="gen-mystery">Mystery</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="genres" value="Romance" id="gen-romance">
+                        <label for="gen-romance">Romance</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="genres" value="Sci-Fi" id="gen-scifi">
+                        <label for="gen-scifi">Sci-Fi</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="genres" value="Thriller" id="gen-thriller">
+                        <label for="gen-thriller">Thriller</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="genres" value="War" id="gen-war">
+                        <label for="gen-war">War</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="genres" value="Western" id="gen-western">
+                        <label for="gen-western">Western</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location & Status -->
+            <div class="input-row">
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" value="Living Room" placeholder="e.g., Living Room">
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status" name="status">
+                        <option value="available">Available</option>
+                        <option value="checked-out">Checked Out</option>
+                        <option value="lent-out">Lent Out</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Type & Date -->
+            <div class="input-row">
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <select id="type" name="type">
+                        <option value="">Movie</option>
+                        <option value="tv">TV Series</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dateAdded">Date Added</label>
+                    <input type="date" id="dateAdded" name="dateAdded">
+                </div>
+            </div>
+
+            <!-- Notes -->
+            <div class="form-group">
+                <label for="notes">Notes (optional)</label>
+                <textarea id="notes" name="notes" rows="3" placeholder="e.g., Complete Series, Steelbook edition"></textarea>
+            </div>
+
+            <!-- GitHub Token -->
+            <div class="form-group">
+                <label for="githubToken" class="required">GitHub Token</label>
+                <input type="password" id="githubToken" name="githubToken" placeholder="ghp_..." required>
+                <small style="color: #888; display: block; margin-top: 5px;">Your GitHub Personal Access Token (with repo scope)</small>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" id="submitBtn">Add Movie to EdFlix</button>
+
+            <!-- Info -->
+            <div class="info-box">
+                <strong>ℹ️ Required Fields:</strong><br>
+                • TMDB ID - From themoviedb.org<br>
+                • Title - Full movie/show name<br>
+                • At least one Format<br>
+                • At least one Genre<br>
+                • GitHub Token - Your PAT with repo access
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const GITHUB_OWNER = 'smalls275';
+        const GITHUB_REPO = 'EdFlix';
+
+        document.getElementById('movieForm').addEventListener('submit', handleSubmit);
+
+        // Set today's date as default
+        document.getElementById('dateAdded').valueAsDate = new Date();
+
+        async function handleSubmit(e) {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const successMsg = document.getElementById('successMessage');
+            const errorMsg = document.getElementById('errorMessage');
+
+            // Hide messages
+            successMsg.classList.add('hidden');
+            errorMsg.classList.add('hidden');
+
+            // Get form data
+            const tmdbId = parseInt(document.getElementById('tmdbId').value);
+            const title = document.getElementById('title').value;
+            const formats = Array.from(document.querySelectorAll('input[name="formats"]:checked')).map(x => x.value);
+            const genres = Array.from(document.querySelectorAll('input[name="genres"]:checked')).map(x => x.value);
+            const location = document.getElementById('location').value;
+            const status = document.getElementById('status').value;
+            const type = document.getElementById('type').value;
+            const dateAdded = document.getElementById('dateAdded').value;
+            const notes = document.getElementById('notes').value;
+            const githubToken = document.getElementById('githubToken').value;
+
+            // Validation
+            if (!tmdbId || !title || formats.length === 0 || genres.length === 0 || !githubToken) {
+                showError('Please fill in all required fields');
+                return;
+            }
+
+            // Show loading
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner"></span>Adding...';
+
+            try {
+                const movieData = {
+                    tmdbId,
+                    title,
+                    formats,
+                    genre: genres,
+                    location,
+                    status,
+                    dateAdded,
+                    ...(type && { type }),
+                    ...(notes && { notes })
+                };
+
+                // Update files
+                await updateFiles(githubToken, movieData);
+
+                showSuccess(`✅ Successfully added "${title}" to EdFlix!`);
+
+                // Reset form
+                document.getElementById('movieForm').reset();
+                document.getElementById('dateAdded').valueAsDate = new Date();
+
+            } catch (error) {
+                showError(`Failed to add movie: ${error.message}`);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Add Movie to EdFlix';
+            }
+        }
+
+        async function updateFiles(token, movie) {
+            // Update index.html
+            await updateFile(token, 'index.html', content => updateIndexHtml(content, movie));
+
+            // Update collection.json
+            await updateFile(token, 'src/data/collection.json', content => updateCollectionJson(content, movie));
+
+            // Update MOVIES.md
+            await updateFile(token, 'MOVIES.md', content => updateMoviesMd(content, movie));
+        }
+
+        async function updateFile(token, path, updateFn) {
+            // Get current file
+            const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`;
+            const response = await fetch(url, {
+                headers: { 'Authorization': `token ${token}` }
+            });
+
+            if (!response.ok) {
+                throw new Error(`Failed to fetch ${path}: ${response.statusText}`);
+            }
+
+            const data = await response.json();
+            const content = atob(data.content);
+            const updatedContent = updateFn(content);
+
+            // Update file
+            const updateResponse = await fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `token ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    message: `Add ${document.getElementById('title').value}`,
+                    content: btoa(updatedContent),
+                    sha: data.sha
+                })
+            });
+
+            if (!updateResponse.ok) {
+                const error = await updateResponse.json();
+                throw new Error(`Failed to update ${path}: ${error.message}`);
+            }
+        }
+
+        function updateIndexHtml(content, movie) {
+            const jsObj = formatJsObject(movie);
+            const dataMatch = content.match(/const DATA = \[([\s\S]*?)\];/);
+            if (!dataMatch) throw new Error('Could not find DATA array');
+
+            const lines = dataMatch[1].split('\n').filter(l => l.trim().startsWith('{'));
+            let insertIdx = lines.length;
+
+            for (let i = 0; i < lines.length; i++) {
+                const titleMatch = lines[i].match(/title:"([^"]+)"/);
+                if (titleMatch && titleMatch[1] > movie.title) {
+                    insertIdx = i;
+                    break;
+                }
+            }
+
+            lines.splice(insertIdx, 0, jsObj);
+            const newData = `const DATA = [\n      ${lines.join(',\n      ')}\n    ];`;
+            return content.replace(/const DATA = \[([\s\S]*?)\];/, newData);
+        }
+
+        function updateCollectionJson(content, movie) {
+            const data = JSON.parse(content);
+            let insertIdx = data.length;
+
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].title > movie.title) {
+                    insertIdx = i;
+                    break;
+                }
+            }
+
+            data.splice(insertIdx, 0, movie);
+            return JSON.stringify(data, null, 2);
+        }
+
+        function updateMoviesMd(content, movie) {
+            const lines = content.split('\n');
+            let headerEnd = 0;
+
+            for (let i = 0; i < lines.length; i++) {
+                if (lines[i].includes('| movie/tv |')) {
+                    headerEnd = i + 2;
+                    break;
+                }
+            }
+
+            let tableEnd = headerEnd;
+            const tableRows = [];
+
+            for (let i = headerEnd; i < lines.length; i++) {
+                if (lines[i].trim().startsWith('|')) {
+                    tableRows.push(lines[i]);
+                    tableEnd = i + 1;
+                } else {
+                    break;
+                }
+            }
+
+            let insertIdx = tableRows.length;
+            for (let i = 0; i < tableRows.length; i++) {
+                const match = tableRows[i].match(/\| ([^|]+) \|/);
+                if (match && match[1].trim() > movie.title) {
+                    insertIdx = i;
+                    break;
+                }
+            }
+
+            const type = movie.type || 'movie';
+            const formats = movie.formats.join(', ');
+            const genres = movie.genre.join(', ');
+            const newRow = `| ${movie.title} | ${type} | ${formats} | ${genres} | ${movie.location} | ${movie.tmdbId} |`;
+
+            tableRows.splice(insertIdx, 0, newRow);
+
+            const before = lines.slice(0, headerEnd).join('\n');
+            const after = lines.slice(tableEnd).join('\n');
+
+            return before + '\n' + tableRows.join('\n') + '\n' + after;
+        }
+
+        function formatJsObject(movie) {
+            const parts = [
+                `{tmdbId:${movie.tmdbId}`,
+                `title:"${movie.title}"`,
+                `formats:[${movie.formats.map(f => `"${f}"`).join(',')}]`,
+                `location:"${movie.location}"`,
+                `status:"${movie.status}"`,
+                `dateAdded:"${movie.dateAdded}"`,
+                `genre:[${movie.genre.map(g => `"${g}"`).join(',')}]`
+            ];
+
+            if (movie.type) parts.push(`type:"${movie.type}"`);
+            if (movie.notes) parts.push(`notes:"${movie.notes}"`);
+
+            parts.push('}');
+            return parts.join(',');
+        }
+
+        function showSuccess(msg) {
+            const el = document.getElementById('successMessage');
+            el.textContent = msg;
+            el.classList.remove('hidden');
+        }
+
+        function showError(msg) {
+            const el = document.getElementById('errorMessage');
+            el.textContent = msg;
+            el.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
