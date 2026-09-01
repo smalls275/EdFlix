@@ -434,21 +434,33 @@
         const GITHUB_REPO = 'EdFlix';
         const TMDB_API_KEY = '0c4a10e9d60e99bf03e5f8f98897a66b'; // Public read-only key
 
-        const GITHUB_OWNER = 'smalls275';
-        const GITHUB_REPO = 'EdFlix';
-        const TMDB_API_KEY = '0c4a10e9d60e99bf03e5f8f98897a66b'; // Public read-only key
-
-        document.getElementById('movieForm').addEventListener('submit', handleSubmit);
-        document.getElementById('searchBtn').addEventListener('click', searchTMDB);
-        document.getElementById('searchTitle').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                searchTMDB();
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load saved token from localStorage
+            const savedToken = localStorage.getItem('edflixGithubToken');
+            if (savedToken) {
+                document.getElementById('githubToken').value = savedToken;
             }
-        });
 
-        // Set today's date as default
-        document.getElementById('dateAdded').valueAsDate = new Date();
+            // Set today's date as default
+            document.getElementById('dateAdded').valueAsDate = new Date();
+
+            document.getElementById('movieForm').addEventListener('submit', handleSubmit);
+            document.getElementById('searchBtn').addEventListener('click', searchTMDB);
+            document.getElementById('searchTitle').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    searchTMDB();
+                }
+            });
+
+            // Save token to localStorage when changed
+            document.getElementById('githubToken').addEventListener('change', (e) => {
+                if (e.target.value) {
+                    localStorage.setItem('edflixGithubToken', e.target.value);
+                }
+            });
+        });
 
         async function searchTMDB() {
             const query = document.getElementById('searchTitle').value.trim();
@@ -463,10 +475,13 @@
 
             try {
                 const response = await fetch(
-                    `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(query)}`
+                    `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(query)}&page=1`
                 );
 
-                if (!response.ok) throw new Error('Failed to search TMDB');
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.status_message || 'Failed to search TMDB');
+                }
 
                 const data = await response.json();
                 const results = data.results || [];
@@ -476,10 +491,10 @@
                     return;
                 }
 
-                resultsDiv.innerHTML = results.slice(0, 5).map(movie => `
-                    <div class="search-result-item" onclick="selectMovie(${movie.id}, '${movie.title.replace(/'/g, "\\'")}')">
+                resultsDiv.innerHTML = results.slice(0, 10).map(movie => `
+                    <div class="search-result-item" onclick="selectMovie(${movie.id}, '${escapeQuote(movie.title)}', '${movie.release_date || ''}')">
                         <div class="search-result-title">${movie.title}</div>
-                        <div class="search-result-meta">TMDB ID: ${movie.id} | ${movie.release_date ? movie.release_date.substring(0, 4) : 'N/A'}</div>
+                        <div class="search-result-meta">TMDB ID: ${movie.id} | Year: ${movie.release_date ? movie.release_date.substring(0, 4) : 'N/A'}</div>
                     </div>
                 `).join('');
 
@@ -489,7 +504,11 @@
             }
         }
 
-        function selectMovie(tmdbId, title) {
+        function escapeQuote(str) {
+            return str.replace(/'/g, "\\'").replace(/"/g, '\\"');
+        }
+
+        function selectMovie(tmdbId, title, releaseDate) {
             document.getElementById('tmdbId').value = tmdbId;
             document.getElementById('title').value = title;
             document.getElementById('searchResults').classList.add('hidden');
