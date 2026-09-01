@@ -590,12 +590,23 @@
         async function updateFile(token, path, updateFn) {
             // Get current file
             const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`;
+            console.log('Fetching from:', url);
+            console.log('Token:', token.substring(0, 20) + '...');
+            
             const response = await fetch(url, {
-                headers: { 'Authorization': `token ${token}` }
+                headers: { 
+                    'Authorization': `token ${token}`,
+                    'Accept': 'application/vnd.github.v3+json'
+                }
             });
 
             if (!response.ok) {
-                throw new Error(`Failed to fetch ${path}: ${response.statusText}`);
+                let errorMsg = `${response.status} ${response.statusText}`;
+                try {
+                    const errorData = await response.json();
+                    if (errorData.message) errorMsg += ` - ${errorData.message}`;
+                } catch (e) {}
+                throw new Error(`Failed to fetch ${path}: ${errorMsg}`);
             }
 
             const data = await response.json();
