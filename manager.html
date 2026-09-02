@@ -436,9 +436,11 @@
 
         // Initialize page
         document.addEventListener('DOMContentLoaded', () => {
-            // Load saved token from localStorage or use default
-            const savedToken = localStorage.getItem('edflixGithubToken') || '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';
-            document.getElementById('githubToken').value = savedToken;
+            // Load saved token from localStorage
+            const savedToken = localStorage.getItem('edflixGithubToken');
+            if (savedToken) {
+                document.getElementById('githubToken').value = savedToken;
+            }
 
             // Set today's date as default
             document.getElementById('dateAdded').valueAsDate = new Date();
