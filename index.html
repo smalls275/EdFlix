@@ -851,7 +851,11 @@
       const tv = fr.filter(m => m.type === 'tv' || m.notes?.includes('TV Series'));
       if (tv.length) c.push({title: 'TV Series', movies: byRating(tv)});
       const g = new Map();
-      fr.forEach(m => m.genre?.forEach(h => { if (!g.has(h)) g.set(h, []); g.get(h).push(m); }));
+      fr.forEach(m => m.genre?.forEach(h => {
+        const genre = h === 'Sci-Fi' ? 'Science Fiction' : h;
+        if (!g.has(genre)) g.set(genre, []);
+        g.get(genre).push(m);
+      }));
       [...g.entries()].sort((a,b) => b[1].length - a[1].length).forEach(([t,m]) => { if (m.length >= 2) c.push({title: t, movies: byRating(m)}); });
       const un = fr.filter(m => m.status !== 'available');
       if (un.length) c.push({title: 'Currently Checked Out', movies: byRating(un)});
