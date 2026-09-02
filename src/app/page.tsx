@@ -13,6 +13,13 @@ const COLLECTION = collectionData as CollectionItem[];
 
 type FilterType = 'all' | 'available' | 'checked-out' | '4K UHD' | 'Blu-ray' | 'DVD' | 'VHS';
 
+function getMovieGenres(movie: EnrichedMovie): string[] {
+  const tmdbGenres = movie.tmdbData?.genres?.map((genre) => genre.name).filter(Boolean);
+  if (tmdbGenres?.length) return tmdbGenres;
+
+  return (movie.genre || []).map((genre) => (genre === 'Sci-Fi' ? 'Science Fiction' : genre));
+}
+
 export default function HomePage() {
   const [movies, setMovies] = useState<EnrichedMovie[]>([]);
   const [loading, setLoading] = useState(true);
@@ -26,7 +33,7 @@ export default function HomePage() {
       setLoading(true);
       const enriched: EnrichedMovie[] = await Promise.all(
         COLLECTION.map(async (item) => {
-          const tmdbData: TMDBMovie | null = await fetchMovieBasic(item.tmdbId);
+          const tmdbData: TMDBMovie | null = await fetchMovieBasic(item.tmdbId, item.type);
           return { ...item, tmdbData: tmdbData || undefined };
         })
       );
@@ -50,7 +57,7 @@ export default function HomePage() {
       result = result.filter(
         (m) =>
           m.title.toLowerCase().includes(q) ||
-          m.genre?.some((g) => g.toLowerCase().includes(q)) ||
+          getMovieGenres(m).some((g) => g.toLowerCase().includes(q)) ||
           m.tags?.some((t) => t.toLowerCase().includes(q)) ||
           m.location?.toLowerCase().includes(q) ||
           m.checkedOutBy?.toLowerCase().includes(q) ||
@@ -95,7 +102,7 @@ export default function HomePage() {
 
     const genres = new Map<string, EnrichedMovie[]>();
     filteredMovies.forEach((m) => {
-      m.genre?.forEach((g) => {
+      getMovieGenres(m).forEach((g) => {
         if (!genres.has(g)) genres.set(g, []);
         genres.get(g)!.push(m);
       });

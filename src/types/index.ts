@@ -4,6 +4,7 @@ export type AvailabilityStatus = 'available' | 'checked-out' | 'lent-out';
 
 export interface CollectionItem {
   tmdbId: number;
+  type?: 'movie' | 'tv';
   title: string;
   formats: MediaFormat[];
   location?: string;

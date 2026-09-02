@@ -1,510 +1,4953 @@
-[
-  {
-    "tmdbId": 155,
-    "title": "The Dark Knight",
-    "formats": ["4K UHD", "Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "notes": "Steelbook edition",
-    "dateAdded": "2023-01-15",
-    "genre": ["Action", "Crime", "Drama"],
-    "tags": ["favorites", "superhero"]
-  },
-  {
-    "tmdbId": 680,
-    "title": "Pulp Fiction",
-    "formats": ["Blu-ray", "DVD"],
-    "location": "Living Room Shelf B",
-    "status": "available",
-    "dateAdded": "2022-06-20",
-    "genre": ["Thriller", "Crime"],
-    "tags": ["classics"]
-  },
-  {
-    "tmdbId": 238,
-    "title": "The Godfather",
-    "formats": ["4K UHD", "Blu-ray", "DVD"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2021-12-25",
-    "genre": ["Drama", "Crime"],
-    "tags": ["classics", "favorites"]
-  },
-  {
-    "tmdbId": 550,
-    "title": "Fight Club",
-    "formats": ["Blu-ray"],
-    "location": "Bedroom Shelf",
-    "status": "checked-out",
-    "checkedOutBy": "Dad",
-    "dateAdded": "2023-03-10",
-    "genre": ["Drama"],
-    "tags": ["cult-classics"]
-  },
-  {
-    "tmdbId": 13,
-    "title": "Forrest Gump",
-    "formats": ["DVD", "VHS"],
-    "location": "Living Room Shelf B",
-    "status": "available",
-    "dateAdded": "2020-08-01",
-    "genre": ["Comedy", "Drama", "Romance"],
-    "tags": ["family-friendly", "classics"]
-  },
-  {
-    "tmdbId": 11,
-    "title": "Star Wars",
-    "formats": ["4K UHD", "Blu-ray", "VHS"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2019-05-04",
-    "genre": ["Adventure", "Action", "Science Fiction"],
-    "tags": ["favorites", "sci-fi"]
-  },
-  {
-    "tmdbId": 120,
-    "title": "The Lord of the Rings: The Fellowship of the Ring",
-    "formats": ["4K UHD", "Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "notes": "Extended Edition",
-    "dateAdded": "2022-01-10",
-    "genre": ["Adventure", "Fantasy", "Action"],
-    "tags": ["favorites", "fantasy"]
-  },
-  {
-    "tmdbId": 497,
-    "title": "The Green Mile",
-    "formats": ["Blu-ray"],
-    "location": "Living Room Shelf B",
-    "status": "available",
-    "dateAdded": "2023-06-15",
-    "genre": ["Fantasy", "Drama", "Crime"],
-    "tags": ["classics"]
-  },
-  {
-    "tmdbId": 157336,
-    "title": "Interstellar",
-    "formats": ["4K UHD", "Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "lent-out",
-    "checkedOutBy": "Uncle Mike",
-    "dateAdded": "2023-09-01",
-    "genre": ["Adventure", "Drama", "Science Fiction"],
-    "tags": ["favorites", "sci-fi"]
-  },
-  {
-    "tmdbId": 278,
-    "title": "The Shawshank Redemption",
-    "formats": ["Blu-ray", "DVD"],
-    "location": "Living Room Shelf B",
-    "status": "available",
-    "dateAdded": "2021-03-20",
-    "genre": ["Drama", "Crime"],
-    "tags": ["classics", "favorites"]
-  },
-  {
-    "tmdbId": 603,
-    "title": "The Matrix",
-    "formats": ["4K UHD", "DVD"],
-    "location": "Bedroom Shelf",
-    "status": "available",
-    "dateAdded": "2022-11-10",
-    "genre": ["Action", "Science Fiction"],
-    "tags": ["sci-fi", "cult-classics"]
-  },
-  {
-    "tmdbId": 389,
-    "title": "12 Angry Men",
-    "formats": ["DVD"],
-    "location": "Living Room Shelf B",
-    "status": "available",
-    "dateAdded": "2020-02-14",
-    "genre": ["Drama"],
-    "tags": ["classics"]
-  },
-  {
-    "tmdbId": 24428,
-    "title": "The Avengers",
-    "formats": ["Blu-ray", "DVD"],
-    "location": "Kids Room",
-    "status": "available",
-    "dateAdded": "2022-07-04",
-    "genre": ["Science Fiction", "Action", "Adventure"],
-    "tags": ["family-friendly", "superhero"]
-  },
-  {
-    "tmdbId": 862,
-    "title": "Toy Story",
-    "formats": ["Blu-ray", "DVD", "VHS"],
-    "location": "Kids Room",
-    "status": "available",
-    "dateAdded": "2019-11-22",
-    "genre": ["Animation", "Comedy", "Family"],
-    "tags": ["family-friendly", "kids", "animation"]
-  },
-  {
-    "tmdbId": 150540,
-    "title": "Inside Out",
-    "formats": ["Blu-ray"],
-    "location": "Kids Room",
-    "status": "checked-out",
-    "checkedOutBy": "Kids",
-    "dateAdded": "2023-04-20",
-    "genre": ["Animation", "Family", "Comedy"],
-    "tags": ["family-friendly", "kids", "animation"]
-  },
-  {
-    "tmdbId": 50512,
-    "title": "Anna Karenina",
-    "formats": ["Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2025-01-01",
-    "genre": ["Drama", "Romance"]
-  },
-  {
-    "tmdbId": 44403,
-    "title": "Big Man on Campus",
-    "formats": ["Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-23",
-    "genre": ["Comedy"]
-  },
-  {
-    "tmdbId": 9292,
-    "title": "Hudson Hawk",
-    "formats": ["Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-23",
-    "genre": ["Action", "Adventure", "Comedy"]
-  },
-  {
-    "tmdbId": 264660,
-    "title": "Ex Machina",
-    "formats": ["Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-24",
-    "genre": ["Science Fiction", "Drama"]
-  },
-  {
-    "tmdbId": 841,
-    "title": "Dune",
-    "formats": ["Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-23",
-    "genre": ["Action", "Science Fiction", "Adventure"]
-  },
-  {
-    "tmdbId": 1022789,
-    "title": "Inside Out 2",
-    "formats": ["4K UHD", "Blu-ray"],
-    "location": "Kids Room",
-    "status": "available",
-    "dateAdded": "2026-08-23",
-    "genre": ["Animation", "Family", "Comedy"],
-    "tags": ["family-friendly", "kids", "animation"]
-  },
-  {
-    "tmdbId": 122,
-    "title": "The Lord of the Rings: The Return of the King",
-    "formats": ["4K UHD", "Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "notes": "Extended Edition",
-    "dateAdded": "2022-01-10",
-    "genre": ["Adventure", "Fantasy", "Action"],
-    "tags": ["favorites", "fantasy"]
-  },
-  {
-    "tmdbId": 121,
-    "title": "The Lord of the Rings: The Two Towers",
-    "formats": ["4K UHD", "Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "notes": "Extended Edition",
-    "dateAdded": "2022-01-10",
-    "genre": ["Adventure", "Fantasy", "Action"],
-    "tags": ["favorites", "fantasy"]
-  },
-  {
-    "tmdbId": 27205,
-    "title": "Inception",
-    "formats": ["4K UHD", "Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2023-02-28",
-    "genre": ["Action", "Science Fiction", "Adventure"],
-    "tags": ["favorites", "sci-fi"]
-  },
-  {
-    "tmdbId": 807,
-    "title": "Se7en",
-    "formats": ["Blu-ray"],
-    "location": "Bedroom Shelf",
-    "status": "available",
-    "dateAdded": "2023-10-31",
-    "genre": ["Crime", "Mystery", "Thriller"],
-    "tags": ["thriller"]
-  },
-  {
-    "tmdbId": 105,
-    "title": "Back to the Future",
-    "formats": ["4K UHD", "Blu-ray", "VHS"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2020-10-21",
-    "genre": ["Adventure", "Comedy", "Science Fiction"],
-    "tags": ["family-friendly", "classics", "sci-fi"]
-  },
-  {
-    "tmdbId": 1339713,
-    "title": "Obsession",
-    "formats": ["4K UHD"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Horror", "Thriller"],
-    "tags": ["2026", "new-release", "horror"]
-  },
-  {
-    "tmdbId": 11286,
-    "title": "The Cannonball Run",
-    "formats": ["Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Action", "Comedy", "Family"],
-    "tags": ["comedy", "classics"]
-  },
-  {
-    "tmdbId": 2252,
-    "title": "Eastern Promises",
-    "formats": ["Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Thriller", "Crime", "Mystery"],
-    "tags": ["thriller"]
-  },
-  {
-    "tmdbId": 6466,
-    "title": "Freddy vs. Jason",
-    "formats": ["Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Horror"],
-    "tags": ["horror", "franchise"]
-  },
-  {
-    "tmdbId": 687163,
-    "title": "Project Hail Mary",
-    "formats": ["4K UHD"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Science Fiction", "Adventure"],
-    "tags": ["2026", "new-release", "sci-fi"]
-  },
-  {
-    "tmdbId": 11412,
-    "title": "The Long Kiss Goodnight",
-    "formats": ["4K UHD"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Crime", "Action", "Mystery", "Thriller"],
-    "tags": ["action", "thriller", "classics"]
-  },
-  {
-    "tmdbId": 4011,
-    "title": "Beetlejuice",
-    "formats": ["4K UHD"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Comedy", "Fantasy"],
-    "tags": ["comedy", "classics"]
-  },
-  {
-    "tmdbId": 43082,
-    "type": "tv",
-    "title": "Key & Peele",
-    "formats": ["DVD"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Comedy"],
-    "notes": "Complete Series",
-    "tags": ["comedy", "sketch-comedy"]
-  },
-  {
-    "tmdbId": 57607,
-    "type": "tv",
-    "title": "Kroll Show",
-    "formats": ["DVD"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Comedy"],
-    "notes": "Season 1",
-    "tags": ["comedy", "sketch-comedy"]
-  },
-  {
-    "tmdbId": 1547,
-    "title": "The Lost Boys",
-    "formats": ["4K UHD"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Horror", "Comedy", "Thriller"],
-    "tags": ["horror", "classics"]
-  },
-  {
-    "tmdbId": 260513,
-    "title": "The Incredibles 2",
-    "formats": ["4K UHD"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Action", "Adventure", "Animation", "Family"],
-    "tags": ["family-friendly", "animation", "superhero"]
-  },
-  {
-    "tmdbId": 661374,
-    "title": "Glass Onion: A Knives Out Mystery",
-    "formats": ["Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Comedy", "Crime", "Mystery"],
-    "tags": ["comedy", "mystery", "knives-out"]
-  },
-  {
-    "tmdbId": 16363,
-    "title": "The Best Little Whorehouse in Texas",
-    "formats": ["Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Comedy"],
-    "tags": ["comedy", "classics"]
-  },
-  {
-    "tmdbId": 57607,
-    "type": "tv",
-    "title": "Kroll Show",
-    "formats": ["DVD"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Comedy"],
-    "notes": "Season 2",
-    "tags": ["comedy", "sketch-comedy"]
-  },
-  {
-    "tmdbId": 9728,
-    "title": "Friday the 13th Part III",
-    "formats": ["3D Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Horror"],
-    "tags": ["horror", "franchise"]
-  },
-  {
-    "tmdbId": 137113,
-    "title": "Live Die Repeat",
-    "formats": ["3D Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Action", "Sci-Fi"]
-  },
-  {
-    "tmdbId": 2666,
-    "title": "Dark City",
-    "formats": ["Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Mystery", "Science Fiction"]
-  },
-  {
-    "tmdbId": 74465,
-    "title": "We Bought a Zoo",
-    "formats": ["DVD"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Drama", "Comedy", "Family"]
-  },
-  {
-    "tmdbId": 97630,
-    "title": "Zero Dark Thirty",
-    "formats": ["Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Thriller", "Drama"]
-  },
-  {
-    "tmdbId": 11967,
-    "title": "Young Guns",
-    "formats": ["Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-22",
-    "genre": ["Western", "Action", "Adventure", "Drama"]
-  },
-  {
-    "tmdbId": 630,
-    "title": "The Wizard of Oz",
-    "formats": ["4K UHD", "3D Blu-ray"],
-    "location": "Living Room Shelf A",
-    "status": "available",
-    "dateAdded": "2026-08-24",
-    "genre": ["Adventure", "Fantasy", "Family", "Musical"]
-  },
-  {
-    "tmdbId": 285,
-    "title": "Pirates of the Caribbean: At World's End",
-    "formats": ["Blu-ray"],
-    "location": "Living Room",
-    "status": "available",
-    "dateAdded": "2026-09-01",
-    "genre": ["Action", "Adventure", "Fantasy"]
-  },
-  {
-    "tmdbId": 58,
-    "title": "Pirates of the Caribbean: Dead Man's Chest",
-    "formats": ["Blu-ray"],
-    "location": "Living Room",
-    "status": "available",
-    "dateAdded": "2026-09-01",
-    "genre": ["Action", "Adventure", "Fantasy"]
-  },
-  {
-    "tmdbId": 22,
-    "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
-    "formats": ["Blu-ray"],
-    "location": "Living Room",
-    "status": "available",
-    "dateAdded": "2026-09-01",
-    "genre": ["Action", "Adventure", "Fantasy"]
-  },
-  {
-    "tmdbId": 9426,
-    "title": "The Fly",
-    "formats": ["Blu-ray"],
-    "location": "Living Room",
-    "status": "available",
-    "dateAdded": "2026-09-02",
-    "genre": ["Horror", "Science Fiction"]
-  }
+﻿[
+    {
+        "tmdbId":  268,
+        "title":  "Batman",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Crime"
+                  ]
+    },
+    {
+        "tmdbId":  364,
+        "title":  "Batman Returns",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Crime"
+                  ]
+    },
+    {
+        "tmdbId":  850,
+        "title":  "A Christmas Story",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  950387,
+        "title":  "A Minecraft Movie",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Fantasy"
+                  ]
+    },
+    {
+        "tmdbId":  11959,
+        "title":  "UHF",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  1649,
+        "title":  "Bill \u0026 Ted\u0027s Bogus Journey",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Fantasy"
+                  ]
+    },
+    {
+        "tmdbId":  9374,
+        "title":  "Death Becomes Her",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Fantasy"
+                  ]
+    },
+    {
+        "tmdbId":  5549,
+        "title":  "RoboCop 2",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Crime",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  1880,
+        "title":  "Red Dawn",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Drama",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  27205,
+        "title":  "Inception",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Sci-Fi",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  36557,
+        "title":  "Casino Royale",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  9003,
+        "title":  "Hellraiser",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror"
+                  ]
+    },
+    {
+        "tmdbId":  9064,
+        "title":  "Hellraiser II: Hellbound",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror"
+                  ]
+    },
+    {
+        "tmdbId":  11569,
+        "title":  "Hellraiser III: Hell on Earth",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror"
+                  ]
+    },
+    {
+        "tmdbId":  8766,
+        "title":  "Hellraiser: Bloodline",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  13063,
+        "title":  "Cannibal! The Musical",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Horror",
+                      "Musical"
+                  ]
+    },
+    {
+        "tmdbId":  9426,
+        "title":  "The Fly",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-02",
+        "genre":  [
+                      "Horror",
+                      "Science Fiction"
+                  ]
+    },
+    {
+        "tmdbId":  635731,
+        "title":  "Pig",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Mystery"
+                  ]
+    },
+    {
+        "tmdbId":  11542,
+        "title":  "Altered States",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  15,
+        "title":  "Citizen Kane",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Mystery"
+                  ]
+    },
+    {
+        "tmdbId":  1878,
+        "title":  "Fear and Loathing in Las Vegas",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Comedy",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  996,
+        "title":  "Double Indemnity",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Crime",
+                      "Drama",
+                      "Film-Noir"
+                  ]
+    },
+    {
+        "tmdbId":  2293,
+        "title":  "Mallrats",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  5548,
+        "title":  "RoboCop",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Crime",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  19542,
+        "title":  "The Red Shoes",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Music",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  36685,
+        "title":  "The Rocky Horror Picture Show",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Horror",
+                      "Musical"
+                  ]
+    },
+    {
+        "tmdbId":  1018,
+        "title":  "Mulholland Drive",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Mystery",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  8337,
+        "title":  "They Live",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Horror",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  3175,
+        "title":  "Barry Lyndon",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  238,
+        "title":  "The Godfather",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Crime",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  240,
+        "title":  "The Godfather Part II",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Crime",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  242,
+        "title":  "The Godfather Part III",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Crime",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  13353,
+        "title":  "It\u0027s the Great Pumpkin, Charlie Brown",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Comedy",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  568,
+        "title":  "Apollo 13",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Drama",
+                      "History"
+                  ]
+    },
+    {
+        "tmdbId":  8843,
+        "title":  "The Cell",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Crime",
+                      "Horror",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  62211,
+        "title":  "Monsters University",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  373868,
+        "title":  "Dora the Explorer: Big Sister Dora",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  9836,
+        "title":  "Happy Feet",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  11459,
+        "title":  "Sky High",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  10315,
+        "title":  "Fantastic Mr. Fox",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  9718,
+        "title":  "Talladega Nights: The Ballad of Ricky Bobby",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Comedy",
+                      "Sport"
+                  ]
+    },
+    {
+        "tmdbId":  137113,
+        "title":  "Live Die Repeat",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  10329,
+        "title":  "Congo",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Mystery"
+                  ]
+    },
+    {
+        "tmdbId":  1184918,
+        "title":  "The Wild Robot",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  326359,
+        "title":  "Frozen Fever",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Comedy",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  1939,
+        "title":  "Laura",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Film-Noir",
+                      "Mystery"
+                  ]
+    },
+    {
+        "tmdbId":  664,
+        "title":  "Twister",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Thriller"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  329,
+        "title":  "Jurassic Park",
+        "formats":  [
+                        "4K UHD",
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Sci-Fi",
+                      "Thriller"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  330,
+        "title":  "The Lost World: Jurassic Park",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  595,
+        "title":  "To Kill a Mockingbird",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Crime",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  289,
+        "title":  "Casablanca",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Romance",
+                      "War"
+                  ]
+    },
+    {
+        "tmdbId":  276843,
+        "title":  "What We Did on Our Holiday",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  493529,
+        "title":  "Dungeons \u0026 Dragons: Honor Among Thieves",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  11587,
+        "title":  "The Exorcist III",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Horror",
+                      "Mystery"
+                  ]
+    },
+    {
+        "tmdbId":  272,
+        "title":  "Batman Begins",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Crime"
+                  ]
+    },
+    {
+        "tmdbId":  155,
+        "title":  "The Dark Knight",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Crime",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  49026,
+        "title":  "The Dark Knight Rises",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Crime"
+                  ]
+    },
+    {
+        "tmdbId":  2119,
+        "title":  "Days of Thunder",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Drama",
+                      "Sport"
+                  ]
+    },
+    {
+        "tmdbId":  11381,
+        "title":  "Tommy Boy",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  88,
+        "title":  "Dirty Dancing",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Music",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  389,
+        "title":  "12 Angry Men",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Crime",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  4147,
+        "title":  "Road to Perdition",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Crime",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  13368,
+        "title":  "White Christmas",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Musical",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  10719,
+        "title":  "Elf",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Family",
+                      "Fantasy"
+                  ]
+    },
+    {
+        "tmdbId":  10437,
+        "title":  "The Muppet Christmas Carol",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Drama",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  5255,
+        "title":  "The Polar Express",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  4348,
+        "title":  "Pride \u0026 Prejudice",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  39452,
+        "title":  "Exit Through the Gift Shop",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Documentary",
+                      "Comedy",
+                      "Crime"
+                  ]
+    },
+    {
+        "tmdbId":  44189,
+        "title":  "Burning Love",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy"
+                  ],
+        "notes":  "TV Series"
+    },
+    {
+        "tmdbId":  341012,
+        "title":  "Popstar: Never Stop Never Stopping",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Music"
+                  ]
+    },
+    {
+        "tmdbId":  11772,
+        "title":  "The Haunting",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror"
+                  ]
+    },
+    {
+        "tmdbId":  44826,
+        "title":  "Hugo",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Drama",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  63,
+        "title":  "12 Monkeys",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Mystery",
+                      "Sci-Fi",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  1911,
+        "title":  "The 13th Warrior",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "History"
+                  ]
+    },
+    {
+        "tmdbId":  62,
+        "title":  "2001: A Space Odyssey",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  170,
+        "title":  "28 Days Later",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Horror",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  1562,
+        "title":  "28 Weeks Later",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  2756,
+        "title":  "The Abyss",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  2907,
+        "title":  "The Addams Family",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Fantasy"
+                  ]
+    },
+    {
+        "tmdbId":  2758,
+        "title":  "Addams Family Values",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Fantasy"
+                  ]
+    },
+    {
+        "tmdbId":  10436,
+        "title":  "The Age of Innocence",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  812,
+        "title":  "Aladdin",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  126889,
+        "title":  "Alien: Covenant",
+        "formats":  [
+                        "4K UHD",
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  945961,
+        "title":  "Alien: Romulus",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  348,
+        "title":  "Alien",
+        "formats":  [
+                        "4K UHD",
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  679,
+        "title":  "Aliens",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Horror"
+                  ]
+    },
+    {
+        "tmdbId":  8077,
+        "title":  "AlienÂ³",
+        "formats":  [
+                        "Blu-ray",
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Horror",
+                      "Sci-Fi"
+                  ],
+        "notes":  "Assembly Cut"
+    },
+    {
+        "tmdbId":  8078,
+        "title":  "Alien Resurrection",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Horror",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  279,
+        "title":  "Amadeus",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Biography",
+                      "Drama",
+                      "Music"
+                  ]
+    },
+    {
+        "tmdbId":  50512,
+        "title":  "Anna Karenina",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  44403,
+        "title":  "Big Man on Campus",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-23",
+        "genre":  [
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  300668,
+        "title":  "Annihilation",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Drama",
+                      "Horror"
+                  ]
+    },
+    {
+        "tmdbId":  61891,
+        "title":  "Anonymous",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  329865,
+        "title":  "Arrival",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Mystery",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  10020,
+        "title":  "Beauty and the Beast",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  4011,
+        "title":  "Beetlejuice",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Fantasy"
+                  ]
+    },
+    {
+        "tmdbId":  267935,
+        "title":  "The BFG",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Family",
+                      "Fantasy"
+                  ]
+    },
+    {
+        "tmdbId":  6978,
+        "title":  "Big Trouble in Little China",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  855,
+        "title":  "Black Hawk Down",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Drama",
+                      "History"
+                  ]
+    },
+    {
+        "tmdbId":  78,
+        "title":  "Blade Runner",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Drama",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  335984,
+        "title":  "Blade Runner 2049",
+        "formats":  [
+                        "4K UHD",
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Drama",
+                      "Mystery"
+                  ]
+    },
+    {
+        "tmdbId":  11072,
+        "title":  "Blazing Saddles",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Western"
+                  ]
+    },
+    {
+        "tmdbId":  11977,
+        "title":  "Caddyshack",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Sport"
+                  ]
+    },
+    {
+        "tmdbId":  11418,
+        "title":  "National Lampoon\u0027s European Vacation",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  525,
+        "title":  "The Blues Brothers",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Comedy",
+                      "Crime"
+                  ]
+    },
+    {
+        "tmdbId":  62177,
+        "title":  "Brave",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Action",
+                      "Adventure"
+                  ]
+    },
+    {
+        "tmdbId":  68,
+        "title":  "Brazil",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Sci-Fi",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  920,
+        "title":  "Cars",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  11286,
+        "title":  "The Cannonball Run",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-22",
+        "genre":  [
+                      "Action",
+                      "Comedy",
+                      "Family"
+                  ],
+        "tags":  [
+                     "comedy",
+                     "classics"
+                 ]
+    },
+    {
+        "tmdbId":  7443,
+        "title":  "Chicken Run",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  11708,
+        "title":  "Chitty Chitty Bang Bang",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Comedy",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  150689,
+        "title":  "Cinderella",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Drama",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  929590,
+        "title":  "Civil War",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Thriller",
+                      "War"
+                  ]
+    },
+    {
+        "tmdbId":  15196,
+        "title":  "Clue",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Crime",
+                      "Mystery"
+                  ]
+    },
+    {
+        "tmdbId":  14836,
+        "title":  "Coraline",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Drama",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  3933,
+        "title":  "Corpse Bride",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Comedy",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  8656,
+        "title":  "Deep Impact",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Drama",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  76493,
+        "title":  "The Dictator",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  68718,
+        "title":  "Django Unchained",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Western"
+                  ]
+    },
+    {
+        "tmdbId":  141,
+        "title":  "Donnie Darko",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Mystery",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  49049,
+        "title":  "Dredd",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Crime",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  2666,
+        "title":  "Dark City",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-22",
+        "genre":  [
+                      "Mystery",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  693134,
+        "title":  "Dune: Part Two",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  438631,
+        "title":  "Dune",
+        "formats":  [
+                        "4K UHD",
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  841,
+        "title":  "Dune",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-23",
+        "genre":  [
+                      "Action",
+                      "Sci-Fi",
+                      "Adventure"
+                  ]
+    },
+    {
+        "tmdbId":  374720,
+        "title":  "Dunkirk",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Drama",
+                      "History"
+                  ]
+    },
+    {
+        "tmdbId":  2252,
+        "title":  "Eastern Promises",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-22",
+        "genre":  [
+                      "Thriller",
+                      "Crime",
+                      "Mystery"
+                  ],
+        "tags":  [
+                     "thriller"
+                 ]
+    },
+    {
+        "tmdbId":  601,
+        "title":  "E.T. the Extra-Terrestrial",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Family",
+                      "Sci-Fi"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  4523,
+        "title":  "Enchanted",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  264660,
+        "title":  "Ex Machina",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-24",
+        "genre":  [
+                      "Sci-Fi",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  550,
+        "title":  "Fight Club",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  127380,
+        "title":  "Finding Dory",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  17339,
+        "title":  "Force 10 from Navarone",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Drama",
+                      "War"
+                  ]
+    },
+    {
+        "tmdbId":  106,
+        "title":  "Predator",
+        "formats":  [
+                        "4K UHD",
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Horror"
+                  ]
+    },
+    {
+        "tmdbId":  169,
+        "title":  "Predator 2",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Horror",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  34851,
+        "title":  "Predators",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  1242898,
+        "title":  "Predator: Badlands",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  1233413,
+        "title":  "Sinners",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Drama",
+                      "Horror"
+                  ]
+    },
+    {
+        "tmdbId":  11020,
+        "title":  "Picnic at Hanging Rock",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Mystery"
+                  ]
+    },
+    {
+        "tmdbId":  1078605,
+        "title":  "Weapons",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror",
+                      "Mystery"
+                  ]
+    },
+    {
+        "tmdbId":  377,
+        "title":  "A Nightmare on Elm Street",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror"
+                  ]
+    },
+    {
+        "tmdbId":  10014,
+        "title":  "A Nightmare on Elm Street 2: Freddy\u0027s Revenge",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror"
+                  ]
+    },
+    {
+        "tmdbId":  10072,
+        "title":  "A Nightmare on Elm Street 3: Dream Warriors",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Fantasy",
+                      "Horror"
+                  ]
+    },
+    {
+        "tmdbId":  10131,
+        "title":  "A Nightmare on Elm Street 4: The Dream Master",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror"
+                  ]
+    },
+    {
+        "tmdbId":  10160,
+        "title":  "A Nightmare on Elm Street: The Dream Child",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Fantasy",
+                      "Horror"
+                  ]
+    },
+    {
+        "tmdbId":  11284,
+        "title":  "Freddy\u0027s Dead: The Final Nightmare",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Fantasy",
+                      "Horror"
+                  ]
+    },
+    {
+        "tmdbId":  6466,
+        "title":  "Freddy vs. Jason",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-22",
+        "genre":  [
+                      "Horror"
+                  ],
+        "tags":  [
+                     "horror",
+                     "franchise"
+                 ]
+    },
+    {
+        "tmdbId":  9728,
+        "title":  "Friday the 13th Part III",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-22",
+        "genre":  [
+                      "Horror"
+                  ],
+        "tags":  [
+                     "horror",
+                     "franchise"
+                 ]
+    },
+    {
+        "tmdbId":  11596,
+        "title":  "Wes Craven\u0027s New Nightmare",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Fantasy",
+                      "Horror",
+                      "Mystery"
+                  ]
+    },
+    {
+        "tmdbId":  521,
+        "title":  "Dial M for Murder",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Crime",
+                      "Drama",
+                      "Mystery"
+                  ],
+        "tags":  [
+                     "hitchcock"
+                 ]
+    },
+    {
+        "tmdbId":  11976,
+        "title":  "Legend",
+        "formats":  [
+                        "4K UHD",
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Fantasy",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  64688,
+        "title":  "21 Jump Street",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Comedy",
+                      "Crime"
+                  ]
+    },
+    {
+        "tmdbId":  1903,
+        "title":  "Vanilla Sky",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Fantasy",
+                      "Mystery",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  1891,
+        "type":  "tv",
+        "title":  "Rome",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "History",
+                      "War"
+                  ],
+        "notes":  "Complete Series"
+    },
+    {
+        "tmdbId":  109445,
+        "title":  "Frozen",
+        "formats":  [
+                        "4K UHD",
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  330457,
+        "title":  "Frozen II",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  786892,
+        "title":  "Furiosa: A Mad Max Saga",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  926,
+        "title":  "Galaxy Quest",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Comedy",
+                      "Sci-Fi"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  205,
+        "type":  "tv",
+        "title":  "Garth Marenghi\u0027s Darkplace",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Horror"
+                  ],
+        "notes":  "Complete Series"
+    },
+    {
+        "tmdbId":  65754,
+        "title":  "The Girl with the Dragon Tattoo",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Crime",
+                      "Drama",
+                      "Mystery"
+                  ]
+    },
+    {
+        "tmdbId":  98,
+        "title":  "Gladiator",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  770,
+        "title":  "Gone with the Wind",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Romance",
+                      "War"
+                  ]
+    },
+    {
+        "tmdbId":  9340,
+        "title":  "The Goonies",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Comedy",
+                      "Family"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  927,
+        "title":  "Gremlins",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Fantasy",
+                      "Horror"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  928,
+        "title":  "Gremlins 2: The New Batch",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Fantasy",
+                      "Horror"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  5835,
+        "type":  "tv",
+        "title":  "Goosebumps",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Family",
+                      "Horror",
+                      "Mystery"
+                  ]
+    },
+    {
+        "tmdbId":  5279,
+        "title":  "Gosford Park",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Drama",
+                      "Mystery"
+                  ]
+    },
+    {
+        "tmdbId":  49047,
+        "title":  "Gravity",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Sci-Fi",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  9037,
+        "title":  "Grease 2",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Musical",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  5925,
+        "title":  "The Great Escape",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Drama",
+                      "History"
+                  ]
+    },
+    {
+        "tmdbId":  64682,
+        "title":  "The Great Gatsby",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  559907,
+        "title":  "The Green Knight",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Drama",
+                      "Fantasy"
+                  ]
+    },
+    {
+        "tmdbId":  270487,
+        "title":  "Hail, Caesar!",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Mystery"
+                  ]
+    },
+    {
+        "tmdbId":  49051,
+        "title":  "The Hobbit: An Unexpected Journey",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Fantasy"
+                  ]
+    },
+    {
+        "tmdbId":  57158,
+        "title":  "The Hobbit: The Desolation of Smaug",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Fantasy"
+                  ]
+    },
+    {
+        "tmdbId":  771,
+        "title":  "Home Alone",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  814,
+        "type":  "tv",
+        "title":  "Hornblower",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  18573,
+        "title":  "House of Wax",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror",
+                      "Mystery",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  15856,
+        "title":  "House on Haunted Hill",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror",
+                      "Mystery",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  1669,
+        "title":  "The Hunt for Red October",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  9806,
+        "title":  "The Incredibles",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Action",
+                      "Adventure"
+                  ]
+    },
+    {
+        "tmdbId":  260513,
+        "title":  "The Incredibles 2",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-22",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Animation",
+                      "Family"
+                  ],
+        "tags":  [
+                     "family-friendly",
+                     "animation",
+                     "superhero"
+                 ]
+    },
+    {
+        "tmdbId":  85,
+        "title":  "Raiders of the Lost Ark",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  87,
+        "title":  "Indiana Jones and the Temple of Doom",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  89,
+        "title":  "Indiana Jones and the Last Crusade",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  217,
+        "title":  "Indiana Jones and the Kingdom of the Crystal Skull",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure"
+                  ]
+    },
+    {
+        "tmdbId":  16869,
+        "title":  "Inglourious Basterds",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "War"
+                  ]
+    },
+    {
+        "tmdbId":  86829,
+        "title":  "Inside Llewyn Davis",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Music"
+                  ]
+    },
+    {
+        "tmdbId":  150540,
+        "title":  "Inside Out",
+        "formats":  [
+                        "4K UHD",
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  1022789,
+        "title":  "Inside Out 2",
+        "formats":  [
+                        "4K UHD",
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-23",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  157336,
+        "title":  "Interstellar",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Drama",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  1547,
+        "title":  "The Lost Boys",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-22",
+        "genre":  [
+                      "Horror",
+                      "Comedy",
+                      "Thriller"
+                  ],
+        "tags":  [
+                     "horror",
+                     "classics"
+                 ]
+    },
+    {
+        "tmdbId":  578,
+        "title":  "Jaws",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Thriller"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  17692,
+        "title":  "Jaws 3-D",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Horror",
+                      "Thriller"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  8844,
+        "title":  "Jumanji",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Family",
+                      "Fantasy"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  342521,
+        "title":  "Keanu",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Comedy",
+                      "Crime"
+                  ]
+    },
+    {
+        "tmdbId":  24,
+        "title":  "Kill Bill: Vol. 1",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Crime",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  393,
+        "title":  "Kill Bill: Vol. 2",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Crime",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  546554,
+        "title":  "Knives Out",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Crime",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  661374,
+        "title":  "Glass Onion: A Knives Out Mystery",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-22",
+        "genre":  [
+                      "Comedy",
+                      "Crime",
+                      "Mystery"
+                  ],
+        "tags":  [
+                     "comedy",
+                     "mystery",
+                     "knives-out"
+                 ]
+    },
+    {
+        "tmdbId":  16363,
+        "title":  "The Best Little Whorehouse in Texas",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-22",
+        "genre":  [
+                      "Comedy"
+                  ],
+        "tags":  [
+                     "comedy",
+                     "classics"
+                 ]
+    },
+    {
+        "tmdbId":  43082,
+        "type":  "tv",
+        "title":  "Key \u0026 Peele",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-22",
+        "genre":  [
+                      "Comedy"
+                  ],
+        "notes":  "Complete Series",
+        "tags":  [
+                     "comedy",
+                     "sketch-comedy"
+                 ]
+    },
+    {
+        "tmdbId":  57607,
+        "type":  "tv",
+        "title":  "Kroll Show",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-22",
+        "genre":  [
+                      "Comedy"
+                  ],
+        "notes":  "Season 1",
+        "tags":  [
+                     "comedy",
+                     "sketch-comedy"
+                 ]
+    },
+    {
+        "tmdbId":  57607,
+        "type":  "tv",
+        "title":  "Kroll Show",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-22",
+        "genre":  [
+                      "Comedy"
+                  ],
+        "notes":  "Season 2",
+        "tags":  [
+                     "comedy",
+                     "sketch-comedy"
+                 ]
+    },
+    {
+        "tmdbId":  13938,
+        "title":  "The Last Dragon",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Comedy",
+                      "Music"
+                  ]
+    },
+    {
+        "tmdbId":  947,
+        "title":  "Lawrence of Arabia",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Biography",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  87827,
+        "title":  "Life of Pi",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Drama",
+                      "Fantasy"
+                  ]
+    },
+    {
+        "tmdbId":  8587,
+        "title":  "The Lion King",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  10144,
+        "title":  "The Little Mermaid",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  193756,
+        "title":  "Lone Survivor",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Drama",
+                      "War"
+                  ]
+    },
+    {
+        "tmdbId":  11412,
+        "title":  "The Long Kiss Goodnight",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-22",
+        "genre":  [
+                      "Crime",
+                      "Action",
+                      "Mystery",
+                      "Thriller"
+                  ],
+        "tags":  [
+                     "action",
+                     "thriller",
+                     "classics"
+                 ]
+    },
+    {
+        "tmdbId":  120,
+        "title":  "The Lord of the Rings: The Fellowship of the Ring",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Fantasy"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  121,
+        "title":  "The Lord of the Rings: The Two Towers",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Fantasy"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  122,
+        "title":  "The Lord of the Rings: The Return of the King",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Fantasy"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  76341,
+        "title":  "Mad Max: Fury Road",
+        "formats":  [
+                        "4K UHD",
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  9942,
+        "title":  "Major League",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Sport"
+                  ]
+    },
+    {
+        "tmdbId":  286217,
+        "title":  "The Martian",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Drama",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  603,
+        "title":  "The Matrix",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  28162,
+        "title":  "A Matter of Life and Death",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Fantasy",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  381518,
+        "title":  "Mindhorn",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  5876,
+        "title":  "The Mist",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror",
+                      "Sci-Fi",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  277834,
+        "title":  "Moana",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  87148,
+        "title":  "Monster Dog",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror",
+                      "Music"
+                  ]
+    },
+    {
+        "tmdbId":  585,
+        "title":  "Monsters, Inc.",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Comedy",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  5825,
+        "title":  "National Lampoon\u0027s Christmas Vacation",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  290250,
+        "title":  "The Nice Guys",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Comedy",
+                      "Crime"
+                  ]
+    },
+    {
+        "tmdbId":  9479,
+        "title":  "The Nightmare Before Christmas",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Family",
+                      "Fantasy"
+                  ]
+    },
+    {
+        "tmdbId":  762504,
+        "title":  "Nope",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror",
+                      "Mystery",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  213,
+        "title":  "North by Northwest",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Mystery",
+                      "Thriller"
+                  ],
+        "tags":  [
+                     "hitchcock"
+                 ]
+    },
+    {
+        "tmdbId":  303,
+        "title":  "Notorious",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Film-Noir",
+                      "Mystery"
+                  ],
+        "tags":  [
+                     "hitchcock"
+                 ]
+    },
+    {
+        "tmdbId":  1339713,
+        "title":  "Obsession",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-22",
+        "genre":  [
+                      "Horror",
+                      "Thriller"
+                  ],
+        "tags":  [
+                     "2026",
+                     "new-release",
+                     "horror"
+                 ]
+    },
+    {
+        "tmdbId":  872585,
+        "title":  "Oppenheimer",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Biography",
+                      "Drama",
+                      "History"
+                  ]
+    },
+    {
+        "tmdbId":  27581,
+        "title":  "The Other Guys",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Comedy",
+                      "Crime"
+                  ]
+    },
+    {
+        "tmdbId":  116149,
+        "title":  "Paddington",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Comedy",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  346648,
+        "title":  "Paddington 2",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Comedy",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  9869,
+        "title":  "Patriot Games",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  285,
+        "title":  "Pirates of the Caribbean: At World\u0027s End",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Fantasy"
+                  ]
+    },
+    {
+        "tmdbId":  58,
+        "title":  "Pirates of the Caribbean: Dead Man\u0027s Chest",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Fantasy"
+                  ]
+    },
+    {
+        "tmdbId":  22,
+        "title":  "Pirates of the Caribbean: The Curse of the Black Pearl",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Fantasy"
+                  ]
+    },
+    {
+        "tmdbId":  10895,
+        "title":  "Pinocchio",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  1992,
+        "title":  "Planet Terror",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Horror",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  1124,
+        "title":  "The Prestige",
+        "formats":  [
+                        "4K UHD",
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Mystery",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  687163,
+        "title":  "Project Hail Mary",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-22",
+        "genre":  [
+                      "Science Fiction",
+                      "Adventure"
+                  ],
+        "tags":  [
+                     "2026",
+                     "new-release",
+                     "sci-fi"
+                 ]
+    },
+    {
+        "tmdbId":  766507,
+        "title":  "Prey",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  10198,
+        "title":  "The Princess and the Frog",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  2493,
+        "title":  "The Princess Bride",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Comedy",
+                      "Family"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  70981,
+        "title":  "Prometheus",
+        "formats":  [
+                        "4K UHD",
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  680,
+        "title":  "Pulp Fiction",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Crime",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  378,
+        "title":  "Raising Arizona",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Crime"
+                  ]
+    },
+    {
+        "tmdbId":  2062,
+        "title":  "Ratatouille",
+        "formats":  [
+                        "4K UHD",
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Comedy",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  527774,
+        "title":  "Raya and the Last Dragon",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Action",
+                      "Adventure"
+                  ]
+    },
+    {
+        "tmdbId":  16551,
+        "title":  "Rhinestone",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Music"
+                  ]
+    },
+    {
+        "tmdbId":  20766,
+        "title":  "The Road",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Drama",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  9802,
+        "title":  "The Rock",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  15373,
+        "title":  "Role Models",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  23514,
+        "title":  "The Rum Diary",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Drama",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  11528,
+        "title":  "The Sandlot",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Drama",
+                      "Family"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  287947,
+        "title":  "Shazam!",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  694,
+        "title":  "The Shining",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Horror"
+                  ]
+    },
+    {
+        "tmdbId":  4141,
+        "title":  "Shoot \u0027Em Up",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Comedy",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  11324,
+        "title":  "Shutter Island",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Mystery",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  273481,
+        "title":  "Sicario",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Crime",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  872,
+        "title":  "Singin\u0027 in the Rain",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Musical",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  37724,
+        "title":  "Skyfall",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  10882,
+        "title":  "Sleeping Beauty",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  11006,
+        "title":  "Smokey and the Bandit",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Comedy"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  324857,
+        "title":  "Spider-Man: Into the Spider-Verse",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Action",
+                      "Adventure"
+                  ]
+    },
+    {
+        "tmdbId":  152,
+        "title":  "Star Trek: The Motion Picture",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Mystery",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  154,
+        "title":  "Star Trek II: The Wrath of Khan",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  157,
+        "title":  "Star Trek III: The Search for Spock",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  168,
+        "title":  "Star Trek IV: The Voyage Home",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Comedy",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  172,
+        "title":  "Star Trek V: The Final Frontier",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  174,
+        "title":  "Star Trek VI: The Undiscovered Country",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  193,
+        "title":  "Star Trek: Generations",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  199,
+        "title":  "Star Trek: First Contact",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  200,
+        "title":  "Star Trek: Insurrection",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  201,
+        "title":  "Star Trek: Nemesis",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  9659,
+        "title":  "Mad Max",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  8810,
+        "title":  "Mad Max 2: The Road Warrior",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  9355,
+        "title":  "Mad Max Beyond Thunderdome",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  9023,
+        "title":  "Spirit: Stallion of the Cimarron",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  235,
+        "title":  "Stand by Me",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  11,
+        "title":  "Star Wars",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Action",
+                      "Sci-Fi"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  1891,
+        "title":  "The Empire Strikes Back",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Action",
+                      "Sci-Fi"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  1892,
+        "title":  "Return of the Jedi",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Adventure",
+                      "Action",
+                      "Sci-Fi"
+                  ],
+        "tags":  [
+                     "drive-in"
+                 ]
+    },
+    {
+        "tmdbId":  502356,
+        "title":  "The Super Mario Bros. Movie",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Comedy",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  38757,
+        "title":  "Tangled",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Adventure",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  13475,
+        "title":  "Star Trek",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  188927,
+        "title":  "Star Trek Beyond",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  563,
+        "title":  "Starship Troopers",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  614930,
+        "title":  "Teenage Mutant Ninja Turtles: Mutant Mayhem",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Animation",
+                      "Action",
+                      "Adventure",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  218,
+        "title":  "The Terminator",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Sci-Fi",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  280,
+        "title":  "Terminator 2: Judgment Day",
+        "formats":  [
+                        "4K UHD",
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Sci-Fi",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  107985,
+        "title":  "The World\u0027s End",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Comedy",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  74465,
+        "title":  "We Bought a Zoo",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-22",
+        "genre":  [
+                      "Drama",
+                      "Comedy",
+                      "Family"
+                  ]
+    },
+    {
+        "tmdbId":  4638,
+        "title":  "Hot Fuzz",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Comedy",
+                      "Mystery"
+                  ]
+    },
+    {
+        "tmdbId":  9292,
+        "title":  "Hudson Hawk",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-23",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  747,
+        "title":  "Shaun of the Dead",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Comedy",
+                      "Horror"
+                  ]
+    },
+    {
+        "tmdbId":  1091,
+        "title":  "The Thing",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Horror",
+                      "Mystery",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  284053,
+        "title":  "Thor: Ragnarok",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  597,
+        "title":  "Titanic",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-01-01",
+        "genre":  [
+                      "Drama",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  50647,
+        "title":  "Wanderlust",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Comedy",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  2171,
+        "title":  "Wet Hot American Summer",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  19566,
+        "type":  "tv",
+        "title":  "Frank Herbert\u0027s Dune",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Drama",
+                      "Sci-Fi"
+                  ],
+        "notes":  "Miniseries (2000) â€” Season 1"
+    },
+    {
+        "tmdbId":  9156,
+        "type":  "tv",
+        "title":  "Frank Herbert\u0027s Children of Dune",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Drama",
+                      "Sci-Fi"
+                  ],
+        "notes":  "Miniseries (2003) â€” Season 2"
+    },
+    {
+        "tmdbId":  84773,
+        "type":  "tv",
+        "title":  "The Lord of the Rings: The Rings of Power",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Drama",
+                      "Fantasy"
+                  ],
+        "notes":  "Seasons 1-2"
+    },
+    {
+        "tmdbId":  787699,
+        "title":  "Wonka",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Adventure",
+                      "Comedy",
+                      "Family",
+                      "Fantasy",
+                      "Musical"
+                  ]
+    },
+    {
+        "tmdbId":  11967,
+        "title":  "Young Guns",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-22",
+        "genre":  [
+                      "Western",
+                      "Action",
+                      "Adventure",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  20526,
+        "title":  "TRON: Legacy",
+        "formats":  [
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Action",
+                      "Adventure",
+                      "Sci-Fi"
+                  ]
+    },
+    {
+        "tmdbId":  319,
+        "title":  "True Romance",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Crime",
+                      "Drama",
+                      "Romance",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  426,
+        "title":  "Vertigo",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Mystery",
+                      "Romance",
+                      "Thriller"
+                  ],
+        "tags":  [
+                     "hitchcock"
+                 ]
+    },
+    {
+        "tmdbId":  861,
+        "title":  "Total Recall",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Action",
+                      "Sci-Fi",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  7345,
+        "title":  "There Will Be Blood",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Drama",
+                      "Western"
+                  ]
+    },
+    {
+        "tmdbId":  837,
+        "title":  "Videodrome",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Horror",
+                      "Sci-Fi",
+                      "Thriller"
+                  ]
+    },
+    {
+        "tmdbId":  252,
+        "title":  "Willy Wonka \u0026 the Chocolate Factory",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Adventure",
+                      "Comedy",
+                      "Family",
+                      "Fantasy",
+                      "Musical"
+                  ]
+    },
+    {
+        "tmdbId":  630,
+        "title":  "The Wizard of Oz",
+        "formats":  [
+                        "4K UHD",
+                        "3D Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-24",
+        "genre":  [
+                      "Adventure",
+                      "Fantasy",
+                      "Family",
+                      "Musical"
+                  ]
+    },
+    {
+        "tmdbId":  97630,
+        "title":  "Zero Dark Thirty",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-08-22",
+        "genre":  [
+                      "Thriller",
+                      "Drama"
+                  ]
+    },
+    {
+        "tmdbId":  15413,
+        "title":  "Don\u0027t Tell Mom the Babysitter\u0027s Dead",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  11520,
+        "title":  "Grumpy Old Men",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Comedy",
+                      "Drama",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  31997,
+        "title":  "Saboteur",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Mystery",
+                      "Thriller"
+                  ],
+        "tags":  [
+                     "hitchcock"
+                 ]
+    },
+    {
+        "tmdbId":  21734,
+        "title":  "Shadow of a Doubt",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Drama",
+                      "Mystery",
+                      "Thriller"
+                  ],
+        "tags":  [
+                     "hitchcock"
+                 ]
+    },
+    {
+        "tmdbId":  11219,
+        "title":  "The Trouble with Harry",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Comedy",
+                      "Mystery"
+                  ],
+        "tags":  [
+                     "hitchcock"
+                 ]
+    },
+    {
+        "tmdbId":  506,
+        "title":  "Marnie",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Crime",
+                      "Drama",
+                      "Mystery",
+                      "Thriller"
+                  ],
+        "tags":  [
+                     "hitchcock"
+                 ]
+    },
+    {
+        "tmdbId":  5854,
+        "title":  "Family Plot",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-05-25",
+        "genre":  [
+                      "Comedy",
+                      "Mystery",
+                      "Thriller"
+                  ],
+        "tags":  [
+                     "hitchcock"
+                 ]
+    },
+    {
+        "tmdbId":  7446,
+        "title":  "Tropic Thunder",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2025-06-07",
+        "genre":  [
+                      "Action",
+                      "Comedy",
+                      "War"
+                  ]
+    }
 ]

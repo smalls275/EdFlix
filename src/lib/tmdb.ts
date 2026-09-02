@@ -30,13 +30,13 @@ export async function fetchMovieDetails(tmdbId: number) {
   }
 }
 
-export async function fetchMovieBasic(tmdbId: number) {
+export async function fetchMovieBasic(tmdbId: number, mediaType: 'movie' | 'tv' = 'movie') {
   const apiKey = getApiKey();
   if (!apiKey) return null;
 
   try {
     const res = await fetch(
-      `${TMDB_BASE_URL}/movie/${tmdbId}?api_key=${apiKey}`
+      `${TMDB_BASE_URL}/${mediaType}/${tmdbId}?api_key=${apiKey}`
     );
     if (!res.ok) return null;
     return await res.json();
