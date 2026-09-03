@@ -4978,5 +4978,20 @@
                       "Horror",
                       "Sci-Fi"
                   ]
+    },
+    {
+        "tmdbId":  8321,
+        "title":  "In Bruges",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-03",
+        "genre":  [
+                      "Comedy",
+                      "Crime",
+                      "Drama"
+                  ]
     }
 ]
