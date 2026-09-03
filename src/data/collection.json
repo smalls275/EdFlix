@@ -4993,5 +4993,20 @@
                       "Crime",
                       "Drama"
                   ]
+    },
+    {
+        "tmdbId":  24194,
+        "title":  "Good Morning, Vietnam",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-03",
+        "genre":  [
+                      "Comedy",
+                      "Drama",
+                      "War"
+                  ]
     }
 ]
