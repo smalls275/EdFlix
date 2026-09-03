@@ -5038,5 +5038,19 @@
                       "Drama",
                       "War"
                   ]
+    },
+    {
+        "tmdbId":  1654,
+        "title":  "The Dirty Dozen",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-03",
+        "genre":  [
+                      "Adventure",
+                      "War"
+                  ]
     }
 ]
