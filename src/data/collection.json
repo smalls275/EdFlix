@@ -5081,5 +5081,21 @@
                       "Crime",
                       "Thriller"
                   ]
+    },
+    {
+        "tmdbId":  24253,
+        "title":  "The Girl Who Played with Fire",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-03",
+        "genre":  [
+                      "Crime",
+                      "Drama",
+                      "Mystery",
+                      "Thriller"
+                  ]
     }
 ]
