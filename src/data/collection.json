@@ -5008,5 +5008,20 @@
                       "Drama",
                       "War"
                   ]
+    },
+    {
+        "tmdbId":  59,
+        "title":  "A History of Violence",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-03",
+        "genre":  [
+                      "Crime",
+                      "Drama",
+                      "Thriller"
+                  ]
     }
 ]
