@@ -4949,5 +4949,19 @@
                       "Comedy",
                       "War"
                   ]
+    },
+    {
+        "tmdbId":  310131,
+        "title":  "The Witch",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-03",
+        "genre":  [
+                      "Horror",
+                      "Mystery"
+                  ]
     }
 ]
