@@ -5097,5 +5097,33 @@
                       "Mystery",
                       "Thriller"
                   ]
+    },
+    {
+        "tmdbId":  6575,
+        "title":  "Walk Hard: The Dewey Cox Story",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-04",
+        "genre":  [
+                      "Comedy",
+                      "Music"
+                  ]
+    },
+    {
+        "tmdbId":  928344,
+        "title":  "Weird: The Al Yankovic Story",
+        "formats":  [
+                        "4K UHD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-04",
+        "genre":  [
+                      "Comedy",
+                      "Music"
+                  ]
     }
 ]
