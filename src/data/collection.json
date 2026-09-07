@@ -5266,5 +5266,47 @@
         "genre":  [
                       "Comedy"
                   ]
+    },
+    {
+        "tmdbId":  194,
+        "title":  "Amélie",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-07",
+        "genre":  [
+                      "Comedy",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  8872,
+        "title":  "Wayne's World",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-07",
+        "genre":  [
+                      "Comedy",
+                      "Music"
+                  ]
+    },
+    {
+        "tmdbId":  55721,
+        "title":  "Bridesmaids",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-07",
+        "genre":  [
+                      "Comedy",
+                      "Romance"
+                  ]
     }
 ]
