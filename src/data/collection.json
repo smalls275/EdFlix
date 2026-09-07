@@ -5154,5 +5154,34 @@
                       "Drama",
                       "War"
                   ]
+    },
+    {
+        "tmdbId":  9066,
+        "title":  "The Brady Bunch Movie",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-07",
+        "genre":  [
+                      "Family",
+                      "Comedy",
+                      "Romance"
+                  ]
+    },
+    {
+        "tmdbId":  12606,
+        "title":  "A Very Brady Sequel",
+        "formats":  [
+                        "Blu-ray"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-07",
+        "genre":  [
+                      "Family",
+                      "Comedy"
+                  ]
     }
 ]
