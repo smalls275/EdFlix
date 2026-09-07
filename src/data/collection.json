@@ -5352,5 +5352,33 @@
                       "Drama",
                       "Music"
                   ]
+    },
+    {
+        "tmdbId":  4543,
+        "title":  "Monty Python's The Meaning of Life",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-07",
+        "genre":  [
+                      "Comedy"
+                  ]
+    },
+    {
+        "tmdbId":  11054,
+        "title":  "Hairspray",
+        "formats":  [
+                        "DVD"
+                    ],
+        "location":  "Living Room",
+        "status":  "available",
+        "dateAdded":  "2026-09-07",
+        "genre":  [
+                      "Comedy",
+                      "Music",
+                      "Romance"
+                  ]
     }
 ]
