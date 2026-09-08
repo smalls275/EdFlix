@@ -344,6 +344,7 @@ _Auto-generated from `index.html` DATA array._
 | Wes Craven's New Nightmare | movie | 4K UHD | Fantasy, Horror, Mystery | Living Room | 11596 |
 | Wet Hot American Summer | movie | Blu-ray | Comedy | Living Room | 2171 |
 | What We Did on Our Holiday | movie | DVD | Comedy, Drama | Living Room | 276843 |
+| When Harry Met Sally... | movie | DVD | Comedy, Drama, Romance | Living Room | 639 |
 | White Christmas | movie | 4K UHD | Comedy, Musical, Romance | Living Room | 13368 |
 | Willy Wonka & the Chocolate Factory | movie | 4K UHD | Adventure, Comedy, Family, Fantasy, Musical | Living Room | 252 |
 | The Wizard of Oz | movie | 4K UHD, 3D Blu-ray | Adventure, Fantasy, Family, Musical | Living Room | 630 |
