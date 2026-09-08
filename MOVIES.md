@@ -340,6 +340,7 @@ _Auto-generated from `index.html` DATA array._
 | Vertigo | movie | 4K UHD | Mystery, Romance, Thriller | Living Room | 426 |
 | Videodrome | movie | Blu-ray | Horror, Sci-Fi, Thriller | Living Room | 837 |
 | Wanderlust | movie | Blu-ray | Comedy, Romance | Living Room | 50647 |
+| Watchmen | movie | Blu-ray | Action, Mystery, Sci-Fi | Living Room | 13183 |
 | We Bought a Zoo | movie | DVD | Drama, Comedy, Family | Living Room | 74465 |
 | Weapons | movie | 4K UHD | Horror, Mystery | Living Room | 1078605 |
 | Wes Craven's New Nightmare | movie | 4K UHD | Fantasy, Horror, Mystery | Living Room | 11596 |
