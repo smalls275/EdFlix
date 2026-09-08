@@ -47,7 +47,7 @@
 <div class="container">
   <header>
     <h1>🎬 EdFlix Manager</h1>
-    <div class="subtitle">Search TMDB, pick your movie, and it's added to EdFlix automatically.</div>
+    <div class="subtitle">Search TMDB, pick your movie, and it's added to EdFlix automatically. <span style="color:#555">v7</span></div>
   </header>
 
   <div id="okMsg" class="msg"></div>
@@ -403,8 +403,10 @@ function mkGh(token) {
       if (r.ok) return r.json();
       const d = await r.json().catch(() => ({}));
       lastErr = new Error(`GitHub ${method} ${path}: ${r.status} ${d.message || r.statusText}`);
-      // Retry transient errors only; 401/403 fail fast
-      if (![404, 409, 422, 500, 502, 503].includes(r.status)) break;
+      // Retry only truly transient errors with the same request.
+      // 422 (non-fast-forward) must NOT be retried here — the outer
+      // transaction loop re-reads the head and rebuilds the commit instead.
+      if (![404, 500, 502, 503].includes(r.status)) break;
     }
     throw lastErr;
   };
