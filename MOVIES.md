@@ -78,6 +78,7 @@ _Auto-generated from `index.html` DATA array._
 | How the Grinch Stole Christmas! | movie | Blu-ray | Animation, Comedy, Family | Living Room | 13377 |
 | Master and Commander: The Far Side of the World | movie | DVD | Adventure, Drama, War | Living Room | 8619 |
 | Moulin Rouge! | movie | DVD | Drama, Musical, Romance | Living Room | 824 |
+| My Fellow Americans | movie | DVD | Comedy | Living Room | 17795 |
 | Sleepy Hollow | movie | DVD | Fantasy, Horror, Mystery, Thriller | Living Room | 2668 |
 | The Cannonball Run | movie | Blu-ray | Action, Comedy, Family | Living Room | 11286 |
 | Cannibal! The Musical | movie | Blu-ray | Comedy, Horror, Musical | Living Room | 13063 |
