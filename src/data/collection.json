@@ -5704,5 +5704,20 @@
       "Family",
       "Fantasy"
     ]
+  },
+  {
+    "tmdbId": 765,
+    "title": "Evil Dead II",
+    "formats": [
+      "4K UHD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-08T19:35:16",
+    "genre": [
+      "Comedy",
+      "Fantasy",
+      "Horror"
+    ]
   }
 ]
