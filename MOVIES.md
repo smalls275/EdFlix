@@ -74,6 +74,7 @@ _Auto-generated from `index.html` DATA array._
 | Caddyshack | movie | Blu-ray | Comedy, Sport | Living Room | 11977 |
 | Constantine | movie | Blu-ray | Action, Fantasy, Horror | Living Room | 561 |
 | Dark City | movie | Blu-ray | Mystery, Sci-Fi | Living Room | 2666 |
+| Forgetting Sarah Marshall | movie | Blu-ray | Comedy, Drama, Romance | Living Room | 9870 |
 | How the Grinch Stole Christmas! | movie | Blu-ray | Animation, Comedy, Family | Living Room | 13377 |
 | Sleepy Hollow | movie | DVD | Fantasy, Horror, Mystery, Thriller | Living Room | 2668 |
 | The Cannonball Run | movie | Blu-ray | Action, Comedy, Family | Living Room | 11286 |
