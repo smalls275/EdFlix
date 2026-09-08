@@ -349,6 +349,7 @@ _Auto-generated from `index.html` DATA array._
 | Wes Craven's New Nightmare | movie | 4K UHD | Fantasy, Horror, Mystery | Living Room | 11596 |
 | Wet Hot American Summer | movie | Blu-ray | Comedy | Living Room | 2171 |
 | What We Did on Our Holiday | movie | DVD | Comedy, Drama | Living Room | 276843 |
+| What We Do in the Shadows | movie | Blu-ray | Comedy, Horror | Living Room | 246741 |
 | When Harry Met Sally... | movie | DVD | Comedy, Drama, Romance | Living Room | 639 |
 | White Christmas | movie | 4K UHD | Comedy, Musical, Romance | Living Room | 13368 |
 | Who Framed Roger Rabbit | movie | Blu-ray | Animation, Comedy, Crime, Fantasy | Living Room | 856 |
