@@ -5656,5 +5656,23 @@
       "Family",
       "Sci-Fi"
     ]
+  },
+  {
+    "tmdbId": 1499,
+    "title": "Teenage Mutant Ninja Turtles III",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-08T19:19:28",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Family",
+      "Fantasy",
+      "Sci-Fi"
+    ]
   }
 ]
