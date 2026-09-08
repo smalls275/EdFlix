@@ -73,6 +73,7 @@ _Auto-generated from `index.html` DATA array._
 | Burning Love | movie | DVD | Comedy | Living Room | 44189 |
 | Caddyshack | movie | Blu-ray | Comedy, Sport | Living Room | 11977 |
 | Dark City | movie | Blu-ray | Mystery, Sci-Fi | Living Room | 2666 |
+| Sleepy Hollow | movie | DVD | Fantasy, Horror, Mystery, Thriller | Living Room | 2668 |
 | The Cannonball Run | movie | Blu-ray | Action, Comedy, Family | Living Room | 11286 |
 | Cannibal! The Musical | movie | Blu-ray | Comedy, Horror, Musical | Living Room | 13063 |
 | Cars | movie | 3D Blu-ray | Animation, Adventure, Comedy | Living Room | 920 |
