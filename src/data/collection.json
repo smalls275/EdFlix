@@ -5688,5 +5688,21 @@
       "Animation",
       "Family"
     ]
+  },
+  {
+    "tmdbId": 13382,
+    "title": "Rudolph the Red-Nosed Reindeer",
+    "formats": [
+      "Blu-ray"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-08T19:25:54",
+    "genre": [
+      "Adventure",
+      "Animation",
+      "Family",
+      "Fantasy"
+    ]
   }
 ]
