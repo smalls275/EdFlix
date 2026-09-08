@@ -5622,5 +5622,22 @@
       "Family",
       "Fantasy"
     ]
+  },
+  {
+    "tmdbId": 1498,
+    "title": "Teenage Mutant Ninja Turtles",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-08",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Family",
+      "Sci-Fi"
+    ]
   }
 ]
