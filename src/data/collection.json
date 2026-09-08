@@ -5531,5 +5531,21 @@
       "Drama",
       "Romance"
     ]
+  },
+  {
+    "tmdbId": 14160,
+    "title": "Up",
+    "formats": [
+      "3D Blu-ray"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-08",
+    "genre": [
+      "Adventure",
+      "Animation",
+      "Comedy",
+      "Family"
+    ]
   }
 ]

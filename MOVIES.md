@@ -339,6 +339,7 @@ _Auto-generated from `index.html` DATA array._
 | True Romance | movie | Blu-ray | Crime, Drama, Romance, Thriller | Living Room | 319 |
 | Twister | movie | 4K UHD | Action, Adventure, Thriller | Living Room | 664 |
 | UHF | movie | 4K UHD | Comedy | Living Room | 11959 |
+| Up | movie | 3D Blu-ray | Adventure, Animation, Comedy, Family | Living Room | 14160 |
 | V for Vendetta | movie | Blu-ray | Action, Sci-Fi, Thriller | Living Room | 752 |
 | Vanilla Sky | movie | Blu-ray | Fantasy, Mystery, Romance | Living Room | 1903 |
 | Vertigo | movie | 4K UHD | Mystery, Romance, Thriller | Living Room | 426 |
