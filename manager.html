@@ -340,28 +340,45 @@ async function handleSubmit(e) {
 }
 
 // ---------- GitHub helpers ----------
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
 async function ghGetFile(token, path) {
-  const r = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`, {
-    headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' }
-  });
-  if (!r.ok) {
+  let lastErr;
+  for (let attempt = 0; attempt < 4; attempt++) {
+    if (attempt) await sleep(1000 * attempt); // 1s, 2s, 3s backoff
+    const r = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}?t=${Date.now()}`, {
+      headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' }
+    });
+    if (r.ok) {
+      const data = await r.json();
+      return { sha: data.sha, text: b64DecodeUtf8(data.content) };
+    }
     const d = await r.json().catch(() => ({}));
-    throw new Error(`Couldn't read ${path}: ${r.status} ${d.message || r.statusText}`);
+    lastErr = new Error(`Couldn't read ${path}: ${r.status} ${d.message || r.statusText}`);
+    if (r.status !== 404 && r.status !== 409 && r.status !== 500 && r.status !== 502) break; // don't retry auth errors
   }
-  const data = await r.json();
-  return { sha: data.sha, text: b64DecodeUtf8(data.content) };
+  throw lastErr;
 }
 
 async function ghPutFile(token, path, sha, content, message) {
-  const r = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`, {
-    method: 'PUT',
-    headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' },
-    body: JSON.stringify({ message, content: b64EncodeUtf8(content), sha })
-  });
-  if (!r.ok) {
+  let lastErr;
+  for (let attempt = 0; attempt < 4; attempt++) {
+    if (attempt) {
+      await sleep(1000 * attempt);
+      // Refresh the sha in case it went stale between read and write
+      try { sha = (await ghGetFile(token, path)).sha; } catch {}
+    }
+    const r = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`, {
+      method: 'PUT',
+      headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' },
+      body: JSON.stringify({ message, content: b64EncodeUtf8(content), sha })
+    });
+    if (r.ok) return;
     const d = await r.json().catch(() => ({}));
-    throw new Error(`Couldn't update ${path}: ${r.status} ${d.message || r.statusText}`);
+    lastErr = new Error(`Couldn't update ${path}: ${r.status} ${d.message || r.statusText}`);
+    if (r.status !== 404 && r.status !== 409 && r.status !== 500 && r.status !== 502) break;
   }
+  throw lastErr;
 }
 
 // ---------- File updaters (append-only, EdFlix code untouched) ----------
