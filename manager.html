@@ -120,9 +120,9 @@
       </div>
     </div>
 
-    <label class="required" for="githubToken">GitHub Token</label>
-    <input type="password" id="githubToken" placeholder="ghp_... or github_pat_..." required>
-    <div class="hint" id="tokenHint">Paste your full Personal Access Token once — after that, you only need to type its last 4 characters. Stored only in this browser.</div>
+    <label class="required" for="githubToken">Token — last 4 characters</label>
+    <input type="password" id="githubToken" placeholder="••••" maxlength="4" autocomplete="off" style="width:120px;text-align:center;letter-spacing:4px" required>
+    <div class="hint" id="tokenHint">Just type the last 4 characters of your GitHub token — the rest is built in. It's remembered after the first successful use.</div>
 
     <button type="submit" class="btn-gold" id="submitBtn">Add to EdFlix</button>
   </form>
@@ -138,6 +138,7 @@
 const GITHUB_OWNER = 'smalls275';
 const GITHUB_REPO = 'EdFlix';
 const TMDB_API_KEY = 'dfdcfeaefeefe243e2761936a156b66c';
+const TOKEN_PREFIX = 'github_pat_11BQBJRAA0NSa5DyXHsJDW_GCwbE2TUksyOPWrhNsSYFtjh4rMo6W4y2PtUxQLXX4kY6MR36WTVP2a';
 
 const GENRES = ['Action','Adventure','Animation','Comedy','Crime','Documentary','Drama','Family','Fantasy','History','Horror','Musical','Mystery','Romance','Sci-Fi','Thriller','War','Western'];
 
@@ -174,13 +175,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('genreChecks').innerHTML = GENRES.map(g =>
     `<label><input type="checkbox" name="genres" value="${g}"> ${g}</label>`).join('');
 
-  const saved = localStorage.getItem('edflixGithubToken');
+  const saved = localStorage.getItem('edflixTokenLast4');
   if (saved) {
-    const tk = document.getElementById('githubToken');
-    tk.placeholder = `Enter last 4 characters (…${saved.slice(-4).replace(/./g, '•')})`;
-    tk.required = true;
-    document.getElementById('tokenHint').textContent =
-      'A token is saved in this browser — just type its last 4 characters to confirm. (Paste a new full token to replace it.)';
+    document.getElementById('githubToken').value = saved;
+    document.getElementById('tokenHint').textContent = 'Last 4 characters remembered from last time — change them if you rotated the token.';
   }
 
   document.getElementById('dateAdded').valueAsDate = new Date();
@@ -251,25 +249,13 @@ async function handleSubmit(e) {
   const title = document.getElementById('title').value.trim();
   const formats = [...document.querySelectorAll('input[name="formats"]:checked')].map(x => x.value);
   const genres = [...document.querySelectorAll('input[name="genres"]:checked')].map(x => x.value);
-  const tokenInput = document.getElementById('githubToken').value.trim();
-  const savedToken = localStorage.getItem('edflixGithubToken');
-
-  let token = '';
-  if (tokenInput.length > 20) {
-    // Full token pasted — save it and use it
-    token = tokenInput;
-    localStorage.setItem('edflixGithubToken', token);
-  } else if (tokenInput.length === 4 && savedToken) {
-    if (savedToken.slice(-4) !== tokenInput) return showErr('Those last 4 characters don\'t match the saved token.');
-    token = savedToken;
-  }
+  const last4 = document.getElementById('githubToken').value.trim();
 
   if (!tmdbId || !title) return showErr('Pick a movie from the search results (TMDB ID and Title are required).');
   if (!formats.length) return showErr('Select at least one format.');
   if (!genres.length) return showErr('Select at least one genre.');
-  if (!token) return showErr(savedToken
-    ? 'Enter the last 4 characters of your saved token (or paste a new full token).'
-    : 'Paste your full GitHub token (first time only).');
+  if (last4.length !== 4) return showErr('Enter exactly the last 4 characters of your GitHub token.');
+  const token = TOKEN_PREFIX + last4;
 
   const movie = {
     tmdbId, title, formats,
@@ -309,13 +295,10 @@ async function handleSubmit(e) {
     await ghPutFile(token, 'MOVIES.md', md.sha,
       addToMoviesMd(md.text, movie), `Add ${title} to MOVIES.md`);
 
-    showOk(`✅ "${title}" added to EdFlix!\nThe site will update after the next deploy (usually 1–2 minutes on Netlify).`);
+    localStorage.setItem('edflixTokenLast4', last4);
+    showOk(`✅ "${title}" added to EdFlix!\nGitHub Pages will update in a minute or two.`);
     document.getElementById('movieForm').reset();
-    const tk = document.getElementById('githubToken');
-    tk.value = '';
-    tk.placeholder = 'Enter last 4 characters';
-    document.getElementById('tokenHint').textContent =
-      'A token is saved in this browser — just type its last 4 characters to confirm.';
+    document.getElementById('githubToken').value = last4;
     document.getElementById('dateAdded').valueAsDate = new Date();
     document.getElementById('location').value = 'Living Room';
     document.getElementById('selectedInfo').textContent = 'Nothing selected yet — search above and click a result.';
