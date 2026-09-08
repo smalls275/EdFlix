@@ -5472,5 +5472,20 @@
       "Fantasy",
       "Horror"
     ]
+  },
+  {
+    "tmdbId": 13377,
+    "title": "How the Grinch Stole Christmas!",
+    "formats": [
+      "Blu-ray"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-08",
+    "genre": [
+      "Animation",
+      "Comedy",
+      "Family"
+    ]
   }
 ]
