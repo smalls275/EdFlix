@@ -5674,5 +5674,19 @@
       "Fantasy",
       "Sci-Fi"
     ]
+  },
+  {
+    "tmdbId": 187133,
+    "title": "Harold and the Purple Crayon",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-08T19:22:10",
+    "genre": [
+      "Animation",
+      "Family"
+    ]
   }
 ]
