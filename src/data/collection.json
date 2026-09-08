@@ -5590,5 +5590,22 @@
     "genre": [
       "Comedy"
     ]
+  },
+  {
+    "tmdbId": 18360,
+    "title": "Night at the Museum: Battle of the Smithsonian",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-08",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Family",
+      "Fantasy"
+    ]
   }
 ]
