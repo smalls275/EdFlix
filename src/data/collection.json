@@ -5547,5 +5547,20 @@
       "Comedy",
       "Family"
     ]
+  },
+  {
+    "tmdbId": 8619,
+    "title": "Master and Commander: The Far Side of the World",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-08",
+    "genre": [
+      "Adventure",
+      "Drama",
+      "War"
+    ]
   }
 ]

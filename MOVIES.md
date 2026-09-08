@@ -76,6 +76,7 @@ _Auto-generated from `index.html` DATA array._
 | Dark City | movie | Blu-ray | Mystery, Sci-Fi | Living Room | 2666 |
 | Forgetting Sarah Marshall | movie | Blu-ray | Comedy, Drama, Romance | Living Room | 9870 |
 | How the Grinch Stole Christmas! | movie | Blu-ray | Animation, Comedy, Family | Living Room | 13377 |
+| Master and Commander: The Far Side of the World | movie | DVD | Adventure, Drama, War | Living Room | 8619 |
 | Sleepy Hollow | movie | DVD | Fantasy, Horror, Mystery, Thriller | Living Room | 2668 |
 | The Cannonball Run | movie | Blu-ray | Action, Comedy, Family | Living Room | 11286 |
 | Cannibal! The Musical | movie | Blu-ray | Comedy, Horror, Musical | Living Room | 13063 |
