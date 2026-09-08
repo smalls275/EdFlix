@@ -346,6 +346,7 @@ _Auto-generated from `index.html` DATA array._
 | What We Did on Our Holiday | movie | DVD | Comedy, Drama | Living Room | 276843 |
 | When Harry Met Sally... | movie | DVD | Comedy, Drama, Romance | Living Room | 639 |
 | White Christmas | movie | 4K UHD | Comedy, Musical, Romance | Living Room | 13368 |
+| Who Framed Roger Rabbit | movie | Blu-ray | Animation, Comedy, Crime, Fantasy | Living Room | 856 |
 | Willy Wonka & the Chocolate Factory | movie | 4K UHD | Adventure, Comedy, Family, Fantasy, Musical | Living Room | 252 |
 | The Wizard of Oz | movie | 4K UHD, 3D Blu-ray | Adventure, Fantasy, Family, Musical | Living Room | 630 |
 | Wonka | movie | 4K UHD | Adventure, Comedy, Family, Fantasy, Musical | Living Room | 787699 |
