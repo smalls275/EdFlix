@@ -121,8 +121,9 @@
     </div>
 
     <label class="required" for="githubToken">Token — last 4 characters</label>
-    <input type="password" id="githubToken" placeholder="••••" maxlength="4" autocomplete="off" style="width:120px;text-align:center;letter-spacing:4px" required>
-    <div class="hint" id="tokenHint">Just type the last 4 characters of your GitHub token — the rest is built in. It's remembered after the first successful use.</div>
+    <input type="text" id="githubToken" placeholder="••••" maxlength="4" autocomplete="off" spellcheck="false" style="width:140px;text-align:center;letter-spacing:6px;font-family:Consolas,monospace;font-size:1.2em" required>
+    <span id="tokenStatus" style="margin-left:10px;font-size:1.1em"></span>
+    <div class="hint" id="tokenHint">Type the last 4 characters of your GitHub token — it's checked live with GitHub. Careful: lowercase l vs 1 vs I.</div>
 
     <button type="submit" class="btn-gold" id="submitBtn">Add to EdFlix</button>
   </form>
@@ -178,8 +179,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const saved = localStorage.getItem('edflixTokenLast4');
   if (saved) {
     document.getElementById('githubToken').value = saved;
-    document.getElementById('tokenHint').textContent = 'Last 4 characters remembered from last time — change them if you rotated the token.';
+    verifyLast4();
   }
+  document.getElementById('githubToken').addEventListener('input', verifyLast4);
 
   document.getElementById('dateAdded').valueAsDate = new Date();
   document.getElementById('searchBtn').addEventListener('click', searchTMDB);
@@ -188,6 +190,31 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.getElementById('movieForm').addEventListener('submit', handleSubmit);
 });
+
+// ---------- Live token check ----------
+let verifyTimer = null;
+function verifyLast4() {
+  const st = document.getElementById('tokenStatus');
+  const last4 = document.getElementById('githubToken').value.trim();
+  clearTimeout(verifyTimer);
+  if (last4.length !== 4) { st.textContent = ''; return; }
+  st.textContent = '⏳';
+  verifyTimer = setTimeout(async () => {
+    try {
+      const r = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}`, {
+        headers: { 'Authorization': `Bearer ${TOKEN_PREFIX + last4}`, 'Accept': 'application/vnd.github+json' }
+      });
+      if (r.ok) {
+        st.textContent = '✅ token OK';
+        st.style.color = '#a5d6a7';
+        localStorage.setItem('edflixTokenLast4', last4);
+      } else {
+        st.textContent = '❌ wrong characters';
+        st.style.color = '#ef9a9a';
+      }
+    } catch { st.textContent = '⚠️ network error'; st.style.color = '#ffcc80'; }
+  }, 400);
+}
 
 // ---------- TMDB search ----------
 async function searchTMDB() {
