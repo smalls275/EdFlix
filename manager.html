@@ -269,6 +269,20 @@ function selectItem(id, title, type, genres, date) {
 }
 
 // ---------- Submit ----------
+// If the chosen date is today, include the current time so Recently Added
+// sorts newest-first even when many movies are added on the same day.
+// (EdFlix compares dateAdded as strings; "2026-09-08T15:42:07" > "2026-09-08".)
+function preciseDateAdded() {
+  const picked = document.getElementById('dateAdded').value;
+  const now = new Date();
+  const today = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+  if (!picked || picked === today) {
+    const t = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
+    return `${today}T${t}`;
+  }
+  return picked; // backdated entries stay as plain dates
+}
+
 async function handleSubmit(e) {
   e.preventDefault();
   hideMsgs();
@@ -289,7 +303,7 @@ async function handleSubmit(e) {
     tmdbId, title, formats,
     location: document.getElementById('location').value.trim() || 'Living Room',
     status: document.getElementById('status').value,
-    dateAdded: document.getElementById('dateAdded').value || new Date().toISOString().substring(0, 10),
+    dateAdded: preciseDateAdded(),
     genre: genres
   };
   if (selectedMediaType === 'tv') movie.type = 'tv';
