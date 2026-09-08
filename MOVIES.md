@@ -79,6 +79,7 @@ _Auto-generated from `index.html` DATA array._
 | Master and Commander: The Far Side of the World | movie | DVD | Adventure, Drama, War | Living Room | 8619 |
 | Moulin Rouge! | movie | DVD | Drama, Musical, Romance | Living Room | 824 |
 | My Fellow Americans | movie | DVD | Comedy | Living Room | 17795 |
+| Night at the Museum | movie | DVD | Comedy, Family, Fantasy | Living Room | 1593 |
 | Night at the Museum: Battle of the Smithsonian | movie | DVD | Action, Adventure, Comedy, Family, Fantasy | Living Room | 18360 |
 | Sleepy Hollow | movie | DVD | Fantasy, Horror, Mystery, Thriller | Living Room | 2668 |
 | The Cannonball Run | movie | Blu-ray | Action, Comedy, Family | Living Room | 11286 |
