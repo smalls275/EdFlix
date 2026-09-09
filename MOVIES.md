@@ -73,6 +73,7 @@ _Auto-generated from `index.html` DATA array._
 | Brazil | movie | Blu-ray | Drama, Sci-Fi, Thriller | Living Room | 68 |
 | Burning Love | movie | DVD | Comedy | Living Room | 44189 |
 | Caddyshack | movie | Blu-ray | Comedy, Sport | Living Room | 11977 |
+| Check It Out! with Dr. Steve Brule | tv | DVD | Comedy | Living Room | 32612 |
 | Constantine | movie | Blu-ray | Action, Fantasy, Horror | Living Room | 561 |
 | Dark City | movie | Blu-ray | Mystery, Sci-Fi | Living Room | 2666 |
 | Eddie Izzard: Dress to Kill | movie | DVD | Comedy | Living Room | 13589 |

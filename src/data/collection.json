@@ -5916,5 +5916,19 @@
     "genre": [
       "Comedy"
     ]
+  },
+  {
+    "tmdbId": 32612,
+    "title": "Check It Out! with Dr. Steve Brule",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-09T18:31:56",
+    "genre": [
+      "Comedy"
+    ],
+    "type": "tv"
   }
 ]
