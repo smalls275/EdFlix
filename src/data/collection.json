@@ -5768,5 +5768,20 @@
       "Sci-Fi"
     ],
     "type": "tv"
+  },
+  {
+    "tmdbId": 9647,
+    "title": "Scrooged",
+    "formats": [
+      "Blu-ray"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-09T17:01:21",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Fantasy"
+    ]
   }
 ]
