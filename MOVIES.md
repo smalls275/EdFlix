@@ -64,6 +64,7 @@ _Auto-generated from `index.html` DATA array._
 | Beetlejuice | movie | 4K UHD | Comedy, Fantasy | Living Room | 4011 |
 | Big Trouble in Little China | movie | Blu-ray | Action, Adventure, Comedy | Living Room | 6978 |
 | Bill & Ted's Bogus Journey | movie | 4K UHD | Comedy, Fantasy | Living Room | 1649 |
+| Birdman or (The Unexpected Virtue of Ignorance) | movie | Blu-ray | Comedy, Drama | Living Room | 194662 |
 | Black Hawk Down | movie | Blu-ray | Action, Drama, History | Living Room | 855 |
 | Blade Runner | movie | 4K UHD | Action, Drama, Sci-Fi | Living Room | 78 |
 | Blade Runner 2049 | movie | 4K UHD, 3D Blu-ray | Action, Drama, Mystery | Living Room | 335984 |
