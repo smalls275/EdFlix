@@ -86,6 +86,7 @@ _Auto-generated from `index.html` DATA array._
 | My Fellow Americans | movie | DVD | Comedy | Living Room | 17795 |
 | Night at the Museum | movie | DVD | Comedy, Family, Fantasy | Living Room | 1593 |
 | Night at the Museum: Battle of the Smithsonian | movie | DVD | Action, Adventure, Comedy, Family, Fantasy | Living Room | 18360 |
+| Penguins of Madagascar | movie | Blu-ray | Adventure, Animation, Comedy, Family | Living Room | 270946 |
 | Rudolph the Red-Nosed Reindeer | movie | Blu-ray | Adventure, Animation, Family, Fantasy | Living Room | 13382 |
 | Scrooged | movie | Blu-ray | Comedy, Drama, Fantasy | Living Room | 9647 |
 | Sleepy Hollow | movie | DVD | Fantasy, Horror, Mystery, Thriller | Living Room | 2668 |
