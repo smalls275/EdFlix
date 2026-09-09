@@ -94,6 +94,7 @@ _Auto-generated from `index.html` DATA array._
 | Night at the Museum: Battle of the Smithsonian | movie | DVD | Action, Adventure, Comedy, Family, Fantasy | Living Room | 18360 |
 | Olaf's Frozen Adventure | movie | Blu-ray | Adventure, Animation, Comedy, Family, Fantasy | Living Room | 460793 |
 | Penguins of Madagascar | movie | Blu-ray | Adventure, Animation, Comedy, Family | Living Room | 270946 |
+| Persuasion | movie | DVD | Drama, Romance | Living Room | 17015 |
 | Rudolph the Red-Nosed Reindeer | movie | Blu-ray | Adventure, Animation, Family, Fantasy | Living Room | 13382 |
 | Scrooged | movie | Blu-ray | Comedy, Drama, Fantasy | Living Room | 9647 |
 | Sleepy Hollow | movie | DVD | Fantasy, Horror, Mystery, Thriller | Living Room | 2668 |
