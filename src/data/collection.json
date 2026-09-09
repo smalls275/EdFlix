@@ -5842,5 +5842,18 @@
       "Fantasy",
       "Sci-Fi"
     ]
+  },
+  {
+    "tmdbId": 348089,
+    "title": "Grease Live",
+    "formats": [
+      "Blu-ray"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-09T17:44:26",
+    "genre": [
+      "Musical"
+    ]
   }
 ]
