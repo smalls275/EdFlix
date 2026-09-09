@@ -84,6 +84,7 @@ _Auto-generated from `index.html` DATA array._
 | How the Grinch Stole Christmas! | movie | Blu-ray | Animation, Comedy, Family | Living Room | 13377 |
 | Krull | movie | Blu-ray | Action, Adventure, Fantasy, Sci-Fi | Living Room | 849 |
 | Master and Commander: The Far Side of the World | movie | DVD | Adventure, Drama, War | Living Room | 8619 |
+| Mission: Impossible - Ghost Protocol | movie | Blu-ray | Action, Adventure, Thriller | Living Room | 56292 |
 | Moulin Rouge! | movie | DVD | Drama, Musical, Romance | Living Room | 824 |
 | My Fellow Americans | movie | DVD | Comedy | Living Room | 17795 |
 | Night at the Museum | movie | DVD | Comedy, Family, Fantasy | Living Room | 1593 |
