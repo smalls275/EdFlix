@@ -5988,5 +5988,20 @@
       "Drama"
     ],
     "type": "tv"
+  },
+  {
+    "tmdbId": 10681,
+    "title": "WALL·E",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-09T19:32:53",
+    "genre": [
+      "Animation",
+      "Family",
+      "Sci-Fi"
+    ]
   }
 ]
