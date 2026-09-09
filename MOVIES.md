@@ -82,6 +82,7 @@ _Auto-generated from `index.html` DATA array._
 | Ghosts | tv | DVD | Comedy, Fantasy, Sci-Fi | Living Room | 17174 |
 | Grease | movie | Blu-ray | Comedy, Romance | Living Room | 621 |
 | Grease Live | movie | Blu-ray | Musical | Living Room | 348089 |
+| Hannibal | tv | Blu-ray | Crime, Drama | Living Room | 40008 |
 | Harold and the Purple Crayon | movie | DVD | Animation, Family | Living Room | 187133 |
 | How the Grinch Stole Christmas! | movie | Blu-ray | Animation, Comedy, Family | Living Room | 13377 |
 | Krull | movie | Blu-ray | Action, Adventure, Fantasy, Sci-Fi | Living Room | 849 |

@@ -5930,5 +5930,20 @@
       "Comedy"
     ],
     "type": "tv"
+  },
+  {
+    "tmdbId": 40008,
+    "title": "Hannibal",
+    "formats": [
+      "Blu-ray"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-09T18:32:53",
+    "genre": [
+      "Crime",
+      "Drama"
+    ],
+    "type": "tv"
   }
 ]
