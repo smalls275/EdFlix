@@ -75,6 +75,7 @@ _Auto-generated from `index.html` DATA array._
 | Caddyshack | movie | Blu-ray | Comedy, Sport | Living Room | 11977 |
 | Constantine | movie | Blu-ray | Action, Fantasy, Horror | Living Room | 561 |
 | Dark City | movie | Blu-ray | Mystery, Sci-Fi | Living Room | 2666 |
+| Eddie Izzard: Dress to Kill | movie | DVD | Comedy | Living Room | 13589 |
 | Evil Dead II | movie | 4K UHD | Comedy, Fantasy, Horror | Living Room | 765 |
 | Forgetting Sarah Marshall | movie | Blu-ray | Comedy, Drama, Romance | Living Room | 9870 |
 | Ghosts | tv | DVD | Comedy, Fantasy, Sci-Fi | Living Room | 17174 |
