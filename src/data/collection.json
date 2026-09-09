@@ -5826,5 +5826,21 @@
     "genre": [
       "Comedy"
     ]
+  },
+  {
+    "tmdbId": 849,
+    "title": "Krull",
+    "formats": [
+      "Blu-ray"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-09T17:08:32",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Sci-Fi"
+    ]
   }
 ]

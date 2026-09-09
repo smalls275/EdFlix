@@ -81,6 +81,7 @@ _Auto-generated from `index.html` DATA array._
 | Grease | movie | Blu-ray | Comedy, Romance | Living Room | 621 |
 | Harold and the Purple Crayon | movie | DVD | Animation, Family | Living Room | 187133 |
 | How the Grinch Stole Christmas! | movie | Blu-ray | Animation, Comedy, Family | Living Room | 13377 |
+| Krull | movie | Blu-ray | Action, Adventure, Fantasy, Sci-Fi | Living Room | 849 |
 | Master and Commander: The Far Side of the World | movie | DVD | Adventure, Drama, War | Living Room | 8619 |
 | Moulin Rouge! | movie | DVD | Drama, Musical, Romance | Living Room | 824 |
 | My Fellow Americans | movie | DVD | Comedy | Living Room | 17795 |
