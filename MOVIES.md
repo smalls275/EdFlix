@@ -197,6 +197,7 @@ _Auto-generated from `index.html` DATA array._
 | Legend | movie | 4K UHD, Blu-ray | Adventure, Fantasy, Romance | Living Room | 11976 |
 | Life of Pi | movie | 3D Blu-ray | Adventure, Drama, Fantasy | Living Room | 87827 |
 | Lone Survivor | movie | Blu-ray | Action, Drama, War | Living Room | 193756 |
+| The Jerk | movie | Blu-ray | Comedy | Living Room | 6471 |
 | The Long Kiss Goodnight | movie | 4K UHD | Crime, Action, Mystery, Thriller | Living Room | 11412 |
 | The Lost Boys | movie | 4K UHD | Horror, Comedy, Thriller | Living Room | 1547 |
 | Mad Max | movie | 4K UHD | Action, Adventure, Sci-Fi | Living Room | 9659 |

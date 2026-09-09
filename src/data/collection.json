@@ -5813,5 +5813,18 @@
       "Comedy",
       "Family"
     ]
+  },
+  {
+    "tmdbId": 6471,
+    "title": "The Jerk",
+    "formats": [
+      "Blu-ray"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-09T17:07:10",
+    "genre": [
+      "Comedy"
+    ]
   }
 ]
