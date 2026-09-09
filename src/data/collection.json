@@ -5870,5 +5870,22 @@
       "Adventure",
       "Thriller"
     ]
+  },
+  {
+    "tmdbId": 460793,
+    "title": "Olaf's Frozen Adventure",
+    "formats": [
+      "Blu-ray"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-09T17:52:25",
+    "genre": [
+      "Adventure",
+      "Animation",
+      "Comedy",
+      "Family",
+      "Fantasy"
+    ]
   }
 ]
