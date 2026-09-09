@@ -5752,5 +5752,21 @@
       "Sci-Fi"
     ],
     "type": "tv"
+  },
+  {
+    "tmdbId": 17174,
+    "title": "Ghosts",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-09",
+    "genre": [
+      "Comedy",
+      "Fantasy",
+      "Sci-Fi"
+    ],
+    "type": "tv"
   }
 ]

@@ -76,6 +76,7 @@ _Auto-generated from `index.html` DATA array._
 | Dark City | movie | Blu-ray | Mystery, Sci-Fi | Living Room | 2666 |
 | Evil Dead II | movie | 4K UHD | Comedy, Fantasy, Horror | Living Room | 765 |
 | Forgetting Sarah Marshall | movie | Blu-ray | Comedy, Drama, Romance | Living Room | 9870 |
+| Ghosts | tv | DVD | Comedy, Fantasy, Sci-Fi | Living Room | 17174 |
 | Grease | movie | Blu-ray | Comedy, Romance | Living Room | 621 |
 | Harold and the Purple Crayon | movie | DVD | Animation, Family | Living Room | 187133 |
 | How the Grinch Stole Christmas! | movie | Blu-ray | Animation, Comedy, Family | Living Room | 13377 |
