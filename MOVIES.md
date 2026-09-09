@@ -79,6 +79,7 @@ _Auto-generated from `index.html` DATA array._
 | Eddie Izzard: Dress to Kill | movie | DVD | Comedy | Living Room | 13589 |
 | Evil Dead II | movie | 4K UHD | Comedy, Fantasy, Horror | Living Room | 765 |
 | Forgetting Sarah Marshall | movie | Blu-ray | Comedy, Drama, Romance | Living Room | 9870 |
+| Freaks and Geeks | tv | DVD | Comedy, Drama | Living Room | 2382 |
 | Ghosts | tv | DVD | Comedy, Fantasy, Sci-Fi | Living Room | 17174 |
 | Grease | movie | Blu-ray | Comedy, Romance | Living Room | 621 |
 | Grease Live | movie | Blu-ray | Musical | Living Room | 348089 |

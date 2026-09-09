@@ -5973,5 +5973,20 @@
       "Drama",
       "Romance"
     ]
+  },
+  {
+    "tmdbId": 2382,
+    "title": "Freaks and Geeks",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-09T19:30:28",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "type": "tv"
   }
 ]
