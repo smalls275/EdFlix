@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EdFlix Manager</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0a; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 20px; }
+  .container { max-width: 760px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 30px; }
+  h1 { font-size: 2.2em; color: #FFD700; }
+  .subtitle { color: #999; margin-top: 6px; }
+  .card { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 24px; margin-bottom: 24px; }
+  label { display: block; margin: 14px 0 6px; font-weight: 600; color: #FFD700; }
+  .required::after { content: " *"; color: #E50914; }
+  input[type=text], input[type=number], input[type=date], input[type=password], select, textarea {
+    width: 100%; padding: 11px; background: #2a2a2a; border: 1px solid #444; border-radius: 4px; color: #fff; font-size: 1em; font-family: inherit;
+  }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: #FFD700; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .checks { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 6px; margin-top: 6px; }
+  .checks label { display: flex; align-items: center; gap: 6px; font-weight: 400; color: #ddd; margin: 0; cursor: pointer; }
+  .checks input { width: auto; }
+  button { cursor: pointer; border: none; border-radius: 4px; font-size: 1em; font-weight: 600; }
+  .btn-gold { background: #FFD700; color: #000; padding: 12px 20px; width: 100%; margin-top: 20px; }
+  .btn-gold:disabled { opacity: .5; cursor: wait; }
+  .btn-search { background: #333; color: #fff; padding: 11px 18px; }
+  .search-bar { display: flex; gap: 8px; }
+  .search-bar input { flex: 1; }
+  #searchResults { margin-top: 10px; border: 1px solid #333; border-radius: 4px; max-height: 340px; overflow-y: auto; }
+  .result { display: flex; gap: 12px; padding: 10px; border-bottom: 1px solid #2a2a2a; cursor: pointer; align-items: center; }
+  .result:hover { background: #2a2a2a; }
+  .result img { width: 46px; height: 69px; object-fit: cover; border-radius: 3px; background: #222; flex-shrink: 0; }
+  .result .t { font-weight: 600; }
+  .result .m { color: #999; font-size: .85em; margin-top: 2px; }
+  .msg { padding: 14px; border-radius: 4px; margin-bottom: 16px; display: none; white-space: pre-wrap; }
+  .msg.ok { background: #103a10; border: 1px solid #2e7d32; color: #a5d6a7; display: block; }
+  .msg.err { background: #3a1010; border: 1px solid #b71c1c; color: #ef9a9a; display: block; }
+  .hint { color: #888; font-size: .85em; margin-top: 5px; }
+  .pill { display: inline-block; background: #2a2a2a; border: 1px solid #444; border-radius: 20px; padding: 2px 10px; font-size: .8em; margin: 2px; color: #ccc; }
+  .hidden { display: none; }
+  a { color: #FFD700; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>🎬 EdFlix Manager</h1>
+    <div class="subtitle">Search TMDB, pick your movie, and it's added to EdFlix automatically. <span style="color:#555">v7</span></div>
+  </header>
+
+  <div id="okMsg" class="msg"></div>
+  <div id="errMsg" class="msg"></div>
+
+  <!-- Step 1: Search -->
+  <div class="card">
+    <label class="required" style="margin-top:0">1. Search TMDB</label>
+    <div class="search-bar">
+      <input type="text" id="searchTitle" placeholder="e.g., The Matrix">
+      <select id="mediaType" style="width:130px">
+        <option value="movie">Movie</option>
+        <option value="tv">TV Series</option>
+      </select>
+      <button type="button" class="btn-search" id="searchBtn">Search</button>
+    </div>
+    <div id="searchResults" class="hidden"></div>
+  </div>
+
+  <!-- Step 2: Details -->
+  <form id="movieForm" class="card">
+    <label style="margin-top:0">2. Confirm details</label>
+    <div id="selectedInfo" class="hint">Nothing selected yet — search above and click a result. Genres fill in automatically.</div>
+
+    <div class="row">
+      <div>
+        <label class="required" for="tmdbId">TMDB ID</label>
+        <input type="number" id="tmdbId" required>
+      </div>
+      <div>
+        <label class="required" for="title">Title</label>
+        <input type="text" id="title" required>
+      </div>
+    </div>
+
+    <label class="required">Formats</label>
+    <div class="checks" id="formatChecks">
+      <label><input type="checkbox" name="formats" value="4K UHD" checked> 4K UHD</label>
+      <label><input type="checkbox" name="formats" value="Blu-ray"> Blu-ray</label>
+      <label><input type="checkbox" name="formats" value="3D Blu-ray"> 3D Blu-ray</label>
+      <label><input type="checkbox" name="formats" value="DVD"> DVD</label>
+      <label><input type="checkbox" name="formats" value="Digital"> Digital</label>
+    </div>
+
+    <label class="required">Genres <span class="hint" style="display:inline">(auto-filled from TMDB)</span></label>
+    <div class="checks" id="genreChecks"></div>
+
+    <div class="row">
+      <div>
+        <label for="location">Location</label>
+        <input type="text" id="location" value="Living Room">
+      </div>
+      <div>
+        <label for="status">Status</label>
+        <select id="status">
+          <option value="available">Available</option>
+          <option value="checked-out">Checked Out</option>
+          <option value="lent-out">Lent Out</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="dateAdded">Date Added</label>
+        <input type="date" id="dateAdded">
+      </div>
+      <div>
+        <label for="notes">Notes (optional)</label>
+        <input type="text" id="notes" placeholder="e.g., Steelbook edition">
+      </div>
+    </div>
+
+    <label class="required" for="githubToken">Token — last 4 characters</label>
+    <input type="text" id="githubToken" placeholder="••••" maxlength="4" autocomplete="off" spellcheck="false" style="width:140px;text-align:center;letter-spacing:6px;font-family:Consolas,monospace;font-size:1.2em" required>
+    <span id="tokenStatus" style="margin-left:10px;font-size:1.1em"></span>
+    <div class="hint" id="tokenHint">Type the last 4 characters of your GitHub token — it's checked live with GitHub. Careful: lowercase l vs 1 vs I.</div>
+
+    <button type="submit" class="btn-gold" id="submitBtn">Add to EdFlix</button>
+  </form>
+
+  <div class="card hint">
+    ℹ️ This tool only <strong>appends data entries</strong> to index.html's DATA list, src/data/collection.json and MOVIES.md.
+    It never modifies EdFlix's code, layout or behavior. The site sorts and categorizes everything itself at load time.
+    It also checks for duplicates before adding.
+  </div>
+</div>
+
+<script>
+const GITHUB_OWNER = 'smalls275';
+const GITHUB_REPO = 'EdFlix';
+const TMDB_API_KEY = 'dfdcfeaefeefe243e2761936a156b66c';
+const TOKEN_PREFIX = 'github_pat_11BQBJRAA0NSa5DyXHsJDW_GCwbE2TUksyOPWrhNsSYFtjh4rMo6W4y2PtUxQLXX4kY6MR36WTVP2a';
+
+const GENRES = ['Action','Adventure','Animation','Comedy','Crime','Documentary','Drama','Family','Fantasy','History','Horror','Musical','Mystery','Romance','Sci-Fi','Thriller','War','Western'];
+
+// TMDB genre id -> EdFlix genre name(s)
+const TMDB_GENRE_MAP = {
+  28:['Action'], 12:['Adventure'], 16:['Animation'], 35:['Comedy'], 80:['Crime'],
+  99:['Documentary'], 18:['Drama'], 10751:['Family'], 14:['Fantasy'], 36:['History'],
+  27:['Horror'], 10402:['Musical'], 9648:['Mystery'], 10749:['Romance'], 878:['Sci-Fi'],
+  53:['Thriller'], 10752:['War'], 37:['Western'],
+  // TV genres
+  10759:['Action','Adventure'], 10762:['Family'], 10763:['Documentary'],
+  10764:['Documentary'], 10765:['Sci-Fi','Fantasy'], 10766:['Drama'],
+  10767:['Comedy'], 10768:['War']
+};
+
+let selectedMediaType = ''; // '' = movie, 'tv' = TV series
+
+// ---------- UTF-8 safe base64 (fixes the old btoa/atob crashes) ----------
+function b64EncodeUtf8(str) {
+  const bytes = new TextEncoder().encode(str);
+  let bin = '';
+  bytes.forEach(b => bin += String.fromCharCode(b));
+  return btoa(bin);
+}
+function b64DecodeUtf8(b64) {
+  const bin = atob(b64.replace(/\n/g, ''));
+  const bytes = Uint8Array.from(bin, c => c.charCodeAt(0));
+  return new TextDecoder().decode(bytes);
+}
+
+// ---------- Init ----------
+document.addEventListener('DOMContentLoaded', () => {
+  // Build genre checkboxes
+  document.getElementById('genreChecks').innerHTML = GENRES.map(g =>
+    `<label><input type="checkbox" name="genres" value="${g}"> ${g}</label>`).join('');
+
+  const saved = localStorage.getItem('edflixTokenLast4');
+  if (saved) {
+    document.getElementById('githubToken').value = saved;
+    verifyLast4();
+  }
+  document.getElementById('githubToken').addEventListener('input', verifyLast4);
+
+  document.getElementById('dateAdded').valueAsDate = new Date();
+  document.getElementById('searchBtn').addEventListener('click', searchTMDB);
+  document.getElementById('searchTitle').addEventListener('keypress', e => {
+    if (e.key === 'Enter') { e.preventDefault(); searchTMDB(); }
+  });
+  document.getElementById('movieForm').addEventListener('submit', handleSubmit);
+});
+
+// ---------- Live token check ----------
+let verifyTimer = null;
+function verifyLast4() {
+  const st = document.getElementById('tokenStatus');
+  const last4 = document.getElementById('githubToken').value.trim();
+  clearTimeout(verifyTimer);
+  if (last4.length !== 4) { st.textContent = ''; return; }
+  st.textContent = '⏳';
+  verifyTimer = setTimeout(async () => {
+    try {
+      const r = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}`, {
+        headers: { 'Authorization': `Bearer ${TOKEN_PREFIX + last4}`, 'Accept': 'application/vnd.github+json' }
+      });
+      if (r.ok) {
+        st.textContent = '✅ token OK';
+        st.style.color = '#a5d6a7';
+        localStorage.setItem('edflixTokenLast4', last4);
+      } else {
+        st.textContent = '❌ wrong characters';
+        st.style.color = '#ef9a9a';
+      }
+    } catch { st.textContent = '⚠️ network error'; st.style.color = '#ffcc80'; }
+  }, 400);
+}
+
+// ---------- TMDB search ----------
+async function searchTMDB() {
+  const query = document.getElementById('searchTitle').value.trim();
+  const type = document.getElementById('mediaType').value; // 'movie' | 'tv'
+  const box = document.getElementById('searchResults');
+  if (!query) { showErr('Please enter a title to search.'); return; }
+  hideMsgs();
+  box.classList.remove('hidden');
+  box.innerHTML = '<div style="padding:12px;color:#888">Searching…</div>';
+
+  try {
+    const r = await fetch(`https://api.themoviedb.org/3/search/${type}?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(query)}&page=1`);
+    if (!r.ok) throw new Error((await r.json()).status_message || r.statusText);
+    const results = (await r.json()).results || [];
+    if (!results.length) { box.innerHTML = '<div style="padding:12px;color:#888">No results found.</div>'; return; }
+
+    box.innerHTML = '';
+    results.slice(0, 10).forEach(item => {
+      const title = type === 'tv' ? item.name : item.title;
+      const date = (type === 'tv' ? item.first_air_date : item.release_date) || '';
+      const genres = [...new Set((item.genre_ids || []).flatMap(id => TMDB_GENRE_MAP[id] || []))];
+      const div = document.createElement('div');
+      div.className = 'result';
+      div.innerHTML = `
+        <img src="${item.poster_path ? 'https://image.tmdb.org/t/p/w92' + item.poster_path : ''}" alt="">
+        <div>
+          <div class="t"></div>
+          <div class="m">TMDB ID: ${item.id} · ${date ? date.substring(0,4) : 'N/A'} · ⭐ ${(item.vote_average || 0).toFixed(1)}</div>
+          <div>${genres.map(g => `<span class="pill">${g}</span>`).join('')}</div>
+        </div>`;
+      div.querySelector('.t').textContent = title; // safe for any characters
+      div.addEventListener('click', () => selectItem(item.id, title, type, genres, date));
+      box.appendChild(div);
+    });
+  } catch (err) {
+    box.classList.add('hidden');
+    showErr('TMDB search failed: ' + err.message);
+  }
+}
+
+function selectItem(id, title, type, genres, date) {
+  document.getElementById('tmdbId').value = id;
+  document.getElementById('title').value = title;
+  selectedMediaType = type === 'tv' ? 'tv' : '';
+  // Auto-check genres
+  document.querySelectorAll('input[name="genres"]').forEach(cb => cb.checked = genres.includes(cb.value));
+  document.getElementById('searchResults').classList.add('hidden');
+  document.getElementById('selectedInfo').textContent =
+    `Selected: ${title} (${date ? date.substring(0,4) : 'N/A'}) — ${type === 'tv' ? 'TV Series' : 'Movie'} — genres auto-filled, adjust if needed.`;
+}
+
+// ---------- Submit ----------
+// If the chosen date is today, include the current time so Recently Added
+// sorts newest-first even when many movies are added on the same day.
+// (EdFlix compares dateAdded as strings; "2026-09-08T15:42:07" > "2026-09-08".)
+function preciseDateAdded() {
+  const picked = document.getElementById('dateAdded').value;
+  const now = new Date();
+  const today = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+  if (!picked || picked === today) {
+    const t = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
+    return `${today}T${t}`;
+  }
+  return picked; // backdated entries stay as plain dates
+}
+
+async function handleSubmit(e) {
+  e.preventDefault();
+  hideMsgs();
+
+  const tmdbId = parseInt(document.getElementById('tmdbId').value, 10);
+  const title = document.getElementById('title').value.trim();
+  const formats = [...document.querySelectorAll('input[name="formats"]:checked')].map(x => x.value);
+  const genres = [...document.querySelectorAll('input[name="genres"]:checked')].map(x => x.value);
+  const last4 = document.getElementById('githubToken').value.trim();
+
+  if (!tmdbId || !title) return showErr('Pick a movie from the search results (TMDB ID and Title are required).');
+  if (!formats.length) return showErr('Select at least one format.');
+  if (!genres.length) return showErr('Select at least one genre.');
+  if (last4.length !== 4) return showErr('Enter exactly the last 4 characters of your GitHub token.');
+  const token = TOKEN_PREFIX + last4;
+
+  const movie = {
+    tmdbId, title, formats,
+    location: document.getElementById('location').value.trim() || 'Living Room',
+    status: document.getElementById('status').value,
+    dateAdded: preciseDateAdded(),
+    genre: genres
+  };
+  if (selectedMediaType === 'tv') movie.type = 'tv';
+  const notes = document.getElementById('notes').value.trim();
+  if (notes) movie.notes = notes;
+
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Adding…';
+
+  try {
+    const gh = mkGh(token);
+    let done = false, lastErr = null;
+
+    // Retry the WHOLE transaction with a fresh head each time — safe because
+    // the duplicate check runs on every attempt.
+    for (let attempt = 1; attempt <= 5 && !done; attempt++) {
+      if (attempt > 1) {
+        btn.textContent = `Adding… (retry ${attempt - 1})`;
+        await sleep(1500 * (attempt - 1));
+      }
+      try {
+        // Read the current commit tree (single source of truth)
+        const ref = await gh(`git/ref/heads/main`);
+        const headSha = ref.object.sha;
+        const commit = await gh(`git/commits/${headSha}`);
+
+        // Fetch all three files from that exact commit
+        const [colText, idxText, mdText] = await Promise.all([
+          ghReadBlob(gh, headSha, 'src/data/collection.json'),
+          ghReadBlob(gh, headSha, 'index.html'),
+          ghReadBlob(gh, headSha, 'MOVIES.md')
+        ]);
+
+        // Duplicate check (re-done every attempt — makes retries safe)
+        const collection = JSON.parse(colText);
+        if (collection.some(m => m.tmdbId === tmdbId && (m.type || '') === (movie.type || ''))) {
+          throw Object.assign(new Error(`"${title}" (TMDB ${tmdbId}) is already in EdFlix.`), { fatal: true });
+        }
+
+        // Build new contents
+        collection.push(movie);
+        const newCol = JSON.stringify(collection, null, 2) + '\n';
+        const newIdx = appendToDataArray(idxText, movie);
+        const newMd = addToMoviesMd(mdText, movie);
+
+        // One atomic commit updating all three files
+        const newTree = await gh('git/trees', 'POST', {
+          base_tree: commit.tree.sha,
+          tree: [
+            { path: 'src/data/collection.json', mode: '100644', type: 'blob', content: newCol },
+            { path: 'index.html', mode: '100644', type: 'blob', content: newIdx },
+            { path: 'MOVIES.md', mode: '100644', type: 'blob', content: newMd }
+          ]
+        });
+        const newCommit = await gh('git/commits', 'POST', {
+          message: `Add ${title}`, tree: newTree.sha, parents: [headSha]
+        });
+        await gh('git/refs/heads/main', 'PATCH', { sha: newCommit.sha });
+        done = true;
+      } catch (err) {
+        if (err.fatal) throw err;      // duplicate — stop immediately
+        lastErr = err;                 // transient — loop retries with fresh head
+      }
+    }
+    if (!done) throw lastErr || new Error('Add failed after several retries — wait a few seconds and try again.');
+
+    localStorage.setItem('edflixTokenLast4', last4);
+    showOk(`✅ "${title}" added to EdFlix!\nGitHub Pages will update in a minute or two.`);
+    document.getElementById('movieForm').reset();
+    document.getElementById('githubToken').value = last4;
+    document.getElementById('dateAdded').valueAsDate = new Date();
+    document.getElementById('location').value = 'Living Room';
+    document.getElementById('selectedInfo').textContent = 'Nothing selected yet — search above and click a result.';
+    selectedMediaType = '';
+  } catch (err) {
+    showErr('❌ ' + err.message);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Add to EdFlix';
+  }
+}
+
+// ---------- GitHub helpers (Git Data API — single atomic commit, no races) ----------
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+function mkGh(token) {
+  return async function gh(path, method = 'GET', body = null) {
+    let lastErr;
+    for (let attempt = 0; attempt < 2; attempt++) {
+      if (attempt) await sleep(800);
+      const r = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/${path}`, {
+        method,
+        headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' },
+        body: body ? JSON.stringify(body) : undefined
+      });
+      if (r.ok) return r.json();
+      const d = await r.json().catch(() => ({}));
+      lastErr = new Error(`GitHub ${method} ${path}: ${r.status} ${d.message || r.statusText}`);
+      // Retry only truly transient errors with the same request.
+      // 422 (non-fast-forward) must NOT be retried here — the outer
+      // transaction loop re-reads the head and rebuilds the commit instead.
+      if (![404, 500, 502, 503].includes(r.status)) break;
+    }
+    throw lastErr;
+  };
+}
+
+async function ghReadBlob(gh, commitSha, path) {
+  // Resolve the file's blob at an exact commit — immune to replication lag
+  const parts = path.split('/');
+  let treeSha = (await gh(`git/commits/${commitSha}`)).tree.sha;
+  for (let i = 0; i < parts.length - 1; i++) {
+    const tree = await gh(`git/trees/${treeSha}`);
+    const entry = tree.tree.find(e => e.path === parts[i] && e.type === 'tree');
+    if (!entry) throw new Error(`Folder not found: ${parts[i]} (in ${path})`);
+    treeSha = entry.sha;
+  }
+  const tree = await gh(`git/trees/${treeSha}`);
+  const file = tree.tree.find(e => e.path === parts[parts.length - 1] && e.type === 'blob');
+  if (!file) throw new Error(`File not found: ${path}`);
+  const blob = await gh(`git/blobs/${file.sha}`);
+  return b64DecodeUtf8(blob.content);
+}
+
+// ---------- File updaters (append-only, EdFlix code untouched) ----------
+function jsStr(s) { return '"' + String(s).replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '"'; }
+
+function formatJsEntry(m) {
+  let parts = [
+    `tmdbId:${m.tmdbId}`,
+    `title:${jsStr(m.title)}`,
+    `formats:[${m.formats.map(jsStr).join(',')}]`,
+    `location:${jsStr(m.location)}`,
+    `status:${jsStr(m.status)}`,
+    `dateAdded:${jsStr(m.dateAdded)}`,
+    `genre:[${m.genre.map(jsStr).join(',')}]`
+  ];
+  if (m.type) parts.push(`type:${jsStr(m.type)}`);
+  if (m.notes) parts.push(`notes:${jsStr(m.notes)}`);
+  return `{${parts.join(',')}}`;
+}
+
+function appendToDataArray(html, movie) {
+  const start = html.indexOf('const DATA = [');
+  if (start === -1) throw new Error('Could not find the DATA array in index.html');
+  const end = html.indexOf('];', start);
+  if (end === -1) throw new Error('Could not find the end of the DATA array in index.html');
+
+  // Trim trailing whitespace before "];", ensure a trailing comma, append new entry
+  let body = html.slice(start, end).replace(/[\s]*$/, '');
+  if (!body.trim().endsWith('[') && !body.trim().endsWith(',')) body += ',';
+  body += `\n      ${formatJsEntry(movie)}\n    `;
+  return html.slice(0, start) + body + html.slice(end);
+}
+
+function addToMoviesMd(content, movie) {
+  const lines = content.split('\n');
+  const type = movie.type || 'movie';
+  const newRow = `| ${movie.title} | ${type} | ${movie.formats.join(', ')} | ${movie.genre.join(', ')} | ${movie.location} | ${movie.tmdbId} |`;
+
+  // Find table: header row containing '|' followed by separator '---'
+  let headerEnd = -1;
+  for (let i = 0; i < lines.length - 1; i++) {
+    if (lines[i].trim().startsWith('|') && /^\s*\|[\s\-|:]+\|\s*$/.test(lines[i + 1])) {
+      headerEnd = i + 2;
+      break;
+    }
+  }
+  if (headerEnd === -1) return content.trimEnd() + '\n' + newRow + '\n'; // no table found — just append
+
+  let tableEnd = headerEnd;
+  while (tableEnd < lines.length && lines[tableEnd].trim().startsWith('|')) tableEnd++;
+
+  // Alphabetical insert (case-insensitive)
+  let insertAt = tableEnd;
+  for (let i = headerEnd; i < tableEnd; i++) {
+    const t = (lines[i].split('|')[1] || '').trim();
+    if (t.localeCompare(movie.title, undefined, { sensitivity: 'base' }) > 0) { insertAt = i; break; }
+  }
+  lines.splice(insertAt, 0, newRow);
+  return lines.join('\n');
+}
+
+// ---------- Messages ----------
+function showOk(m)  { const el = document.getElementById('okMsg');  el.textContent = m; el.className = 'msg ok'; window.scrollTo({top:0, behavior:'smooth'}); }
+function showErr(m) { const el = document.getElementById('errMsg'); el.textContent = m; el.className = 'msg err'; window.scrollTo({top:0, behavior:'smooth'}); }
+function hideMsgs() { document.getElementById('okMsg').className = 'msg'; document.getElementById('errMsg').className = 'msg'; }
+</script>
+</body>
+</html>
