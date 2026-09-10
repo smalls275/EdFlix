@@ -6049,5 +6049,19 @@
       "Comedy",
       "Family"
     ]
+  },
+  {
+    "tmdbId": 1360,
+    "title": "Frida",
+    "formats": [
+      "Blu-ray"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-10",
+    "genre": [
+      "Drama",
+      "Romance"
+    ]
   }
 ]
