@@ -6034,5 +6034,20 @@
       "Drama"
     ],
     "type": "tv"
+  },
+  {
+    "tmdbId": 772,
+    "title": "Home Alone 2: Lost in New York",
+    "formats": [
+      "Blu-ray"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-10",
+    "genre": [
+      "Adventure",
+      "Comedy",
+      "Family"
+    ]
   }
 ]
