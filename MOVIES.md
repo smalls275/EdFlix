@@ -76,6 +76,7 @@ _Auto-generated from `index.html` DATA array._
 | Check It Out! with Dr. Steve Brule | tv | DVD | Comedy | Living Room | 32612 |
 | Constantine | movie | Blu-ray | Action, Fantasy, Horror | Living Room | 561 |
 | Dark City | movie | Blu-ray | Mystery, Sci-Fi | Living Room | 2666 |
+| Eastbound & Down | tv | Blu-ray | Comedy, Drama | Living Room | 8624 |
 | Eddie Izzard: Dress to Kill | movie | DVD | Comedy | Living Room | 13589 |
 | Evil Dead II | movie | 4K UHD | Comedy, Fantasy, Horror | Living Room | 765 |
 | Forgetting Sarah Marshall | movie | Blu-ray | Comedy, Drama, Romance | Living Room | 9870 |

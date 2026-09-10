@@ -6003,5 +6003,20 @@
       "Family",
       "Sci-Fi"
     ]
+  },
+  {
+    "tmdbId": 8624,
+    "title": "Eastbound & Down",
+    "formats": [
+      "Blu-ray"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-10",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "type": "tv"
   }
 ]
