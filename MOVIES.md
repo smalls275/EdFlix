@@ -349,6 +349,7 @@ _Auto-generated from `index.html` DATA array._
 | The Rocky Horror Picture Show | movie | 4K UHD | Comedy, Horror, Musical | Living Room | 36685 |
 | The Rum Diary | movie | Blu-ray | Comedy, Drama, Romance | Living Room | 23514 |
 | The Sandlot | movie | Blu-ray | Comedy, Drama, Family | Living Room | 11528 |
+| The Scarlet Pimpernel | tv | DVD | Action, Adventure, Drama | Living Room | 753 |
 | The Shining | movie | 4K UHD | Drama, Horror | Living Room | 694 |
 | The Super Mario Bros. Movie | movie | 4K UHD | Animation, Adventure, Comedy, Family | Living Room | 502356 |
 | The Terminator | movie | 4K UHD | Action, Sci-Fi, Thriller | Living Room | 218 |

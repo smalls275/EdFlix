@@ -6018,5 +6018,21 @@
       "Drama"
     ],
     "type": "tv"
+  },
+  {
+    "tmdbId": 753,
+    "title": "The Scarlet Pimpernel",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-10",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "type": "tv"
   }
 ]
