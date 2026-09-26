@@ -6120,5 +6120,19 @@
       "Horror",
       "Sci-Fi"
     ]
+  },
+  {
+    "tmdbId": 37136,
+    "title": "The Naked Gun: From the Files of Police Squad!",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-26T13:58:24",
+    "genre": [
+      "Comedy",
+      "Crime"
+    ]
   }
 ]

@@ -341,6 +341,7 @@ _Auto-generated from `index.html` DATA array._
 | The Matrix | movie | 4K UHD | Action, Sci-Fi | Living Room | 603 |
 | The Mist | movie | 4K UHD | Horror, Sci-Fi, Thriller | Living Room | 5876 |
 | The Muppet Christmas Carol | movie | DVD | Comedy, Drama, Family | Living Room | 10437 |
+| The Naked Gun: From the Files of Police Squad! | movie | DVD | Comedy, Crime | Living Room | 37136 |
 | The Nice Guys | movie | Blu-ray | Action, Comedy, Crime | Living Room | 290250 |
 | The Nightmare Before Christmas | movie | 3D Blu-ray | Animation, Family, Fantasy | Living Room | 9479 |
 | The Other Guys | movie | Blu-ray | Action, Comedy, Crime | Living Room | 27581 |
