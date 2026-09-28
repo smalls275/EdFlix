@@ -6134,5 +6134,20 @@
       "Comedy",
       "Crime"
     ]
+  },
+  {
+    "tmdbId": 4232,
+    "title": "Scream",
+    "formats": [
+      "4K UHD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-09-28T16:42:32",
+    "genre": [
+      "Crime",
+      "Horror",
+      "Mystery"
+    ]
   }
 ]
