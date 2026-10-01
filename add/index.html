@@ -393,8 +393,11 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 function mkGh(token) {
   return async function gh(path, method = 'GET', body = null) {
     let lastErr;
-    for (let attempt = 0; attempt < 2; attempt++) {
-      if (attempt) await sleep(800);
+    // 404/409 right after a push = GitHub replication lag (reads hit a stale
+    // replica before the new commit propagates). Retry with exponential
+    // backoff: 1s, 2s, 4s, 8s — total ~15s, which covers normal lag.
+    for (let attempt = 0; attempt < 5; attempt++) {
+      if (attempt) await sleep(1000 * Math.pow(2, attempt - 1));
       const r = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/${path}`, {
         method,
         headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' },
@@ -406,7 +409,7 @@ function mkGh(token) {
       // Retry only truly transient errors with the same request.
       // 422 (non-fast-forward) must NOT be retried here — the outer
       // transaction loop re-reads the head and rebuilds the commit instead.
-      if (![404, 500, 502, 503].includes(r.status)) break;
+      if (![404, 409, 500, 502, 503].includes(r.status)) break;
     }
     throw lastErr;
   };
