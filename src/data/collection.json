@@ -6149,5 +6149,19 @@
       "Horror",
       "Mystery"
     ]
+  },
+  {
+    "tmdbId": 83542,
+    "title": "Cloud Atlas",
+    "formats": [
+      "Blu-ray"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-10-01T17:31:59",
+    "genre": [
+      "Drama",
+      "Sci-Fi"
+    ]
   }
 ]

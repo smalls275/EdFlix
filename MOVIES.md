@@ -74,6 +74,7 @@ _Auto-generated from `index.html` DATA array._
 | Burning Love | movie | DVD | Comedy | Living Room | 44189 |
 | Caddyshack | movie | Blu-ray | Comedy, Sport | Living Room | 11977 |
 | Check It Out! with Dr. Steve Brule | tv | DVD | Comedy | Living Room | 32612 |
+| Cloud Atlas | movie | Blu-ray | Drama, Sci-Fi | Living Room | 83542 |
 | Constantine | movie | Blu-ray | Action, Fantasy, Horror | Living Room | 561 |
 | Dark City | movie | Blu-ray | Mystery, Sci-Fi | Living Room | 2666 |
 | Eastbound & Down | tv | Blu-ray | Comedy, Drama | Living Room | 8624 |
