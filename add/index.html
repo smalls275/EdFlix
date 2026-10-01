@@ -40,6 +40,8 @@
   .hint { color: #888; font-size: .85em; margin-top: 5px; }
   .pill { display: inline-block; background: #2a2a2a; border: 1px solid #444; border-radius: 20px; padding: 2px 10px; font-size: .8em; margin: 2px; color: #ccc; }
   .hidden { display: none; }
+  #editButtons { display: flex; gap: 10px; margin-top: 10px; }
+  #editButtons.hidden { display: none; }
   a { color: #FFD700; }
 </style>
 </head>
@@ -47,7 +49,7 @@
 <div class="container">
   <header>
     <h1>🎬 EdFlix Manager</h1>
-    <div class="subtitle">Search TMDB, pick your movie, and it's added to EdFlix automatically. <span style="color:#555">v7</span></div>
+    <div class="subtitle">Search TMDB, pick your movie, and it's added to EdFlix automatically. Or load the collection below to edit/remove entries. <span style="color:#555">v8</span></div>
   </header>
 
   <div id="okMsg" class="msg"></div>
@@ -95,6 +97,10 @@
     <label class="required">Genres <span class="hint" style="display:inline">(auto-filled from TMDB)</span></label>
     <div class="checks" id="genreChecks"></div>
 
+    <label>Categories / Tags <span class="hint" style="display:inline">(optional — controls special rows like Drive-In)</span></label>
+    <div class="checks" id="tagChecks"></div>
+    <input type="text" id="customTags" placeholder="Extra tags, comma-separated (e.g., franchise, knives-out)" style="margin-top:8px">
+
     <div class="row">
       <div>
         <label for="location">Location</label>
@@ -127,10 +133,25 @@
     <div class="hint" id="tokenHint">Type the last 4 characters of your GitHub token — it's checked live with GitHub. Careful: lowercase l vs 1 vs I.</div>
 
     <button type="submit" class="btn-gold" id="submitBtn">Add to EdFlix</button>
+    <div id="editButtons" class="hidden">
+      <button type="button" class="btn-gold" id="removeBtn" style="background:#E50914;color:#fff;margin-top:0">🗑 Remove from EdFlix</button>
+      <button type="button" class="btn-search" id="cancelEditBtn" style="padding:12px 20px">Cancel edit</button>
+    </div>
   </form>
 
+  <!-- Step 3: Manage existing -->
+  <div class="card">
+    <label style="margin-top:0">3. Manage existing collection</label>
+    <div class="hint" style="margin-bottom:10px">Load the collection, click a title to edit it (formats, tags like <strong>drive-in</strong>, location, etc.) or remove it entirely.</div>
+    <div class="search-bar">
+      <input type="text" id="manageFilter" placeholder="Filter by title…" disabled>
+      <button type="button" class="btn-search" id="loadBtn">Load collection</button>
+    </div>
+    <div id="manageList" class="hidden" style="margin-top:10px;border:1px solid #333;border-radius:4px;max-height:340px;overflow-y:auto"></div>
+  </div>
+
   <div class="card hint">
-    ℹ️ This tool only <strong>appends data entries</strong> to index.html's DATA list, src/data/collection.json and MOVIES.md.
+    ℹ️ This tool edits data entries in index.html's DATA list, src/data/collection.json and MOVIES.md.
     It never modifies EdFlix's code, layout or behavior. The site sorts and categorizes everything itself at load time.
     It also checks for duplicates before adding.
   </div>
@@ -143,6 +164,14 @@ const TMDB_API_KEY = 'dfdcfeaefeefe243e2761936a156b66c';
 const TOKEN_PREFIX = 'github_pat_11BQBJRAA0NSa5DyXHsJDW_GCwbE2TUksyOPWrhNsSYFtjh4rMo6W4y2PtUxQLXX4kY6MR36WTVP2a';
 
 const GENRES = ['Action','Adventure','Animation','Comedy','Crime','Documentary','Drama','Family','Fantasy','History','Horror','Musical','Mystery','Romance','Sci-Fi','Thriller','War','Western'];
+
+// Special-row categories used by EdFlix (tags field)
+const TAGS = ['drive-in','hitchcock','classics','comedy','horror','thriller','action','mystery','franchise','family-friendly','animation','superhero','sketch-comedy'];
+
+// When set, the form is editing an existing entry instead of adding a new one.
+// { tmdbId, type, occurrence } — occurrence disambiguates duplicates (e.g. two seasons).
+let editTarget = null;
+let loadedCollection = null;
 
 // TMDB genre id -> EdFlix genre name(s)
 const TMDB_GENRE_MAP = {
@@ -176,6 +205,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Build genre checkboxes
   document.getElementById('genreChecks').innerHTML = GENRES.map(g =>
     `<label><input type="checkbox" name="genres" value="${g}"> ${g}</label>`).join('');
+
+  // Build tag checkboxes
+  document.getElementById('tagChecks').innerHTML = TAGS.map(t =>
+    `<label><input type="checkbox" name="tags" value="${t}"> ${t}</label>`).join('');
+
+  document.getElementById('loadBtn').addEventListener('click', loadCollection);
+  document.getElementById('manageFilter').addEventListener('input', renderManageList);
+  document.getElementById('cancelEditBtn').addEventListener('click', exitEditMode);
+  document.getElementById('removeBtn').addEventListener('click', handleRemove);
 
   const saved = localStorage.getItem('edflixTokenLast4');
   if (saved) {
@@ -283,6 +321,98 @@ function preciseDateAdded() {
   return picked; // backdated entries stay as plain dates
 }
 
+// ---------- Manage existing ----------
+async function loadCollection() {
+  hideMsgs();
+  const btn = document.getElementById('loadBtn');
+  btn.disabled = true; btn.textContent = 'Loading…';
+  try {
+    // Raw file read — no token needed for a public repo, cache-busted
+    const r = await fetch(`https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/main/src/data/collection.json?t=${Date.now()}`);
+    if (!r.ok) throw new Error(`Could not load collection (${r.status})`);
+    loadedCollection = await r.json();
+    document.getElementById('manageFilter').disabled = false;
+    renderManageList();
+  } catch (err) {
+    showErr('❌ ' + err.message);
+  } finally {
+    btn.disabled = false; btn.textContent = 'Reload';
+  }
+}
+
+function renderManageList() {
+  const box = document.getElementById('manageList');
+  if (!loadedCollection) return;
+  const q = document.getElementById('manageFilter').value.trim().toLowerCase();
+  box.classList.remove('hidden');
+  box.innerHTML = '';
+  // Track occurrence per tmdbId+type so duplicates (e.g. two seasons) stay distinct
+  const seen = {};
+  loadedCollection.forEach(m => {
+    const key = `${m.tmdbId}|${m.type || ''}`;
+    const occ = seen[key] = (seen[key] || 0) + 1;
+    if (q && !m.title.toLowerCase().includes(q)) return;
+    const div = document.createElement('div');
+    div.className = 'result';
+    div.innerHTML = `<div style="padding-left:4px">
+      <div class="t"></div>
+      <div class="m">TMDB ${m.tmdbId}${m.type === 'tv' ? ' · TV' : ''} · ${m.formats.join(', ')}${m.notes ? ' · ' + m.notes : ''}</div>
+      <div>${(m.tags || []).map(t => `<span class="pill">${t}</span>`).join('')}</div>
+    </div>`;
+    div.querySelector('.t').textContent = m.title;
+    div.addEventListener('click', () => enterEditMode(m, occ));
+    box.appendChild(div);
+  });
+  if (!box.children.length) box.innerHTML = '<div style="padding:12px;color:#888">No matches.</div>';
+}
+
+function enterEditMode(m, occurrence) {
+  hideMsgs();
+  editTarget = { tmdbId: m.tmdbId, type: m.type || '', occurrence };
+  selectedMediaType = m.type === 'tv' ? 'tv' : '';
+  document.getElementById('tmdbId').value = m.tmdbId;
+  document.getElementById('title').value = m.title;
+  document.getElementById('location').value = m.location || 'Living Room';
+  document.getElementById('status').value = m.status || 'available';
+  document.getElementById('notes').value = m.notes || '';
+  document.getElementById('dateAdded').value = (m.dateAdded || '').substring(0, 10);
+  document.querySelectorAll('input[name="formats"]').forEach(cb => cb.checked = (m.formats || []).includes(cb.value));
+  document.querySelectorAll('input[name="genres"]').forEach(cb => cb.checked = (m.genre || []).includes(cb.value));
+  const tags = m.tags || [];
+  document.querySelectorAll('input[name="tags"]').forEach(cb => cb.checked = tags.includes(cb.value));
+  document.getElementById('customTags').value = tags.filter(t => !TAGS.includes(t)).join(', ');
+  document.getElementById('selectedInfo').textContent = `✏️ Editing: ${m.title} (TMDB ${m.tmdbId}) — change anything below, then Save.`;
+  document.getElementById('submitBtn').textContent = 'Save changes';
+  document.getElementById('editButtons').classList.remove('hidden');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function exitEditMode() {
+  editTarget = null;
+  selectedMediaType = '';
+  document.getElementById('movieForm').reset();
+  const saved = localStorage.getItem('edflixTokenLast4');
+  if (saved) document.getElementById('githubToken').value = saved;
+  document.getElementById('dateAdded').valueAsDate = new Date();
+  document.getElementById('location').value = 'Living Room';
+  document.getElementById('submitBtn').textContent = 'Add to EdFlix';
+  document.getElementById('editButtons').classList.add('hidden');
+  document.getElementById('selectedInfo').textContent = 'Nothing selected yet — search above and click a result.';
+}
+
+function collectTags() {
+  const picked = [...document.querySelectorAll('input[name="tags"]:checked')].map(x => x.value);
+  const custom = document.getElementById('customTags').value.split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+  return [...new Set([...picked, ...custom])];
+}
+
+async function handleRemove() {
+  if (!editTarget) return;
+  const title = document.getElementById('title').value.trim();
+  if (!confirm(`Remove "${title}" from EdFlix? This deletes it from all three files.`)) return;
+  await commitChange('remove', null, `Remove ${title}`);
+}
+
 async function handleSubmit(e) {
   e.preventDefault();
   hideMsgs();
@@ -303,12 +433,16 @@ async function handleSubmit(e) {
     tmdbId, title, formats,
     location: document.getElementById('location').value.trim() || 'Living Room',
     status: document.getElementById('status').value,
-    dateAdded: preciseDateAdded(),
+    dateAdded: editTarget ? (document.getElementById('dateAdded').value || preciseDateAdded()) : preciseDateAdded(),
     genre: genres
   };
   if (selectedMediaType === 'tv') movie.type = 'tv';
   const notes = document.getElementById('notes').value.trim();
   if (notes) movie.notes = notes;
+  const tags = collectTags();
+  if (tags.length) movie.tags = tags;
+
+  if (editTarget) return commitChange('update', movie, `Update ${title}`);
 
   const btn = document.getElementById('submitBtn');
   btn.disabled = true;
@@ -387,6 +521,88 @@ async function handleSubmit(e) {
   }
 }
 
+// ---------- Update / Remove transaction ----------
+async function commitChange(action, movie, message) {
+  const last4 = document.getElementById('githubToken').value.trim();
+  if (last4.length !== 4) return showErr('Enter exactly the last 4 characters of your GitHub token.');
+  const token = TOKEN_PREFIX + last4;
+  const target = editTarget;
+  const btn = action === 'remove' ? document.getElementById('removeBtn') : document.getElementById('submitBtn');
+  btn.disabled = true;
+  const origLabel = btn.textContent;
+  btn.textContent = action === 'remove' ? 'Removing…' : 'Saving…';
+
+  try {
+    const gh = mkGh(token);
+    let done = false, lastErr = null;
+    for (let attempt = 1; attempt <= 5 && !done; attempt++) {
+      if (attempt > 1) await sleep(1500 * (attempt - 1));
+      try {
+        const ref = await gh(`git/ref/heads/main`);
+        const headSha = ref.object.sha;
+        const commit = await gh(`git/commits/${headSha}`);
+        const [colText, idxText, mdText] = await Promise.all([
+          ghReadBlob(gh, headSha, 'src/data/collection.json'),
+          ghReadBlob(gh, headSha, 'index.html'),
+          ghReadBlob(gh, headSha, 'MOVIES.md')
+        ]);
+
+        const collection = JSON.parse(colText);
+        const pos = findOccurrence(collection, target);
+        if (pos === -1) throw Object.assign(new Error('Entry not found in the collection — reload and try again.'), { fatal: true });
+
+        if (action === 'remove') collection.splice(pos, 1);
+        else collection[pos] = movie;
+        const newCol = JSON.stringify(collection, null, 2) + '\n';
+        const newIdx = editDataArray(idxText, target, action === 'remove' ? null : movie);
+        const newMd = editMoviesMd(mdText, target, action === 'remove' ? null : movie);
+
+        const newTree = await gh('git/trees', 'POST', {
+          base_tree: commit.tree.sha,
+          tree: [
+            { path: 'src/data/collection.json', mode: '100644', type: 'blob', content: newCol },
+            { path: 'index.html', mode: '100644', type: 'blob', content: newIdx },
+            { path: 'MOVIES.md', mode: '100644', type: 'blob', content: newMd }
+          ]
+        });
+        const newCommit = await gh('git/commits', 'POST', { message, tree: newTree.sha, parents: [headSha] });
+        await gh('git/refs/heads/main', 'PATCH', { sha: newCommit.sha });
+        done = true;
+      } catch (err) {
+        if (err.fatal) throw err;
+        lastErr = err;
+      }
+    }
+    if (!done) throw lastErr || new Error('Change failed after several retries — wait a few seconds and try again.');
+
+    localStorage.setItem('edflixTokenLast4', last4);
+    showOk(action === 'remove'
+      ? `🗑 Removed from EdFlix.\nGitHub Pages will update in a minute or two.`
+      : `✅ "${movie.title}" updated!\nGitHub Pages will update in a minute or two.`);
+    exitEditMode();
+    loadedCollection = null;
+    document.getElementById('manageList').classList.add('hidden');
+    document.getElementById('loadBtn').textContent = 'Load collection';
+  } catch (err) {
+    showErr('❌ ' + err.message);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = origLabel;
+  }
+}
+
+// Find the index of the target entry: nth occurrence of (tmdbId, type)
+function findOccurrence(collection, target) {
+  let n = 0;
+  for (let i = 0; i < collection.length; i++) {
+    const m = collection[i];
+    if (m.tmdbId === target.tmdbId && (m.type || '') === target.type) {
+      if (++n === target.occurrence) return i;
+    }
+  }
+  return -1;
+}
+
 // ---------- GitHub helpers (Git Data API — single atomic commit, no races) ----------
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
@@ -447,7 +663,67 @@ function formatJsEntry(m) {
   ];
   if (m.type) parts.push(`type:${jsStr(m.type)}`);
   if (m.notes) parts.push(`notes:${jsStr(m.notes)}`);
+  if (m.tags && m.tags.length) parts.push(`tags:[${m.tags.map(jsStr).join(',')}]`);
   return `{${parts.join(',')}}`;
+}
+
+// Replace (movie given) or delete (movie null) the target's line in index.html's DATA array.
+function editDataArray(html, target, movie) {
+  const start = html.indexOf('const DATA = [');
+  if (start === -1) throw new Error('Could not find the DATA array in index.html');
+  const end = html.indexOf('];', start);
+  if (end === -1) throw new Error('Could not find the end of the DATA array in index.html');
+
+  const lines = html.slice(start, end).split('\n');
+  const idRe = new RegExp(`\\{\\s*tmdbId\\s*:\\s*${target.tmdbId}\\s*[,}]`);
+  const typeRe = /type\s*:\s*"tv"/;
+  let n = 0, hit = -1;
+  for (let i = 0; i < lines.length; i++) {
+    if (!idRe.test(lines[i])) continue;
+    const isTv = typeRe.test(lines[i]);
+    if ((target.type === 'tv') !== isTv) continue;
+    if (++n === target.occurrence) { hit = i; break; }
+  }
+  if (hit === -1) throw new Error(`Entry TMDB ${target.tmdbId} not found in index.html's DATA array`);
+
+  if (movie) {
+    const trailing = lines[hit].trimEnd().endsWith(',') ? ',' : '';
+    lines[hit] = `      ${formatJsEntry(movie)}${trailing}`;
+  } else {
+    lines.splice(hit, 1);
+    // If we removed the last entry, make sure the now-last entry keeps valid syntax
+    for (let i = lines.length - 1; i >= 0; i--) {
+      const t = lines[i].trimEnd();
+      if (!t) continue;
+      if (t.endsWith('[')) break;          // array is now empty
+      if (t.endsWith(',')) lines[i] = t.replace(/,$/, '');
+      break;
+    }
+  }
+  return html.slice(0, start) + lines.join('\n') + html.slice(end);
+}
+
+// Replace or delete the target's row in the MOVIES.md table (matched by last tmdbId column).
+function editMoviesMd(content, target, movie) {
+  const lines = content.split('\n');
+  let n = 0, hit = -1;
+  for (let i = 0; i < lines.length; i++) {
+    const cells = lines[i].split('|').map(s => s.trim());
+    if (cells.length < 3) continue;
+    const id = cells[cells.length - 2]; // last non-empty column before trailing pipe
+    if (id !== String(target.tmdbId)) continue;
+    const isTv = /\btv\b/i.test(cells[2] || '');
+    if ((target.type === 'tv') !== isTv) continue;
+    if (++n === target.occurrence) { hit = i; break; }
+  }
+  if (hit === -1) return movie ? addToMoviesMd(content, movie) : content; // tolerate missing row
+
+  if (movie) {
+    lines[hit] = `| ${movie.title} | ${movie.type || 'movie'} | ${movie.formats.join(', ')} | ${movie.genre.join(', ')} | ${movie.location} | ${movie.tmdbId} |`;
+  } else {
+    lines.splice(hit, 1);
+  }
+  return lines.join('\n');
 }
 
 function appendToDataArray(html, movie) {
