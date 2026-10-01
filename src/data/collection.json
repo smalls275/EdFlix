@@ -6163,5 +6163,18 @@
       "Drama",
       "Sci-Fi"
     ]
+  },
+  {
+    "tmdbId": 10162,
+    "title": "Waking Ned",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-10-01T19:34:45",
+    "genre": [
+      "Comedy"
+    ]
   }
 ]

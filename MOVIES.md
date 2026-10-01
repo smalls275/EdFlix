@@ -384,6 +384,7 @@ _Auto-generated from `index.html` DATA array._
 | Vanilla Sky | movie | Blu-ray | Fantasy, Mystery, Romance | Living Room | 1903 |
 | Vertigo | movie | 4K UHD | Mystery, Romance, Thriller | Living Room | 426 |
 | Videodrome | movie | Blu-ray | Horror, Sci-Fi, Thriller | Living Room | 837 |
+| Waking Ned | movie | DVD | Comedy | Living Room | 10162 |
 | WALL·E | movie | DVD | Animation, Family, Sci-Fi | Living Room | 10681 |
 | Wanderlust | movie | Blu-ray | Comedy, Romance | Living Room | 50647 |
 | Watchmen | movie | Blu-ray | Action, Mystery, Sci-Fi | Living Room | 13183 |
