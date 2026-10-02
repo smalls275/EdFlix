@@ -6222,5 +6222,19 @@
       "Comedy",
       "Romance"
     ]
+  },
+  {
+    "tmdbId": 381284,
+    "title": "Hidden Figures",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-10-02T16:21:34",
+    "genre": [
+      "Drama",
+      "History"
+    ]
   }
 ]
