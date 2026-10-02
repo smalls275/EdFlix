@@ -1248,13 +1248,15 @@
     "formats": [
       "4K UHD"
     ],
-    "location": "Living Room",
+    "location": "Bottom left",
     "status": "available",
     "dateAdded": "2025-01-01",
     "genre": [
       "Action",
       "Adventure",
-      "Horror"
+      "Horror",
+      "Sci-Fi",
+      "Thriller"
     ]
   },
   {

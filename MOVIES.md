@@ -47,7 +47,7 @@ _Auto-generated from `index.html` DATA array._
 | Alien: Covenant | movie | 4K UHD, 3D Blu-ray | Horror, Sci-Fi | Living Room | 126889 |
 | Alien: Romulus | movie | 4K UHD | Horror, Sci-Fi | Living Room | 945961 |
 | Alien³ | movie | Blu-ray, 3D Blu-ray | Action, Horror, Sci-Fi | Living Room | 8077 |
-| Aliens | movie | 4K UHD | Action, Adventure, Horror | Living Room | 679 |
+| Aliens | movie | 4K UHD | Action, Adventure, Horror, Sci-Fi, Thriller | Bottom left | 679 |
 | Altered States | movie | 4K UHD | Horror, Sci-Fi | Living Room | 11542 |
 | Amadeus | movie | 4K UHD | Biography, Drama, Music | Living Room | 279 |
 | Anna Karenina | movie | Blu-ray | Drama, Romance | Living Room | 50512 |
