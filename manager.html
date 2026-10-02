@@ -49,7 +49,7 @@
 <div class="container">
   <header>
     <h1>🎬 EdFlix Manager</h1>
-    <div class="subtitle">Search TMDB, pick your movie, and it's added to EdFlix automatically. Or load the collection below to edit/remove entries. <span style="color:#555">v8</span></div>
+    <div class="subtitle">Search TMDB, pick your movie, and it's added to EdFlix automatically. Or load the collection below to edit/remove entries. <span style="color:#555">v9</span></div>
   </header>
 
   <div id="okMsg" class="msg"></div>
@@ -472,10 +472,13 @@ async function handleSubmit(e) {
           ghReadBlob(gh, headSha, 'MOVIES.md')
         ]);
 
-        // Duplicate check (re-done every attempt — makes retries safe)
+        // Duplicate check (re-done every attempt — makes retries safe).
+        // If found, we don't just block — we offer to update the existing entry.
         const collection = JSON.parse(colText);
-        if (collection.some(m => m.tmdbId === tmdbId && (m.type || '') === (movie.type || ''))) {
-          throw Object.assign(new Error(`"${title}" (TMDB ${tmdbId}) is already in EdFlix.`), { fatal: true });
+        const dupIdx = collection.findIndex(m => m.tmdbId === tmdbId && (m.type || '') === (movie.type || ''));
+        if (dupIdx !== -1) {
+          throw Object.assign(new Error(`"${title}" (TMDB ${tmdbId}) is already in EdFlix.`),
+            { fatal: true, duplicateOf: collection[dupIdx] });
         }
 
         // Build new contents
@@ -514,6 +517,29 @@ async function handleSubmit(e) {
     document.getElementById('selectedInfo').textContent = 'Nothing selected yet — search above and click a result.';
     selectedMediaType = '';
   } catch (err) {
+    if (err.duplicateOf) {
+      // Intelligent duplicate handling: offer to update the existing entry,
+      // merging what's already there with what was just entered.
+      const existing = err.duplicateOf;
+      btn.disabled = false;
+      btn.textContent = 'Add to EdFlix';
+      if (confirm(`"${title}" is already in EdFlix.\n\nUpdate the existing entry with these details instead?\n(Formats, genres and tags will be merged; original date added is kept.)`)) {
+        const merged = {
+          ...movie,
+          formats: [...new Set([...(existing.formats || []), ...movie.formats])],
+          genre: [...new Set([...(existing.genre || []), ...movie.genre])],
+          dateAdded: existing.dateAdded || movie.dateAdded
+        };
+        const mTags = [...new Set([...(existing.tags || []), ...(movie.tags || [])])];
+        if (mTags.length) merged.tags = mTags;
+        if (!merged.notes && existing.notes) merged.notes = existing.notes;
+        editTarget = { tmdbId, type: movie.type || '', occurrence: 1 };
+        await commitChange('update', merged, `Update ${title}`);
+        return;
+      }
+      showErr(`❌ ${err.message}\nNothing was changed. To edit it, use "Manage existing collection" below.`);
+      return;
+    }
     showErr('❌ ' + err.message);
   } finally {
     btn.disabled = false;
