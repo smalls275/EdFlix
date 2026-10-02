@@ -6208,5 +6208,19 @@
       "Crime",
       "Drama"
     ]
+  },
+  {
+    "tmdbId": 9768,
+    "title": "Cry-Baby",
+    "formats": [
+      "4K UHD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-10-02T16:14:38",
+    "genre": [
+      "Comedy",
+      "Romance"
+    ]
   }
 ]
