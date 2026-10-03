@@ -6071,11 +6071,12 @@
     "tmdbId": 447404,
     "title": "Pokémon Detective Pikachu",
     "formats": [
-      "Blu-ray"
+      "Blu-ray",
+      "3D Blu-ray"
     ],
     "location": "Living Room",
     "status": "available",
-    "dateAdded": "2026-09-11T15:44:42",
+    "dateAdded": "2026-09-11",
     "genre": [
       "Action",
       "Adventure",
