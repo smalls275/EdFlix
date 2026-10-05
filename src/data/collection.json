@@ -6240,5 +6240,19 @@
       "Drama",
       "History"
     ]
+  },
+  {
+    "tmdbId": 11000,
+    "title": "The Birdcage",
+    "formats": [
+      "Blu-ray"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-10-05T16:57:25",
+    "genre": [
+      "Comedy",
+      "Romance"
+    ]
   }
 ]

@@ -116,6 +116,7 @@ _Auto-generated from `index.html` DATA array._
 | Teenage Mutant Ninja Turtles | movie | DVD | Action, Adventure, Comedy, Family, Sci-Fi | Living Room | 1498 |
 | Teenage Mutant Ninja Turtles II: The Secret of the Ooze | movie | DVD | Action, Adventure, Comedy, Family, Sci-Fi | Living Room | 1497 |
 | Teenage Mutant Ninja Turtles III | movie | DVD | Action, Adventure, Comedy, Family, Fantasy, Sci-Fi | Living Room | 1499 |
+| The Birdcage | movie | Blu-ray | Comedy, Romance | Living Room | 11000 |
 | The Cannonball Run | movie | Blu-ray | Action, Comedy, Family | Living Room | 11286 |
 | Cannibal! The Musical | movie | Blu-ray | Comedy, Horror, Musical | Living Room | 13063 |
 | Cars | movie | 3D Blu-ray | Animation, Adventure, Comedy | Living Room | 920 |
