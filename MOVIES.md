@@ -91,6 +91,7 @@ _Auto-generated from `index.html` DATA array._
 | Hannibal | tv | Blu-ray | Crime, Drama | Living Room | 40008 |
 | Harold and the Purple Crayon | movie | DVD | Animation, Family | Living Room | 187133 |
 | Hidden Figures | movie | DVD | Drama, History | Living Room | 381284 |
+| Holy Flying Circus | movie | DVD | Comedy, Drama | Living Room | 76750 |
 | Home Alone 2: Lost in New York | movie | Blu-ray | Adventure, Comedy, Family | Living Room | 772 |
 | How the Grinch Stole Christmas! | movie | Blu-ray | Animation, Comedy, Family | Living Room | 13377 |
 | Krull | movie | Blu-ray | Action, Adventure, Fantasy, Sci-Fi | Living Room | 849 |
