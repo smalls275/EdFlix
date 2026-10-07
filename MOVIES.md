@@ -94,6 +94,7 @@ _Auto-generated from `index.html` DATA array._
 | Holy Flying Circus | movie | DVD | Comedy, Drama | Living Room | 76750 |
 | Home Alone 2: Lost in New York | movie | Blu-ray | Adventure, Comedy, Family | Living Room | 772 |
 | How the Grinch Stole Christmas! | movie | Blu-ray | Animation, Comedy, Family | Living Room | 13377 |
+| Journey to the Center of the Earth | movie | 3D Blu-ray | Action, Adventure, Comedy, Family, Sci-Fi | Living Room | 88751 |
 | Krull | movie | Blu-ray | Action, Adventure, Fantasy, Sci-Fi | Living Room | 849 |
 | Little Women | movie | DVD | Drama, Romance | Living Room | 9587 |
 | Major League II | movie | DVD | Comedy | Living Room | 11067 |

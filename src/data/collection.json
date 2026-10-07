@@ -6268,5 +6268,22 @@
       "Comedy",
       "Drama"
     ]
+  },
+  {
+    "tmdbId": 88751,
+    "title": "Journey to the Center of the Earth",
+    "formats": [
+      "3D Blu-ray"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2025-10-07",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Family",
+      "Sci-Fi"
+    ]
   }
 ]
