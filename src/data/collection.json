@@ -6285,5 +6285,21 @@
       "Family",
       "Sci-Fi"
     ]
+  },
+  {
+    "tmdbId": 9326,
+    "title": "Romancing the Stone",
+    "formats": [
+      "Blu-ray"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-10-08T16:41:19",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Romance"
+    ]
   }
 ]
