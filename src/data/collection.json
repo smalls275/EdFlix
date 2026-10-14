@@ -6331,5 +6331,20 @@
       "Comedy",
       "War"
     ]
+  },
+  {
+    "tmdbId": 9644,
+    "title": "National Lampoon's Loaded Weapon 1",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-10-14T15:56:28",
+    "genre": [
+      "Action",
+      "Comedy",
+      "Crime"
+    ]
   }
 ]

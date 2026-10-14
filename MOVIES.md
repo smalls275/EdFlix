@@ -104,6 +104,7 @@ _Auto-generated from `index.html` DATA array._
 | Mission: Impossible - Ghost Protocol | movie | Blu-ray | Action, Adventure, Thriller | Living Room | 56292 |
 | Moulin Rouge! | movie | DVD | Drama, Musical, Romance | Living Room | 824 |
 | My Fellow Americans | movie | DVD | Comedy | Living Room | 17795 |
+| National Lampoon's Loaded Weapon 1 | movie | DVD | Action, Comedy, Crime | Living Room | 9644 |
 | Night at the Museum | movie | DVD | Comedy, Family, Fantasy | Living Room | 1593 |
 | Night at the Museum: Battle of the Smithsonian | movie | DVD | Action, Adventure, Comedy, Family, Fantasy | Living Room | 18360 |
 | Nine to Five | movie | DVD | Comedy | Living Room | 19494 |
