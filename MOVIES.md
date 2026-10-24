@@ -360,6 +360,7 @@ _Auto-generated from `index.html` DATA array._
 | The Naked Gun: From the Files of Police Squad! | movie | DVD | Comedy, Crime | Living Room | 37136 |
 | The Nice Guys | movie | Blu-ray | Action, Comedy, Crime | Living Room | 290250 |
 | The Nightmare Before Christmas | movie | 3D Blu-ray | Animation, Family, Fantasy | Living Room | 9479 |
+| The Office | tv | Blu-ray | Comedy | Living Room | 2316 |
 | The Other Guys | movie | Blu-ray | Action, Comedy, Crime | Living Room | 27581 |
 | The Polar Express | movie | 3D Blu-ray | Animation, Adventure, Family | Living Room | 5255 |
 | The Prestige | movie | 4K UHD, DVD | Drama, Mystery, Sci-Fi | Living Room | 1124 |
