@@ -6404,5 +6404,18 @@
       "Sci-Fi",
       "Thriller"
     ]
+  },
+  {
+    "tmdbId": 9398,
+    "title": "Zoolander",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-10-24T12:37:26",
+    "genre": [
+      "Comedy"
+    ]
   }
 ]

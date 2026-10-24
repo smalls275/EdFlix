@@ -418,3 +418,4 @@ _Auto-generated from `index.html` DATA array._
 | Wonka | movie | 4K UHD | Adventure, Comedy, Family, Fantasy, Musical | Living Room | 787699 |
 | Young Guns | movie | Blu-ray | Western, Action, Adventure, Drama | Living Room | 11967 |
 | Zero Dark Thirty | movie | Blu-ray | Thriller, Drama | Living Room | 97630 |
+| Zoolander | movie | DVD | Comedy | Living Room | 9398 |
