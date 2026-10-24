@@ -80,6 +80,7 @@ _Auto-generated from `index.html` DATA array._
 | Dark City | movie | Blu-ray | Mystery, Sci-Fi | Living Room | 2666 |
 | Eastbound & Down | tv | Blu-ray | Comedy, Drama | Living Room | 8624 |
 | Eddie Izzard: Dress to Kill | movie | DVD | Comedy | Living Room | 13589 |
+| Event Horizon | movie | 4K UHD | Horror, Mystery, Sci-Fi | Living Room | 8413 |
 | Evil Dead II | movie | 4K UHD | Comedy, Fantasy, Horror | Living Room | 765 |
 | Forgetting Sarah Marshall | movie | Blu-ray | Comedy, Drama, Romance | Living Room | 9870 |
 | Freaks and Geeks | tv | DVD | Comedy, Drama | Living Room | 2382 |

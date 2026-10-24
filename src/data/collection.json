@@ -6346,5 +6346,20 @@
       "Comedy",
       "Crime"
     ]
+  },
+  {
+    "tmdbId": 8413,
+    "title": "Event Horizon",
+    "formats": [
+      "4K UHD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-10-24",
+    "genre": [
+      "Horror",
+      "Mystery",
+      "Sci-Fi"
+    ]
   }
 ]
