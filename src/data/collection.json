@@ -6389,5 +6389,20 @@
     "genre": [
       "Comedy"
     ]
+  },
+  {
+    "tmdbId": 74,
+    "title": "War of the Worlds",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-10-24T10:50:34",
+    "genre": [
+      "Adventure",
+      "Sci-Fi",
+      "Thriller"
+    ]
   }
 ]

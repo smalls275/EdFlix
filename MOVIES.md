@@ -402,6 +402,7 @@ _Auto-generated from `index.html` DATA array._
 | Waking Ned | movie | DVD | Comedy | Living Room | 10162 |
 | WALL·E | movie | DVD | Animation, Family, Sci-Fi | Living Room | 10681 |
 | Wanderlust | movie | Blu-ray | Comedy, Romance | Living Room | 50647 |
+| War of the Worlds | movie | DVD | Adventure, Sci-Fi, Thriller | Living Room | 74 |
 | Watchmen | movie | Blu-ray | Action, Mystery, Sci-Fi | Living Room | 13183 |
 | We Bought a Zoo | movie | DVD | Drama, Comedy, Family | Living Room | 74465 |
 | Weapons | movie | 4K UHD | Horror, Mystery | Living Room | 1078605 |
