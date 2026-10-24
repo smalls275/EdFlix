@@ -6376,5 +6376,18 @@
       "Thriller",
       "Western"
     ]
+  },
+  {
+    "tmdbId": 9472,
+    "title": "DodgeBall: A True Underdog Story",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-10-24T10:49:19",
+    "genre": [
+      "Comedy"
+    ]
   }
 ]

@@ -78,6 +78,7 @@ _Auto-generated from `index.html` DATA array._
 | Constantine | movie | Blu-ray | Action, Fantasy, Horror | Living Room | 561 |
 | Cry-Baby | movie | 4K UHD | Comedy, Romance | Living Room | 9768 |
 | Dark City | movie | Blu-ray | Mystery, Sci-Fi | Living Room | 2666 |
+| DodgeBall: A True Underdog Story | movie | DVD | Comedy | Living Room | 9472 |
 | Eastbound & Down | tv | Blu-ray | Comedy, Drama | Living Room | 8624 |
 | Eddie Izzard: Dress to Kill | movie | DVD | Comedy | Living Room | 13589 |
 | Event Horizon | movie | 4K UHD | Horror, Mystery, Sci-Fi | Living Room | 8413 |
