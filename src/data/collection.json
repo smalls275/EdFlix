@@ -6448,5 +6448,19 @@
       "Sci-Fi"
     ],
     "type": "tv"
+  },
+  {
+    "tmdbId": 87108,
+    "title": "Chernobyl",
+    "formats": [
+      "4K UHD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-10-24T17:09:52",
+    "genre": [
+      "Drama"
+    ],
+    "type": "tv"
   }
 ]

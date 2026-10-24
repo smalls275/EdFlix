@@ -74,6 +74,7 @@ _Auto-generated from `index.html` DATA array._
 | Burning Love | movie | DVD | Comedy | Living Room | 44189 |
 | Caddyshack | movie | Blu-ray | Comedy, Sport | Living Room | 11977 |
 | Check It Out! with Dr. Steve Brule | tv | DVD | Comedy | Living Room | 32612 |
+| Chernobyl | tv | 4K UHD | Drama | Living Room | 87108 |
 | Cloud Atlas | movie | Blu-ray | Drama, Sci-Fi | Living Room | 83542 |
 | Constantine | movie | Blu-ray | Action, Fantasy, Horror | Living Room | 561 |
 | Cry-Baby | movie | 4K UHD | Comedy, Romance | Living Room | 9768 |
