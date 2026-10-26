@@ -6445,21 +6445,5 @@
       "Drama"
     ],
     "type": "tv"
-  },
-  {
-    "tmdbId": 715003,
-    "title": "The Terror",
-    "formats": [
-      "Blu-ray"
-    ],
-    "location": "Living Room",
-    "status": "available",
-    "dateAdded": "2026-10-24",
-    "genre": [
-      "Drama",
-      "Fantasy",
-      "Mystery",
-      "Sci-Fi"
-    ]
   }
 ]
