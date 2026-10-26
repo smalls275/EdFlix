@@ -222,7 +222,6 @@ _Auto-generated from `index.html` DATA array._
 | Keanu | movie | Blu-ray | Action, Comedy, Crime | Living Room | 342521 |
 | Key & Peele | tv | DVD | Comedy | Living Room | 43082 |
 | Kroll Show | tv | DVD | Comedy | Living Room | 57607 |
-| Kroll Show | tv | DVD | Comedy | Living Room | 57607 |
 | Kill Bill: Vol. 1 | movie | Blu-ray | Action, Crime, Thriller | Living Room | 24 |
 | Kill Bill: Vol. 2 | movie | Blu-ray | Action, Crime, Thriller | Living Room | 393 |
 | Knives Out | movie | 4K UHD | Comedy, Crime, Drama | Living Room | 546554 |
