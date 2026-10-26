@@ -135,7 +135,7 @@ _Auto-generated from `index.html` DATA array._
 | Casino Royale | movie | 4K UHD | Action, Adventure, Thriller | Living Room | 36557 |
 | Chicken Run | movie | DVD | Animation, Adventure, Comedy | Living Room | 7443 |
 | Chitty Chitty Bang Bang | movie | Blu-ray | Adventure, Comedy, Family | Living Room | 11708 |
-| Cinderella | movie | Blu-ray | Adventure, Drama, Family | Living Room | 150689 |
+| Cinderella | movie | Blu-ray | Adventure, Drama, Family | Living Room | 11224 |
 | Citizen Kane | movie | 4K UHD | Drama, Mystery | Living Room | 15 |
 | Civil War | movie | 4K UHD | Action, Thriller, War | Living Room | 929590 |
 | Clue | movie | 4K UHD | Comedy, Crime, Mystery | Living Room | 15196 |
