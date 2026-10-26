@@ -6462,5 +6462,21 @@
       "Sci-Fi"
     ],
     "type": "tv"
+  },
+  {
+    "tmdbId": 63247,
+    "title": "Westworld",
+    "formats": [
+      "4K UHD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-10-26T17:32:56",
+    "genre": [
+      "Fantasy",
+      "Sci-Fi",
+      "Western"
+    ],
+    "type": "tv"
   }
 ]

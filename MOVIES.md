@@ -410,6 +410,7 @@ _Auto-generated from `index.html` DATA array._
 | We Bought a Zoo | movie | DVD | Drama, Comedy, Family | Living Room | 74465 |
 | Weapons | movie | 4K UHD | Horror, Mystery | Living Room | 1078605 |
 | Wes Craven's New Nightmare | movie | 4K UHD | Fantasy, Horror, Mystery | Living Room | 11596 |
+| Westworld | tv | 4K UHD | Fantasy, Sci-Fi, Western | Living Room | 63247 |
 | Wet Hot American Summer | movie | Blu-ray | Comedy | Living Room | 2171 |
 | What We Did on Our Holiday | movie | DVD | Comedy, Drama | Living Room | 276843 |
 | What We Do in the Shadows | movie | Blu-ray | Comedy, Horror | Living Room | 246741 |
