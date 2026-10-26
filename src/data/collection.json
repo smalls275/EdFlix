@@ -6433,23 +6433,6 @@
     "type": "tv"
   },
   {
-    "tmdbId": 100344,
-    "title": "The Terror",
-    "formats": [
-      "Blu-ray"
-    ],
-    "location": "Living Room",
-    "status": "available",
-    "dateAdded": "2026-10-24",
-    "genre": [
-      "Drama",
-      "Fantasy",
-      "Mystery",
-      "Sci-Fi"
-    ],
-    "type": "tv"
-  },
-  {
     "tmdbId": 87108,
     "title": "Chernobyl",
     "formats": [

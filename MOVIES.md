@@ -378,7 +378,6 @@ _Auto-generated from `index.html` DATA array._
 | The Shining | movie | 4K UHD | Drama, Horror | Living Room | 694 |
 | The Super Mario Bros. Movie | movie | 4K UHD | Animation, Adventure, Comedy, Family | Living Room | 502356 |
 | The Terminator | movie | 4K UHD | Action, Sci-Fi, Thriller | Living Room | 218 |
-| The Terror | tv | Blu-ray | Drama, Fantasy, Mystery, Sci-Fi | Living Room | 100344 |
 | The Terror | movie | Blu-ray | Drama, Fantasy, Mystery, Sci-Fi | Living Room | 715003 |
 | The Thing | movie | 4K UHD | Horror, Mystery, Sci-Fi | Living Room | 1091 |
 | The Trouble with Harry | movie | 4K UHD | Comedy, Mystery | Living Room | 11219 |
