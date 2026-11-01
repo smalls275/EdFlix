@@ -184,7 +184,7 @@ _Auto-generated from `index.html` DATA array._
 | Glass Onion: A Knives Out Mystery | movie | Blu-ray | Comedy, Crime, Mystery | Living Room | 661374 |
 | Garth Marenghi's Darkplace | tv | DVD | Comedy, Horror | Living Room | 205 |
 | Gladiator | movie | Blu-ray | Action, Adventure, Drama | Living Room | 98 |
-| Gone with the Wind | movie | Blu-ray | Drama, Romance, War | Living Room | 770 |
+| Gone with the Wind | movie | 4K UHD, Blu-ray | Drama, Romance, War | Living Room | 770 |
 | Goosebumps | tv | DVD | Family, Horror, Mystery | Living Room | 5835 |
 | Gosford Park | movie | DVD | Comedy, Drama, Mystery | Living Room | 5279 |
 | Gravity | movie | 3D Blu-ray | Drama, Sci-Fi, Thriller | Living Room | 49047 |

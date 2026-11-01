@@ -2392,6 +2392,7 @@
     "tmdbId": 770,
     "title": "Gone with the Wind",
     "formats": [
+      "4K UHD",
       "Blu-ray"
     ],
     "location": "Living Room",
@@ -2401,6 +2402,9 @@
       "Drama",
       "Romance",
       "War"
+    ],
+    "tags": [
+      "classics"
     ]
   },
   {
