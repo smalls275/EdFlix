@@ -100,6 +100,7 @@ _Auto-generated from `index.html` DATA array._
 | Hot Shots! Part Deux | movie | DVD | Action, Comedy, War | Living Room | 9255 |
 | How the Grinch Stole Christmas! | movie | Blu-ray | Animation, Comedy, Family | Living Room | 13377 |
 | Journey to the Center of the Earth | movie | 3D Blu-ray | Action, Adventure, Comedy, Family, Sci-Fi | Living Room | 88751 |
+| KPop Demon Hunters | movie | 4K UHD | Animation, Comedy, Fantasy, Musical | Living Room | 803796 |
 | Krull | movie | Blu-ray | Action, Adventure, Fantasy, Sci-Fi | Living Room | 849 |
 | Little Women | movie | DVD | Drama, Romance | Living Room | 9587 |
 | Major League II | movie | DVD | Comedy | Living Room | 11067 |

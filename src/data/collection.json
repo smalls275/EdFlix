@@ -6463,5 +6463,21 @@
       "Western"
     ],
     "type": "tv"
+  },
+  {
+    "tmdbId": 803796,
+    "title": "KPop Demon Hunters",
+    "formats": [
+      "4K UHD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-11-02T17:18:08",
+    "genre": [
+      "Animation",
+      "Comedy",
+      "Fantasy",
+      "Musical"
+    ]
   }
 ]
