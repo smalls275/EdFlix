@@ -6522,5 +6522,18 @@
       "Adventure",
       "Comedy"
     ]
+  },
+  {
+    "tmdbId": 109443,
+    "title": "Anchorman 2: The Legend Continues",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-11-07T12:37:12",
+    "genre": [
+      "Comedy"
+    ]
   }
 ]

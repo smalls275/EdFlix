@@ -50,6 +50,7 @@ _Auto-generated from `index.html` DATA array._
 | Aliens | movie | 4K UHD | Action, Adventure, Horror, Sci-Fi, Thriller | Bottom left | 679 |
 | Altered States | movie | 4K UHD | Horror, Sci-Fi | Living Room | 11542 |
 | Amadeus | movie | 4K UHD | Biography, Drama, Music | Living Room | 279 |
+| Anchorman 2: The Legend Continues | movie | DVD | Comedy | Living Room | 109443 |
 | Anna Karenina | movie | Blu-ray | Drama, Romance | Living Room | 50512 |
 | Austenland | movie | Blu-ray | Comedy, Romance | Living Room | 156711 |
 | Big Man on Campus | movie | Blu-ray | Comedy | Living Room | 44403 |
