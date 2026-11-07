@@ -122,6 +122,7 @@ _Auto-generated from `index.html` DATA array._
 | Rudolph the Red-Nosed Reindeer | movie | Blu-ray | Adventure, Animation, Family, Fantasy | Living Room | 13382 |
 | Scream | movie | 4K UHD | Crime, Horror, Mystery | Living Room | 4232 |
 | Scrooged | movie | Blu-ray | Comedy, Drama, Fantasy | Living Room | 9647 |
+| Sideways | movie | DVD | Comedy, Drama, Romance | Living Room | 9675 |
 | Sleepy Hollow | movie | DVD | Fantasy, Horror, Mystery, Thriller | Living Room | 2668 |
 | Slither | movie | DVD | Comedy, Horror, Sci-Fi | Living Room | 9035 |
 | Sneakers | movie | 4K UHD | Comedy, Crime, Drama | Living Room | 2322 |

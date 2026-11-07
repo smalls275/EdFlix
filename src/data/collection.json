@@ -6493,5 +6493,20 @@
       "Comedy",
       "Romance"
     ]
+  },
+  {
+    "tmdbId": 9675,
+    "title": "Sideways",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-11-07T12:33:28",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ]
   }
 ]
