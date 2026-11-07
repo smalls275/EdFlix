@@ -126,6 +126,7 @@ _Auto-generated from `index.html` DATA array._
 | Sleepy Hollow | movie | DVD | Fantasy, Horror, Mystery, Thriller | Living Room | 2668 |
 | Slither | movie | DVD | Comedy, Horror, Sci-Fi | Living Room | 9035 |
 | Sneakers | movie | 4K UHD | Comedy, Crime, Drama | Living Room | 2322 |
+| Spies Like Us | movie | DVD | Adventure, Comedy | Living Room | 9080 |
 | Star Trek: The Next Generation | tv | Blu-ray | Action, Adventure, Drama, Fantasy, Mystery, Sci-Fi | Living Room | 655 |
 | Teenage Mutant Ninja Turtles | movie | DVD | Action, Adventure, Comedy, Family, Sci-Fi | Living Room | 1498 |
 | Teenage Mutant Ninja Turtles II: The Secret of the Ooze | movie | DVD | Action, Adventure, Comedy, Family, Sci-Fi | Living Room | 1497 |

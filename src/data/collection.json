@@ -6508,5 +6508,19 @@
       "Drama",
       "Romance"
     ]
+  },
+  {
+    "tmdbId": 9080,
+    "title": "Spies Like Us",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-11-07T12:35:09",
+    "genre": [
+      "Adventure",
+      "Comedy"
+    ]
   }
 ]
