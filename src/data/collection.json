@@ -6549,5 +6549,19 @@
       "Fantasy",
       "Horror"
     ]
+  },
+  {
+    "tmdbId": 2667,
+    "title": "The Blair Witch Project",
+    "formats": [
+      "DVD"
+    ],
+    "location": "Living Room",
+    "status": "available",
+    "dateAdded": "2026-11-07T12:40:43",
+    "genre": [
+      "Horror",
+      "Mystery"
+    ]
   }
 ]
